@@ -28,7 +28,7 @@
      "weights": {
       "ppg": 0.216,
       "ypg": 0.12,
-      "ypp": 0.121,
+      "ypp": 0.122,
       "epa": 0.15,
       "success": 0.254,
       "to": 0.05,
@@ -119,12 +119,12 @@
      "r2": 0.0,
      "learned": true,
      "weights": {
-      "cmp_pct": 0.244,
+      "cmp_pct": 0.247,
       "net_ypa": 0.128,
       "pass_td": 0.171,
       "ints": 0.112,
       "sack_rate": 0.075,
-      "qb_hits": 0.121,
+      "qb_hits": 0.118,
       "epa_db": 0.15
      }
     },
@@ -239,7 +239,7 @@
      1.38
     ],
     [
-     "Rushing: Rushing yards per game",
+     "Rushing: Rushing yards",
      1.17
     ]
    ],
@@ -374,11 +374,11 @@
      1.63
     ],
     [
-     "Receiving: Receiving yards",
+     "Receiving: Receiving yards per game",
      0.88
     ],
     [
-     "Receiving: Receiving yards per game",
+     "Receiving: Receiving yards",
      0.88
     ]
    ],
@@ -449,7 +449,7 @@
      1.15
     ],
     [
-     "Receiving: Receiving yards",
+     "Receiving: Receiving yards per game",
      1.07
     ]
    ],
@@ -594,7 +594,7 @@
       "solo": 0.197,
       "tfl": 0.314,
       "ff": 0.205,
-      "fr": 0.092
+      "fr": 0.091
      }
     },
     "playing_time": {
@@ -632,12 +632,12 @@
      0.97
     ],
     [
-     "Playing Time: Defensive snaps per game",
-     0.96
+     "Playing Time: Defensive snaps",
+     0.95
     ],
     [
-     "Playing Time: Defensive snaps",
-     0.96
+     "Playing Time: Defensive snaps per game",
+     0.95
     ]
    ],
    "categories": {
@@ -646,10 +646,10 @@
      "learned": true,
      "weights": {
       "tackles": 0.15,
-      "solo": 0.282,
+      "solo": 0.281,
       "tfl": 0.283,
-      "ff": 0.202,
-      "fr": 0.084
+      "ff": 0.203,
+      "fr": 0.083
      }
     },
     "pass_rush": {
@@ -719,10 +719,10 @@
      "learned": true,
      "weights": {
       "tackles": 0.15,
-      "solo": 0.28,
-      "tfl": 0.255,
-      "ff": 0.217,
-      "fr": 0.099
+      "solo": 0.279,
+      "tfl": 0.254,
+      "ff": 0.218,
+      "fr": 0.098
      }
     },
     "playing_time": {
@@ -741,8 +741,8 @@
      "learned": true,
      "weights": {
       "sacks": 0.25,
-      "qb_hits": 0.286,
-      "tfl": 0.464
+      "qb_hits": 0.287,
+      "tfl": 0.463
      }
     },
     "returns": {
