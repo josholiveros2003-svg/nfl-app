@@ -40,6 +40,8 @@ export type Breakdown = {
   baseline: number;
   /** How far this season's stats move it (before the other factors). */
   stats: number;
+  /** Share of the adjustment that comes from this season's stats. */
+  perfShare: number;
   /** How much each other factor moved it (null = not available). */
   moves: { factor: Factor; share: number; move: number | null }[];
   /** How much stats count here (0-1), after the influence slider. */
@@ -55,7 +57,9 @@ const clamp = (x: number) => Math.max(1, Math.min(99, x));
 
 export function breakdown(rt: Rt | null | undefined, weights: number[], influence = 1): Breakdown | null {
   if (!rt || rt.m == null || !rt.g) return null;
-  const w = effectiveWeights(weights);
+  // Factors with no value here (e.g. no betting-market view for players) are skipped, so
+  // their share is spread across the others.
+  const w = effectiveWeights(weights.map((x, i) => (rt.g[i] == null ? 0 : x)));
   const perf = (rt.g[0] ?? 0) * influence;
   const moves = FACTORS.slice(1).map((factor, j) => {
     const i = j + 1;
@@ -68,6 +72,7 @@ export function breakdown(rt: Rt | null | undefined, weights: number[], influenc
     rating: Math.round(clamp(total)),
     baseline: rt.m,
     stats: perf,
+    perfShare: w[0],
     moves,
     statShare: Math.min(1, (rt.s ?? 0) * influence),
     limited: !!rt.ltd,

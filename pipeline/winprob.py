@@ -226,14 +226,31 @@ def backtest(rows: list) -> dict:
         for r in played:
             if (r["season"], r["week"]) == sw:
                 margins[r["id"]] = predict(r["feats"], w, 1.0)[0]
-    # Turn margins into percentages with the spread that best matches held-out results.
-    sigma = best_sigma([(margins[r["id"]], r["margin"]) for r in played])
-    probs = {k: phi(m / sigma) for k, m in margins.items()}
+    # Blend in the betting line (the "analyst opinion" factor): find the share that works best on
+    # held-out games, together with the margin-to-percentage spread.
+    best, curve = None, {}
+    for share in np.arange(0.0, 1.0001, 0.05):
+        pairs = [((1 - share) * margins[r["id"]] + share * (r["spread"] if r.get("spread") is not None else margins[r["id"]]),
+                  r["margin"]) for r in played]
+        sigma = best_sigma(pairs)
+        loss = log_loss(pairs, sigma)
+        picks = [(phi(m / sigma), a) for m, a in pairs if a != 0]
+        curve[f"{share:.2f}"] = {"accuracy": round(100 * sum((p > 0.5) == (a > 0) for p, a in picks) / len(picks), 1),
+                                 "brier": round(sum((p - (a > 0)) ** 2 for p, a in picks) / len(picks), 4)}
+        if best is None or loss < best[0]:
+            best = (loss, float(share), sigma)
+    _, market_share, sigma = best
+    blended = {r["id"]: (1 - market_share) * margins[r["id"]] +
+               market_share * (r["spread"] if r.get("spread") is not None else margins[r["id"]]) for r in played}
+    probs = {k: phi(m / sigma) for k, m in blended.items()}
+    model_only_sigma = best_sigma([(margins[r["id"]], r["margin"]) for r in played])
+    model_only = {k: phi(m / model_only_sigma) for k, m in margins.items()}
     out = {}
     for label, sel in [("all", played)] + [(str(s), [r for r in played if r["season"] == s])
                                             for s in sorted({r["season"] for r in played})]:
         out[label] = {
             "model": evaluate(sel, [probs[r["id"]] for r in sel]),
+            "modelWithoutMarket": evaluate(sel, [model_only[r["id"]] for r in sel]),
             "homeTeam": evaluate(sel, [0.57 for _ in sel]),
             "vegas": evaluate([r for r in sel if r.get("spread") is not None],
                               [phi(r["spread"] / SETTINGS["marginSD"]) for r in sel if r.get("spread") is not None]),
@@ -242,7 +259,23 @@ def backtest(rows: list) -> dict:
     out["fittedWeights"] = {k: round(v, 3) for k, v in fitted.items()}
     out["fittedMarginSD"] = round(sd, 2)
     out["calibratedMarginSD"] = sigma
+    out["fittedMarketWeight"] = round(market_share, 2)
+    # The spread that goes with the blend actually used (config/winprob.json -> market.weight).
+    used = SETTINGS["market"]["weight"]
+    out["marginSDForMarketWeight"] = best_sigma([((1 - used) * margins[r["id"]] + used * (
+        r["spread"] if r.get("spread") is not None else margins[r["id"]]), r["margin"]) for r in played])
+    out["marketBlendCurve"] = curve
     return out
+
+
+def log_loss(pairs, sigma) -> float:
+    loss = 0.0
+    for m, actual in pairs:
+        if actual == 0:
+            continue
+        p = min(max(phi(m / sigma), 1e-6), 1 - 1e-6)
+        loss -= math.log(p if actual > 0 else 1 - p)
+    return loss
 
 
 def best_sigma(pairs) -> float:

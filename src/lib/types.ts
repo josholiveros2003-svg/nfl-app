@@ -16,7 +16,7 @@ export type Rt = {
 };
 
 /** "Why" text for the opponent / injury / recent-form factors. */
-export type RatingContext = { opp?: string; inj?: string; recent?: string };
+export type RatingContext = { opp?: string; inj?: string; recent?: string; mkt?: string };
 
 export type UnitId = 'offense' | 'defense' | 'special';
 

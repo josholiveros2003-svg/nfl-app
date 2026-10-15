@@ -56,10 +56,9 @@
       },
       {
         "id": "analyst",
-        "label": "Analyst opinion",
+        "label": "Betting market",
         "weight": 10,
-        "available": false,
-        "explain": "Expert opinion beyond Madden. Madden itself is already the starting point, so this stays empty until a separate free source exists; its share is spread across the other factors."
+        "explain": "The betting market's view: from this season's point spreads and totals, how good the market thinks each team's offense and defense are (recent weeks count most). Betting lines are effectively the combined opinion of the sharpest analysts. Teams only (offense, defense and overall); for special teams, categories and players there's no market view, so this share is spread across the other factors there."
       },
       {
         "id": "recent",

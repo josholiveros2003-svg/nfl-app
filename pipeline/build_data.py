@@ -34,6 +34,7 @@ from players import CATEGORIES, GROUP_OF, build_players, season_players, trainin
 from ratings import MADDEN, RECENT_GAMES, blend_default, rate_teams, strip_fmt, team_baselines, weights_for
 from ratings import SETTINGS as RATINGS_SETTINGS
 from rankings import league_components, records_before, unit_lists
+from market import describe as describe_market, market_strengths
 
 RELEASES = "https://github.com/nflverse/nflverse-data/releases/download"
 ROOT = Path(__file__).resolve().parent.parent
@@ -182,13 +183,25 @@ def winprob_games(season, sched, pbp, team_ids, people, baselines, model, out_by
                      "awayScore": None if pd.isna(g.away_score) else int(g.away_score),
                      "margin": None if pd.isna(g.result) else float(g.result),
                      "spread": None if pd.isna(g.spread_line) else float(g.spread_line),
+                     "total": None if pd.isna(g.total_line) else float(g.total_line),
                      "neutral": g.location == "Neutral", "feats": feats, "details": details})
     return rows, snaps
 
 
 def game_doc(r: dict) -> dict:
     """What the app needs for one game: teams, score, pre-game win probability, and why."""
-    margin, p_home, contrib = predict(r["feats"])
+    model_margin, _, contrib = predict(r["feats"])
+    mk = WP_SETTINGS["market"]
+    spread = r.get("spread")
+    if spread is not None:
+        # Blend with the betting line: the model's factors count (1 - weight), the line counts weight.
+        contrib = {f: v * (1 - mk["weight"]) for f, v in contrib.items()}
+        contrib["market"] = mk["weight"] * spread
+        sigma = mk["marginSDWithLine"]
+    else:
+        sigma = WP_SETTINGS["marginSD"]
+    margin = sum(contrib.values())
+    p_home = phi(margin / sigma)
     d = r["details"]
     rh, ra = d["ratings"]["home"], d["ratings"]["away"]
     h, a = r["home"], r["away"]
@@ -205,9 +218,14 @@ def game_doc(r: dict) -> dict:
                       f"({h}) vs {d['lastSeason']['away']:+.1f} ({a})",
         "injuries": f"Missing players worth {d['injuries']['homePoints']:.1f} points ({h}) vs "
                     f"{d['injuries']['awayPoints']:.1f} ({a})",
+        "market": "" if spread is None else (
+            f"Betting line: {h if spread > 0 else a} favored by {abs(spread):g}"
+            + (f", over/under {r['total']:g}" if r.get("total") is not None else "")
+            + f" (counts {mk['weight'] * 100:.0f}%; the model's other factors count the rest)"),
     }
-    factors = sorted(({"id": f, "label": WP_LABELS[f], "points": round(contrib[f], 2), "detail": detail[f]}
-                      for f in WP_FEATURES), key=lambda x: -abs(x["points"]))
+    labels = {**WP_LABELS, "market": "Betting market"}
+    factors = sorted(({"id": f, "label": labels[f], "points": round(contrib[f], 2), "detail": detail[f]}
+                      for f in contrib), key=lambda x: -abs(x["points"]))
     played = r["margin"] is not None
     return {
         "id": r["id"], "season": r["season"], "week": r["week"], "date": r["date"],
@@ -975,6 +993,23 @@ def main():
                team_rows(all_units, games_played, season, baselines), unit_cats, {})
     set_trust(team_model, MADDEN["minTrust"]["teams"])
     team_ratings = rate_teams(team_model, season, all_units, recent_units, games_played, team_ctx, baselines)
+
+    # Betting market's view of each team fills the "analyst opinion" factor (offense, defense, overall).
+    tb = MADDEN["teamBaseline"]
+    market = market_strengths(sched, team_ids, tb["mean"], tb["sd"])
+    for t in team_ids:
+        m = market.get(t)
+        if not m:
+            continue
+        for unit in ("offense", "defense"):
+            rt = team_ratings[t]["units"][unit]["rt"]
+            if rt:
+                rt["g"][3] = round(m[unit] - rt["m"], 1)
+            team_ctx[t][unit]["mkt"] = describe_market(m, unit)
+        rt = team_ratings[t]["rt"]
+        if rt:
+            rt["g"][3] = round(m["overall"] - rt["m"], 1)
+        team_ctx[t]["special"]["mkt"] = describe_market(m, "overall")
     strip_fmt(all_units)
     strip_fmt(last_units)
 
@@ -1101,7 +1136,8 @@ def main():
                "team": team, "games": games_out, "units": all_units[t], "roster": rosters.get(t, []),
                "unitRatings": team_ratings[t]["units"],
                "results": team_results_ctx[t],
-               "context": {side: {"opp": c["opp"], "inj": c["inj"], "recent": recent_text(played_by_team[t])}
+               "context": {side: {"opp": c["opp"], "inj": c["inj"], "recent": recent_text(played_by_team[t]),
+                                  "mkt": c.get("mkt")}
                            for side, c in team_ctx[t].items()}}
         (OUT_DIR / "teams" / f"{t}.json").write_text(json.dumps(doc, separators=(",", ":"), default=to_plain))
         team_docs[t] = doc

@@ -99,7 +99,7 @@ Every team, unit, category, stat, player and player category has a 0-100 rating.
   how much he's played × how well stats explain Madden at his position. Low-sample players
   stay near Madden and are marked **LTD**.
 - **Sliders (Settings ⚙):** stats influence, plus the blend of this season's stats,
-  opponent strength, injuries, analyst opinion (not available yet), and recent form.
+  opponent strength, injuries, betting market (teams only), and recent form.
 - **Why this rating:** tap any colored rating to see the Madden baseline and how much each
   factor moved it.
 
@@ -134,3 +134,12 @@ The home screen has three tabs: **Schedule**, **Rankings** and **Compare**.
   away, with that opponent's injuries; close games count as partial results; margins capped
   at 21), the team rating minus key players out now, and recent form. Weights in
   `config/rankings.json`, with sliders in Settings. Byes never lower a team's score.
+
+## Betting market (the "analyst opinion" factor)
+
+There's no free, structured source of analyst opinion, so the betting market stands in for
+it (pipeline/market.py). From this season's point spreads and over/under totals (recent
+weeks count most), each team gets a market-view rating for offense, defense and overall,
+blended in with the "Betting market" slider. In win probability, games with a betting line
+use 75% line and 25% model: testing showed the line alone is slightly more accurate, but
+this blend is almost as good and keeps the model's factors meaningful.

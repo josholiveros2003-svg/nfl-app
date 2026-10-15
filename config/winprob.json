@@ -60,5 +60,14 @@
   "injuriesWhy": "Each missing player costs points = position value x quality x starter. Position values: a starting QB is worth about 5.5 points (an average starter vs. his backup), every other position well under 1 point. Quality comes from Madden: 85 = 1.0x, 95 = 1.5x, 70 = 0.25x. Backups count 20% (most backups barely play). Out and injured reserve count fully; Doubtful 75% (doubtful players rarely play). Questionable doesn't count.",
   "fitting": {
     "ridge": 1.0
+  },
+  "market": {
+    "weight": 0.75,
+    "why": "How much the betting line counts in each game's win probability. Testing on 349 past games found the line alone was best (it already prices in injuries, form and matchups), but 75% line + 25% model is almost exactly as accurate (Brier 0.2165 vs 0.2156) and keeps the model's factors meaningful in the 'why' view. Games without a line yet (more than about a week out) use the model alone.",
+    "recencyDecay": 0.85,
+    "recencyWhy": "For team ratings, each week older counts 85% as much, so the market's current view (this week's and next week's lines) matters most.",
+    "ridge": 2.0,
+    "marginSDWithLine": 11.5,
+    "marginSDWhy": "With the betting line blended in, predictions are sharper, so the margin-to-percentage spread is 11.5 points (fitted on past games). Games without a line use marginSD (14.25)."
   }
 }

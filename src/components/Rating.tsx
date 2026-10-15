@@ -1,7 +1,7 @@
 import { router, type Href } from 'expo-router';
 import { useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { breakdown, effectiveWeights, useRating, useRatingWeights } from '@/lib/ratings';
+import { breakdown, useRating, useRatingWeights } from '@/lib/ratings';
 import { colors, ratingColor } from '@/lib/theme';
 import type { RatingContext, Rt, TeamResults } from '@/lib/types';
 
@@ -95,6 +95,7 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
     opponents: info.context?.opp,
     injuries: info.context?.inj,
     recent: info.context?.recent,
+    analyst: info.context?.mkt,
   };
   const parts = (info.parts ?? []).filter((p) => p.rt && (p.w ?? 0) > 0);
   const totalW = parts.reduce((a, p) => a + (p.w ?? 0), 0);
@@ -135,7 +136,7 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
               />
               <Row
                 label="This season's stats"
-                detail={`Compared with what a ${Math.round(b.baseline)} normally produces · stats count ${pct(b.statShare)} here${b.limited ? ' (limited sample)' : ''} · ${pct(effectiveWeights(weights)[0])} weight`}
+                detail={`Compared with what a ${Math.round(b.baseline)} normally produces · stats count ${pct(b.statShare)} here${b.limited ? ' (limited sample)' : ''} · ${pct(b.perfShare)} weight`}
                 value={fmtMove(b.stats)}
                 color={b.stats >= 0.05 ? colors.good : b.stats <= -0.05 ? colors.bad : colors.muted}
               />
@@ -145,7 +146,9 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
                   label={m.factor.label}
                   detail={
                     m.move == null
-                      ? 'Not available yet. Its share is spread across the other factors.'
+                      ? m.factor.id === 'analyst'
+                        ? 'No betting-market view here (the market only rates team offense, defense and overall). Its share is spread across the other factors.'
+                        : 'Not available here. Its share is spread across the other factors.'
                       : `${pct(m.share)} weight${ctxFor[m.factor.id] ? ` · ${ctxFor[m.factor.id]}` : ''}`
                   }
                   value={m.move == null ? 'n/a' : fmtMove(m.move)}
