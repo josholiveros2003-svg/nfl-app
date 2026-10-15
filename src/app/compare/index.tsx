@@ -6,6 +6,7 @@ import { Card, Loading, Screen, SectionTitle, Segmented, styles as ui } from '@/
 import { usePlayersIndex, useTeams } from '@/lib/data';
 import { colors } from '@/lib/theme';
 import type { PlayerIndexEntry, Team } from '@/lib/types';
+import { useIsClient } from '@/lib/useIsClient';
 
 type Kind = 'teams' | 'players';
 const KINDS: { id: Kind; label: string }[] = [
@@ -21,7 +22,10 @@ const GROUP_NAME: Record<string, string> = {
 // Pick any two teams, or any two players at the same position, then compare them.
 export default function ComparePickerScreen() {
   const params = useLocalSearchParams<{ kind?: string }>();
-  const [kind, setKind] = useState<Kind>(params.kind === 'players' ? 'players' : 'teams');
+  const isClient = useIsClient();
+  // The address can ask for ?kind=players; only follow it once in the browser (see useIsClient).
+  const [chosen, setKind] = useState<Kind | null>(null);
+  const kind: Kind = chosen ?? (isClient && params.kind === 'players' ? 'players' : 'teams');
 
   return (
     <>

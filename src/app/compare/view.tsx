@@ -4,12 +4,14 @@ import { Comparison } from '@/components/Comparison';
 import { Loading, Screen, styles as ui } from '@/components/ui';
 import { playerSide, teamSide } from '@/lib/compare';
 import { usePlayer, useTeam } from '@/lib/data';
+import { useIsClient } from '@/lib/useIsClient';
 
 // Side-by-side comparison of two teams or two players.
 // Address: /compare/view?kind=teams&a=KC&b=BUF&path=offense.passing
 export default function CompareViewScreen() {
   const params = useLocalSearchParams<{ kind?: string; a?: string; b?: string; path?: string }>();
   const kind = params.kind === 'players' ? 'players' : 'teams';
+  const isClient = useIsClient();
   const path = params.path ? params.path.split('.').filter(Boolean) : [];
 
   const teamA = useTeam(kind === 'teams' ? params.a : undefined);
@@ -29,7 +31,7 @@ export default function CompareViewScreen() {
   return (
     <>
       <Stack.Screen options={{ title: 'Compare' }} />
-      {!params.a || !params.b ? (
+      {isClient && (!params.a || !params.b) ? (
         <Loading error="Pick two teams or two players to compare." />
       ) : !a || !b ? (
         <Loading error={error} />

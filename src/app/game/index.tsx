@@ -4,11 +4,13 @@ import { Loading, Screen } from '@/components/ui';
 import { GameHeader } from '@/components/WinProb';
 import { teamSide } from '@/lib/compare';
 import { useGame, useTeam } from '@/lib/data';
+import { useIsClient } from '@/lib/useIsClient';
 
 // One game: win chances (or the final score), then the two teams side by side using the
 // same Compare screen. Address: /game?id=2026_06_SEA_DEN (&path=offense.passing to drill down).
 export default function GameScreen() {
   const params = useLocalSearchParams<{ id?: string; path?: string }>();
+  const isClient = useIsClient();
   const path = params.path ? params.path.split('.').filter(Boolean) : [];
   const game = useGame(params.id);
   const away = useTeam(game.data?.away);
@@ -24,7 +26,7 @@ export default function GameScreen() {
     <>
       <Stack.Screen options={{ title: game.data ? `${game.data.away} @ ${game.data.home}` : 'Game' }} />
       {!game.data || !away.data || !home.data ? (
-        <Loading error={!params.id ? 'No game picked' : error} />
+        <Loading error={isClient && !params.id ? 'No game picked' : error} />
       ) : (
         <Screen>
           <GameHeader game={game.data} teams={{ home: home.data.team, away: away.data.team }} />

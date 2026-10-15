@@ -5,19 +5,21 @@ import { PlayerHeader } from '@/components/PlayerHeader';
 import { RatingBadge } from '@/components/Rating';
 import { LinkCard, Loading, Screen, styles as ui } from '@/components/ui';
 import { usePlayer } from '@/lib/data';
+import { useIsClient } from '@/lib/useIsClient';
 import { readableTeamColor } from '@/lib/theme';
 
 // A player's page: header, then one card per stat category that fits his position.
 // The address looks like /player?id=00-0033873 (his NFL player id).
 export default function PlayerScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const isClient = useIsClient();
   const { data, error } = usePlayer(id);
 
   return (
     <>
       <Stack.Screen options={{ title: data?.name ?? 'Player' }} />
       {!data ? (
-        <Loading error={error ?? (!id ? 'No player picked' : undefined)} />
+        <Loading error={error ?? (isClient && !id ? 'No player picked' : undefined)} />
       ) : (
         <Screen>
           <PlayerHeader player={data} />
