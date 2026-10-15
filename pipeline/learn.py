@@ -20,6 +20,7 @@ tracks Madden on its own (its correlation, R), and the cross-validated fit.
 
 from __future__ import annotations
 
+import copy
 import math
 
 import numpy as np
@@ -68,18 +69,7 @@ def fit(rows: list, fallback) -> Model:
     model = Model()
 
     # 1. Peer averages/spreads per season (qualified players only).
-    vals = {}
-    for r in rows:
-        for cid, cat in r["cats"].items():
-            if not cat["qualified"]:
-                continue
-            for s in _stats_of(cat):
-                v = perf_value(s, r["games"], cat.get("teamBased"))
-                if v is not None and not (isinstance(v, float) and math.isnan(v)):
-                    vals.setdefault((r["season"], r["group"], cid, s["id"]), []).append(v)
-    for k, v in vals.items():
-        a = np.array(v, dtype=float)
-        model.pools[k] = (float(a.mean()), float(a.std()))
+    model.pools = _pools(rows)
 
     # 2. Madden spread per group.
     ms = {}
@@ -127,6 +117,32 @@ def set_trust(model: Model, minimum: float):
     for group, fit in model.group_fit.items():
         r2 = fit.get("r2") or 0.0
         model.trust[group] = round(max(minimum, math.sqrt(r2)), 2)
+
+
+def _pools(rows: list) -> dict:
+    """(season, group, category, stat) -> (mean, sd) of per-game values among qualified peers."""
+    vals = {}
+    for r in rows:
+        for cid, cat in r["cats"].items():
+            if not cat["qualified"]:
+                continue
+            for s in _stats_of(cat):
+                v = perf_value(s, r["games"], cat.get("teamBased"))
+                if v is not None and not (isinstance(v, float) and math.isnan(v)):
+                    vals.setdefault((r["season"], r["group"], cid, s["id"]), []).append(v)
+    out = {}
+    for k, v in vals.items():
+        a = np.array(v, dtype=float)
+        out[k] = (float(a.mean()), float(a.std()))
+    return out
+
+
+def repool(model: Model, rows: list) -> Model:
+    """The same learned model, but comparing against peers as they stood at an earlier point
+    in the season (used to rebuild ratings 'as of' a past week without peeking ahead)."""
+    m = copy.copy(model)
+    m.pools = _pools(rows)
+    return m
 
 
 def fit_groups(model: Model, rows: list, core: dict, labels: dict):

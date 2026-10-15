@@ -1,0 +1,64 @@
+{
+  "_readme": [
+    "Win probability settings. Every factor is converted into points on the scoreboard (an expected winning margin), which is then turned into a percentage.",
+    "These weights were fitted on 2025 and 2026 games (see public/data/winprob_report.json, which the pipeline refreshes every run with an honest test and freshly fitted suggestions).",
+    "Edit a number, save, and run `npm run data` (or push and let the scheduled job rebuild)."
+  ],
+  "weights": {
+    "home": 1.9,
+    "offense": 0.39,
+    "defense": 0.05,
+    "special": 0.0,
+    "form": 0.13,
+    "adjusted": 0.15,
+    "lastSeason": 0.55,
+    "injuries": 1.0
+  },
+  "weightsWhy": {
+    "home": "Home field is worth about 1.9 points (home teams won 54% of 2025 games). Neutral-site games get none.",
+    "offense": "Each point of Offense rating gap is worth about 0.4 points on the scoreboard. Offense is the most stable, most predictive part of a team.",
+    "defense": "Defense ratings add very little once actual points allowed (in 'record & schedule') and last season are counted: defensive play swings more from week to week. Fitted at 0.05.",
+    "special": "Special teams ratings didn't help predict winners at all in testing (the fitted weight was slightly negative, which is noise), so it's set to 0. Kickers still matter through points scored and allowed.",
+    "form": "Recent form: each point of average margin over the last 3 games is worth 0.13 points.",
+    "adjusted": "Record & schedule: average winning margin, adjusted for how good the opponents were (beating good teams counts more). Worth 0.15 points per point.",
+    "lastSeason": "Last season's schedule-adjusted margin, worth 0.55 points per point in Week 1 and fading as this season's games come in (half weight after 4 games). The strongest early-season signal.",
+    "injuries": "Injury points (below) count one-for-one. Testing fitted 1.08, which confirms the injury point values are about right."
+  },
+  "marginSD": 14.25,
+  "marginSDWhy": "NFL results vary around the expected margin by about 14 points. 14.25 is the value that best matched how often held-out favorites actually won, which keeps the percentages honest (not overconfident).",
+  "recentGames": 3,
+  "resultsHalfWeightGames": 3,
+  "resultsWhy": "Early-season results are shrunk toward zero: after 3 games they count half.",
+  "lastSeasonFadeGames": 4,
+  "injuries": {
+    "positionPoints": {
+      "QB": 5.5,
+      "RB": 0.4,
+      "WR": 0.7,
+      "TE": 0.5,
+      "OL": 0.5,
+      "DL": 0.6,
+      "LB": 0.4,
+      "DB": 0.5,
+      "K": 0.4,
+      "P": 0.15,
+      "LS": 0.05
+    },
+    "qualityFloor": 65,
+    "qualityScale": 20,
+    "minQuality": 0.25,
+    "maxQuality": 1.4,
+    "unknownQuality": 0.5,
+    "nonStarterShare": 0.2,
+    "statusWeight": {
+      "Out": 1.0,
+      "Doubtful": 0.75,
+      "IR": 1.0
+    },
+    "minPointsToShow": 0.15
+  },
+  "injuriesWhy": "Each missing player costs points = position value x quality x starter. Position values: a starting QB is worth about 5.5 points (an average starter vs. his backup), every other position well under 1 point. Quality comes from Madden: 85 = 1.0x, 95 = 1.5x, 70 = 0.25x. Backups count 20% (most backups barely play). Out and injured reserve count fully; Doubtful 75% (doubtful players rarely play). Questionable doesn't count.",
+  "fitting": {
+    "ridge": 1.0
+  }
+}

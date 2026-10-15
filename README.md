@@ -102,3 +102,21 @@ Every team, unit, category, stat, player and player category has a 0-100 rating.
   opponent strength, injuries, analyst opinion (not available yet), and recent form.
 - **Why this rating:** tap any colored rating to see the Madden baseline and how much each
   factor moved it.
+
+## Games and win probability
+
+Tap any game on a team's Schedule to open it. Both teams appear side by side (the same
+screen as Compare), with the chance to win at the top. For finished games it shows the
+final score and what the model gave each team before kickoff.
+
+- **How it works (pipeline/winprob.py):** each factor is turned into points on the
+  scoreboard: home field, Offense/Defense/Special Teams rating gaps, recent form, record
+  adjusted for opponents, last season (fading out), and that week's injuries (a starting
+  QB is worth about 5.5 points, more for a star). The expected margin becomes a percentage.
+- **Only pre-game information is used:** ratings are rebuilt from earlier games, so past
+  games are judged fairly.
+- **Settings:** every weight is in `config/winprob.json`, with the reasoning next to each.
+- **Testing:** each run re-tests the model on every 2025 and 2026 game (each week predicted
+  by a model that never saw that week's results) and saves accuracy and calibration to
+  `public/data/winprob_report.json`, next to two benchmarks: always picking the home team,
+  and the betting favorite.

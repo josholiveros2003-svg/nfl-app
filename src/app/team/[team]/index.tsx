@@ -1,5 +1,5 @@
-import { router, Stack, useLocalSearchParams } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { Link, router, Stack, useLocalSearchParams } from 'expo-router';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { KeyStats } from '@/components/KeyStats';
 import { TeamHeader } from '@/components/TeamHeader';
 import { RatingBadge } from '@/components/Rating';
@@ -72,22 +72,42 @@ export default function TeamScreen() {
           )}
 
           {tab === 'schedule' && (
-            <Card style={{ paddingVertical: 4 }}>
-              {data.games.map((g, i) => (
-                <View key={g.week} style={[s.game, i < data.games.length - 1 && s.divider]}>
-                  <Text style={s.week}>Wk {g.week}</Text>
-                  <Text style={s.opp}>
-                    {g.home ? 'vs' : '@'} {g.opp}
-                  </Text>
-                  {g.result ? (
-                    <Text style={[s.score, { color: g.result === 'W' ? colors.good : g.result === 'L' ? colors.bad : colors.mid }]}>
-                      {g.result} {g.pf}–{g.pa}
-                    </Text>
-                  ) : (
-                    <Text style={s.date}>{formatDate(g.date)}</Text>
-                  )}
-                </View>
-              ))}
+            <Card style={{ paddingVertical: 0, paddingHorizontal: 0, overflow: 'hidden' }}>
+              {data.games.map((g, i) => {
+                const row = (pressed: boolean) => (
+                  <View style={[s.game, i < data.games.length - 1 && s.divider, pressed && { backgroundColor: colors.cardPressed }]}>
+                    <Text style={s.week}>Wk {g.week}</Text>
+                    <View style={{ flex: 1 }}>
+                      <Text style={s.opp}>
+                        {g.home ? 'vs' : '@'} {g.opp}
+                      </Text>
+                      {g.wp != null ? (
+                        <Text style={s.wp}>
+                          {g.result ? 'Model gave them' : 'Chance to win'} {Math.round(g.wp * 100)}%
+                          {g.result && g.result !== 'T' ? ((g.wp > 0.5) === (g.result === 'W') ? ' · ✓' : ' · ✗') : ''}
+                        </Text>
+                      ) : null}
+                    </View>
+                    {g.result ? (
+                      <Text style={[s.score, { color: g.result === 'W' ? colors.good : g.result === 'L' ? colors.bad : colors.mid }]}>
+                        {g.result} {g.pf}–{g.pa}
+                      </Text>
+                    ) : (
+                      <Text style={s.date}>{formatDate(g.date)}</Text>
+                    )}
+                    {g.id ? <Text style={s.chev}>›</Text> : null}
+                  </View>
+                );
+                return g.id ? (
+                  <Link key={g.week} href={{ pathname: '/game', params: { id: g.id } }} asChild>
+                    <Pressable accessibilityRole="link" accessibilityLabel={`Week ${g.week} game details`}>
+                      {({ pressed }) => row(pressed)}
+                    </Pressable>
+                  </Link>
+                ) : (
+                  <View key={g.week}>{row(false)}</View>
+                );
+              })}
             </Card>
           )}
 
@@ -109,7 +129,9 @@ function formatDate(iso: string) {
 }
 
 const s = StyleSheet.create({
-  game: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, gap: 12 },
+  game: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, paddingHorizontal: 14, gap: 12 },
+  wp: { color: colors.muted, fontSize: 12, marginTop: 2 },
+  chev: { color: colors.muted, fontSize: 20, marginTop: -2 },
   divider: { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.border },
   week: { color: colors.muted, width: 44, fontSize: 13 },
   opp: { color: colors.text, flex: 1, fontSize: 15 },

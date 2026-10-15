@@ -72,6 +72,10 @@ export type Category = {
 };
 
 export type Game = {
+  /** nflverse game id, e.g. "2026_06_SEA_DEN". */
+  id?: string;
+  /** This team's chance to win, as the model saw it before kickoff (0-1). */
+  wp?: number | null;
   week: number;
   date: string;
   opp: string;
@@ -175,3 +179,33 @@ export type PlayerIndexEntry = {
   starter: boolean;
   rt?: Rt | null;
 };
+
+export type GameFactor = { id: string; label: string; points: number; detail: string };
+export type MissingPlayer = { id: string; name: string; pos: string | null; status: string; points: number };
+
+/** public/data/games/<id>.json: one game, with its pre-game win probability and why. */
+export type GameDoc = {
+  id: string;
+  season: number;
+  week: number;
+  date: string;
+  home: string;
+  away: string;
+  neutral: boolean;
+  played: boolean;
+  homeScore: number | null;
+  awayScore: number | null;
+  prob: { home: number; away: number };
+  /** Expected home margin in points (negative = away favored). */
+  margin: number;
+  /** Each factor's effect in points (positive helps the home team), biggest first. */
+  factors: GameFactor[];
+  injuries: { home: MissingPlayer[]; away: MissingPlayer[] };
+  correct: boolean | null;
+};
+
+type Eval = { games: number; correct: number; accuracy: number; brier: number;
+  calibration: { band: string; games: number; predicted: number; actual: number }[] };
+
+/** public/data/winprob_report.json: how the model has done on past games. */
+export type WinProbReport = Record<string, { model: Eval; homeTeam: Eval; vegas: Eval }>;

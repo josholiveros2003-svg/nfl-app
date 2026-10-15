@@ -26,10 +26,12 @@ import pandas as pd
 import requests
 
 from context import Context, expected_starters, burdens, team_contexts, team_strength, unavailable
-from learn import fit, fit_groups, set_trust
+from learn import fit, fit_groups, repool, set_trust
+from winprob import FEATURES as WP_FEATURES, LABELS as WP_LABELS, SETTINGS as WP_SETTINGS
+from winprob import backtest, game_features, last_season_margins, predict, team_results, unavailable_by_week
 from madden import load_madden
 from players import CATEGORIES, GROUP_OF, build_players, season_players, training_rows
-from ratings import MADDEN, RECENT_GAMES, rate_teams, strip_fmt, team_baselines, weights_for
+from ratings import MADDEN, RECENT_GAMES, blend_default, rate_teams, strip_fmt, team_baselines, weights_for
 
 RELEASES = "https://github.com/nflverse/nflverse-data/releases/download"
 ROOT = Path(__file__).resolve().parent.parent
@@ -95,6 +97,118 @@ def load_last_season(season: int) -> dict:
         "roster": pd.read_csv(io.BytesIO(fetch(f"rosters/roster_{season}.csv")), low_memory=False),
         "weekly": pd.read_parquet(io.BytesIO(fetch(f"stats_player/stats_player_week_{season}.parquet"))),
         "snaps": pd.read_parquet(io.BytesIO(fetch(f"snap_counts/snap_counts_{season}.parquet"))),
+        # For testing the win-probability model on last season's games:
+        "injuries": optional_parquet(f"injuries/injuries_{season}.parquet", ["gsis_id", "week", "report_status", "team"]),
+        "weekly_rosters": optional_parquet(f"weekly_rosters/roster_weekly_{season}.parquet",
+                                           ["gsis_id", "week", "status", "team"]),
+        "depth": pd.read_parquet(io.BytesIO(fetch(f"depth_charts/depth_charts_{season}.parquet"))),
+    }
+
+
+UNIT_KEYS = ("offense", "defense", "special")
+
+
+def played_frame(sched, team: str, game_ids: set) -> pd.DataFrame:
+    """A team's games (from its point of view) that have results and play-by-play."""
+    h = sched[sched.home_team == team].assign(opp=lambda x: x.away_team, home=True,
+                                               pf=lambda x: x.home_score, pa=lambda x: x.away_score)
+    a = sched[sched.away_team == team].assign(opp=lambda x: x.home_team, home=False,
+                                               pf=lambda x: x.away_score, pa=lambda x: x.home_score)
+    s = pd.concat([h, a]).sort_values("week")
+    return s[s.pf.notna() & s.game_id.isin(game_ids)]
+
+
+def ratings_asof(season, week, pbp, sched, team_ids, people, baselines, model) -> dict:
+    """Each team's Offense/Defense/Special Teams ratings using only games before `week`
+    (so a past game is judged only on what was known before kickoff)."""
+    p = pbp[pbp.week < week]
+    if p.empty:
+        return {t: {u: baselines[t][u] for u in UNIT_KEYS} for t in team_ids}
+    gids = set(p.game_id)
+    scrim = p[p.play_type.isin(["pass", "run"])]
+    units, gp = {}, {}
+    for t in team_ids:
+        played = played_frame(sched, t, gids)
+        gp[t] = len(played)
+        units[t] = build_team(t, p, scrim, len(played), played, people)
+    snap = repool(model, team_rows(units, gp, season, baselines))
+    zero = {t: {u: {"opp_z": 0.0, "inj_z": 0.0} for u in UNIT_KEYS} for t in team_ids}
+    rated = rate_teams(snap, season, units, units, gp, zero, baselines)
+    return {t: {u: round(blend_default(rated[t]["units"][u]["rt"]), 1) for u in UNIT_KEYS} for t in team_ids}
+
+
+def player_info(roster, madden: dict, starters: dict) -> dict:
+    """Who each player is, for weighing injuries: position group, Madden rating, starter or not."""
+    starter_ids = {pid for ps in starters.values() for pid, _, _ in ps}
+    r = roster.dropna(subset=["gsis_id"]).sort_values("week").drop_duplicates("gsis_id", keep="last")
+    out = {}
+    for x in r.itertuples():
+        pos = x.depth_chart_position if isinstance(x.depth_chart_position, str) else x.position
+        out[x.gsis_id] = {"name": x.full_name, "pos": pos, "group": GROUP_OF.get(x.position) or GROUP_OF.get(pos),
+                          "madden": madden.get(x.gsis_id), "starter": x.gsis_id in starter_ids}
+    return out
+
+
+def winprob_games(season, sched, pbp, team_ids, people, baselines, model, out_by_week, info, prior) -> list:
+    """Every regular-season game with its pre-game features (and result, if played)."""
+    results = team_results(sched)
+    last_played = int(sched[sched.result.notna()].week.max()) if sched.result.notna().any() else 0
+    latest_report = max((w for (_, w) in out_by_week), default=0)
+    snaps, rows = {}, []
+    for g in sched.sort_values(["week", "gameday", "game_id"]).itertuples():
+        week = int(g.week)
+        as_of = min(week, last_played + 1)  # future games use the latest ratings
+        if as_of not in snaps:
+            snaps[as_of] = ratings_asof(season, as_of, pbp, sched, team_ids, people, baselines, model)
+        # Injury reports exist only up to the current week; further ahead, only injured reserve is known.
+        inj = out_by_week
+        if week > latest_report:
+            inj = {(t, week): {pid: st for pid, st in v.items() if st == "IR"}
+                   for (t, w), v in out_by_week.items() if w == latest_report}
+        feats, details = game_features(g.home_team, g.away_team, week, g.location == "Neutral",
+                                       snaps[as_of], results, inj, info, prior)
+        rows.append({"id": g.game_id, "season": season, "week": week, "date": g.gameday,
+                     "home": g.home_team, "away": g.away_team,
+                     "homeScore": None if pd.isna(g.home_score) else int(g.home_score),
+                     "awayScore": None if pd.isna(g.away_score) else int(g.away_score),
+                     "margin": None if pd.isna(g.result) else float(g.result),
+                     "spread": None if pd.isna(g.spread_line) else float(g.spread_line),
+                     "neutral": g.location == "Neutral", "feats": feats, "details": details})
+    return rows
+
+
+def game_doc(r: dict) -> dict:
+    """What the app needs for one game: teams, score, pre-game win probability, and why."""
+    margin, p_home, contrib = predict(r["feats"])
+    d = r["details"]
+    rh, ra = d["ratings"]["home"], d["ratings"]["away"]
+    h, a = r["home"], r["away"]
+    detail = {
+        "home": "Neutral site, so no home edge" if r["neutral"] else f"{h} is at home",
+        "offense": f"Offense rating {rh['offense']:.0f} ({h}) vs {ra['offense']:.0f} ({a})",
+        "defense": f"Defense rating {rh['defense']:.0f} ({h}) vs {ra['defense']:.0f} ({a})",
+        "special": f"Special teams rating {rh['special']:.0f} ({h}) vs {ra['special']:.0f} ({a})",
+        "form": f"Last {WP_SETTINGS['recentGames']} games, average margin: {d['form']['home']:+.1f} ({h}) vs "
+                f"{d['form']['away']:+.1f} ({a})",
+        "adjusted": f"Season margin adjusted for opponents: {d['adjusted']['home']:+.1f} ({h}) vs "
+                    f"{d['adjusted']['away']:+.1f} ({a})",
+        "lastSeason": f"Last season's adjusted margin (fading as this season goes on): {d['lastSeason']['home']:+.1f} "
+                      f"({h}) vs {d['lastSeason']['away']:+.1f} ({a})",
+        "injuries": f"Missing players worth {d['injuries']['homePoints']:.1f} points ({h}) vs "
+                    f"{d['injuries']['awayPoints']:.1f} ({a})",
+    }
+    factors = sorted(({"id": f, "label": WP_LABELS[f], "points": round(contrib[f], 2), "detail": detail[f]}
+                      for f in WP_FEATURES), key=lambda x: -abs(x["points"]))
+    played = r["margin"] is not None
+    return {
+        "id": r["id"], "season": r["season"], "week": r["week"], "date": r["date"],
+        "home": h, "away": a, "neutral": r["neutral"], "played": played,
+        "homeScore": r["homeScore"], "awayScore": r["awayScore"],
+        "prob": {"home": round(p_home, 3), "away": round(1 - p_home, 3)},
+        "margin": round(margin, 1),
+        "factors": factors,
+        "injuries": {"home": d["injuries"]["home"], "away": d["injuries"]["away"]},
+        "correct": None if not played or r["margin"] == 0 else (p_home > 0.5) == (r["margin"] > 0),
     }
 
 
@@ -826,6 +940,33 @@ def main():
         "trust": {"teams": team_model.trust, "players": player_model.trust},
     }, indent=1, default=to_plain))
 
+    # ---- Win probability: every game this season and last, then an honest test ----
+    out_now = unavailable_by_week(extra["injuries"], extra["weekly_rosters"])
+    all_reg = games[games.game_type == "REG"]
+    games_now = winprob_games(season, sched, pbp, team_ids, people, baselines, team_model, out_now,
+                              player_info(roster, madden, starters),
+                              last_season_margins(all_reg[all_reg.season == season - 1]))
+    # Last season: no preseason Madden existed for it in our data, so every team starts even.
+    flat = {t: {k: MADDEN["teamBaseline"]["mean"] for k in (*UNIT_KEYS, "overall")} for t in team_ids}
+    lstarters = expected_starters(last["depth"], str(lsched.gameday.min()))
+    games_last = winprob_games(season - 1, lsched, lpbp, team_ids, lpeople, flat, team_model,
+                               unavailable_by_week(last["injuries"], last["weekly_rosters"]),
+                               player_info(last["roster"], madden, lstarters),
+                               last_season_margins(all_reg[all_reg.season == season - 2]))
+    wp_report = backtest(games_last + games_now)
+    (OUT_DIR / "winprob_report.json").write_text(json.dumps(wp_report, indent=1, default=to_plain))
+    print("  win probability test:", json.dumps({k: v["model"]["accuracy"] for k, v in wp_report.items()
+                                                 if isinstance(v, dict) and "model" in v}))
+
+    # One file per game this season: pre-game win probability and why.
+    game_docs = {r["id"]: game_doc(r) for r in games_now}
+    games_dir = OUT_DIR / "games"
+    games_dir.mkdir(exist_ok=True)
+    for old in games_dir.glob("*.json"):
+        old.unlink()
+    for gid, gdoc in game_docs.items():
+        (games_dir / f"{gid}.json").write_text(json.dumps(gdoc, separators=(",", ":"), default=to_plain))
+
     # Team leader lists show each player's overall rating too.
     for units in all_units.values():
         for cats in units.values():
@@ -875,6 +1016,7 @@ def main():
         }
         index.append(team)
         games_out = [{
+            "id": g.game_id,
             "week": int(g.week),
             "date": g.gameday,
             "opp": g.opp,
@@ -882,6 +1024,9 @@ def main():
             "pf": None if pd.isna(g.pf) else int(g.pf),
             "pa": None if pd.isna(g.pa) else int(g.pa),
             "result": None if pd.isna(g.pf) else ("W" if g.pf > g.pa else "L" if g.pf < g.pa else "T"),
+            # This team's chance to win, as the model saw it before kickoff.
+            "wp": None if g.game_id not in game_docs else
+            game_docs[g.game_id]["prob"]["home" if g.home else "away"],
         } for g in s.itertuples()]
         doc = {"season": season, "throughWeek": through_week, "updated": updated,
                "team": team, "games": games_out, "units": all_units[t], "roster": rosters.get(t, []),
