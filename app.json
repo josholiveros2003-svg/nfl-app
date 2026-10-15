@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "NFL Stats",
+    "slug": "nfl-stats",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png",
+      "name": "NFL Stats",
+      "shortName": "NFL Stats",
+      "themeColor": "#0B0F17",
+      "backgroundColor": "#0B0F17"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar"
+    ],
+    "scheme": "nflstats",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

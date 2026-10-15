@@ -1,0 +1,85 @@
+# Free scheduled job (GitHub Actions) that keeps the app's stats fresh.
+#
+# Every few hours it downloads the latest nflverse data and rebuilds the stats.
+# If anything changed (i.e. games were played), it saves the new data to the
+# repo and republishes the website on GitHub Pages. If nothing changed, it stops
+# early, so quiet days cost almost nothing.
+name: Update data & deploy
+
+on:
+  schedule:
+    # Times are UTC. nflverse refreshes play-by-play overnight after games, so
+    # checking every 6 hours catches Thursday, Sunday and Monday games by morning.
+    - cron: "17 */6 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch: # adds a "Run workflow" button on GitHub for manual runs
+
+permissions:
+  contents: write # to save updated data back to the repo
+  pages: write # to publish the site
+  id-token: write # required by GitHub Pages deploy
+
+concurrency:
+  group: update-and-deploy
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: Build stats from nflverse
+        run: |
+          pip install -r pipeline/requirements.txt
+          python pipeline/build_data.py
+
+      - name: Save new data (if any)
+        id: save
+        run: |
+          git add public/data
+          if git diff --cached --quiet; then
+            echo "No new data."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Update NFL data"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Everything below only runs when there's something new to publish.
+      - uses: actions/setup-node@v4
+        if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Build website
+        if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
+        run: |
+          npm ci
+          # GitHub Pages serves the site at /<repo-name>/ (unless the repo is <user>.github.io).
+          REPO="${{ github.event.repository.name }}"
+          if [[ "$REPO" == *.github.io ]]; then export EXPO_PUBLIC_BASE_URL=""; else export EXPO_PUBLIC_BASE_URL="/$REPO"; fi
+          npm run build:web
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
+        with:
+          path: dist
+
+      - id: deploy
+        if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
+        uses: actions/deploy-pages@v4

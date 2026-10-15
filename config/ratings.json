@@ -1,0 +1,584 @@
+{
+  "_readme": [
+    "All rating settings live in this one file. Edit a number, save, and run `npm run data` (or wait for the scheduled job).",
+    "Weights inside a group don't need to add up to 100; they're turned into percentages automatically.",
+    "Each 'why' line explains the reasoning in plain language."
+  ],
+  "madden": {
+    "why": "Every rating starts from Madden NFL 27's launch rating (data/madden/*.xlsx) and then moves based on how the player's (or team's) real stats compare with what that Madden rating would normally produce.",
+    "playerHalfWeightGames": 6,
+    "playerHalfWeightWhy": "How fast stats take over from Madden. Once a player has 6 games' worth of the playing-time bar in a category (e.g. 6 x 14 = 84 pass attempts for a QB), his stats count half as much as they ever can; by a full season they count about 75%. Also scaled by how well stats explain Madden at his position.",
+    "teamHalfWeightGames": 4,
+    "teamHalfWeightWhy": "Same idea for teams, a bit faster because every game is a full sample of the whole team: after 4 games, a team's stats count half as much as they ever can.",
+    "noMaddenPercentile": 25,
+    "noMaddenWhy": "Players missing from the Madden file (signed later, or not matched) start at the 25th percentile of rated players at their position, roughly a backup, and are labeled 'estimated baseline'.",
+    "teamBaseline": {
+      "why": "A team's Madden baseline is the average Madden rating of its expected starters (from the preseason depth chart), with the QB counting 4 times. It's then scaled so teams spread like Madden's own team ratings (average about 77, best around 90, worst in the low 60s).",
+      "qbWeight": 4,
+      "mean": 77,
+      "sd": 7
+    },
+    "learning": {
+      "why": "How the stat weights are learned: for each position, players' per-game stats (standardized against their peers) are compared with their Madden ratings using 2025 full-season stats and 2026 stats so far. A ridge regression (a cautious, overfitting-resistant kind of line fitting) that only allows stats to help in the sensible direction picks the weights. If a position has too few players to learn from, the hand-set fallback weights below are used.",
+      "ridgeAlpha": 10,
+      "minPlayers": 15,
+      "learnedShare": 0.5,
+      "learnedShareWhy": "Final stat weights are 50% learned from Madden and 50% the football-knowledge weights in this file (the 'Fallback' blocks). Learned weights alone over-reward volume (good players play more, so they pile up yards), which would undercut efficiency."
+    },
+    "minTrust": {
+      "players": 0.3,
+      "teams": 0.75
+    },
+    "trustWhy": "How far stats can move a rating = how much he's played x how well stats explain Madden at his position (cross-validated). Positions where stats explain little (kickers, punters, long snappers) stay close to Madden. Minimums keep real results from being ignored: 30% for players, 75% for teams, because team results decide the standings even though they explain Madden's preseason team ratings only weakly."
+  },
+  "context": {
+    "why": "The Madden baseline is always the starting point. These five factors decide how the stat-based adjustment is blended. The app's Settings screen has sliders for them, plus one for how strongly stats can move ratings at all.",
+    "factors": [
+      {
+        "id": "performance",
+        "label": "This season's stats",
+        "weight": 50,
+        "explain": "How his (or the team's) stats so far, per game, compare with what his Madden rating would normally produce."
+      },
+      {
+        "id": "opponents",
+        "label": "Opponent strength",
+        "weight": 20,
+        "pointsPerStdDev": 6,
+        "explain": "The same comparison, nudged for who the stats came against: good numbers against tough opponents count for more."
+      },
+      {
+        "id": "injuries",
+        "label": "Injuries",
+        "weight": 15,
+        "pointsPerStdDev": 6,
+        "explain": "Adjusts for missing starters: playing short-handed earns credit; facing short-handed opponents loses some."
+      },
+      {
+        "id": "analyst",
+        "label": "Analyst opinion",
+        "weight": 10,
+        "available": false,
+        "explain": "Expert opinion beyond Madden. Madden itself is already the starting point, so this stays empty until a separate free source exists; its share is spread across the other factors."
+      },
+      {
+        "id": "recent",
+        "label": "Recent form",
+        "weight": 5,
+        "games": 3,
+        "explain": "The same comparison using only the last 3 games."
+      }
+    ],
+    "statsInfluence": {
+      "default": 1.0,
+      "min": 0,
+      "max": 2,
+      "explain": "How strongly stats can move ratings away from Madden. 1x is the learned amount; 0 = pure Madden; 2x = twice as much movement."
+    }
+  },
+  "team": {
+    "units": {
+      "why": "Offense drives scoring and is the most consistent from week to week, so it counts most. Defense matters nearly as much but swings more. Special teams decide a few games a year.",
+      "weights": {
+        "offense": 50,
+        "defense": 40,
+        "special": 10
+      }
+    },
+    "categories": {
+      "offense": {
+        "why": "The overall picture (points, EPA) and passing predict winning best. Situational football (3rd downs, red zone) decides close games. The run game matters less than people think, and receiving overlaps with passing.",
+        "weights": {
+          "overview": 30,
+          "passing": 30,
+          "rushing": 12,
+          "receiving": 8,
+          "situational": 20
+        }
+      },
+      "defense": {
+        "why": "Stopping the pass matters more than stopping the run in today's NFL. The overview captures points and EPA allowed. Situational defense (3rd downs, red zone) wins close games.",
+        "weights": {
+          "overview": 35,
+          "pass_defense": 35,
+          "run_defense": 15,
+          "situational": 15
+        }
+      },
+      "special": {
+        "why": "Kicking (made field goals) swings the most points. Then punting (field position), then returns and coverage.",
+        "weights": {
+          "kicking": 40,
+          "punting": 25,
+          "returns": 20,
+          "coverage": 15
+        }
+      }
+    },
+    "stats": {
+      "offense": {
+        "overview": {
+          "why": "Points and EPA per play are the best measures of an offense. Turnovers are drive-killers. Total yards and time of possession are noisy.",
+          "weights": {
+            "ppg": 30,
+            "epa": 30,
+            "success": 15,
+            "ypp": 10,
+            "to": 10,
+            "ypg": 5,
+            "top": 0
+          }
+        },
+        "passing": {
+          "why": "Efficiency per dropback (EPA, net yards per attempt) matters most. Interceptions and sacks are costly mistakes. Raw passing yards mostly reflect volume.",
+          "weights": {
+            "epa_db": 30,
+            "net_ypa": 25,
+            "ints": 15,
+            "sacks": 10,
+            "cmp_pct": 10,
+            "pass_td": 5,
+            "pass_ypg": 5,
+            "explosive_pass": 0
+          }
+        },
+        "rushing": {
+          "why": "Efficiency (EPA, success rate, yards per carry) over volume. Big runs and avoiding stuffs help.",
+          "weights": {
+            "rush_epa": 30,
+            "rush_success": 25,
+            "ypc": 20,
+            "explosive_run": 10,
+            "stuffed": 10,
+            "rush_td": 5,
+            "rush_ypg": 0
+          }
+        },
+        "receiving": {
+          "why": "What happens after the catch and how much each catch gains.",
+          "weights": {
+            "yac_pg": 50,
+            "ypr": 50
+          }
+        },
+        "situational": {
+          "why": "Red zone and 3rd down performance turn drives into points. Penalties stall drives.",
+          "weights": {
+            "rz": 30,
+            "third": 30,
+            "fourth": 10,
+            "fd_pg": 10,
+            "pen_pg": 10,
+            "pen_yds_pg": 10
+          }
+        }
+      },
+      "defense": {
+        "overview": {
+          "why": "Points and EPA allowed per play are the best measures. Takeaways swing games.",
+          "weights": {
+            "papg": 30,
+            "epa": 30,
+            "success": 15,
+            "takeaways": 15,
+            "ypp": 10,
+            "yapg": 0,
+            "def_td": 0
+          }
+        },
+        "pass_defense": {
+          "why": "EPA per dropback and net yards per attempt capture coverage and pass rush together. Sacks and interceptions are drive-enders.",
+          "weights": {
+            "epa_db": 30,
+            "net_ypa": 20,
+            "sack_rate": 15,
+            "ints": 15,
+            "cmp_pct": 10,
+            "qb_hits": 5,
+            "pass_td": 5,
+            "pass_ypg": 0,
+            "sacks": 0
+          }
+        },
+        "run_defense": {
+          "why": "Efficiency allowed per run matters most; stuffs and tackles for loss show a disruptive front.",
+          "weights": {
+            "rush_epa": 30,
+            "ypc": 25,
+            "stuffed": 15,
+            "explosive_run": 10,
+            "tfl": 10,
+            "rush_td": 5,
+            "rush_ypg": 5
+          }
+        },
+        "situational": {
+          "why": "Getting off the field on 3rd down and holding opponents to field goals in the red zone.",
+          "weights": {
+            "rz": 30,
+            "third": 30,
+            "fourth": 10,
+            "fd_pg": 10,
+            "pen_pg": 10,
+            "pen_yds_pg": 10
+          }
+        }
+      },
+      "special": {
+        "kicking": {
+          "why": "Field goal accuracy is the main thing; long-range makes add value; missed extra points cost points.",
+          "weights": {
+            "fg_pct": 45,
+            "xp_pct": 20,
+            "fg_50": 15,
+            "fg_40_49": 10,
+            "fg_0_39": 5,
+            "fg_long": 5
+          }
+        },
+        "punting": {
+          "why": "Net average (after returns) is what actually moves field position; pinning teams inside the 20 helps.",
+          "weights": {
+            "net": 50,
+            "gross": 20,
+            "in20": 20,
+            "tb": 10,
+            "punts_pg": 0
+          }
+        },
+        "returns": {
+          "why": "Average return yards, plus the occasional touchdown.",
+          "weights": {
+            "kr_avg": 40,
+            "pr_avg": 40,
+            "ret_td": 20
+          }
+        },
+        "coverage": {
+          "why": "Holding the other team's returners down.",
+          "weights": {
+            "kr_allowed": 40,
+            "pr_allowed": 40,
+            "ret_td_allowed": 20
+          }
+        }
+      },
+      "_note": "Fallback only: within each category, stat weights are now learned from Madden (see 'madden.learning'). These are used only if learning isn't possible."
+    }
+  },
+  "players": {
+    "positions": {
+      "QB": {
+        "why": "A quarterback is judged mostly on passing efficiency. Running adds a little. Playing time shows he's the trusted starter.",
+        "weights": {
+          "passing": 85,
+          "rushing": 10,
+          "playing_time": 5
+        }
+      },
+      "RB": {
+        "why": "Mostly running the ball (ball security is built into the rushing rating), with some credit for catching passes.",
+        "weights": {
+          "rushing": 70,
+          "receiving": 20,
+          "returns": 2,
+          "playing_time": 8
+        }
+      },
+      "WR": {
+        "why": "Almost all receiving. Playing time shows how much the coaches trust him.",
+        "weights": {
+          "receiving": 85,
+          "rushing": 3,
+          "returns": 2,
+          "playing_time": 10
+        }
+      },
+      "TE": {
+        "why": "Receiving, plus a bigger playing-time share because tight ends also block (free data can't measure blocking directly).",
+        "weights": {
+          "receiving": 70,
+          "rushing": 0,
+          "returns": 0,
+          "playing_time": 30
+        }
+      },
+      "OL": {
+        "why": "Free data doesn't track individual blocks, so linemen are judged on how well their team protects the QB and runs the ball while they're on the field, plus playing time and penalties.",
+        "weights": {
+          "pass_pro": 40,
+          "run_block": 35,
+          "playing_time": 25
+        }
+      },
+      "DL": {
+        "why": "Defensive linemen are judged mostly on pressuring the QB, then on stopping runs (tackles, tackles for loss).",
+        "weights": {
+          "pass_rush": 55,
+          "tackling": 30,
+          "coverage": 0,
+          "playing_time": 15
+        }
+      },
+      "LB": {
+        "why": "Linebackers do a bit of everything: tackling first, then pass coverage, then rushing the passer.",
+        "weights": {
+          "tackling": 45,
+          "coverage": 25,
+          "pass_rush": 20,
+          "playing_time": 10
+        }
+      },
+      "DB": {
+        "why": "Cornerbacks and safeties are judged mostly on coverage (interceptions and passes defended), then tackling.",
+        "weights": {
+          "coverage": 60,
+          "tackling": 25,
+          "pass_rush": 2,
+          "returns": 3,
+          "playing_time": 10
+        }
+      },
+      "K": {
+        "why": "Kickers are all about kicking.",
+        "weights": {
+          "kicking": 100,
+          "playing_time": 0
+        }
+      },
+      "P": {
+        "why": "Punters are all about punting.",
+        "weights": {
+          "punting": 100,
+          "playing_time": 0
+        }
+      },
+      "LS": {
+        "why": "Long snappers have no stats in free data, so their rating only reflects playing time and penalties.",
+        "weights": {
+          "playing_time": 100
+        }
+      }
+    },
+    "stats": {
+      "passing": {
+        "why": "Efficiency first: net yards per attempt and EPA per dropback. Then accuracy (completion %, CPOE), touchdowns vs. interceptions, and avoiding sacks. Raw totals count for little.",
+        "weights": {
+          "net_ypa": 25,
+          "epa_db": 25,
+          "cmp_pct": 10,
+          "td_rate": 10,
+          "int_rate": 10,
+          "cpoe": 5,
+          "sack_rate": 5,
+          "rating": 5,
+          "pass_ypg": 5,
+          "pass_yds": 0,
+          "ypa": 0,
+          "pass_td": 0,
+          "ints": 0,
+          "sacks": 0,
+          "pass_20": 0
+        }
+      },
+      "rushing": {
+        "why": "Production per game and per carry, efficiency (EPA), and ball security (fumbles lost) as a meaningful slice.",
+        "weights": {
+          "ypc": 20,
+          "rush_epa": 20,
+          "rush_ypg": 20,
+          "fumbles": 15,
+          "rush_td": 10,
+          "rush_10": 10,
+          "rush_fd": 5,
+          "rush_yds": 0
+        }
+      },
+      "receiving": {
+        "why": "Yards per game and EPA per target, then reliability (catch rate), big plays, touchdowns and yards after catch.",
+        "weights": {
+          "rec_ypg": 25,
+          "rec_epa": 20,
+          "catch_rate": 15,
+          "ypr": 10,
+          "rec_td": 10,
+          "yac": 10,
+          "rec": 5,
+          "targets": 5,
+          "rec_20": 0,
+          "rec_yds": 0
+        }
+      },
+      "pass_rush": {
+        "why": "Sacks most, then QB hits (pressure that didn't finish), then tackles for loss.",
+        "weights": {
+          "sacks": 50,
+          "qb_hits": 30,
+          "tfl": 20,
+          "sacks_pg": 0
+        }
+      },
+      "tackling": {
+        "why": "Tackle volume, splash plays (tackles for loss, forced fumbles), and recoveries.",
+        "weights": {
+          "tackles": 30,
+          "tfl": 25,
+          "ff": 20,
+          "solo": 15,
+          "fr": 10,
+          "tackles_pg": 0
+        }
+      },
+      "coverage": {
+        "why": "Passes defended and interceptions. (Free data doesn't show targets or yards allowed per defender.)",
+        "weights": {
+          "pd": 45,
+          "ints": 40,
+          "def_td": 15
+        }
+      },
+      "kicking": {
+        "why": "Accuracy first, with extra credit for long kicks; missed extra points hurt.",
+        "weights": {
+          "fg_pct": 45,
+          "xp_pct": 20,
+          "fg_50": 15,
+          "fg_40": 10,
+          "fg_long": 5,
+          "fg_made": 5
+        }
+      },
+      "punting": {
+        "why": "Net average is what moves field position.",
+        "weights": {
+          "net": 50,
+          "gross": 20,
+          "in20": 20,
+          "tb": 10,
+          "long": 0
+        }
+      },
+      "returns": {
+        "why": "Average return and touchdowns.",
+        "weights": {
+          "kr_avg": 40,
+          "pr_avg": 40,
+          "ret_td": 20
+        }
+      },
+      "playing_time": {
+        "why": "Snap share shows how much the coaches trust him. Penalties count against him.",
+        "weights": {
+          "snap_share": 60,
+          "snaps_pg": 20,
+          "penalties": 10,
+          "penalty_yds": 10,
+          "snaps": 0
+        }
+      },
+      "pass_pro": {
+        "why": "Team pass protection while he's on the field: sacks allowed and passing efficiency.",
+        "weights": {
+          "sacks": 35,
+          "epa_db": 35,
+          "net_ypa": 30
+        }
+      },
+      "run_block": {
+        "why": "Team run blocking while he's on the field: yards per carry, avoiding stuffs, success rate and EPA.",
+        "weights": {
+          "ypc": 30,
+          "stuffed": 25,
+          "rush_success": 25,
+          "rush_epa": 20
+        }
+      },
+      "_note": "Fallback only: within each category, stat weights are now learned from Madden (see 'madden.learning'). These are used only if learning isn't possible."
+    },
+    "sampleBars": {
+      "why": "How much a player must play in a category, per team game, to get a full rating and a rank. Below it, his rating is pulled toward average in proportion (half the bar = halfway to 70) and labeled 'limited sample'. Mostly based on the NFL's own leaderboard minimums.",
+      "bars": {
+        "passing": [
+          "attempts",
+          14,
+          "pass attempts"
+        ],
+        "rushing": [
+          "carries",
+          6.25,
+          "carries"
+        ],
+        "rushing:QB": [
+          "carries",
+          2,
+          "carries"
+        ],
+        "receiving": [
+          "targets",
+          2,
+          "targets"
+        ],
+        "pass_rush": [
+          "defense_snaps",
+          15,
+          "defensive snaps"
+        ],
+        "tackling": [
+          "defense_snaps",
+          15,
+          "defensive snaps"
+        ],
+        "coverage": [
+          "defense_snaps",
+          15,
+          "defensive snaps"
+        ],
+        "kicking": [
+          "fg_att",
+          1,
+          "field goal attempts"
+        ],
+        "punting": [
+          "pt_att",
+          2,
+          "punts"
+        ],
+        "returns": [
+          "returns",
+          1,
+          "returns"
+        ],
+        "playing_time": [
+          "snaps",
+          15,
+          "snaps"
+        ],
+        "playing_time:K": [
+          "snaps",
+          5,
+          "special teams snaps"
+        ],
+        "playing_time:P": [
+          "snaps",
+          5,
+          "special teams snaps"
+        ],
+        "playing_time:LS": [
+          "snaps",
+          5,
+          "special teams snaps"
+        ],
+        "pass_pro": [
+          "offense_snaps",
+          15,
+          "offensive snaps"
+        ],
+        "run_block": [
+          "offense_snaps",
+          15,
+          "offensive snaps"
+        ]
+      }
+    }
+  }
+}
