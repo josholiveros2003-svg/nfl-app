@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { RatingBadge } from '@/components/Rating';
 import { LinkCard, Loading, Screen, SectionTitle, styles as ui } from '@/components/ui';
 import { useTeams } from '@/lib/data';
-import { readableTeamColor } from '@/lib/theme';
+import { colors, readableTeamColor } from '@/lib/theme';
 import type { Team } from '@/lib/types';
 
 const DIVISIONS = ['East', 'North', 'South', 'West'];
@@ -22,6 +22,10 @@ export default function TeamsScreen() {
 
   return (
     <Screen>
+      <LinkCard href="/compare" accent={colors.good}>
+        <Text style={ui.title}>Compare</Text>
+        <Text style={ui.muted}>Any two teams, or two players at the same position, side by side.</Text>
+      </LinkCard>
       <Text style={ui.muted}>
         {data.season} season · through Week {data.throughWeek}. The colored number is each team’s overall
         rating: its Madden roster rating, moved by this season’s results.

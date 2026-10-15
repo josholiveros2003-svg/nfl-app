@@ -843,6 +843,14 @@ def main():
         pdoc = {"season": season, "throughWeek": through_week, "updated": updated, **pdoc}
         (players_dir / f"{pid}.json").write_text(json.dumps(pdoc, separators=(",", ":"), default=to_plain))
 
+    # A small list of every player, for searching (e.g. the Compare screen).
+    player_index = sorted(
+        ({"id": pid, "name": d["name"], "team": d["team"], "pos": d["pos"], "group": d["group"],
+          "jersey": d["jersey"], "starter": d["starter"], "rt": d.get("rt")}
+         for pid, d in player_docs.items()),
+        key=lambda x: (x["name"], x["id"]))
+    (OUT_DIR / "players.json").write_text(json.dumps(player_index, separators=(",", ":"), default=to_plain))
+
     index = []
     for t in team_ids:
         info = teams.loc[t]

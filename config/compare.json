@@ -1,0 +1,19 @@
+{
+  "_readme": [
+    "Settings for the Compare screen's advantage colors. Edit a number, save, and rebuild the site (the scheduled job does this on its next run after you push).",
+    "The side with the advantage is shaded green and the other side red. The shade goes from light (tiny gap) to solid (gap at or above the numbers below). Exactly even = both yellow."
+  ],
+
+  "ratingGapForSolid": 10,
+  "ratingGapWhy": "For 0-100 ratings (overall, units, categories): a 10-point gap is about one Madden tier, e.g. a good starter (80) vs. a star (90). Anything that big or bigger is solid; a 2-point gap is barely tinted.",
+
+  "statRankGapForSolid": 50,
+  "statRankGapWhy": "For individual stats, the gap is measured by league rank, turned into a 0-100 percentile so it works for teams (ranked out of 32) and players (ranked among his position). A 50-point gap is solid: e.g. 8th vs. 24th of 32 teams. Using rank means 'lower is better' stats like interceptions are handled automatically, since 1st is always best.",
+
+  "statRelativeGapForSolid": 0.5,
+  "statRelativeGapWhy": "Backup for stats where one side has no rank yet (a player below the playing-time bar): compare the raw numbers, accounting for which direction is better. Solid when one side's number is 50% better than the other's.",
+
+  "lightestShade": 0.16,
+  "solidShade": 0.9,
+  "shadeWhy": "How strong the color fill is, from 0 (none) to 1 (fully opaque), for the smallest and biggest gaps."
+}

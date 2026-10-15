@@ -163,3 +163,15 @@ export type TeamsIndex = {
   updated: string;
   teams: Team[];
 };
+
+/** One row of public/data/players.json (used for searching players). */
+export type PlayerIndexEntry = {
+  id: string;
+  name: string;
+  team: string | null;
+  pos: string | null;
+  group: string;
+  jersey: number | null;
+  starter: boolean;
+  rt?: Rt | null;
+};
