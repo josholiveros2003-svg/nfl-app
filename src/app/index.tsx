@@ -26,6 +26,7 @@ export default function TeamsScreen() {
       <View style={s.tiles}>
         {[
           { href: '/schedule' as const, icon: '📅', label: 'Schedule' },
+          { href: '/standings' as const, icon: '📊', label: 'Standings' },
           { href: '/rankings' as const, icon: '🏆', label: 'Rankings' },
           { href: '/compare' as const, icon: '⚖️', label: 'Compare' },
         ].map((t) => (
@@ -65,11 +66,11 @@ export default function TeamsScreen() {
 const s = StyleSheet.create({
   tiles: { flexDirection: 'row', gap: 8 },
   tile: {
-    flex: 1, alignItems: 'center', gap: 4, paddingVertical: 14, borderRadius: 14, backgroundColor: colors.card,
+    flex: 1, alignItems: 'center', gap: 4, paddingVertical: 12, borderRadius: 14, backgroundColor: colors.card,
     borderWidth: StyleSheet.hairlineWidth, borderColor: colors.border,
   },
   tileIcon: { fontSize: 24 },
-  tileLabel: { color: colors.text, fontWeight: '700', fontSize: 14 },
+  tileLabel: { color: colors.text, fontWeight: '700', fontSize: 13 },
   logoBg: { width: 40, height: 40, borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.92)', alignItems: 'center', justifyContent: 'center' },
   logo: { width: 30, height: 30 },
   record: { color: '#C9D1DE', fontSize: 15, fontWeight: '600', fontVariant: ['tabular-nums'] },
