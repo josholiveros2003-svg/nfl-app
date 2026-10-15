@@ -221,3 +221,30 @@ export type TeamResults = {
   expectedWins: number;
   games: { week: number; opp: string; home: boolean; pf: number; pa: number; result: 'W' | 'L' | 'T'; expected: number; points: number }[];
 };
+
+// ---- public/data/rankings.json ----
+export type LeagueParts = { results: number; form: number; rating: number; injuryPoints: number };
+export type RankedGame = {
+  week: number; opp: string; home: boolean; neutral: boolean; pf: number; pa: number;
+  result: 'W' | 'L' | 'T'; oppRecord: string; avgChance: number; quality: number;
+};
+export type LeagueTeam = {
+  record: string; now: LeagueParts; prev: LeagueParts; injuries: MissingPlayer[]; games: RankedGame[];
+};
+export type UnitList = {
+  id: string; label: string; kind: 'unit' | 'cat' | 'group'; description: string;
+  teams: Record<string, { rt: Rt | null; starters: { id: string; name: string; pos: string | null }[]; move?: number }>;
+};
+export type RankingsDoc = {
+  season: number; throughWeek: number; updated: string;
+  league: { lastPlayedWeek: number; teams: Record<string, LeagueTeam> };
+  units: UnitList[];
+};
+
+// ---- public/data/schedule.json ----
+export type ScheduleGame = {
+  id: string; date: string; weekday: string; time: string; away: string; home: string; neutral: boolean;
+  awayRecord: string; homeRecord: string; awayScore: number | null; homeScore: number | null;
+  prob: { home: number; away: number } | null; correct: boolean | null;
+};
+export type ScheduleDoc = { season: number; currentWeek: number; weeks: Record<string, ScheduleGame[]> };

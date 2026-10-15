@@ -1,0 +1,46 @@
+{
+  "_readme": [
+    "League power rankings settings. The three weights are the defaults for the sliders in the app's Settings screen.",
+    "Edit a number, save, and run `npm run data` (or push and let the scheduled job rebuild)."
+  ],
+  "weights": {
+    "results": 55,
+    "rating": 35,
+    "form": 10
+  },
+  "weightsWhy": {
+    "results": "Wins and losses in context count most (55%), because the standings are what a power ranking is about.",
+    "rating": "The 0-100 team rating (Madden roster plus this season's stats) counts 35%: it captures how good a team really is beyond a few close games.",
+    "form": "Recent form counts 10%: who's hot right now, without letting one or two games swing everything."
+  },
+  "results": {
+    "why": "Each game is scored the same way as in team ratings (half the win or loss, half the margin), then compared with what an AVERAGE team would be expected to do in that exact spot: against that opponent, home or away, with that opponent's injuries that week. So beating a strong team earns a lot, beating a weak team earns little, losing to a weak team costs a lot, and road wins count more than home wins (an average team is expected to win less often on the road). Comparing with an average team, not the team's own expectation, is what makes this a measure of what a team has accomplished.",
+    "winLossShare": 0.5,
+    "marginScale": 10,
+    "marginCap": 21,
+    "marginCapWhy": "Margins are capped at 21 points: winning by 45 counts the same as winning by 21.",
+    "halfWeightGames": 3,
+    "halfWeightWhy": "It's an average per game played, so bye weeks never drop a team. Teams with only a few games are pulled toward the middle (half weight after 3 games), so one lucky or unlucky game can't put a team at the very top or bottom.",
+    "closeGameMargin": 8,
+    "closeGameWhy": "One-score games are close to a coin flip, so they count as partial wins or losses: a 3-point loss counts about a third of a win, a 3-point win about two thirds, and anything decided by 8 or more counts as a full win or loss. This keeps a close loss to a great team from hurting much."
+  },
+  "form": {
+    "games": 4,
+    "recencyWeights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "why": "The last 4 games' results (scored as above), with the most recent game counting 4x as much as the oldest of the four."
+  },
+  "injuries": {
+    "ratingPointsPerInjuryPoint": 1.5,
+    "why": "Key players out right now (injury report Out/Doubtful, or injured reserve) lower the team-rating part. Injury points come from config/winprob.json (a starting QB is about 5.5 points); each point costs 1.5 rating points, so losing an average starting QB costs about 8 rating points. The Settings slider scales this (0 = ignore injuries)."
+  },
+  "scale": {
+    "mean": 77,
+    "sd": 7,
+    "why": "The final power score is put on the same 0-100 feel as team ratings: the average team is 77, and the best team is usually around 90."
+  }
+}

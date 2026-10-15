@@ -1,4 +1,5 @@
 import { createContext, createElement, useCallback, useContext, useMemo, useState, type ReactNode } from 'react';
+import rankingSettings from '../../config/rankings.json';
 import settings from '../../config/ratings.json';
 import type { Rt } from './types';
 
@@ -21,7 +22,7 @@ export type Factor = {
 export const FACTORS = settings.context.factors as Factor[];
 export const DEFAULT_WEIGHTS = FACTORS.map((f) => f.weight);
 export const INFLUENCE = settings.context.statsInfluence;
-const STORAGE_KEY = 'nfl-stats:rating-weights-v2';
+const STORAGE_KEY = 'nfl-stats:rating-weights-v3';
 
 const isAvailable = (i: number) => FACTORS[i].available !== false;
 
@@ -78,14 +79,22 @@ export function breakdown(rt: Rt | null | undefined, weights: number[], influenc
 
 // ---- Slider settings, shared by every screen ----
 
-type Saved = { weights: number[]; influence: number };
+/** League power-ranking weights (see config/rankings.json). */
+export type RankWeights = { results: number; rating: number; form: number; injuries: number };
+export const DEFAULT_RANK_WEIGHTS: RankWeights = { ...rankingSettings.weights, injuries: 1 };
+
+type Saved = { weights: number[]; influence: number; rank: RankWeights };
 
 function loadSaved(): Saved | null {
   try {
     const raw = globalThis.localStorage?.getItem(STORAGE_KEY);
     const parsed = raw ? JSON.parse(raw) : null;
     if (parsed && Array.isArray(parsed.weights) && parsed.weights.length === FACTORS.length) {
-      return { weights: parsed.weights.map(Number), influence: Number(parsed.influence ?? INFLUENCE.default) };
+      return {
+        weights: parsed.weights.map(Number),
+        influence: Number(parsed.influence ?? INFLUENCE.default),
+        rank: { ...DEFAULT_RANK_WEIGHTS, ...(parsed.rank ?? {}) },
+      };
     }
   } catch {
     // ignore: fall back to defaults
@@ -104,10 +113,13 @@ function save(v: Saved) {
 type WeightsState = Saved & {
   setWeight: (i: number, v: number) => void;
   setInfluence: (v: number) => void;
+  setRank: (key: keyof RankWeights, v: number) => void;
   reset: () => void;
 };
-const DEFAULTS: Saved = { weights: DEFAULT_WEIGHTS, influence: INFLUENCE.default };
-const WeightsContext = createContext<WeightsState>({ ...DEFAULTS, setWeight: () => {}, setInfluence: () => {}, reset: () => {} });
+const DEFAULTS: Saved = { weights: DEFAULT_WEIGHTS, influence: INFLUENCE.default, rank: DEFAULT_RANK_WEIGHTS };
+const WeightsContext = createContext<WeightsState>({
+  ...DEFAULTS, setWeight: () => {}, setInfluence: () => {}, setRank: () => {}, reset: () => {},
+});
 
 export function RatingWeightsProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<Saved>(() => loadSaved() ?? DEFAULTS);
@@ -123,8 +135,15 @@ export function RatingWeightsProvider({ children }: { children: ReactNode }) {
     [update],
   );
   const setInfluence = useCallback((v: number) => update((p) => ({ ...p, influence: v })), [update]);
+  const setRank = useCallback(
+    (key: keyof RankWeights, v: number) => update((p) => ({ ...p, rank: { ...p.rank, [key]: v } })),
+    [update],
+  );
   const reset = useCallback(() => update(() => DEFAULTS), [update]);
-  const value = useMemo(() => ({ ...state, setWeight, setInfluence, reset }), [state, setWeight, setInfluence, reset]);
+  const value = useMemo(
+    () => ({ ...state, setWeight, setInfluence, setRank, reset }),
+    [state, setWeight, setInfluence, setRank, reset],
+  );
   return createElement(WeightsContext.Provider, { value }, children);
 }
 

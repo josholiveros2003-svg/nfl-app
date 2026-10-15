@@ -1,4 +1,4 @@
-import { router } from 'expo-router';
+import { router, type Href } from 'expo-router';
 import { useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { breakdown, effectiveWeights, useRating, useRatingWeights } from '@/lib/ratings';
@@ -18,6 +18,10 @@ export type WhyInfo = {
   team?: boolean;
   /** Teams' overall rating: wins and losses in context, game by game. */
   results?: TeamResults;
+  /** A button to the full team/player page (used by the rankings lists). */
+  link?: { label: string; href: Href };
+  /** Describes the starting point when it isn't a single team's or player's Madden rating. */
+  baseline?: { label: string; detail: string };
 };
 
 /** A small colored 0-100 box. Shows "—" when there's nothing to rate. */
@@ -114,10 +118,13 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
             <View style={s.box}>
               <Row
                 label={
-                  info.team ? 'Madden roster baseline' : b.estimatedBaseline ? 'Starting point (estimated)' : 'Madden NFL 27 rating'
+                  info.baseline?.label ??
+                  (info.team ? 'Madden roster baseline' : b.estimatedBaseline ? 'Starting point (estimated)' : 'Madden NFL 27 rating')
                 }
                 detail={
-                  info.team
+                  info.baseline
+                    ? info.baseline.detail
+                    : info.team
                     ? 'Average Madden rating of the expected starters (QB counts 4×), scaled to Madden\'s team range.'
                     : b.estimatedBaseline
                       ? 'Not in the Madden file, so he starts at a typical backup rating for his position.'
@@ -217,6 +224,18 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
               more at positions where stats explain Madden ratings well.
             </Text>
 
+            {info.link ? (
+              <Pressable
+                onPress={() => {
+                  onClose();
+                  router.push(info.link!.href);
+                }}
+                style={s.linkBtn}
+                accessibilityRole="link"
+              >
+                <Text style={s.linkText}>{info.link.label} ›</Text>
+              </Pressable>
+            ) : null}
             <Pressable
               onPress={() => {
                 onClose();
@@ -288,5 +307,7 @@ const s = StyleSheet.create({
   section: { color: colors.muted, fontSize: 13, fontWeight: '700', letterSpacing: 0.8, textTransform: 'uppercase', marginTop: 4 },
   note: { color: colors.muted, fontSize: 12, lineHeight: 17 },
   settingsBtn: { alignSelf: 'flex-start', paddingVertical: 8 },
+  linkBtn: { backgroundColor: colors.card, borderRadius: 12, paddingVertical: 12, alignItems: 'center', borderWidth: StyleSheet.hairlineWidth, borderColor: colors.border },
+  linkText: { color: colors.text, fontWeight: '700', fontSize: 15 },
   settingsText: { color: '#7FB2FF', fontWeight: '700', fontSize: 14 },
 });

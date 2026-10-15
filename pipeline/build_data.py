@@ -33,6 +33,7 @@ from madden import load_madden
 from players import CATEGORIES, GROUP_OF, build_players, season_players, training_rows
 from ratings import MADDEN, RECENT_GAMES, blend_default, rate_teams, strip_fmt, team_baselines, weights_for
 from ratings import SETTINGS as RATINGS_SETTINGS
+from rankings import league_components, records_before, unit_lists
 
 RELEASES = "https://github.com/nflverse/nflverse-data/releases/download"
 ROOT = Path(__file__).resolve().parent.parent
@@ -135,7 +136,13 @@ def ratings_asof(season, week, pbp, sched, team_ids, people, baselines, model) -
     snap = repool(model, team_rows(units, gp, season, baselines))
     zero = {t: {u: {"opp_z": 0.0, "inj_z": 0.0} for u in UNIT_KEYS} for t in team_ids}
     rated = rate_teams(snap, season, units, units, gp, zero, baselines)
-    return {t: {u: round(blend_default(rated[t]["units"][u]["rt"]), 1) for u in UNIT_KEYS} for t in team_ids}
+    out = {}
+    for t in team_ids:
+        out[t] = {u: round(blend_default(rated[t]["units"][u]["rt"]), 1) for u in UNIT_KEYS}
+        # Category ratings too (e.g. "offense.passing"), for week-to-week movement in the rankings.
+        out[t]["cats"] = {f"{u}.{c['id']}": round(blend_default(c["rt"]), 1)
+                          for u in UNIT_KEYS for c in units[t][u] if c.get("rt")}
+    return out
 
 
 def player_info(roster, madden: dict, starters: dict) -> dict:
@@ -150,8 +157,9 @@ def player_info(roster, madden: dict, starters: dict) -> dict:
     return out
 
 
-def winprob_games(season, sched, pbp, team_ids, people, baselines, model, out_by_week, info, prior) -> list:
-    """Every regular-season game with its pre-game features (and result, if played)."""
+def winprob_games(season, sched, pbp, team_ids, people, baselines, model, out_by_week, info, prior):
+    """Every regular-season game with its pre-game features (and result, if played).
+    Also returns the weekly 'as of' team ratings it built: {week: {team: ratings}}."""
     results = team_results(sched)
     last_played = int(sched[sched.result.notna()].week.max()) if sched.result.notna().any() else 0
     latest_report = max((w for (_, w) in out_by_week), default=0)
@@ -175,7 +183,7 @@ def winprob_games(season, sched, pbp, team_ids, people, baselines, model, out_by
                      "margin": None if pd.isna(g.result) else float(g.result),
                      "spread": None if pd.isna(g.spread_line) else float(g.spread_line),
                      "neutral": g.location == "Neutral", "feats": feats, "details": details})
-    return rows
+    return rows, snaps
 
 
 def game_doc(r: dict) -> dict:
@@ -246,6 +254,24 @@ def results_component(game_docs: dict, team_ids) -> dict:
             "games": rows,
         }
     return out
+
+
+def schedule_doc(sched, game_docs: dict, records: dict, last_played: int, season: int) -> dict:
+    """Every game by week: teams, records going in, kickoff, score and win chances."""
+    weeks = {}
+    for g in sched.sort_values(["week", "gameday", "gametime", "game_id"]).itertuples():
+        d = game_docs.get(g.game_id, {})
+        weeks.setdefault(int(g.week), []).append({
+            "id": g.game_id, "date": g.gameday, "weekday": g.weekday, "time": g.gametime,
+            "away": g.away_team, "home": g.home_team, "neutral": g.location == "Neutral",
+            "awayRecord": records.get((g.away_team, int(g.week)), "0-0"),
+            "homeRecord": records.get((g.home_team, int(g.week)), "0-0"),
+            "awayScore": None if pd.isna(g.away_score) else int(g.away_score),
+            "homeScore": None if pd.isna(g.home_score) else int(g.home_score),
+            "prob": d.get("prob"), "correct": d.get("correct"),
+        })
+    total = max(weeks) if weeks else 1
+    return {"season": season, "currentWeek": min(last_played + 1, total), "weeks": weeks}
 
 
 def team_rows(all_units: dict, gp: dict, season: int, baselines: dict) -> list:
@@ -979,13 +1005,14 @@ def main():
     # ---- Win probability: every game this season and last, then an honest test ----
     out_now = unavailable_by_week(extra["injuries"], extra["weekly_rosters"])
     all_reg = games[games.game_type == "REG"]
-    games_now = winprob_games(season, sched, pbp, team_ids, people, baselines, team_model, out_now,
-                              player_info(roster, madden, starters),
+    info_now = player_info(roster, madden, starters)
+    games_now, snaps_now = winprob_games(season, sched, pbp, team_ids, people, baselines, team_model, out_now,
+                              info_now,
                               last_season_margins(all_reg[all_reg.season == season - 1]))
     # Last season: no preseason Madden existed for it in our data, so every team starts even.
     flat = {t: {k: MADDEN["teamBaseline"]["mean"] for k in (*UNIT_KEYS, "overall")} for t in team_ids}
     lstarters = expected_starters(last["depth"], str(lsched.gameday.min()))
-    games_last = winprob_games(season - 1, lsched, lpbp, team_ids, lpeople, flat, team_model,
+    games_last, _ = winprob_games(season - 1, lsched, lpbp, team_ids, lpeople, flat, team_model,
                                unavailable_by_week(last["injuries"], last["weekly_rosters"]),
                                player_info(last["roster"], madden, lstarters),
                                last_season_margins(all_reg[all_reg.season == season - 2]))
@@ -1034,7 +1061,7 @@ def main():
         key=lambda x: (x["name"], x["id"]))
     (OUT_DIR / "players.json").write_text(json.dumps(player_index, separators=(",", ":"), default=to_plain))
 
-    index = []
+    index, team_docs = [], {}
     for t in team_ids:
         info = teams.loc[t]
         s = schedules[t]
@@ -1077,6 +1104,21 @@ def main():
                "context": {side: {"opp": c["opp"], "inj": c["inj"], "recent": recent_text(played_by_team[t])}
                            for side, c in team_ctx[t].items()}}
         (OUT_DIR / "teams" / f"{t}.json").write_text(json.dumps(doc, separators=(",", ":"), default=to_plain))
+        team_docs[t] = doc
+
+    # ---- Power rankings ----
+    records = records_before(sched)
+    current_rating = {t: blend_default(team_ratings[t]["rt"]) - team_ratings[t]["rt"].get("res", 0) for t in team_ids}
+    league = league_components(games_now, team_ids, current_rating, snaps_now, out_now, info_now, records,
+                               {t["abbr"]: t["record"] for t in index})
+    rankings_doc = {"season": season, "throughWeek": through_week, "updated": updated, "league": league,
+                    "units": unit_lists(team_docs, snaps_now, league["lastPlayedWeek"])}
+    (OUT_DIR / "rankings.json").write_text(json.dumps(rankings_doc, separators=(",", ":"), default=to_plain))
+
+    # ---- This season's schedule, week by week ----
+    (OUT_DIR / "schedule.json").write_text(json.dumps(
+        schedule_doc(sched, game_docs, records, league["lastPlayedWeek"], season), separators=(",", ":"),
+        default=to_plain))
 
     (OUT_DIR / "teams.json").write_text(json.dumps(
         {"season": season, "throughWeek": through_week, "updated": updated, "teams": index},

@@ -120,3 +120,17 @@ final score and what the model gave each team before kickoff.
   by a model that never saw that week's results) and saves accuracy and calibration to
   `public/data/winprob_report.json`, next to two benchmarks: always picking the home team,
   and the betting favorite.
+
+## Schedule and Power Rankings
+
+The home screen has three tabs: **Schedule**, **Rankings** and **Compare**.
+
+- **Schedule:** every game of a week, grouped by day, with records, kickoff (Eastern) and
+  win chances. Arrows or week numbers switch weeks; tapping a game opens the game screen.
+- **Power Rankings:** League (all 32 teams), Team units (Offense, Offensive Line, Secondary,
+  ...), and Players by position. Tap any row to see why it's ranked there.
+- **League power score (pipeline/rankings.py + src/lib/powerRankings.ts):** wins and losses
+  in context (each game vs. what an average team would do against that opponent, home or
+  away, with that opponent's injuries; close games count as partial results; margins capped
+  at 21), the team rating minus key players out now, and recent form. Weights in
+  `config/rankings.json`, with sliders in Settings. Byes never lower a team's score.

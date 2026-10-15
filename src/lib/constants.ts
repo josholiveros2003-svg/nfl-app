@@ -27,3 +27,10 @@ export const PLAYER_CATEGORY_IDS = [
   'passing', 'rushing', 'receiving', 'pass_rush', 'tackling', 'coverage',
   'kicking', 'punting', 'returns', 'playing_time', 'pass_pro', 'run_block',
 ];
+
+// Position lists in the power rankings.
+export const POSITIONS: { id: string; label: string }[] = [
+  { id: 'QB', label: 'Quarterbacks' }, { id: 'RB', label: 'Running Backs' }, { id: 'WR', label: 'Wide Receivers' },
+  { id: 'TE', label: 'Tight Ends' }, { id: 'OL', label: 'Offensive Linemen' }, { id: 'DL', label: 'Defensive Linemen' },
+  { id: 'LB', label: 'Linebackers' }, { id: 'DB', label: 'Defensive Backs' }, { id: 'K', label: 'Kickers' }, { id: 'P', label: 'Punters' },
+];

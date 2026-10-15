@@ -1,4 +1,5 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Link } from 'expo-router';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { RatingBadge } from '@/components/Rating';
 import { LinkCard, Loading, Screen, SectionTitle, styles as ui } from '@/components/ui';
 import { useTeams } from '@/lib/data';
@@ -22,10 +23,20 @@ export default function TeamsScreen() {
 
   return (
     <Screen>
-      <LinkCard href="/compare" accent={colors.good}>
-        <Text style={ui.title}>Compare</Text>
-        <Text style={ui.muted}>Any two teams, or two players at the same position, side by side.</Text>
-      </LinkCard>
+      <View style={s.tiles}>
+        {[
+          { href: '/schedule' as const, icon: '📅', label: 'Schedule' },
+          { href: '/rankings' as const, icon: '🏆', label: 'Rankings' },
+          { href: '/compare' as const, icon: '⚖️', label: 'Compare' },
+        ].map((t) => (
+          <Link key={t.href} href={t.href} asChild>
+            <Pressable style={s.tile} accessibilityRole="link">
+              <Text style={s.tileIcon}>{t.icon}</Text>
+              <Text style={s.tileLabel}>{t.label}</Text>
+            </Pressable>
+          </Link>
+        ))}
+      </View>
       <Text style={ui.muted}>
         {data.season} season · through Week {data.throughWeek}. The colored number is each team’s overall
         rating: its Madden roster rating, moved by this season’s results.
@@ -52,6 +63,13 @@ export default function TeamsScreen() {
 }
 
 const s = StyleSheet.create({
+  tiles: { flexDirection: 'row', gap: 8 },
+  tile: {
+    flex: 1, alignItems: 'center', gap: 4, paddingVertical: 14, borderRadius: 14, backgroundColor: colors.card,
+    borderWidth: StyleSheet.hairlineWidth, borderColor: colors.border,
+  },
+  tileIcon: { fontSize: 24 },
+  tileLabel: { color: colors.text, fontWeight: '700', fontSize: 14 },
   logoBg: { width: 40, height: 40, borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.92)', alignItems: 'center', justifyContent: 'center' },
   logo: { width: 30, height: 30 },
   record: { color: '#C9D1DE', fontSize: 15, fontWeight: '600', fontVariant: ['tabular-nums'] },

@@ -2,13 +2,15 @@ import Slider from '@react-native-community/slider';
 import { Stack } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Card, Screen, SectionTitle, styles as ui } from '@/components/ui';
-import { effectiveWeights, FACTORS, INFLUENCE, useRatingWeights } from '@/lib/ratings';
+import rankingSettings from '../../config/rankings.json';
+import { effectiveWeights, FACTORS, INFLUENCE, useRatingWeights, type RankWeights } from '@/lib/ratings';
 import { colors } from '@/lib/theme';
 
 // Sliders for how much each factor counts in every rating. Changes apply instantly
 // across the app and are remembered on this device.
 export default function SettingsScreen() {
-  const { weights, influence, setWeight, setInfluence, reset } = useRatingWeights();
+  const { weights, influence, rank, setWeight, setInfluence, setRank, reset } = useRatingWeights();
+  const rankTotal = (['results', 'rating', 'form'] as const).reduce((a, k) => a + Math.max(0, rank[k]), 0) || 1;
   const shares = effectiveWeights(weights);
 
   return (
@@ -73,8 +75,35 @@ export default function SettingsScreen() {
           })}
         </Card>
 
+        <SectionTitle>Power rankings</SectionTitle>
+        <Text style={ui.muted}>How the League power rankings are built. Percentages are the actual shares after balancing.</Text>
+        <Card style={{ gap: 4 }}>
+          {RANK_SLIDERS.map((r, i) => (
+            <View key={r.key} style={[s.factor, i < RANK_SLIDERS.length - 1 && s.divider]}>
+              <View style={s.top}>
+                <Text style={s.label}>{r.label}</Text>
+                <Text style={s.share}>
+                  {r.key === 'injuries' ? `${rank.injuries.toFixed(1)}×` : `${Math.round((Math.max(0, rank[r.key]) / rankTotal) * 100)}%`}
+                </Text>
+              </View>
+              <Slider
+                minimumValue={0}
+                maximumValue={r.key === 'injuries' ? 2 : 100}
+                step={r.key === 'injuries' ? 0.1 : 1}
+                value={rank[r.key]}
+                onValueChange={(v) => setRank(r.key, v)}
+                minimumTrackTintColor={colors.good}
+                maximumTrackTintColor={colors.border}
+                thumbTintColor={colors.text}
+                accessibilityLabel={`${r.label} weight`}
+              />
+              <Text style={s.explain}>{r.explain}</Text>
+            </View>
+          ))}
+        </Card>
+
         <Pressable onPress={reset} style={({ pressed }) => [s.reset, pressed && { opacity: 0.7 }]} accessibilityRole="button">
-          <Text style={s.resetText}>Reset to defaults (1.0× · 50 / 20 / 15 / 10 / 5)</Text>
+          <Text style={s.resetText}>Reset everything to defaults</Text>
         </Pressable>
 
         <SectionTitle>Other weights</SectionTitle>
@@ -87,6 +116,17 @@ export default function SettingsScreen() {
     </>
   );
 }
+
+const RANK_SLIDERS: { key: keyof RankWeights; label: string; explain: string }[] = [
+  { key: 'results', label: 'Wins & losses (in context)', explain: rankingSettings.weightsWhy.results },
+  { key: 'rating', label: 'Team rating', explain: rankingSettings.weightsWhy.rating },
+  { key: 'form', label: 'Recent form', explain: rankingSettings.weightsWhy.form },
+  {
+    key: 'injuries',
+    label: 'Current injuries',
+    explain: 'How much key players out right now lower a team (1× = a missing average starting QB costs about 8 rating points; 0 = ignore injuries).',
+  },
+];
 
 const s = StyleSheet.create({
   factor: { paddingVertical: 12, gap: 4 },
