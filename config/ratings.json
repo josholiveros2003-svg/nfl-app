@@ -264,6 +264,17 @@
         }
       },
       "_note": "Fallback only: within each category, stat weights are now learned from Madden (see 'madden.learning'). These are used only if learning isn't possible."
+    },
+    "results": {
+      "why": "Wins and losses, judged against what was expected before each game. The expectation is the pre-game win chance (config/winprob.json), which already accounts for the opponent's strength, home field, and both teams' injuries that week. So a close loss to a great team barely hurts, a win over a team missing its key players earns less, and losing games you were expected to win costs the most.",
+      "winLossShare": 0.5,
+      "winLossShareWhy": "Each game's result is 50% the win or loss itself and 50% how close it was (so a 3-point loss is much better than a 30-point loss).",
+      "marginScale": 10,
+      "marginScaleWhy": "How the margin is scored: a 10-point win scores about 0.84, a 3-point loss about 0.38, a blowout loss near 0.",
+      "pointsPerWinAboveExpected": 25,
+      "pointsWhy": "Rating points for doing better than expected, averaged over the season: a team that beats expectations by a full win every game would gain 25 points at full weight. A typical over-performer gains 2-5.",
+      "halfWeightGames": 3,
+      "halfWeightWhy": "Results count half after 3 games, and more as the season goes on (about 85% by the end)."
     }
   },
   "players": {

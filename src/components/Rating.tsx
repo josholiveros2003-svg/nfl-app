@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { breakdown, effectiveWeights, useRating, useRatingWeights } from '@/lib/ratings';
 import { colors, ratingColor } from '@/lib/theme';
-import type { RatingContext, Rt } from '@/lib/types';
+import type { RatingContext, Rt, TeamResults } from '@/lib/types';
 
 /** What a rating is made of, for the "why" sheet (e.g. a category's stats). */
 export type RatingPart = { label: string; w?: number; rt?: Rt | null };
@@ -16,6 +16,8 @@ export type WhyInfo = {
   partsLabel?: string;
   /** Teams: the baseline is built from the starters' Madden ratings. */
   team?: boolean;
+  /** Teams' overall rating: wins and losses in context, game by game. */
+  results?: TeamResults;
 };
 
 /** A small colored 0-100 box. Shows "—" when there's nothing to rate. */
@@ -143,11 +145,48 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
                   color={m.move == null ? colors.muted : m.move >= 0.05 ? colors.good : m.move <= -0.05 ? colors.bad : colors.muted}
                 />
               ))}
+              {b.results != null ? (
+                <Row
+                  label="Wins & losses (in context)"
+                  detail={
+                    info.results
+                      ? `${info.results.wins}-${info.results.losses} vs. ${info.results.expectedWins.toFixed(1)} wins expected, given each opponent, home field and injuries`
+                      : 'Results compared with what was expected before each game'
+                  }
+                  value={fmtMove(b.results)}
+                  color={b.results >= 0.05 ? colors.good : b.results <= -0.05 ? colors.bad : colors.muted}
+                />
+              ) : null}
               <View style={s.totalRow}>
                 <Text style={s.totalLabel}>Rating</Text>
                 <Text style={[s.totalValue, { color: ratingColor(b.rating) }]}>{b.rating}</Text>
               </View>
             </View>
+
+            {info.results?.games.length ? (
+              <>
+                <Text style={s.section}>Game by game</Text>
+                <View style={s.box}>
+                  {info.results.games.map((g) => (
+                    <View key={g.week} style={s.row}>
+                      <View style={{ flex: 1 }}>
+                        <Text style={s.rowLabel}>
+                          Wk {g.week} · {g.result} {g.pf}–{g.pa} {g.home ? 'vs' : '@'} {g.opp}
+                        </Text>
+                        <Text style={s.rowDetail}>Chance to win beforehand: {Math.round(g.expected * 100)}%</Text>
+                      </View>
+                      <Text style={[s.rowValue, { color: g.points >= 0.05 ? colors.good : g.points <= -0.05 ? colors.bad : colors.muted }]}>
+                        {fmtMove(g.points)}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+                <Text style={s.note}>
+                  Each game counts half the win or loss and half how close it was, compared with the team’s chance to win
+                  beforehand. Close losses to strong teams barely hurt; beating a team missing key players earns less.
+                </Text>
+              </>
+            ) : null}
 
             {parts.length ? (
               <>

@@ -28,10 +28,11 @@ import requests
 from context import Context, expected_starters, burdens, team_contexts, team_strength, unavailable
 from learn import fit, fit_groups, repool, set_trust
 from winprob import FEATURES as WP_FEATURES, LABELS as WP_LABELS, SETTINGS as WP_SETTINGS
-from winprob import backtest, game_features, last_season_margins, predict, team_results, unavailable_by_week
+from winprob import backtest, game_features, last_season_margins, phi, predict, team_results, unavailable_by_week
 from madden import load_madden
 from players import CATEGORIES, GROUP_OF, build_players, season_players, training_rows
 from ratings import MADDEN, RECENT_GAMES, blend_default, rate_teams, strip_fmt, team_baselines, weights_for
+from ratings import SETTINGS as RATINGS_SETTINGS
 
 RELEASES = "https://github.com/nflverse/nflverse-data/releases/download"
 ROOT = Path(__file__).resolve().parent.parent
@@ -210,6 +211,41 @@ def game_doc(r: dict) -> dict:
         "injuries": {"home": d["injuries"]["home"], "away": d["injuries"]["away"]},
         "correct": None if not played or r["margin"] == 0 else (p_home > 0.5) == (r["margin"] > 0),
     }
+
+
+def results_component(game_docs: dict, team_ids) -> dict:
+    """Wins and losses in context: each played game scored against the pre-game win chance
+    (which already reflects opponent strength, home field and both teams' injuries)."""
+    cfg = RATINGS_SETTINGS["team"]["results"]
+    share, scale = cfg["winLossShare"], cfg["marginScale"]
+    out = {}
+    for t in team_ids:
+        rows = []
+        for g in sorted(game_docs.values(), key=lambda x: x["week"]):
+            if not g["played"] or t not in (g["home"], g["away"]):
+                continue
+            home = g["home"] == t
+            pf, pa = (g["homeScore"], g["awayScore"]) if home else (g["awayScore"], g["homeScore"])
+            margin = pf - pa
+            won = 1.0 if margin > 0 else 0.0 if margin < 0 else 0.5
+            score = share * won + (1 - share) * phi(margin / scale)
+            expected = g["prob"]["home" if home else "away"]
+            rows.append({"week": g["week"], "opp": g["away"] if home else g["home"], "home": home,
+                         "pf": pf, "pa": pa, "result": "W" if margin > 0 else "L" if margin < 0 else "T",
+                         "expected": round(expected, 3), "over": score - expected})
+        n = len(rows)
+        weight = n / (n + cfg["halfWeightGames"]) if n else 0.0
+        per_game = cfg["pointsPerWinAboveExpected"] * weight / n if n else 0.0
+        for r in rows:
+            r["points"] = round(r.pop("over") * per_game, 1)
+        out[t] = {
+            "points": round(sum(r["points"] for r in rows), 1),
+            "wins": sum(1 for r in rows if r["result"] == "W"),
+            "losses": sum(1 for r in rows if r["result"] == "L"),
+            "expectedWins": round(sum(r["expected"] for r in rows), 1),
+            "games": rows,
+        }
+    return out
 
 
 def team_rows(all_units: dict, gp: dict, season: int, baselines: dict) -> list:
@@ -967,6 +1003,12 @@ def main():
     for gid, gdoc in game_docs.items():
         (games_dir / f"{gid}.json").write_text(json.dumps(gdoc, separators=(",", ":"), default=to_plain))
 
+    # Wins and losses in context become part of each team's overall rating.
+    team_results_ctx = results_component(game_docs, team_ids)
+    for t in team_ids:
+        if team_ratings[t]["rt"]:
+            team_ratings[t]["rt"]["res"] = team_results_ctx[t]["points"]
+
     # Team leader lists show each player's overall rating too.
     for units in all_units.values():
         for cats in units.values():
@@ -1031,6 +1073,7 @@ def main():
         doc = {"season": season, "throughWeek": through_week, "updated": updated,
                "team": team, "games": games_out, "units": all_units[t], "roster": rosters.get(t, []),
                "unitRatings": team_ratings[t]["units"],
+               "results": team_results_ctx[t],
                "context": {side: {"opp": c["opp"], "inj": c["inj"], "recent": recent_text(played_by_team[t])}
                            for side, c in team_ctx[t].items()}}
         (OUT_DIR / "teams" / f"{t}.json").write_text(json.dumps(doc, separators=(",", ":"), default=to_plain))

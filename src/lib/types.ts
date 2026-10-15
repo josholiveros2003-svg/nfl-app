@@ -11,6 +11,8 @@ export type Rt = {
   ltd?: boolean;
   nm?: boolean;
   k?: number;
+  /** Teams only: rating points from wins and losses in context. */
+  res?: number;
 };
 
 /** "Why" text for the opponent / injury / recent-form factors. */
@@ -109,6 +111,7 @@ export type TeamDoc = {
   units: Record<UnitId, Category[]>;
   roster: RosterSection[];
   unitRatings: Record<UnitId, { rt: Rt | null; w: number }>;
+  results?: TeamResults;
   context: Record<UnitId, RatingContext>;
 };
 
@@ -209,3 +212,12 @@ type Eval = { games: number; correct: number; accuracy: number; brier: number;
 
 /** public/data/winprob_report.json: how the model has done on past games. */
 export type WinProbReport = Record<string, { model: Eval; homeTeam: Eval; vegas: Eval }>;
+
+/** Wins and losses judged against each game's pre-game win chance. */
+export type TeamResults = {
+  points: number;
+  wins: number;
+  losses: number;
+  expectedWins: number;
+  games: { week: number; opp: string; home: boolean; pf: number; pa: number; result: 'W' | 'L' | 'T'; expected: number; points: number }[];
+};

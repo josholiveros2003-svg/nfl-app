@@ -158,7 +158,7 @@ def blend_default(rt):
     ws = [f["weight"] if f.get("available", True) else 0 for f in SETTINGS["context"]["factors"]]
     pairs = [(w, v) for w, v in zip(ws, rt["g"]) if v is not None and w > 0]
     adj = sum(w * v for w, v in pairs) / sum(w for w, _ in pairs) if pairs else 0
-    return max(1, min(99, rt["m"] + adj))
+    return max(1, min(99, rt["m"] + adj + rt.get("res", 0)))
 
 
 # --------------------------------------------------------------------------

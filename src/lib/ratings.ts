@@ -46,6 +46,8 @@ export type Breakdown = {
   limited: boolean;
   estimatedBaseline: boolean;
   respread: number | null;
+  /** Teams: points from wins and losses in context (null for players). */
+  results: number | null;
 };
 
 const clamp = (x: number) => Math.max(1, Math.min(99, x));
@@ -59,7 +61,8 @@ export function breakdown(rt: Rt | null | undefined, weights: number[], influenc
     const usable = isAvailable(i) && rt.g[i] != null;
     return { factor, share: w[i], move: usable ? w[i] * ((rt.g[i] as number) * influence - perf) : null };
   });
-  const total = rt.m + perf + moves.reduce((a, m) => a + (m.move ?? 0), 0);
+  const results = rt.res != null ? rt.res * influence : null;
+  const total = rt.m + perf + moves.reduce((a, m) => a + (m.move ?? 0), 0) + (results ?? 0);
   return {
     rating: Math.round(clamp(total)),
     baseline: rt.m,
@@ -69,6 +72,7 @@ export function breakdown(rt: Rt | null | undefined, weights: number[], influenc
     limited: !!rt.ltd,
     estimatedBaseline: !!rt.nm,
     respread: rt.k ?? null,
+    results,
   };
 }
 

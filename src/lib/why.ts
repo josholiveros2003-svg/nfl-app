@@ -13,6 +13,7 @@ export function teamWhy(doc: TeamDoc): WhyInfo {
   return {
     title: `${doc.team.name}`,
     team: true,
+    results: doc.results,
     rt: doc.team.rt,
     context: { opp: join('opp'), inj: join('inj'), recent: doc.context?.offense?.recent },
     parts: UNITS.map((u) => ({ label: u.label, w: doc.unitRatings?.[u.id]?.w, rt: doc.unitRatings?.[u.id]?.rt })),
