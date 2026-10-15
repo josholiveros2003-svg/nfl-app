@@ -7,8 +7,10 @@ writeFileSync('dist/.nojekyll', '');
 // GitHub Pages shows 404.html for unknown addresses.
 if (existsSync('dist/+not-found.html')) copyFileSync('dist/+not-found.html', 'dist/404.html');
 
-// Player pages live at /player?id=...  Saving a player.html copy lets GitHub Pages serve
-// that address directly instead of redirecting /player -> /player/ (which could drop ?id=).
-if (existsSync('dist/player/index.html')) copyFileSync('dist/player/index.html', 'dist/player.html');
+// Pages whose address carries ?id=... (player, game) or other options (compare) also get a
+// <name>.html copy, so GitHub Pages serves /player?id=... directly instead of redirecting
+// /player -> /player/ first.
+const copies = ['player', 'game', 'compare'].filter((name) => existsSync(`dist/${name}/index.html`));
+for (const name of copies) copyFileSync(`dist/${name}/index.html`, `dist/${name}.html`);
 
-console.log('postexport: added .nojekyll, 404.html and player.html');
+console.log(`postexport: added .nojekyll, 404.html and ${copies.map((n) => `${n}.html`).join(', ')}`);
