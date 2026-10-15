@@ -213,6 +213,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0034381,85,REDG,Josh Sweat,DL
 00-0034383,84,TE,Dalton Schultz,TE
 00-0034384,83,CB,D.J. Reed,DB
+00-0034386,73,WR,Justin Watson,WR
 00-0034391,66,SS,Siran Neal,DB
 00-0034397,72,DT,Tim Settle Jr,DL
 00-0034399,79,LG,Wyatt Teller,OL
@@ -295,10 +296,12 @@ gsis_id,madden,madden_pos,name,grp
 00-0034987,75,SAM,E.J. Speed,LB
 00-0034989,67,RT,Justin Skule,OL
 00-0034993,75,SS,Marcus Epps,DB
+00-0035000,66,REDG,Quinton Bell,DL
 00-0035020,62,MIKE,Demetrius Flannigan-Fowles,LB
 00-0035021,72,WR,Ashton Dulin,WR
 00-0035026,73,DT,Kevin Givens,DL
 00-0035039,60,TE,Stephen Carlson,TE
+00-0035100,68,QB,Jake Browning,QB
 00-0035112,73,RG,Patrick Mekari,OL
 00-0035118,61,LS,Matt Orzech,LS
 00-0035125,74,FB,Alec Ingold,RB
