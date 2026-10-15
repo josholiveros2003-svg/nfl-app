@@ -1,0 +1,254 @@
+{
+ "all": {
+  "model": {
+   "games": 349,
+   "correct": 221,
+   "accuracy": 63.3,
+   "brier": 0.2247,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 164,
+     "predicted": 54.5,
+     "actual": 55.5
+    },
+    {
+     "band": "60-70%",
+     "games": 98,
+     "predicted": 64.7,
+     "actual": 65.3
+    },
+    {
+     "band": "70-80%",
+     "games": 67,
+     "predicted": 74.0,
+     "actual": 71.6
+    },
+    {
+     "band": "80-100%",
+     "games": 20,
+     "predicted": 83.5,
+     "actual": 90.0
+    }
+   ]
+  },
+  "homeTeam": {
+   "games": 349,
+   "correct": 187,
+   "accuracy": 53.6,
+   "brier": 0.2499,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 349,
+     "predicted": 57.0,
+     "actual": 53.6
+    }
+   ]
+  },
+  "vegas": {
+   "games": 349,
+   "correct": 227,
+   "accuracy": 65.0,
+   "brier": 0.2161,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 178,
+     "predicted": 57.4,
+     "actual": 56.7
+    },
+    {
+     "band": "60-70%",
+     "games": 95,
+     "predicted": 66.0,
+     "actual": 70.5
+    },
+    {
+     "band": "70-80%",
+     "games": 49,
+     "predicted": 72.8,
+     "actual": 67.3
+    },
+    {
+     "band": "80-100%",
+     "games": 27,
+     "predicted": 82.5,
+     "actual": 96.3
+    }
+   ]
+  }
+ },
+ "2025": {
+  "model": {
+   "games": 271,
+   "correct": 174,
+   "accuracy": 64.2,
+   "brier": 0.22,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 134,
+     "predicted": 54.5,
+     "actual": 55.2
+    },
+    {
+     "band": "60-70%",
+     "games": 76,
+     "predicted": 64.3,
+     "actual": 67.1
+    },
+    {
+     "band": "70-80%",
+     "games": 51,
+     "predicted": 74.1,
+     "actual": 76.5
+    },
+    {
+     "band": "80-100%",
+     "games": 10,
+     "predicted": 84.0,
+     "actual": 100.0
+    }
+   ]
+  },
+  "homeTeam": {
+   "games": 271,
+   "correct": 146,
+   "accuracy": 53.9,
+   "brier": 0.2495,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 271,
+     "predicted": 57.0,
+     "actual": 53.9
+    }
+   ]
+  },
+  "vegas": {
+   "games": 271,
+   "correct": 177,
+   "accuracy": 65.3,
+   "brier": 0.2126,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 133,
+     "predicted": 57.3,
+     "actual": 55.6
+    },
+    {
+     "band": "60-70%",
+     "games": 74,
+     "predicted": 65.9,
+     "actual": 68.9
+    },
+    {
+     "band": "70-80%",
+     "games": 38,
+     "predicted": 72.6,
+     "actual": 71.1
+    },
+    {
+     "band": "80-100%",
+     "games": 26,
+     "predicted": 82.6,
+     "actual": 96.2
+    }
+   ]
+  }
+ },
+ "2026": {
+  "model": {
+   "games": 78,
+   "correct": 47,
+   "accuracy": 60.3,
+   "brier": 0.241,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 30,
+     "predicted": 54.8,
+     "actual": 56.7
+    },
+    {
+     "band": "60-70%",
+     "games": 22,
+     "predicted": 65.8,
+     "actual": 59.1
+    },
+    {
+     "band": "70-80%",
+     "games": 16,
+     "predicted": 73.6,
+     "actual": 56.2
+    },
+    {
+     "band": "80-100%",
+     "games": 10,
+     "predicted": 83.0,
+     "actual": 80.0
+    }
+   ]
+  },
+  "homeTeam": {
+   "games": 78,
+   "correct": 41,
+   "accuracy": 52.6,
+   "brier": 0.2513,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 78,
+     "predicted": 57.0,
+     "actual": 52.6
+    }
+   ]
+  },
+  "vegas": {
+   "games": 78,
+   "correct": 50,
+   "accuracy": 64.1,
+   "brier": 0.228,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 45,
+     "predicted": 57.7,
+     "actual": 60.0
+    },
+    {
+     "band": "60-70%",
+     "games": 21,
+     "predicted": 66.2,
+     "actual": 76.2
+    },
+    {
+     "band": "70-80%",
+     "games": 11,
+     "predicted": 73.4,
+     "actual": 54.5
+    },
+    {
+     "band": "80-100%",
+     "games": 1,
+     "predicted": 81.0,
+     "actual": 100.0
+    }
+   ]
+  }
+ },
+ "fittedWeights": {
+  "home": 1.872,
+  "offense": 0.388,
+  "defense": 0.045,
+  "special": -0.067,
+  "form": 0.135,
+  "adjusted": 0.145,
+  "lastSeason": 0.55,
+  "injuries": 1.08
+ },
+ "fittedMarginSD": 12.61,
+ "calibratedMarginSD": 14.25
+}
