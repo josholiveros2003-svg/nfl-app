@@ -4,6 +4,7 @@ import { ordinal } from '@/lib/theme';
 import type { PlayerDoc } from '@/lib/types';
 import { playerWhy } from '@/lib/why';
 import { RatingButton } from './Rating';
+import { sized } from '@/lib/images';
 
 /** Banner at the top of every player screen, in his team's colors. */
 export function PlayerHeader({ player, subtitle }: { player: PlayerDoc; subtitle?: string }) {
@@ -20,7 +21,7 @@ export function PlayerHeader({ player, subtitle }: { player: PlayerDoc; subtitle
     <View style={[s.wrap, { backgroundColor: player.teamColor, borderBottomColor: player.teamColor2 }]}>
       <View style={s.top}>
         {player.headshot ? (
-          <Image source={{ uri: player.headshot }} style={s.photo} accessibilityLabel={`Photo of ${player.name}`} />
+          <Image source={{ uri: sized(player.headshot, 84) }} style={s.photo} accessibilityLabel={`Photo of ${player.name}`} />
         ) : (
           <View style={[s.photo, s.placeholder]}>
             <Text style={s.initial}>{player.name.charAt(0)}</Text>
@@ -50,7 +51,7 @@ export function PlayerHeader({ player, subtitle }: { player: PlayerDoc; subtitle
           <Pressable style={s.teamRow} accessibilityRole="link">
             {player.teamLogo ? (
               <View style={s.logoBg}>
-                <Image source={{ uri: player.teamLogo }} style={s.logo} />
+                <Image source={{ uri: sized(player.teamLogo, 20) }} style={s.logo} />
               </View>
             ) : null}
             <Text style={s.team}>{player.teamName}</Text>

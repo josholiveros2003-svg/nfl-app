@@ -9,6 +9,7 @@ import { breakdown, useRatingWeights } from '@/lib/ratings';
 import { colors, ratingColor } from '@/lib/theme';
 import type { Team } from '@/lib/types';
 import { POSITIONS } from '@/lib/constants';
+import { sized } from '@/lib/images';
 
 type Row = {
   key: string;
@@ -131,7 +132,7 @@ function List({ rows }: { rows: Row[] }) {
           {({ pressed }) => (
             <View style={[s.row, i < rows.length - 1 && s.divider, pressed && { backgroundColor: colors.cardPressed }]}>
               <Text style={s.rank}>{r.rank ?? '–'}</Text>
-              <View style={s.logoBg}>{r.image ? <Image source={{ uri: r.image }} style={s.logo} /> : null}</View>
+              <View style={s.logoBg}>{r.image ? <Image source={{ uri: sized(r.image, 26) }} style={s.logo} /> : null}</View>
               <View style={{ flex: 1 }}>
                 <Text style={s.name} numberOfLines={1}>{r.name}</Text>
                 <Text style={s.sub} numberOfLines={1}>{r.sub}</Text>

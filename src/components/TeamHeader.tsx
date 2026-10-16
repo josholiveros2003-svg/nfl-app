@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import type { Team } from '@/lib/types';
 import { RatingButton, type WhyInfo } from './Rating';
+import { sized } from '@/lib/images';
 
 
 /** Banner in the team's colors, shown at the top of every team screen. */
@@ -8,7 +9,7 @@ export function TeamHeader({ team, subtitle, rating }: { team: Team; subtitle?: 
   return (
     <View style={[s.wrap, { backgroundColor: team.color, borderBottomColor: team.color2 }]}>
       <View style={s.logoBg}>
-        <Image source={{ uri: team.logo }} style={s.logo} accessibilityLabel={`${team.name} logo`} />
+        <Image source={{ uri: sized(team.logo, 46) }} style={s.logo} accessibilityLabel={`${team.name} logo`} />
       </View>
       <View style={{ flex: 1 }}>
         <Text style={s.name}>{team.name}</Text>

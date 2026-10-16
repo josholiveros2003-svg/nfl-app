@@ -12,6 +12,7 @@ import {
 } from '@/lib/compare';
 import { useRating } from '@/lib/ratings';
 import { colors, ordinal } from '@/lib/theme';
+import { sized } from '@/lib/images';
 
 type Props = {
   a: CompareSide;
@@ -92,7 +93,7 @@ function SideHeader({ side, rating, adv, which }: { side: CompareSide; rating?: 
     <Link href={side.href as Href} asChild>
       <Pressable style={StyleSheet.flatten([s.side, { backgroundColor: sh.backgroundColor }])} accessibilityRole="link">
         <View style={s.imageWrap}>
-          {side.image ? <Image source={{ uri: side.image }} style={s.image} /> : <Text style={s.initial}>{side.name[0]}</Text>}
+          {side.image ? <Image source={{ uri: sized(side.image, 52) }} style={s.image} /> : <Text style={s.initial}>{side.name[0]}</Text>}
         </View>
         <Text style={[s.sideName, sh.dark && s.darkText]} numberOfLines={2}>
           {side.name}

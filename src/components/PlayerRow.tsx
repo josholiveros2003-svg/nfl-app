@@ -3,6 +3,7 @@ import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors } from '@/lib/theme';
 import type { Rt } from '@/lib/types';
 import { RatingBadge } from './Rating';
+import { sized } from '@/lib/images';
 
 type Props = {
   id: string;
@@ -27,7 +28,7 @@ export function PlayerRow({ id, name, headshot, tagline, line, badge, rt, last }
         {({ pressed }) => (
           <View style={[s.row, !last && s.divider, pressed && s.pressed]}>
             {headshot ? (
-              <Image source={{ uri: headshot }} style={s.photo} />
+              <Image source={{ uri: sized(headshot, 44) }} style={s.photo} />
             ) : (
               <View style={[s.photo, s.placeholder]}>
                 <Text style={s.initial}>{name.charAt(0)}</Text>

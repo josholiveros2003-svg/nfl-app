@@ -7,6 +7,7 @@ import { usePlayersIndex, useTeams } from '@/lib/data';
 import { colors } from '@/lib/theme';
 import type { PlayerIndexEntry, Team } from '@/lib/types';
 import { useIsClient } from '@/lib/useIsClient';
+import { sized } from '@/lib/images';
 
 type Kind = 'teams' | 'players';
 const KINDS: { id: Kind; label: string }[] = [
@@ -80,7 +81,7 @@ function TeamPicker() {
             .map((t, i, list) => (
               <Pressable key={t.abbr} onPress={() => pick(t)} style={({ pressed }) => [s.pickRow, i < list.length - 1 && s.divider, pressed && s.pressed]}>
                 <View style={s.logoBg}>
-                  <Image source={{ uri: t.logo }} style={s.logo} />
+                  <Image source={{ uri: sized(t.logo, 28) }} style={s.logo} />
                 </View>
                 <Text style={s.pickName}>{t.name}</Text>
                 <Text style={s.pickSub}>{t.record}</Text>
@@ -200,7 +201,7 @@ function Slot({ info, label, onClear }: { info: SlotInfo; label: string; onClear
         <>
           {info.image ? (
             <View style={s.logoBg}>
-              <Image source={{ uri: info.image }} style={s.logo} />
+              <Image source={{ uri: sized(info.image, 28) }} style={s.logo} />
             </View>
           ) : null}
           <Text style={s.slotName} numberOfLines={2}>

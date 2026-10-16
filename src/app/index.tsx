@@ -5,6 +5,7 @@ import { LinkCard, Loading, Screen, SectionTitle, styles as ui } from '@/compone
 import { useTeams } from '@/lib/data';
 import { colors, readableTeamColor } from '@/lib/theme';
 import type { Team } from '@/lib/types';
+import { sized } from '@/lib/images';
 
 const DIVISIONS = ['East', 'North', 'South', 'West'];
 
@@ -49,7 +50,7 @@ export default function TeamsScreen() {
             <LinkCard key={t.abbr} href={`/team/${t.abbr.toLowerCase()}`} accent={readableTeamColor(t.color, t.color2)}>
               <View style={ui.row}>
                 <View style={s.logoBg}>
-                  <Image source={{ uri: t.logo }} style={s.logo} accessibilityLabel="" />
+                  <Image source={{ uri: sized(t.logo, 30) }} style={s.logo} accessibilityLabel="" />
                 </View>
                 <Text style={[ui.title, { flex: 1 }]}>{t.name}</Text>
                 <Text style={s.record}>{t.record}</Text>

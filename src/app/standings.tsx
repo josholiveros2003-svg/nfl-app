@@ -5,6 +5,7 @@ import { Loading, Screen, SectionTitle, Segmented, styles as ui } from '@/compon
 import { useSchedule, useTeams } from '@/lib/data';
 import { buildStandings, compareStandings, conferenceSeeds, recordText, type Standing } from '@/lib/standings';
 import { colors } from '@/lib/theme';
+import { sized } from '@/lib/images';
 
 type View_ = 'divisions' | 'conferences';
 const VIEWS: { id: View_; label: string }[] = [
@@ -81,7 +82,7 @@ function Table({ rows, seeds, startAt }: { rows: Standing[]; seeds?: boolean; st
               <View style={[s.row, i < rows.length - 1 && s.divider, pressed && { backgroundColor: colors.cardPressed }]}>
                 {seeds || startAt ? <Text style={s.seed}>{(startAt ?? 1) + i}</Text> : null}
                 <View style={s.logoBg}>
-                  <Image source={{ uri: r.team.logo }} style={s.logo} />
+                  <Image source={{ uri: sized(r.team.logo, 22) }} style={s.logo} />
                 </View>
                 <View style={{ flex: 1 }}>
                   <Text style={s.name} numberOfLines={1}>{r.team.nickname}</Text>

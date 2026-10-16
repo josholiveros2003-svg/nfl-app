@@ -4,6 +4,7 @@ import { Loading, Screen, SectionTitle, styles as ui } from '@/components/ui';
 import { useSchedule, useTeams } from '@/lib/data';
 import { colors, readableTeamColor } from '@/lib/theme';
 import type { ScheduleGame, Team } from '@/lib/types';
+import { sized } from '@/lib/images';
 
 // This week's games (or any week), grouped by day. Tapping a game opens the game screen.
 // Address: /schedule (current week) or /schedule?week=7
@@ -120,7 +121,7 @@ function TeamLine({ team, abbr, record, score, won, prob, home }: {
 }) {
   return (
     <View style={s.line}>
-      <View style={s.logoBg}>{team ? <Image source={{ uri: team.logo }} style={s.logo} /> : null}</View>
+      <View style={s.logoBg}>{team ? <Image source={{ uri: sized(team.logo, 24) }} style={s.logo} /> : null}</View>
       <Text style={s.name} numberOfLines={1}>
         {home ? '@ ' : ''}
         {team?.nickname ?? abbr}
