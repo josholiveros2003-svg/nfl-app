@@ -228,19 +228,19 @@
    "topStats": [
     [
      "Passing: Passing yards",
-     1.63
+     1.52
     ],
     [
      "Passing: Passing yards per game",
-     1.63
-    ],
-    [
-     "Passing: Completions of 20+ yards",
-     1.23
+     1.52
     ],
     [
      "Rushing: Rushing yards",
-     1.22
+     1.2
+    ],
+    [
+     "Rushing: Rushing yards per game",
+     1.2
     ]
    ],
    "categories": {
@@ -281,11 +281,11 @@
      "r2": 0.18,
      "learned": true,
      "weights": {
-      "snaps": 0.166,
-      "snaps_pg": 0.325,
+      "snaps": 0.192,
+      "snaps_pg": 0.297,
       "snap_share": 0.3,
       "penalties": 0.115,
-      "penalty_yds": 0.094
+      "penalty_yds": 0.096
      }
     }
    }
@@ -296,19 +296,19 @@
    "topStats": [
     [
      "Rushing: Rushing TDs",
-     1.64
+     1.62
     ],
     [
      "Playing Time: Snap share",
-     1.18
+     1.3
     ],
     [
      "Rushing: Runs of 10+ yards",
-     0.92
+     0.95
     ],
     [
      "Receiving: Targets",
-     0.75
+     0.77
     ]
    ],
    "categories": {
@@ -343,9 +343,9 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.129,
-      "snaps_pg": 0.273,
-      "snap_share": 0.392,
+      "snaps": 0.159,
+      "snaps_pg": 0.262,
+      "snap_share": 0.373,
       "penalties": 0.05,
       "penalty_yds": 0.156
      }
@@ -363,23 +363,23 @@
   },
   "WR": {
    "r2": 0.67,
-   "players": 238,
+   "players": 239,
    "topStats": [
     [
      "Receiving: Receptions",
-     1.72
+     1.76
     ],
     [
      "Receiving: Targets",
-     1.7
+     1.68
     ],
     [
      "Receiving: Receiving yards per game",
-     0.86
+     0.84
     ],
     [
      "Receiving: Receiving yards",
-     0.86
+     0.84
     ]
    ],
    "categories": {
@@ -401,10 +401,11 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps_pg": 0.457,
-      "snap_share": 0.335,
-      "penalties": 0.069,
-      "penalty_yds": 0.139
+      "snaps": 0.17,
+      "snaps_pg": 0.277,
+      "snap_share": 0.344,
+      "penalties": 0.061,
+      "penalty_yds": 0.148
      }
     },
     "rushing": {
@@ -433,7 +434,7 @@
   },
   "TE": {
    "r2": 0.7,
-   "players": 151,
+   "players": 152,
    "topStats": [
     [
      "Receiving: Targets",
@@ -441,7 +442,7 @@
     ],
     [
      "Receiving: Receiving TDs",
-     1.26
+     1.29
     ],
     [
      "Playing Time: Snap share",
@@ -449,7 +450,7 @@
     ],
     [
      "Receiving: Receiving yards per game",
-     1.12
+     1.13
     ]
    ],
    "categories": {
@@ -472,10 +473,11 @@
      "r2": 0.2,
      "learned": true,
      "weights": {
-      "snaps_pg": 0.464,
-      "snap_share": 0.337,
-      "penalties": 0.085,
-      "penalty_yds": 0.114
+      "snaps": 0.181,
+      "snaps_pg": 0.288,
+      "snap_share": 0.333,
+      "penalties": 0.076,
+      "penalty_yds": 0.121
      }
     },
     "rushing": {
@@ -512,11 +514,11 @@
     ],
     [
      "Run Blocking: Team yards per carry",
-     0.51
+     0.5
     ],
     [
      "Run Blocking: Team ePA per designed run",
-     0.32
+     0.34
     ]
    ],
    "categories": {
@@ -543,10 +545,10 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.035,
-      "snaps_pg": 0.471,
+      "snaps": 0.193,
+      "snaps_pg": 0.298,
       "snap_share": 0.3,
-      "penalties": 0.103,
+      "penalties": 0.119,
       "penalty_yds": 0.091
      }
     }
@@ -558,7 +560,7 @@
    "topStats": [
     [
      "Playing Time: Snap share",
-     2.86
+     3.0
     ],
     [
      "Pass Rush: QB hits",
@@ -570,7 +572,7 @@
     ],
     [
      "Tackling: Forced fumbles",
-     0.28
+     0.29
     ]
    ],
    "categories": {
@@ -589,7 +591,7 @@
      "weights": {
       "tackles": 0.172,
       "tackles_pg": 0.022,
-      "solo": 0.197,
+      "solo": 0.198,
       "tfl": 0.311,
       "ff": 0.208,
       "fr": 0.09
@@ -599,18 +601,19 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps_pg": 0.449,
-      "snap_share": 0.327,
-      "penalties": 0.056,
-      "penalty_yds": 0.167
+      "snaps": 0.165,
+      "snaps_pg": 0.267,
+      "snap_share": 0.344,
+      "penalties": 0.05,
+      "penalty_yds": 0.173
      }
     },
     "coverage": {
      "r2": 0.06,
      "learned": true,
      "weights": {
-      "ints": 0.21,
-      "pd": 0.715,
+      "ints": 0.209,
+      "pd": 0.716,
       "def_td": 0.075
      }
     }
@@ -622,19 +625,19 @@
    "topStats": [
     [
      "Pass Rush: QB hits",
-     1.26
+     1.25
     ],
     [
      "Tackling: Forced fumbles",
-     1.05
-    ],
-    [
-     "Playing Time: Defensive snaps per game",
-     1.04
+     1.09
     ],
     [
      "Playing Time: Defensive snaps",
-     0.81
+     0.94
+    ],
+    [
+     "Playing Time: Defensive snaps per game",
+     0.94
     ]
    ],
    "categories": {
@@ -643,7 +646,7 @@
      "learned": true,
      "weights": {
       "tackles": 0.15,
-      "solo": 0.281,
+      "solo": 0.282,
       "tfl": 0.281,
       "ff": 0.205,
       "fr": 0.083
@@ -662,8 +665,8 @@
      "r2": 0.06,
      "learned": true,
      "weights": {
-      "ints": 0.206,
-      "pd": 0.558,
+      "ints": 0.205,
+      "pd": 0.559,
       "def_td": 0.236
      }
     },
@@ -671,34 +674,34 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.142,
-      "snaps_pg": 0.251,
-      "snap_share": 0.42,
-      "penalties": 0.086,
-      "penalty_yds": 0.101
+      "snaps": 0.18,
+      "snaps_pg": 0.286,
+      "snap_share": 0.347,
+      "penalties": 0.054,
+      "penalty_yds": 0.132
      }
     }
    }
   },
   "DB": {
-   "r2": 0.29,
-   "players": 404,
+   "r2": 0.3,
+   "players": 405,
    "topStats": [
     [
      "Playing Time: Snap share",
-     1.5
+     1.17
     ],
     [
      "Playing Time: Defensive snaps per game",
-     1.25
-    ],
-    [
-     "Coverage: Passes defended",
-     0.91
+     1.1
     ],
     [
      "Playing Time: Defensive snaps",
-     0.6
+     1.09
+    ],
+    [
+     "Coverage: Passes defended",
+     0.92
     ]
    ],
    "categories": {
@@ -707,7 +710,7 @@
      "learned": true,
      "weights": {
       "ints": 0.23,
-      "pd": 0.593,
+      "pd": 0.594,
       "def_td": 0.177
      }
     },
@@ -723,14 +726,14 @@
      }
     },
     "playing_time": {
-     "r2": 0.2,
+     "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.069,
-      "snaps_pg": 0.376,
-      "snap_share": 0.337,
-      "penalties": 0.123,
-      "penalty_yds": 0.095
+      "snaps": 0.165,
+      "snaps_pg": 0.273,
+      "snap_share": 0.341,
+      "penalties": 0.127,
+      "penalty_yds": 0.094
      }
     },
     "pass_rush": {
@@ -759,7 +762,7 @@
    "topStats": [
     [
      "Kicking: Extra point %",
-     1.11
+     1.1
     ],
     [
      "Kicking: Longest field goal",
@@ -767,11 +770,11 @@
     ],
     [
      "Kicking: FG 40\u201349 yards",
-     0.59
+     0.58
     ],
     [
-     "Playing Time: Special teams snaps per game",
-     0.43
+     "Kicking: Field goals made",
+     0.3
     ]
    ],
    "categories": {
@@ -804,16 +807,20 @@
    "players": 61,
    "topStats": [
     [
-     "Playing Time: Special teams snaps per game",
-     0.64
+     "Punting: Gross average",
+     0.4
     ],
     [
-     "Punting: Gross average",
-     0.37
+     "Playing Time: Special teams snaps",
+     0.34
+    ],
+    [
+     "Playing Time: Special teams snaps per game",
+     0.34
     ],
     [
      "Punting: Touchbacks",
-     0.17
+     0.18
     ]
    ],
    "categories": {
@@ -845,7 +852,7 @@
    "topStats": [
     [
      "Playing Time: Penalty yards",
-     0.54
+     0.53
     ],
     [
      "Playing Time: Penalties",
@@ -858,9 +865,9 @@
      "learned": true,
      "weights": {
       "snaps_pg": 0.1,
-      "snap_share": 0.79,
+      "snap_share": 0.793,
       "penalties": 0.05,
-      "penalty_yds": 0.06
+      "penalty_yds": 0.057
      }
     }
    }
@@ -877,11 +884,11 @@
    "QB": 0.73,
    "RB": 0.76,
    "WR": 0.82,
-   "TE": 0.84,
+   "TE": 0.83,
    "OL": 0.51,
    "DL": 0.71,
    "LB": 0.55,
-   "DB": 0.54,
+   "DB": 0.55,
    "K": 0.3,
    "P": 0.3,
    "LS": 0.3
