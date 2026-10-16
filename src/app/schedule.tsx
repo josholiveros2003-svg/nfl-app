@@ -64,16 +64,19 @@ export default function ScheduleScreen() {
             ))}
           </View>
         ))}
-        <Text style={ui.muted}>Kickoff times are Eastern. Win chances are the model’s call before kickoff.</Text>
+        <Text style={ui.muted}>Kickoff times are Mountain Time (Utah). Win chances are the model’s call before kickoff.</Text>
       </Screen>
     </>
   );
 }
 
+/** Kickoff in Mountain Time (Utah). The schedule lists Eastern times; Mountain is always
+ *  2 hours behind, since both switch to and from daylight saving time on the same dates. */
 function kickoff(time: string) {
   const [h, m] = time.split(':').map(Number);
   if (Number.isNaN(h)) return time;
-  return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'} ET`;
+  const mt = (h - 2 + 24) % 24;
+  return `${((mt + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${mt >= 12 ? 'PM' : 'AM'} MT`;
 }
 
 function GameCard({ game, away, home }: { game: ScheduleGame; away?: Team; home?: Team }) {

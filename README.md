@@ -125,7 +125,7 @@ final score and what the model gave each team before kickoff.
 
 The home screen has three tabs: **Schedule**, **Rankings** and **Compare**.
 
-- **Schedule:** every game of a week, grouped by day, with records, kickoff (Eastern) and
+- **Schedule:** every game of a week, grouped by day, with records, kickoff (Mountain Time, Utah) and
   win chances. Arrows or week numbers switch weeks; tapping a game opens the game screen.
 - **Power Rankings:** League (all 32 teams), Team units (Offense, Offensive Line, Secondary,
   ...), and Players by position. Tap any row to see why it's ranked there.
