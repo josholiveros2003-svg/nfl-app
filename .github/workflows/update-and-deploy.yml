@@ -8,9 +8,17 @@ name: Update data & deploy
 
 on:
   schedule:
-    # Times are UTC. nflverse refreshes play-by-play overnight after games, so
-    # checking every 6 hours catches Thursday, Sunday and Monday games by morning.
+    # Times are UTC. Every 6 hours all week, to catch roster, injury and late stat changes.
     - cron: "17 */6 * * *"
+    # Every 30 minutes while games are being played, so results show up soon after the final
+    # whistle. The windows are wide enough to cover both daylight time (UTC-4) and standard
+    # time (UTC-5) in the US. Off-minutes (7, 37) because GitHub delays runs at :00 and :30.
+    # Sunday afternoon and evening (1pm ET kickoffs to Sunday night)
+    - cron: "7,37 16-23 * * 0"
+    # Saturday games (late in the season)
+    - cron: "7,37 16-23 * * 6"
+    # Night games, which end after midnight UTC (Saturday, Sunday, Monday and Thursday nights)
+    - cron: "7,37 0-5 * * 0,1,2,5"
   push:
     branches: [main]
   workflow_dispatch: # adds a "Run workflow" button on GitHub for manual runs
