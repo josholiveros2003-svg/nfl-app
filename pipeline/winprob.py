@@ -120,6 +120,21 @@ def injuries_for(team: str, week: int, out_by_week: dict, info: dict) -> list:
     return sorted(rows, key=lambda r: -r["points"])
 
 
+def inactive_for(team: str, week: int, out_by_week: dict, info: dict) -> list:
+    """Everyone missing for `team` in `week` (no minimum impact): [{id, name, pos, status, starter}],
+    expected starters first, then by impact."""
+    rows = []
+    for pid, status in out_by_week.get((team, week), {}).items():
+        p = info.get(pid)
+        if not p:
+            continue
+        pts = player_importance(p["group"], p["madden"], p["starter"])
+        rows.append({"id": pid, "name": p["name"], "pos": p["pos"], "status": status,
+                     "starter": p["starter"], "_pts": pts})
+    rows.sort(key=lambda r: (not r["starter"], -r["_pts"]))
+    return [{k: v for k, v in r.items() if k != "_pts"} for r in rows]
+
+
 def unavailable_by_week(injuries, weekly_rosters) -> dict:
     """{(team, week): {player id: status}} from injury reports (Out/Doubtful) and injured reserve."""
     out = {}
@@ -167,6 +182,8 @@ def game_features(home: str, away: str, week: int, neutral: bool, ratings: dict,
         "lastSeason": {"home": round(lh, 1), "away": round(la, 1)},
         "games": {"home": gh, "away": ga},
         "injuries": {"home": inj_h, "away": inj_a, "homePoints": round(ih, 2), "awayPoints": round(ia, 2)},
+        "inactive": {"home": inactive_for(home, week, out_by_week, info),
+                     "away": inactive_for(away, week, out_by_week, info)},
     }
     return feats, details
 

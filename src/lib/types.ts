@@ -185,6 +185,8 @@ export type PlayerIndexEntry = {
 
 export type GameFactor = { id: string; label: string; points: number; detail: string };
 export type MissingPlayer = { id: string; name: string; pos: string | null; status: string; points: number };
+/** Everyone ruled out for a game (Out, Doubtful or injured reserve), however small the impact. */
+export type InactivePlayer = { id: string; name: string; pos: string | null; status: string; starter: boolean };
 
 /** public/data/games/<id>.json: one game, with its pre-game win probability and why. */
 export type GameDoc = {
@@ -204,6 +206,8 @@ export type GameDoc = {
   /** Each factor's effect in points (positive helps the home team), biggest first. */
   factors: GameFactor[];
   injuries: { home: MissingPlayer[]; away: MissingPlayer[] };
+  /** Missing in older data files (before this list was added). */
+  inactive?: { home: InactivePlayer[]; away: InactivePlayer[] };
   correct: boolean | null;
 };
 
