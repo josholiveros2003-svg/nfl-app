@@ -1,5 +1,6 @@
 import { Stack, useLocalSearchParams, type Href } from 'expo-router';
 import { Comparison } from '@/components/Comparison';
+import { Inactives } from '@/components/Inactives';
 import { Loading, Screen } from '@/components/ui';
 import { GameHeader } from '@/components/WinProb';
 import { teamSide } from '@/lib/compare';
@@ -31,6 +32,7 @@ export default function GameScreen() {
         <Screen>
           <GameHeader game={game.data} teams={{ home: home.data.team, away: away.data.team }} />
           <Comparison a={teamSide(away.data)} b={teamSide(home.data)} path={path} hrefFor={hrefFor} />
+          {path.length === 0 ? <Inactives game={game.data} away={away.data} home={home.data} /> : null}
         </Screen>
       )}
     </>

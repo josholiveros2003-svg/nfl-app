@@ -235,6 +235,7 @@ def game_doc(r: dict) -> dict:
         "margin": round(margin, 1),
         "factors": factors,
         "injuries": {"home": d["injuries"]["home"], "away": d["injuries"]["away"]},
+        "inactive": d["inactive"],
         "correct": None if not played or r["margin"] == 0 else (p_home > 0.5) == (r["margin"] > 0),
     }
 
