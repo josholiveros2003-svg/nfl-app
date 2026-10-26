@@ -26,6 +26,7 @@ import pandas as pd
 import requests
 
 from averages import Averages
+from boxscore import box_scores
 from context import Context, expected_starters, burdens, team_contexts, team_strength, unavailable
 from learn import fit, fit_groups, repool, set_trust
 from winprob import FEATURES as WP_FEATURES, LABELS as WP_LABELS, SETTINGS as WP_SETTINGS
@@ -1060,6 +1061,10 @@ def main():
 
     # One file per game this season: pre-game win probability and why.
     game_docs = {r["id"]: game_doc(r) for r in games_now}
+    # Played games also get a box score: team stats and player stats, each with the league average.
+    for gid, box in box_scores(pbp, sched, extra["weekly"], set(player_docs)).items():
+        if gid in game_docs:
+            game_docs[gid]["box"] = box
     games_dir = OUT_DIR / "games"
     games_dir.mkdir(exist_ok=True)
     for old in games_dir.glob("*.json"):

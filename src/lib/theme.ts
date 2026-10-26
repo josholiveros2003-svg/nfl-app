@@ -20,6 +20,14 @@ export function rankColor(rank: number | null, of: number | null = 32) {
   return colors.bad;
 }
 
+/** Same thirds as rankColor, for a percentile (100 = best): top ~31% green, bottom ~31% red. */
+export function pctColor(p: number | null | undefined) {
+  if (p == null) return colors.text;
+  if (p >= 68.75) return colors.good;
+  if (p >= 31.25) return colors.mid;
+  return colors.bad;
+}
+
 /** How full the rank bar is: 1st = full, last = nearly empty. */
 export function rankFill(rank: number | null, of: number | null = 32) {
   if (rank == null) return 0;

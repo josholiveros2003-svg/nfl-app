@@ -195,6 +195,32 @@ export type MissingPlayer = { id: string; name: string; pos: string | null; stat
 /** Everyone ruled out for a game (Out, Doubtful or injured reserve), however small the impact. */
 export type InactivePlayer = { id: string; name: string; pos: string | null; status: string; starter: boolean };
 
+/** One number in a box score: how it's shown, and its percentile among this season's games
+ *  (0-100, 100 = best; null = not judged good or bad). */
+export type BoxCell = { d: string; p: number | null };
+export type BoxTeamStat = {
+  id: string; label: string; better: 'high' | 'low' | null;
+  /** League average per team per game, already formatted. */
+  avg: string;
+  home: BoxCell; away: BoxCell;
+};
+export type BoxRow = {
+  id: string; name: string; pos: string | null;
+  /** Which average this player is compared with: a position ("WR") or "*" (everyone in the section). */
+  ag: string;
+  /** Whether the player has a page in the app. */
+  link: boolean;
+  cells: BoxCell[];
+};
+export type BoxSection = {
+  id: string; label: string;
+  cols: { id: string; label: string; better: 'high' | 'low' | null }[];
+  /** League average per game for each column, by position ("*" = everyone in the section). */
+  avgs: Record<string, string[]>;
+  rows: BoxRow[];
+};
+export type BoxScore = { teams: BoxTeamStat[]; players: { home: BoxSection[]; away: BoxSection[] } };
+
 /** public/data/games/<id>.json: one game, with its pre-game win probability and why. */
 export type GameDoc = {
   id: string;
@@ -215,6 +241,8 @@ export type GameDoc = {
   injuries: { home: MissingPlayer[]; away: MissingPlayer[] };
   /** Missing in older data files (before this list was added). */
   inactive?: { home: InactivePlayer[]; away: InactivePlayer[] };
+  /** Played games only: team and player stats (see pipeline/boxscore.py). */
+  box?: BoxScore;
   correct: boolean | null;
 };
 
