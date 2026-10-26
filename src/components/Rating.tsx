@@ -1,7 +1,7 @@
 import { router, type Href } from 'expo-router';
 import { useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { breakdown, useRating, useRatingWeights } from '@/lib/ratings';
+import { avgLabel, breakdown, useLeagueAverage, useRating, useRatingWeights } from '@/lib/ratings';
 import { colors, ratingColor } from '@/lib/theme';
 import type { RatingContext, Rt, TeamResults } from '@/lib/types';
 
@@ -24,23 +24,34 @@ export type WhyInfo = {
   baseline?: { label: string; detail: string };
 };
 
-/** A small colored 0-100 box. Shows "—" when there's nothing to rate. */
+/** A small colored 0-100 box, with the league average (by position for players) underneath.
+ *  Shows "—" when there's nothing to rate. */
 export function RatingBadge({ rt, size = 'md' }: { rt: Rt | null | undefined; size?: 'sm' | 'md' | 'lg' }) {
   const b = useRating(rt);
+  const avg = useLeagueAverage(b ? rt : null);
   const dims = SIZES[size];
   const c = ratingColor(b?.rating);
   return (
-    <View
-      style={[s.badge, { width: dims.box, height: dims.box, borderColor: c, backgroundColor: b ? `${c}22` : 'transparent' }]}
-      accessibilityLabel={b ? `Rating ${b.rating}${b.limited ? ', limited sample' : ''}` : 'No rating'}
-    >
-      <Text style={[s.badgeText, { color: c, fontSize: dims.font }]}>{b ? b.rating : '—'}</Text>
-      {b?.limited ? <Text style={[s.ltd, { color: c }]}>LTD</Text> : null}
+    <View style={s.badgeWrap}>
+      <View
+        style={[s.badge, { width: dims.box, height: dims.box, borderColor: c, backgroundColor: b ? `${c}22` : 'transparent' }]}
+        accessibilityLabel={
+          b ? `Rating ${b.rating}${b.limited ? ', limited sample' : ''}${avg ? `, ${avgLabel(avg)} ${avg.rating}` : ''}` : 'No rating'
+        }
+      >
+        <Text style={[s.badgeText, { color: c, fontSize: dims.font }]}>{b ? b.rating : '—'}</Text>
+        {b?.limited ? <Text style={[s.ltd, { color: c }]}>LTD</Text> : null}
+      </View>
+      {avg ? (
+        <Text style={[s.avg, { fontSize: dims.avg, marginTop: b?.limited ? 8 : 3 }]} numberOfLines={1}>
+          avg {avg.rating}
+        </Text>
+      ) : null}
     </View>
   );
 }
 
-const SIZES = { sm: { box: 34, font: 14 }, md: { box: 40, font: 16 }, lg: { box: 58, font: 24 } };
+const SIZES = { sm: { box: 34, font: 14, avg: 9 }, md: { box: 40, font: 16, avg: 10 }, lg: { box: 58, font: 24, avg: 11 } };
 
 /** A rating badge you can tap to see why it is what it is. */
 export function RatingButton({ info, size = 'md' }: { info: WhyInfo; size?: 'sm' | 'md' | 'lg' }) {
@@ -90,6 +101,7 @@ const pct = (x: number) => `${Math.round(x * 100)}%`;
 export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void }) {
   const { weights, influence } = useRatingWeights();
   const b = breakdown(info.rt, weights, influence);
+  const avg = useLeagueAverage(info.rt);
   if (!b) return null;
   const ctxFor: Record<string, string | undefined> = {
     opponents: info.context?.opp,
@@ -171,6 +183,14 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
                 <Text style={s.totalLabel}>Rating</Text>
                 <Text style={[s.totalValue, { color: ratingColor(b.rating) }]}>{b.rating}</Text>
               </View>
+              {avg ? (
+                <Row
+                  label={`League average (${avg.group ? `${avg.group}s` : 'teams'})`}
+                  detail={`Average of all ${avg.count} ${avg.group ? `${avg.group}s with this rating` : 'teams'}, with your Settings`}
+                  value={String(avg.rating)}
+                  color={b.rating > avg.rating ? colors.good : b.rating < avg.rating ? colors.bad : colors.muted}
+                />
+              ) : null}
             </View>
 
             {info.results?.games.length ? (
@@ -270,16 +290,22 @@ function Row({ label, detail, value, color, strong }: { label: string; detail?: 
 
 function PartRow({ part, share }: { part: RatingPart; share: number }) {
   const b = useRating(part.rt);
+  const avg = useLeagueAverage(b ? part.rt : null);
   return (
     <View style={s.row}>
       <Text style={[s.rowLabel, { flex: 1 }]}>{part.label}</Text>
       <Text style={s.rowDetail}>{pct(share)}</Text>
-      <Text style={[s.rowValue, { color: ratingColor(b?.rating), minWidth: 36, textAlign: 'right' }]}>{b?.rating ?? '—'}</Text>
+      <View style={{ minWidth: 36, alignItems: 'flex-end' }}>
+        <Text style={[s.rowValue, { color: ratingColor(b?.rating) }]}>{b?.rating ?? '—'}</Text>
+        {avg ? <Text style={s.avg}>avg {avg.rating}</Text> : null}
+      </View>
     </View>
   );
 }
 
 const s = StyleSheet.create({
+  badgeWrap: { alignItems: 'center' },
+  avg: { color: colors.muted, fontSize: 10, fontWeight: '600', fontVariant: ['tabular-nums'] },
   badge: { borderWidth: 1.5, borderRadius: 9, alignItems: 'center', justifyContent: 'center' },
   badgeText: { fontWeight: '800', fontVariant: ['tabular-nums'] },
   ltd: { position: 'absolute', bottom: -7, fontSize: 8, fontWeight: '800', backgroundColor: colors.bg, paddingHorizontal: 2 },

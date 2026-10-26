@@ -25,6 +25,7 @@ from pathlib import Path
 import pandas as pd
 import requests
 
+from averages import Averages
 from context import Context, expected_starters, burdens, team_contexts, team_strength, unavailable
 from learn import fit, fit_groups, repool, set_trust
 from winprob import FEATURES as WP_FEATURES, LABELS as WP_LABELS, SETTINGS as WP_SETTINGS
@@ -1080,6 +1081,13 @@ def main():
                     for pl in leader["players"]:
                         pl["rt"] = player_docs.get(pl["id"], {}).get("rt")
 
+    # Tag every rating with its peer group, for the league averages the app shows under each one.
+    averages = Averages()
+    for t in team_ids:
+        averages.add_team(team_ratings[t]["rt"], team_ratings[t]["units"], all_units[t])
+    for pdoc in player_docs.values():
+        averages.add_player(pdoc)
+
     # One file per player. Clear out old files first so released players don't linger.
     players_dir = OUT_DIR / "players"
     players_dir.mkdir(exist_ok=True)
@@ -1150,6 +1158,9 @@ def main():
                                {t["abbr"]: t["record"] for t in index})
     rankings_doc = {"season": season, "throughWeek": through_week, "updated": updated, "league": league,
                     "units": unit_lists(team_docs, snaps_now, league["lastPlayedWeek"])}
+    for ul in rankings_doc["units"]:
+        for v in ul["teams"].values():
+            averages.add(f"rank.{ul['id']}", v["rt"])  # unit/category lists reuse the team ratings tagged above
     (OUT_DIR / "rankings.json").write_text(json.dumps(rankings_doc, separators=(",", ":"), default=to_plain))
 
     # ---- This season's schedule, week by week ----
@@ -1160,6 +1171,7 @@ def main():
     (OUT_DIR / "teams.json").write_text(json.dumps(
         {"season": season, "throughWeek": through_week, "updated": updated, "teams": index},
         separators=(",", ":")))
+    (OUT_DIR / "averages.json").write_text(json.dumps(averages.to_json(), separators=(",", ":")))
     print(f"Wrote {len(index)} teams and {len(player_docs)} players through week {through_week} to {OUT_DIR}")
 
 

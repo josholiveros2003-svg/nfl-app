@@ -3,9 +3,9 @@ import { useMemo, useState } from 'react';
 import { Image, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { WhySheet, type WhyInfo } from '@/components/Rating';
 import { Loading, Screen, SectionTitle, styles as ui } from '@/components/ui';
-import { usePlayersIndex, useRankings, useTeams } from '@/lib/data';
+import { useAverages, usePlayersIndex, useRankings, useTeams } from '@/lib/data';
 import { gameVerdict, powerRankings, type PowerRow } from '@/lib/powerRankings';
-import { breakdown, useRatingWeights } from '@/lib/ratings';
+import { breakdown, leagueAverage, useRatingWeights, type LeagueAverage } from '@/lib/ratings';
 import { colors, ratingColor } from '@/lib/theme';
 import type { Team } from '@/lib/types';
 import { POSITIONS } from '@/lib/constants';
@@ -30,14 +30,17 @@ export default function RankingList() {
   const rankings = useRankings();
   const teams = useTeams();
   const players = usePlayersIndex(type === 'position');
+  const averages = useAverages();
   const { weights, influence, rank: rankWeights } = useRatingWeights();
   const [why, setWhy] = useState<WhyInfo | null>(null);
   const [leagueWhy, setLeagueWhy] = useState<PowerRow | null>(null);
 
   const byTeam = useMemo(() => Object.fromEntries((teams.data?.teams ?? []).map((t) => [t.abbr, t])), [teams.data]);
 
-  const { title, intro, rows, limitedRows } = useMemo(() => {
-    const empty = { title: 'Rankings', intro: '', rows: [] as Row[], limitedRows: [] as Row[] };
+  const { title, intro, rows, limitedRows, avg } = useMemo(() => {
+    const empty = { title: 'Rankings', intro: '', rows: [] as Row[], limitedRows: [] as Row[], avg: null as LeagueAverage | null };
+    const avgFor = (key?: string) =>
+      key && averages.data?.[key] ? leagueAverage(key, averages.data[key], weights, influence) : null;
     if (!rankings.data || !teams.data) return empty;
     const league = rankings.data.league.teams;
     if (type === 'league') {
@@ -51,6 +54,7 @@ export default function RankingList() {
           onPress: () => setLeagueWhy(r),
         })),
         limitedRows: [],
+        avg: null,
       };
     }
     if (type === 'unit') {
@@ -75,6 +79,7 @@ export default function RankingList() {
           }),
         })),
         limitedRows: [],
+        avg: avgFor(Object.values(list.teams).find((v) => v.rt?.a)?.rt?.a),
       };
     }
     // Players by position: full-sample players first; limited-sample players listed separately below.
@@ -97,8 +102,9 @@ export default function RankingList() {
       intro: 'Player ratings (Madden baseline moved by this season’s stats). Players who haven’t played enough yet are listed separately at the bottom. Tap a player to see why.',
       rows: full.map((x, i) => toRow(x, i + 1)),
       limitedRows: limited.slice(0, 40).map((x) => toRow(x, null)),
+      avg: avgFor(`pos.${pos.id}`),
     };
-  }, [rankings.data, teams.data, players.data, type, params.id, weights, influence, rankWeights, byTeam]);
+  }, [rankings.data, teams.data, players.data, averages.data, type, params.id, weights, influence, rankWeights, byTeam]);
 
   const loading = !rankings.data || !teams.data || (type === 'position' && !players.data);
   return (
@@ -109,6 +115,12 @@ export default function RankingList() {
       ) : (
         <Screen>
           <Text style={ui.muted}>{intro}</Text>
+          {avg ? (
+            <Text style={s.avgLine}>
+              League average ({avg.group ? `all ${avg.count} ${avg.group}s` : 'all 32 teams'}):{' '}
+              <Text style={{ color: ratingColor(avg.rating), fontWeight: '800' }}>{avg.rating}</Text>
+            </Text>
+          ) : null}
           <List rows={rows} />
           {limitedRows.length ? (
             <>
@@ -256,6 +268,7 @@ function WhyLine({ label, detail, value, color }: { label: string; detail?: stri
 }
 
 const s = StyleSheet.create({
+  avgLine: { color: colors.muted, fontSize: 13, fontWeight: '600' },
   table: { backgroundColor: colors.card, borderRadius: 14, overflow: 'hidden', borderWidth: StyleSheet.hairlineWidth, borderColor: colors.border },
   row: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10, paddingHorizontal: 12 },
   divider: { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.border },
