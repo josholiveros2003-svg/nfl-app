@@ -39,6 +39,7 @@ the site. Otherwise it stops early.
 | `pipeline/players.py` | Player pages (stats by position) and depth-chart-ordered rosters |
 | `config/ratings.json` | **Every rating weight, in one place**, with the reasoning written next to each |
 | `pipeline/ratings.py`, `pipeline/context.py` | The rating math, opponent strength and injury adjustments |
+| `pipeline/boxscore.py` | Box scores for played games: team and player stats, each with the league average and a percentile for the colors |
 | `pipeline/averages.py` | League averages shown under every rating (teams vs. all 32 teams; players vs. their position, plus a starters-only average) |
 | `public/data/` | The generated stats (one file per team + a team list) |
 | `src/app/` | The screens. Each file is a page; the folder names become the web address |
