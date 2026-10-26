@@ -140,7 +140,7 @@ def team_box(lines: dict, pen: dict) -> dict:
     for key, line in lines.items():
         line["pen"], line["pen_yds"] = pen.get(key, (0, 0))
     stats = TEAM_STATS + [("penalties", "Penalties", "low", lambda x: x["pen_yds"],
-                           lambda x: f"{int(x['pen'])} for {int(x['pen_yds'])} yds", "yds")]
+                           lambda x: f"{int(x['pen'])} for {int(x['pen_yds'])}", "yds")]
     out = {key: [] for key in lines}
     for sid, label, better, value, display, kind in stats:
         vals = {key: value(line) for key, line in lines.items()}

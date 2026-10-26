@@ -61,13 +61,15 @@ export function BoxScore({ box, teams }: { box: Box; teams: Teams }) {
 }
 
 function Section({ sec }: { sec: BoxSection }) {
+  // Narrower columns when there are five, so names still have room.
+  const col = { width: sec.cols.length > 4 ? 44 : 50 };
   const avgKeys = Object.keys(sec.avgs).sort((a, b) => (a === '*' ? 1 : b === '*' ? -1 : a.localeCompare(b)));
   return (
     <View style={s.card}>
       <View style={[s.row, s.headRow]}>
         <Text style={[s.nameCol, s.secTitle]}>{sec.label}</Text>
         {sec.cols.map((c) => (
-          <Text key={c.id} style={[s.statCol, s.colHead]}>
+          <Text key={c.id} style={[s.statCol, col, s.colHead]}>
             {c.label}
           </Text>
         ))}
@@ -76,13 +78,13 @@ function Section({ sec }: { sec: BoxSection }) {
         const content = (pressed: boolean) => (
           <View style={[s.row, s.divider, pressed && s.pressed]}>
             <View style={s.nameCol}>
-              <Text style={[s.name, r.link && s.nameLink]} numberOfLines={1}>
+              <Text style={s.name} numberOfLines={2}>
                 {r.name}
               </Text>
               {r.pos ? <Text style={s.pos}>{r.pos}</Text> : null}
             </View>
             {r.cells.map((c, i) => (
-              <Text key={sec.cols[i].id} style={[s.statCol, s.cell, { color: pctColor(c.p) }]} numberOfLines={1} adjustsFontSizeToFit>
+              <Text key={sec.cols[i].id} style={[s.statCol, col, s.cell, { color: pctColor(c.p) }]} numberOfLines={1} adjustsFontSizeToFit>
                 {c.d}
               </Text>
             ))}
@@ -104,7 +106,7 @@ function Section({ sec }: { sec: BoxSection }) {
             {k === '*' ? 'NFL avg' : `${k} avg`}
           </Text>
           {sec.avgs[k].map((a, j) => (
-            <Text key={sec.cols[j].id} style={[s.statCol, s.avgCell]} numberOfLines={1} adjustsFontSizeToFit>
+            <Text key={sec.cols[j].id} style={[s.statCol, col, s.avgCell]} numberOfLines={1} adjustsFontSizeToFit>
               {a}
             </Text>
           ))}
@@ -187,7 +189,6 @@ const s = StyleSheet.create({
   nameCol: { flex: 1, paddingRight: 6 },
   statCol: { width: 50, textAlign: 'center' },
   name: { color: colors.text, fontSize: 14, fontWeight: '600' },
-  nameLink: { color: colors.text },
   pos: { color: colors.muted, fontSize: 11, marginTop: 1 },
   cell: { fontSize: 14, fontWeight: '700', fontVariant: ['tabular-nums'] },
   avgRow: { paddingVertical: 6, backgroundColor: 'rgba(255,255,255,0.03)' },
