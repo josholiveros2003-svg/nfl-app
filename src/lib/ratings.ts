@@ -1,7 +1,8 @@
 import { createContext, createElement, useCallback, useContext, useMemo, useState, type ReactNode } from 'react';
 import rankingSettings from '../../config/rankings.json';
 import settings from '../../config/ratings.json';
-import type { Rt } from './types';
+import { useAverages } from './data';
+import type { AverageBucket, AveragesDoc, Rt } from './types';
 
 // How the app turns the pipeline's rating ingredients into a 0-100 number.
 //
@@ -36,6 +37,8 @@ export function effectiveWeights(weights: number[]) {
 
 export type Breakdown = {
   rating: number;
+  /** The rating before rounding and the 1-99 limits (used for league averages). */
+  raw: number;
   /** Madden baseline. */
   baseline: number;
   /** How far this season's stats move it (before the other factors). */
@@ -70,6 +73,7 @@ export function breakdown(rt: Rt | null | undefined, weights: number[], influenc
   const total = rt.m + perf + moves.reduce((a, m) => a + (m.move ?? 0), 0) + (results ?? 0);
   return {
     rating: Math.round(clamp(total)),
+    raw: total,
     baseline: rt.m,
     stats: perf,
     perfShare: w[0],
@@ -158,4 +162,54 @@ export const useRatingWeights = () => useContext(WeightsContext);
 export function useRating(rt: Rt | null | undefined) {
   const { weights, influence } = useRatingWeights();
   return useMemo(() => breakdown(rt, weights, influence), [rt, weights, influence]);
+}
+
+// ---- League averages (public/data/averages.json, see pipeline/averages.py) ----
+
+/** group: the position for player ratings (e.g. "WR"), null for team ratings.
+ *  starters: the same average over starters only (players only). */
+export type LeagueAverage = {
+  rating: number;
+  count: number;
+  group: string | null;
+  starters?: { rating: number; count: number } | null;
+};
+
+/** "pos.WR.receiving" → "WR"; team keys → null. */
+const positionOf = (key: string) => (key.startsWith('pos.') ? key.split('.')[1] : null);
+
+/** Short label for who the average covers: "WR avg" or "NFL avg". */
+export const avgLabel = (avg: LeagueAverage) => `${avg.group ?? 'NFL'} avg`;
+
+/** Average rating of a peer group with the given slider settings: each bucket's average
+ *  ingredients give its exact average rating, weighted by how many are in the bucket. */
+function groupAverage(buckets: AverageBucket[], weights: number[], influence: number) {
+  let sum = 0;
+  let count = 0;
+  for (const b of buckets) {
+    const raw = breakdown({ m: b.m, g: b.g, res: b.res }, weights, influence)?.raw;
+    if (raw == null) continue;
+    sum += raw * b.n;
+    count += b.n;
+  }
+  return count ? { rating: Math.round(clamp(sum / count)), count } : null;
+}
+
+/** League average for a peer group (and, for players, the starters-only average). */
+export function leagueAverage(key: string, averages: AveragesDoc, weights: number[], influence = 1): LeagueAverage | null {
+  const all = averages[key] ? groupAverage(averages[key], weights, influence) : null;
+  if (!all) return null;
+  const st = averages[`${key}~starters`];
+  return { ...all, group: positionOf(key), starters: st ? groupAverage(st, weights, influence) : null };
+}
+
+/** The league average for whatever this rating is compared with (null if unknown). */
+export function useLeagueAverage(rt: Rt | null | undefined) {
+  const { weights, influence } = useRatingWeights();
+  const { data } = useAverages();
+  const key = rt?.a;
+  return useMemo(
+    () => (key && data ? leagueAverage(key, data, weights, influence) : null),
+    [key, data, weights, influence],
+  );
 }

@@ -10,7 +10,7 @@ import {
   type CompareNode,
   type CompareSide,
 } from '@/lib/compare';
-import { useRating } from '@/lib/ratings';
+import { avgLabel, useLeagueAverage, useRating, type LeagueAverage } from '@/lib/ratings';
 import { colors, ordinal } from '@/lib/theme';
 import { sized } from '@/lib/images';
 
@@ -32,6 +32,8 @@ export function Comparison({ a, b, path, hrefFor }: Props) {
   const rows = pairChildren(nodeA, nodeB);
   const ratingA = useRating(a.tree.rt)?.rating;
   const ratingB = useRating(b.tree.rt)?.rating;
+  const avgA = useLeagueAverage(a.tree.rt);
+  const avgB = useLeagueAverage(b.tree.rt);
   const overall = ratingAdvantage(ratingA, ratingB);
   const crumbs = ['Overall', ...path.map((_, i) => (nodeAt(a.tree, path.slice(0, i + 1)) ?? nodeAt(b.tree, path.slice(0, i + 1)))?.label ?? '')];
 
@@ -39,9 +41,9 @@ export function Comparison({ a, b, path, hrefFor }: Props) {
     <View style={{ gap: 10 }}>
       {/* Header: who's being compared, with their overall ratings. */}
       <View style={s.header}>
-        <SideHeader side={a} rating={ratingA} adv={overall} which="a" />
+        <SideHeader side={a} rating={ratingA} avg={avgA} adv={overall} which="a" />
         <Text style={s.vs}>vs</Text>
-        <SideHeader side={b} rating={ratingB} adv={overall} which="b" />
+        <SideHeader side={b} rating={ratingB} avg={avgB} adv={overall} which="b" />
       </View>
 
       {/* Breadcrumb: Overall › Offense › Passing (each step tappable). */}
@@ -87,7 +89,7 @@ export function Comparison({ a, b, path, hrefFor }: Props) {
   );
 }
 
-function SideHeader({ side, rating, adv, which }: { side: CompareSide; rating?: number; adv: Advantage; which: 'a' | 'b' }) {
+function SideHeader({ side, rating, avg, adv, which }: { side: CompareSide; rating?: number; avg: LeagueAverage | null; adv: Advantage; which: 'a' | 'b' }) {
   const sh = shade(adv, which);
   return (
     <Link href={side.href as Href} asChild>
@@ -103,6 +105,16 @@ function SideHeader({ side, rating, adv, which }: { side: CompareSide; rating?: 
         </Text>
         <Text style={[s.sideRating, sh.dark && s.darkText]}>{rating ?? '—'}</Text>
         <Text style={[s.sideLabel, sh.dark && s.darkSub]}>OVERALL</Text>
+        {avg ? (
+          <Text style={[s.sideSub, sh.dark && s.darkSub]} numberOfLines={1}>
+            {avgLabel(avg)} {avg.rating}
+          </Text>
+        ) : null}
+        {avg?.starters ? (
+          <Text style={[s.sideSub, sh.dark && s.darkSub]} numberOfLines={1}>
+            Starters avg {avg.starters.rating}
+          </Text>
+        ) : null}
       </Pressable>
     </Link>
   );
@@ -112,17 +124,19 @@ function SideHeader({ side, rating, adv, which }: { side: CompareSide; rating?: 
 function RatingRow({ label, a, b, chevron, strong }: { label: string; a: CompareNode | null; b: CompareNode | null; chevron?: boolean; strong?: boolean }) {
   const ra = useRating(a?.rt);
   const rb = useRating(b?.rt);
+  const avgA = useLeagueAverage(ra ? a?.rt : null);
+  const avgB = useLeagueAverage(rb ? b?.rt : null);
   const adv = ratingAdvantage(ra?.rating, rb?.rating);
   return (
     <View style={[s.row, strong && s.strongRow]}>
-      <Cell adv={adv} which="a" main={ra?.rating != null ? String(ra.rating) : '—'} sub={ra?.limited ? 'LTD' : undefined} />
+      <Cell adv={adv} which="a" main={ra?.rating != null ? String(ra.rating) : '—'} sub={ra?.limited ? 'LTD' : undefined} avg={avgA} />
       <View style={s.labelBox}>
         <Text style={[s.label, strong && { fontWeight: '800' }]} numberOfLines={2}>
           {label}
         </Text>
         {chevron ? <Text style={s.more}>Tap for details ›</Text> : null}
       </View>
-      <Cell adv={adv} which="b" main={rb?.rating != null ? String(rb.rating) : '—'} sub={rb?.limited ? 'LTD' : undefined} />
+      <Cell adv={adv} which="b" main={rb?.rating != null ? String(rb.rating) : '—'} sub={rb?.limited ? 'LTD' : undefined} avg={avgB} />
     </View>
   );
 }
@@ -131,13 +145,15 @@ function RatingRow({ label, a, b, chevron, strong }: { label: string; a: Compare
 function StatRow({ label, a, b }: { label: string; a: CompareNode | null; b: CompareNode | null }) {
   const ra = useRating(a?.rt);
   const rb = useRating(b?.rt);
+  const avgA = useLeagueAverage(ra ? a?.rt : null);
+  const avgB = useLeagueAverage(rb ? b?.rt : null);
   const adv = statAdvantage(a?.stat, b?.stat);
   const sub = (n: CompareNode | null, r?: number) =>
     [n?.stat?.rank != null ? ordinal(n.stat.rank) : null, r != null ? `${r} rtg` : null].filter(Boolean).join(' · ') || undefined;
   const lowerBetter = (a?.stat ?? b?.stat)?.better === 'low';
   return (
     <View style={s.row}>
-      <Cell adv={adv} which="a" main={a?.stat?.display?.split('  ')[0] ?? '—'} sub={sub(a, ra?.rating)} small />
+      <Cell adv={adv} which="a" main={a?.stat?.display?.split('  ')[0] ?? '—'} sub={sub(a, ra?.rating)} avg={avgA} small />
       <View style={s.labelBox}>
         <Text style={s.label} numberOfLines={3}>
           {label}
@@ -145,12 +161,12 @@ function StatRow({ label, a, b }: { label: string; a: CompareNode | null; b: Com
         {lowerBetter ? <Text style={s.more}>lower is better</Text> : null}
         {!(a?.stat ?? b?.stat)?.better ? <Text style={s.more}>info only</Text> : null}
       </View>
-      <Cell adv={adv} which="b" main={b?.stat?.display?.split('  ')[0] ?? '—'} sub={sub(b, rb?.rating)} small />
+      <Cell adv={adv} which="b" main={b?.stat?.display?.split('  ')[0] ?? '—'} sub={sub(b, rb?.rating)} avg={avgB} small />
     </View>
   );
 }
 
-function Cell({ adv, which, main, sub, small }: { adv: Advantage; which: 'a' | 'b'; main: string; sub?: string; small?: boolean }) {
+function Cell({ adv, which, main, sub, avg, small }: { adv: Advantage; which: 'a' | 'b'; main: string; sub?: string; avg?: LeagueAverage | null; small?: boolean }) {
   const sh = shade(adv, which);
   return (
     <View style={[s.cell, { backgroundColor: sh.backgroundColor }]}>
@@ -160,6 +176,17 @@ function Cell({ adv, which, main, sub, small }: { adv: Advantage; which: 'a' | '
       {sub ? (
         <Text style={[s.cellSub, sh.dark && s.darkSub]} numberOfLines={1}>
           {sub}
+        </Text>
+      ) : null}
+      {avg ? (
+        <Text style={[s.cellSub, sh.dark && s.darkSub]} numberOfLines={1}>
+          {avgLabel(avg)} {avg.rating}
+          {small ? ' rtg' : ''}
+        </Text>
+      ) : null}
+      {avg?.starters ? (
+        <Text style={[s.cellSub, sh.dark && s.darkSub]} numberOfLines={1}>
+          Starters {avg.starters.rating}
         </Text>
       ) : null}
     </View>

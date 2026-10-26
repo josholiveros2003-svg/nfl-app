@@ -13,7 +13,14 @@ export type Rt = {
   k?: number;
   /** Teams only: rating points from wins and losses in context. */
   res?: number;
+  /** Peer group for the league average, e.g. "team.offense" or "pos.WR.receiving" (see averages.json). */
+  a?: string;
 };
+
+/** public/data/averages.json: per peer group, the average rating ingredients of each bucket of
+ *  peers that share the same available factors (n = how many). See pipeline/averages.py. */
+export type AverageBucket = { n: number; m: number; g: (number | null)[]; res?: number };
+export type AveragesDoc = Record<string, AverageBucket[]>;
 
 /** "Why" text for the opponent / injury / recent-form factors. */
 export type RatingContext = { opp?: string; inj?: string; recent?: string; mkt?: string };

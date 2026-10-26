@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { GameDoc, PlayerDoc, PlayerIndexEntry, RankingsDoc, ScheduleDoc, TeamDoc, TeamsIndex, WinProbReport } from './types';
+import type { AveragesDoc, GameDoc, PlayerDoc, PlayerIndexEntry, RankingsDoc, ScheduleDoc, TeamDoc, TeamsIndex, WinProbReport } from './types';
 
 // Where the site lives (e.g. "/nfl-app" on GitHub Pages, "" locally).
 const BASE = process.env.EXPO_PUBLIC_BASE_URL ?? '';
@@ -44,3 +44,4 @@ export const useGame = (id?: string) => useJson<GameDoc>(id ? `games/${id}.json`
 export const useWinProbReport = () => useJson<WinProbReport>('winprob_report.json');
 export const useRankings = () => useJson<RankingsDoc>('rankings.json');
 export const useSchedule = () => useJson<ScheduleDoc>('schedule.json');
+export const useAverages = () => useJson<AveragesDoc>('averages.json');
