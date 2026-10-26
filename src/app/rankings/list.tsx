@@ -40,7 +40,7 @@ export default function RankingList() {
   const { title, intro, rows, limitedRows, avg } = useMemo(() => {
     const empty = { title: 'Rankings', intro: '', rows: [] as Row[], limitedRows: [] as Row[], avg: null as LeagueAverage | null };
     const avgFor = (key?: string) =>
-      key && averages.data?.[key] ? leagueAverage(key, averages.data[key], weights, influence) : null;
+      key && averages.data ? leagueAverage(key, averages.data, weights, influence) : null;
     if (!rankings.data || !teams.data) return empty;
     const league = rankings.data.league.teams;
     if (type === 'league') {
@@ -119,6 +119,12 @@ export default function RankingList() {
             <Text style={s.avgLine}>
               League average ({avg.group ? `all ${avg.count} ${avg.group}s` : 'all 32 teams'}):{' '}
               <Text style={{ color: ratingColor(avg.rating), fontWeight: '800' }}>{avg.rating}</Text>
+              {avg.starters ? (
+                <>
+                  {' · '}starters ({avg.starters.count}):{' '}
+                  <Text style={{ color: ratingColor(avg.starters.rating), fontWeight: '800' }}>{avg.starters.rating}</Text>
+                </>
+              ) : null}
             </Text>
           ) : null}
           <List rows={rows} />

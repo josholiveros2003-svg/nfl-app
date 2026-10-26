@@ -36,7 +36,11 @@ export function RatingBadge({ rt, size = 'md' }: { rt: Rt | null | undefined; si
       <View
         style={[s.badge, { width: dims.box, height: dims.box, borderColor: c, backgroundColor: b ? `${c}22` : 'transparent' }]}
         accessibilityLabel={
-          b ? `Rating ${b.rating}${b.limited ? ', limited sample' : ''}${avg ? `, ${avgLabel(avg)} ${avg.rating}` : ''}` : 'No rating'
+          b
+            ? `Rating ${b.rating}${b.limited ? ', limited sample' : ''}${avg ? `, ${avgLabel(avg)} ${avg.rating}` : ''}${
+                avg?.starters ? `, starters ${avg.starters.rating}` : ''
+              }`
+            : 'No rating'
         }
       >
         <Text style={[s.badgeText, { color: c, fontSize: dims.font }]}>{b ? b.rating : '—'}</Text>
@@ -45,6 +49,11 @@ export function RatingBadge({ rt, size = 'md' }: { rt: Rt | null | undefined; si
       {avg ? (
         <Text style={[s.avg, { fontSize: dims.avg, marginTop: b?.limited ? 8 : 3 }]} numberOfLines={1}>
           avg {avg.rating}
+        </Text>
+      ) : null}
+      {avg?.starters ? (
+        <Text style={[s.avg, { fontSize: dims.avg }]} numberOfLines={1}>
+          starters {avg.starters.rating}
         </Text>
       ) : null}
     </View>
@@ -191,6 +200,14 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
                   color={b.rating > avg.rating ? colors.good : b.rating < avg.rating ? colors.bad : colors.muted}
                 />
               ) : null}
+              {avg?.starters ? (
+                <Row
+                  label={`Starter average (${avg.group}s)`}
+                  detail={`Average of the ${avg.starters.count} starting ${avg.group}s with this rating, with your Settings`}
+                  value={String(avg.starters.rating)}
+                  color={b.rating > avg.starters.rating ? colors.good : b.rating < avg.starters.rating ? colors.bad : colors.muted}
+                />
+              ) : null}
             </View>
 
             {info.results?.games.length ? (
@@ -298,6 +315,7 @@ function PartRow({ part, share }: { part: RatingPart; share: number }) {
       <View style={{ minWidth: 36, alignItems: 'flex-end' }}>
         <Text style={[s.rowValue, { color: ratingColor(b?.rating) }]}>{b?.rating ?? '—'}</Text>
         {avg ? <Text style={s.avg}>avg {avg.rating}</Text> : null}
+        {avg?.starters ? <Text style={s.avg}>starters {avg.starters.rating}</Text> : null}
       </View>
     </View>
   );

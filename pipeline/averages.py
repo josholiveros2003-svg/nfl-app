@@ -5,6 +5,7 @@ Every rating object (rt) gets a key "a" naming who it's compared with:
   team, team.<unit>, team.<unit>.<category>, team.<unit>.<category>.<stat>   all 32 teams
   pos.<group>, pos.<group>.<category>, pos.<group>.<category>.<stat>        every rated player at that position
   rank.<list id>                                                            all 32 teams (position-group lists)
+Player groups also get a "<key>~starters" group with only the starters at that position.
 
 The app turns rating ingredients into a 0-100 number with the Settings sliders, so one stored
 average would go stale as soon as a slider moves. Instead, public/data/averages.json stores the
@@ -16,18 +17,24 @@ blending each bucket's averages and weighting by head count gives the exact aver
 from __future__ import annotations
 
 
+STARTERS = "~starters"
+
+
 class Averages:
     def __init__(self):
         self.groups: dict[str, list[dict]] = {}
         self.seen: set[int] = set()
 
-    def add(self, key: str, rt: dict | None):
-        """Tag one rating with its peer group (each rating object counts once)."""
+    def add(self, key: str, rt: dict | None, starter: bool = False):
+        """Tag one rating with its peer group (each rating object counts once). Starters also
+        count in the starters-only group."""
         if not rt or rt.get("m") is None or not rt.get("g") or id(rt) in self.seen:
             return
         self.seen.add(id(rt))
         rt["a"] = key
         self.groups.setdefault(key, []).append(rt)
+        if starter:
+            self.groups.setdefault(key + STARTERS, []).append(rt)
 
     def add_team(self, team_rt: dict | None, unit_ratings: dict, units: dict):
         self.add("team", team_rt)
@@ -40,12 +47,12 @@ class Averages:
                     self.add(f"team.{u}.{cat['id']}.{s['id']}", s.get("rt"))
 
     def add_player(self, doc: dict):
-        g = doc["group"]
-        self.add(f"pos.{g}", doc.get("rt"))
+        g, st = doc["group"], bool(doc.get("starter"))
+        self.add(f"pos.{g}", doc.get("rt"), st)
         for cat in doc["categories"]:
-            self.add(f"pos.{g}.{cat['id']}", cat.get("rt"))
+            self.add(f"pos.{g}.{cat['id']}", cat.get("rt"), st)
             for s in cat["stats"]:
-                self.add(f"pos.{g}.{cat['id']}.{s['id']}", s.get("rt"))
+                self.add(f"pos.{g}.{cat['id']}.{s['id']}", s.get("rt"), st)
 
     def to_json(self) -> dict:
         """{key: [{n, m, g, res?}, ...]}, one entry per bucket."""

@@ -110,6 +110,11 @@ function SideHeader({ side, rating, avg, adv, which }: { side: CompareSide; rati
             {avgLabel(avg)} {avg.rating}
           </Text>
         ) : null}
+        {avg?.starters ? (
+          <Text style={[s.sideSub, sh.dark && s.darkSub]} numberOfLines={1}>
+            Starters avg {avg.starters.rating}
+          </Text>
+        ) : null}
       </Pressable>
     </Link>
   );
@@ -177,6 +182,11 @@ function Cell({ adv, which, main, sub, avg, small }: { adv: Advantage; which: 'a
         <Text style={[s.cellSub, sh.dark && s.darkSub]} numberOfLines={1}>
           {avgLabel(avg)} {avg.rating}
           {small ? ' rtg' : ''}
+        </Text>
+      ) : null}
+      {avg?.starters ? (
+        <Text style={[s.cellSub, sh.dark && s.darkSub]} numberOfLines={1}>
+          Starters {avg.starters.rating}
         </Text>
       ) : null}
     </View>
