@@ -189,6 +189,61 @@ def snap_totals(s: pd.DataFrame) -> pd.DataFrame:
     return agg
 
 
+# --------------------------------------------------------------------------
+# Games cut short by injury
+# --------------------------------------------------------------------------
+# A player who gets hurt in the 2nd quarter has a "game" with almost no stats, which drags down
+# every per-game number his rating uses. For the rating (not the stats shown), such a game counts
+# as the share of a normal game he actually played.
+SHORT_GAME = 0.75     # on the field for less than 75% of his usual share of snaps...
+HURT_LOOKAHEAD = 2    # ...and on the injury report or IR that week or the next two (covers byes)
+MIN_USUAL_SHARE = 0.3  # part-time players' snap counts swing too much to tell
+
+
+def hurt_weeks(injuries: pd.DataFrame, weekly_rosters: pd.DataFrame) -> set:
+    """(player id, week) pairs where a player was on the injury report (any status) or on IR."""
+    pairs = set(zip(injuries.gsis_id, injuries.week)) if len(injuries) else set()
+    if len(weekly_rosters):
+        res = weekly_rosters[weekly_rosters.status == "RES"]
+        pairs |= set(zip(res.gsis_id, res.week))
+    return {(p, int(w)) for p, w in pairs if isinstance(p, str) and pd.notna(w)}
+
+
+def injury_shortened(snap_rows: pd.DataFrame, hurt: set) -> dict:
+    """{(player id, game id): share of a normal game played} for games cut short by injury."""
+    s = snap_rows[snap_rows.played].copy()
+    s["share"] = s[["offense_pct", "defense_pct"]].max(axis=1)
+    s = s[s.share > 0]
+    usual = s.groupby("gsis_id").share.quantile(0.75)
+    out = {}
+    for r in s.itertuples():
+        u = usual.get(r.gsis_id, 0)
+        if u < MIN_USUAL_SHARE or r.share >= SHORT_GAME * u:
+            continue
+        if any((r.gsis_id, int(r.week) + k) in hurt for k in range(HURT_LOOKAHEAD + 1)):
+            out[(r.gsis_id, r.game_id)] = max(0.1, r.share / u)
+    return out
+
+
+def _rating_view(p: dict, rows: pd.DataFrame | None, short: dict, pid: str, side: str) -> tuple[dict, int]:
+    """A copy of a player's numbers where injury-shortened games count as partial games:
+    fewer games to divide by, and snap share from his full games. Returns (numbers, games cut short)."""
+    if rows is None or not len(rows):
+        return p, 0
+    cut = [(gid, short[(pid, gid)]) for gid in rows.game_id if (pid, gid) in short]
+    if not cut:
+        return p, 0
+    q = dict(p)
+    lost = sum(1 - f for _, f in cut)
+    q["games"] = max(1.0, p["games"] - lost)
+    q["snap_games"] = max(1.0, (p.get("snap_games") or 0) - lost)
+    if side in ("offense", "defense"):
+        full = rows[(rows[f"{side}_snaps"] > 0) & ~rows.game_id.isin([g for g, _ in cut])]
+        if len(full):
+            q[f"{side}_pct"] = float(full[f"{side}_pct"].mean())
+    return q, len(cut)
+
+
 def depth_info(depth: pd.DataFrame) -> dict:
     """Best depth-chart spot for each player, from each team's latest depth chart."""
     d = depth[depth.dt == depth.groupby("team").dt.transform("max")].dropna(subset=["gsis_id"]).copy()
@@ -431,13 +486,16 @@ def _team_stats_for_ol(team_units: dict, team: str | None, cat: str):
     return out
 
 
-def season_players(weekly, snaps, roster, team_games: dict, team_units: dict, ctx=None):
+def season_players(weekly, snaps, roster, team_games: dict, team_units: dict, ctx=None, hurt: set | None = None):
     """Every player's stats for one season, split into the categories that fit his position.
-    Used for this season's pages and for last season's data that the ratings learn from."""
+    Used for this season's pages and for last season's data that the ratings learn from.
+    hurt: (player id, week) pairs on the injury report or IR, to spot games cut short by injury."""
     w = weekly[weekly.season_type == "REG"]
     totals = season_totals(w)
     snap_rows = map_snaps(snaps, roster)
     snap = snap_totals(snap_rows)
+    short = injury_shortened(snap_rows, hurt or set())
+    rows_of = {pid: g for pid, g in snap_rows.groupby("gsis_id")}
     median_games = float(pd.Series(list(team_games.values())).median()) if team_games else 1.0
 
     # Every game each player appeared in, as (week, team, opponent), for context + recent form.
@@ -485,6 +543,11 @@ def season_players(weekly, snaps, roster, team_games: dict, team_units: dict, ct
         p["snaps"] = p.get(f"{side}_snaps") or 0
         pr = _stats_dict(_row(totals_recent, pid), _row(snap_recent, pid))
         pr["snaps"] = pr.get(f"{side}_snaps") or 0
+        # What the rating uses: the same numbers, with games cut short by injury counted partially.
+        mine = rows_of.get(pid)
+        p_rate, n_short = _rating_view(p, mine, short, pid, side)
+        recent_rows = None if mine is None else mine[[(pid, g) in recent_keys for g in mine.game_id]]
+        pr_rate, _ = _rating_view(pr, recent_rows, short, pid, side)
 
         core, optional = CATEGORIES[group]
         cats = list(core[:-1])
@@ -519,7 +582,8 @@ def season_players(weekly, snaps, roster, team_games: dict, team_units: dict, ct
                 f"{GROUP_PLURAL[group]} (has {int(have):,}). Until he plays more, his rating here "
                 f"stays close to his Madden rating.",
                 "stats": stats,
-                "_recent": None if team_based else build_stats(cat, pr, side),
+                "_rate": None if team_based else build_stats(cat, p_rate, side),
+                "_recent": None if team_based else build_stats(cat, pr_rate, side),
                 "_have": have,
                 "_bar": per_team_game,
             })
@@ -538,23 +602,34 @@ def season_players(weekly, snaps, roster, team_games: dict, team_units: dict, ct
         else:
             z, texts = {"opp": 0.0, "inj": 0.0}, None
 
+        if n_short:
+            for cat in categories:
+                for st in cat["stats"]:
+                    if st["id"] == "games":
+                        st["display"] = f"{int(st['value'])} ({n_short} cut short by injury)"
+            texts = dict(texts or {})
+            texts["short"] = (f"{n_short} game{'s' if n_short != 1 else ''} cut short by injury "
+                              f"count{'s' if n_short == 1 else ''} as partial games here, so missed snaps "
+                              f"don't drag down his per-game numbers.")
+
         players[pid] = {"id": pid, "group": group, "pos": pos, "team": team, "_info": info, "_tot": tot,
-                        "_onRoster": pid in on_roster, "_p": p, "_pr": pr, "_z": z, "context": texts,
-                        "categories": categories}
+                        "_onRoster": pid in on_roster, "_p": p, "_pr": pr, "_prate": p_rate, "_prrate": pr_rate,
+                        "_z": z, "context": texts, "categories": categories}
     return players
 
 
 def training_rows(players: dict, season: int, madden: dict) -> list:
     """Players' stats paired with their Madden rating, for learn.py."""
     return [{"id": pid, "season": season, "group": pl["group"], "M": madden.get(pid),
-             "games": pl["_p"]["games"], "cats": {c["id"]: c for c in pl["categories"]}}
+             "games": pl["_prate"]["games"],
+             "cats": {c["id"]: ({**c, "stats": c["_rate"]} if c.get("_rate") else c) for c in pl["categories"]}}
             for pid, pl in players.items()]
 
 
 def build_players(weekly, snaps, depth, roster, team_info: dict, team_games: dict, today: date, ctx,
-                  team_units: dict, season: int, madden: dict, last_season_rows: list):
+                  team_units: dict, season: int, madden: dict, last_season_rows: list, hurt: set | None = None):
     """Returns (player_docs: {id: doc}, rosters: {team: [sections]}, model)."""
-    players = season_players(weekly, snaps, roster, team_games, team_units, ctx)
+    players = season_players(weekly, snaps, roster, team_games, team_units, ctx, hurt)
     depths = depth_info(depth)
 
     # Learn how stats connect to Madden (last season's full stats + this season so far).
@@ -717,11 +792,12 @@ def _rate_players(players: dict, model, season: int, madden: dict):
             share = have / (have + bar * half) if have else 0.0
             learned = model.weights.get((pl["group"], cat["id"]), {})
             recent = {s["id"]: s for s in cat["_recent"]} if cat["_recent"] else {}
+            rate = {s["id"]: s for s in cat["_rate"]} if cat["_rate"] else {}
             for s in cat["stats"]:
                 tb = cat["teamBased"]
-                pv = perf_value(s, pl["_p"]["games"], tb)
+                pv = perf_value(rate.get(s["id"], s), pl["_prate"]["games"], tb)
                 rs = recent.get(s["id"])
-                rv = None if tb or rs is None else perf_value(rs, pl["_pr"]["games"])
+                rv = None if tb or rs is None else perf_value(rs, pl["_prrate"]["games"])
                 s.pop("_team_rt", None)
                 s["rt"] = stat_rating(model, season, pl["group"], cat["id"], s, pv, rv, M, share,
                                       pl["_z"]["opp"], pl["_z"]["inj"], nm)

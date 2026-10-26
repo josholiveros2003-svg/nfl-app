@@ -23,7 +23,11 @@ export type AverageBucket = { n: number; m: number; g: (number | null)[]; res?: 
 export type AveragesDoc = Record<string, AverageBucket[]>;
 
 /** "Why" text for the opponent / injury / recent-form factors. */
-export type RatingContext = { opp?: string; inj?: string; recent?: string; mkt?: string };
+export type RatingContext = {
+  opp?: string; inj?: string; recent?: string; mkt?: string;
+  /** Players: games cut short by injury that count as partial games. */
+  short?: string;
+};
 
 export type UnitId = 'offense' | 'defense' | 'special';
 
