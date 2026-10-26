@@ -32,7 +32,7 @@ from learn import fit, fit_groups, repool, set_trust
 from winprob import FEATURES as WP_FEATURES, LABELS as WP_LABELS, SETTINGS as WP_SETTINGS
 from winprob import backtest, game_features, last_season_margins, phi, predict, team_results, unavailable_by_week
 from madden import load_madden
-from players import CATEGORIES, GROUP_OF, build_players, season_players, training_rows
+from players import CATEGORIES, GROUP_OF, build_players, hurt_weeks, season_players, training_rows
 from ratings import MADDEN, RECENT_GAMES, blend_default, rate_teams, strip_fmt, team_baselines, weights_for
 from ratings import SETTINGS as RATINGS_SETTINGS
 from rankings import league_components, records_before, unit_lists
@@ -1016,7 +1016,8 @@ def main():
     strip_fmt(all_units)
     strip_fmt(last_units)
 
-    last_players = season_players(last["weekly"], last["snaps"], last["roster"], last_gp, last_units)
+    last_players = season_players(last["weekly"], last["snaps"], last["roster"], last_gp, last_units,
+                                  hurt=hurt_weeks(last["injuries"], last["weekly_rosters"]))
     last_rows = training_rows(last_players, season - 1, madden)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -1032,7 +1033,8 @@ def main():
                      "color2": teams.loc[t].team_color2, "logo": teams.loc[t].team_logo_espn} for t in team_ids}
     player_docs, rosters, player_model = build_players(extra["weekly"], extra["snaps"], extra["depth"], roster,
                                                        team_info, games_played, date.today(), ctx, all_units,
-                                                       season, madden, last_rows)
+                                                       season, madden, last_rows,
+                                                       hurt_weeks(extra["injuries"], extra["weekly_rosters"]))
     (OUT_DIR / "ratings_model.json").write_text(json.dumps({
         "teams": model_report(team_model, unit_cats),
         "players": model_report(player_model, {g: core + opt for g, (core, opt) in CATEGORIES.items()}),

@@ -157,7 +157,7 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
               />
               <Row
                 label="This season's stats"
-                detail={`Compared with what a ${Math.round(b.baseline)} normally produces · stats count ${pct(b.statShare)} here${b.limited ? ' (limited sample)' : ''} · ${pct(b.perfShare)} weight`}
+                detail={`Compared with what a ${Math.round(b.baseline)} normally produces · stats count ${pct(b.statShare)} here${b.limited ? ' (limited sample)' : ''} · ${pct(b.perfShare)} weight${info.context?.short ? ` · ${info.context.short}` : ''}`}
                 value={fmtMove(b.stats)}
                 color={b.stats >= 0.05 ? colors.good : b.stats <= -0.05 ? colors.bad : colors.muted}
               />
