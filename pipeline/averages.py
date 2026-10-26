@@ -58,10 +58,10 @@ class Averages:
             rows = []
             for (nulls, has_res), b in buckets.items():
                 n = len(b)
-                row = {"n": n, "m": round(sum(r["m"] for r in b) / n, 2),
-                       "g": [None if nulls[i] else round(sum(r["g"][i] for r in b) / n, 2) for i in range(len(nulls))]}
+                row = {"n": n, "m": round(sum(r["m"] for r in b) / n, 3),
+                       "g": [None if nulls[i] else round(sum(r["g"][i] for r in b) / n, 3) for i in range(len(nulls))]}
                 if has_res:
-                    row["res"] = round(sum(r["res"] for r in b) / n, 2)
+                    row["res"] = round(sum(r["res"] for r in b) / n, 3)
                 rows.append(row)
             out[key] = rows
         return out
