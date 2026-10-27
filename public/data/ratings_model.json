@@ -281,10 +281,10 @@
      "learned": true,
      "weights": {
       "snaps": 0.198,
-      "snaps_pg": 0.306,
+      "snaps_pg": 0.305,
       "snap_share": 0.3,
-      "penalties": 0.066,
-      "penalty_yds": 0.13
+      "penalties": 0.07,
+      "penalty_yds": 0.127
      }
     }
    }
@@ -342,11 +342,11 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.17,
-      "snaps_pg": 0.273,
-      "snap_share": 0.348,
+      "snaps": 0.171,
+      "snaps_pg": 0.274,
+      "snap_share": 0.346,
       "penalties": 0.05,
-      "penalty_yds": 0.159
+      "penalty_yds": 0.16
      }
     },
     "returns": {
@@ -402,7 +402,7 @@
      "weights": {
       "snaps": 0.171,
       "snaps_pg": 0.276,
-      "snap_share": 0.34,
+      "snap_share": 0.339,
       "penalties": 0.05,
       "penalty_yds": 0.163
      }
@@ -469,14 +469,14 @@
      }
     },
     "playing_time": {
-     "r2": 0.21,
+     "r2": 0.2,
      "learned": true,
      "weights": {
-      "snaps": 0.187,
-      "snaps_pg": 0.292,
-      "snap_share": 0.324,
+      "snaps": 0.188,
+      "snaps_pg": 0.293,
+      "snap_share": 0.323,
       "penalties": 0.05,
-      "penalty_yds": 0.146
+      "penalty_yds": 0.147
      }
     },
     "rushing": {
@@ -513,11 +513,11 @@
     ],
     [
      "Run Blocking: Team yards per carry",
-     0.63
+     0.64
     ],
     [
      "Playing Time: Snap share",
-     0.52
+     0.48
     ]
    ],
    "categories": {
@@ -548,7 +548,7 @@
       "snaps_pg": 0.294,
       "snap_share": 0.3,
       "penalties": 0.104,
-      "penalty_yds": 0.109
+      "penalty_yds": 0.11
      }
     }
    }
@@ -601,8 +601,8 @@
      "learned": true,
      "weights": {
       "snaps": 0.178,
-      "snaps_pg": 0.279,
-      "snap_share": 0.318,
+      "snaps_pg": 0.28,
+      "snap_share": 0.317,
       "penalties": 0.05,
       "penalty_yds": 0.175
      }
@@ -673,7 +673,7 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.158,
+      "snaps": 0.159,
       "snaps_pg": 0.26,
       "snap_share": 0.38,
       "penalties": 0.058,
@@ -729,8 +729,8 @@
      "learned": true,
      "weights": {
       "snaps": 0.173,
-      "snaps_pg": 0.279,
-      "snap_share": 0.319,
+      "snaps_pg": 0.28,
+      "snap_share": 0.318,
       "penalties": 0.121,
       "penalty_yds": 0.109
      }
@@ -794,8 +794,8 @@
      "learned": true,
      "weights": {
       "snaps_pg": 0.1,
-      "snap_share": 0.782,
-      "penalties": 0.068,
+      "snap_share": 0.781,
+      "penalties": 0.069,
       "penalty_yds": 0.05
      }
     }
