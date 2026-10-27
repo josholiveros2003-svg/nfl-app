@@ -34,15 +34,15 @@
   },
   "modelWithoutMarket": {
    "games": 377,
-   "correct": 238,
-   "accuracy": 63.1,
-   "brier": 0.2264,
+   "correct": 237,
+   "accuracy": 62.9,
+   "brier": 0.2265,
    "calibration": [
     {
      "band": "50-60%",
      "games": 191,
      "predicted": 54.8,
-     "actual": 54.5
+     "actual": 53.9
     },
     {
      "band": "60-70%",
@@ -146,15 +146,15 @@
   },
   "modelWithoutMarket": {
    "games": 271,
-   "correct": 175,
-   "accuracy": 64.6,
+   "correct": 174,
+   "accuracy": 64.2,
    "brier": 0.2194,
    "calibration": [
     {
      "band": "50-60%",
      "games": 143,
      "predicted": 54.6,
-     "actual": 55.2
+     "actual": 54.5
     },
     {
      "band": "60-70%",
@@ -260,7 +260,7 @@
    "games": 106,
    "correct": 63,
    "accuracy": 59.4,
-   "brier": 0.2443,
+   "brier": 0.2444,
    "calibration": [
     {
      "band": "50-60%",
@@ -336,14 +336,14 @@
   }
  },
  "fittedWeights": {
-  "home": 1.577,
+  "home": 1.575,
   "offense": 0.281,
-  "defense": 0.006,
-  "special": -0.03,
+  "defense": 0.005,
+  "special": -0.029,
   "form": 0.122,
-  "adjusted": 0.189,
-  "lastSeason": 0.564,
-  "injuries": 1.202
+  "adjusted": 0.19,
+  "lastSeason": 0.563,
+  "injuries": 1.201
  },
  "fittedMarginSD": 12.52,
  "calibratedMarginSD": 12.0,
@@ -351,8 +351,8 @@
  "marginSDForMarketWeight": 12.0,
  "marketBlendCurve": {
   "0.00": {
-   "accuracy": 63.1,
-   "brier": 0.2264
+   "accuracy": 62.9,
+   "brier": 0.2265
   },
   "0.05": {
    "accuracy": 62.6,
@@ -364,7 +364,7 @@
   },
   "0.15": {
    "accuracy": 62.9,
-   "brier": 0.2242
+   "brier": 0.2243
   },
   "0.20": {
    "accuracy": 62.9,
@@ -384,15 +384,15 @@
   },
   "0.40": {
    "accuracy": 63.4,
-   "brier": 0.2211
+   "brier": 0.2212
   },
   "0.45": {
    "accuracy": 64.2,
-   "brier": 0.2206
+   "brier": 0.2207
   },
   "0.50": {
    "accuracy": 63.9,
-   "brier": 0.2201
+   "brier": 0.2202
   },
   "0.55": {
    "accuracy": 64.2,
@@ -408,7 +408,7 @@
   },
   "0.70": {
    "accuracy": 64.5,
-   "brier": 0.2186
+   "brier": 0.2187
   },
   "0.75": {
    "accuracy": 64.5,
@@ -420,7 +420,7 @@
   },
   "0.85": {
    "accuracy": 65.0,
-   "brier": 0.2179
+   "brier": 0.218
   },
   "0.90": {
    "accuracy": 65.0,
