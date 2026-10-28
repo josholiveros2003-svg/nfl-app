@@ -101,7 +101,7 @@
     ],
     [
      "pass_defense: QB hits",
-     0.52
+     0.53
     ]
    ],
    "categories": {
@@ -119,11 +119,11 @@
      "learned": true,
      "weights": {
       "cmp_pct": 0.285,
-      "net_ypa": 0.146,
+      "net_ypa": 0.145,
       "pass_td": 0.125,
       "ints": 0.075,
       "sack_rate": 0.075,
-      "qb_hits": 0.129,
+      "qb_hits": 0.13,
       "epa_db": 0.165
      }
     },
@@ -559,19 +559,19 @@
    "topStats": [
     [
      "Playing Time: Snap share",
-     2.59
+     2.6
     ],
     [
      "Pass Rush: QB hits",
-     1.78
+     1.81
     ],
     [
      "Tackling: Solo tackles",
-     0.52
+     0.54
     ],
     [
      "Tackling: Forced fumbles",
-     0.36
+     0.35
     ]
    ],
    "categories": {
@@ -580,8 +580,8 @@
      "learned": true,
      "weights": {
       "sacks": 0.25,
-      "qb_hits": 0.421,
-      "tfl": 0.329
+      "qb_hits": 0.422,
+      "tfl": 0.328
      }
     },
     "tackling": {
@@ -591,9 +591,9 @@
       "tackles": 0.164,
       "tackles_pg": 0.014,
       "solo": 0.209,
-      "tfl": 0.324,
-      "ff": 0.201,
-      "fr": 0.087
+      "tfl": 0.323,
+      "ff": 0.2,
+      "fr": 0.089
      }
     },
     "playing_time": {
@@ -648,7 +648,7 @@
       "solo": 0.28,
       "tfl": 0.294,
       "ff": 0.198,
-      "fr": 0.078
+      "fr": 0.077
      }
     },
     "pass_rush": {
@@ -656,8 +656,8 @@
      "learned": true,
      "weights": {
       "sacks": 0.25,
-      "qb_hits": 0.409,
-      "tfl": 0.341
+      "qb_hits": 0.41,
+      "tfl": 0.34
      }
     },
     "coverage": {
@@ -740,8 +740,8 @@
      "learned": true,
      "weights": {
       "sacks": 0.25,
-      "qb_hits": 0.32,
-      "tfl": 0.43
+      "qb_hits": 0.322,
+      "tfl": 0.428
      }
     },
     "returns": {
