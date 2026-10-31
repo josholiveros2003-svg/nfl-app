@@ -343,7 +343,7 @@
      "learned": true,
      "weights": {
       "snaps": 0.175,
-      "snaps_pg": 0.279,
+      "snaps_pg": 0.278,
       "snap_share": 0.337,
       "penalties": 0.05,
       "penalty_yds": 0.159
@@ -402,7 +402,7 @@
      "weights": {
       "snaps": 0.167,
       "snaps_pg": 0.27,
-      "snap_share": 0.34,
+      "snap_share": 0.339,
       "penalties": 0.055,
       "penalty_yds": 0.168
      }
@@ -591,7 +591,7 @@
       "tackles": 0.166,
       "tackles_pg": 0.016,
       "solo": 0.206,
-      "tfl": 0.326,
+      "tfl": 0.327,
       "ff": 0.201,
       "fr": 0.085
      }
@@ -794,8 +794,8 @@
      "learned": true,
      "weights": {
       "snaps_pg": 0.1,
-      "snap_share": 0.785,
-      "penalties": 0.065,
+      "snap_share": 0.784,
+      "penalties": 0.066,
       "penalty_yds": 0.05
      }
     }
@@ -838,8 +838,8 @@
      "learned": true,
      "weights": {
       "snaps_pg": 0.1,
-      "snap_share": 0.779,
-      "penalties": 0.071,
+      "snap_share": 0.778,
+      "penalties": 0.072,
       "penalty_yds": 0.05
      }
     }
