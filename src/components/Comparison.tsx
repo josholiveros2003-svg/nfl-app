@@ -21,12 +21,14 @@ type Props = {
   path: string[];
   /** Address for one level deeper (the screen decides how links look). */
   hrefFor: (path: string[]) => Href;
+  /** League rank (1-32) of a side at a level, if known (teams). */
+  rankOf?: (rankKey: string, sideId: string) => number | null;
 };
 
 /** Side-by-side comparison of any two things that can be turned into a CompareNode tree
  *  (teams, players, and later the two teams in a game). Every row is shaded to show who has
  *  the advantage and by how much. */
-export function Comparison({ a, b, path, hrefFor }: Props) {
+export function Comparison({ a, b, path, hrefFor, rankOf }: Props) {
   const nodeA = nodeAt(a.tree, path);
   const nodeB = nodeAt(b.tree, path);
   const rows = pairChildren(nodeA, nodeB);
@@ -62,14 +64,16 @@ export function Comparison({ a, b, path, hrefFor }: Props) {
         ))}
       </View>
 
-      {path.length > 0 ? <RatingRow label={`${crumbs[crumbs.length - 1]} rating`} a={nodeA} b={nodeB} strong /> : null}
+      {path.length > 0 ? (
+        <RatingRow label={`${crumbs[crumbs.length - 1]} rating`} a={nodeA} b={nodeB} strong ranks={ranksFor(rankOf, a, b, nodeA ?? nodeB)} />
+      ) : null}
 
       <View style={s.table}>
         {rows.map((row, i) => {
           const deeper = !!(row.a?.children?.length || row.b?.children?.length);
           const content = (row.a?.stat || row.b?.stat) && !deeper
             ? <StatRow label={(row.a ?? row.b)!.label} a={row.a} b={row.b} />
-            : <RatingRow label={(row.a ?? row.b)!.label} a={row.a} b={row.b} chevron={deeper} />;
+            : <RatingRow label={(row.a ?? row.b)!.label} a={row.a} b={row.b} chevron={deeper} ranks={ranksFor(rankOf, a, b, row.a ?? row.b)} />;
           return (
             <View key={row.key} style={i < rows.length - 1 ? s.divider : null}>
               {deeper ? (
@@ -89,6 +93,11 @@ export function Comparison({ a, b, path, hrefFor }: Props) {
   );
 }
 
+function ranksFor(rankOf: Props['rankOf'], a: CompareSide, b: CompareSide, node: CompareNode | null) {
+  if (!rankOf || !node?.rankKey) return undefined;
+  return { a: rankOf(node.rankKey, a.id), b: rankOf(node.rankKey, b.id) };
+}
+
 function SideHeader({ side, rating, avg, adv, which }: { side: CompareSide; rating?: number; avg: LeagueAverage | null; adv: Advantage; which: 'a' | 'b' }) {
   const sh = shade(adv, which);
   return (
@@ -105,6 +114,7 @@ function SideHeader({ side, rating, avg, adv, which }: { side: CompareSide; rati
         </Text>
         <Text style={[s.sideRating, sh.dark && s.darkText]}>{rating ?? '—'}</Text>
         <Text style={[s.sideLabel, sh.dark && s.darkSub]}>OVERALL</Text>
+        {side.badge ? <Text style={[s.badge, sh.dark && s.darkText]}>{side.badge}</Text> : null}
         {avg ? (
           <Text style={[s.sideSub, sh.dark && s.darkSub]} numberOfLines={1}>
             {avgLabel(avg)} {avg.rating}
@@ -121,22 +131,27 @@ function SideHeader({ side, rating, avg, adv, which }: { side: CompareSide; rati
 }
 
 /** A row comparing two 0-100 ratings (overall, unit or category). */
-function RatingRow({ label, a, b, chevron, strong }: { label: string; a: CompareNode | null; b: CompareNode | null; chevron?: boolean; strong?: boolean }) {
+function RatingRow({ label, a, b, chevron, strong, ranks }: {
+  label: string; a: CompareNode | null; b: CompareNode | null; chevron?: boolean; strong?: boolean;
+  ranks?: { a: number | null; b: number | null };
+}) {
   const ra = useRating(a?.rt);
   const rb = useRating(b?.rt);
   const avgA = useLeagueAverage(ra ? a?.rt : null);
   const avgB = useLeagueAverage(rb ? b?.rt : null);
   const adv = ratingAdvantage(ra?.rating, rb?.rating);
+  const sub = (rank: number | null | undefined, limited?: boolean) =>
+    [rank ? `${ordinal(rank)} of 32` : null, limited ? 'LTD' : null].filter(Boolean).join(' · ') || undefined;
   return (
     <View style={[s.row, strong && s.strongRow]}>
-      <Cell adv={adv} which="a" main={ra?.rating != null ? String(ra.rating) : '—'} sub={ra?.limited ? 'LTD' : undefined} avg={avgA} />
+      <Cell adv={adv} which="a" main={ra?.rating != null ? String(ra.rating) : '—'} sub={sub(ranks?.a, ra?.limited)} avg={avgA} />
       <View style={s.labelBox}>
         <Text style={[s.label, strong && { fontWeight: '800' }]} numberOfLines={2}>
           {label}
         </Text>
         {chevron ? <Text style={s.more}>Tap for details ›</Text> : null}
       </View>
-      <Cell adv={adv} which="b" main={rb?.rating != null ? String(rb.rating) : '—'} sub={rb?.limited ? 'LTD' : undefined} avg={avgB} />
+      <Cell adv={adv} which="b" main={rb?.rating != null ? String(rb.rating) : '—'} sub={sub(ranks?.b, rb?.limited)} avg={avgB} />
     </View>
   );
 }
@@ -229,6 +244,7 @@ const s = StyleSheet.create({
   sideSub: { color: colors.muted, fontSize: 12 },
   sideRating: { color: colors.text, fontSize: 30, fontWeight: '800', marginTop: 4, fontVariant: ['tabular-nums'] },
   sideLabel: { color: colors.muted, fontSize: 10, fontWeight: '800', letterSpacing: 0.6 },
+  badge: { color: colors.text, fontSize: 12, fontWeight: '700', marginTop: 2, textAlign: 'center' },
   darkText: { color: '#0B0F17' },
   darkSub: { color: 'rgba(11,15,23,0.7)' },
   crumbs: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 4 },

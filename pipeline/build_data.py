@@ -277,6 +277,19 @@ def results_component(game_docs: dict, team_ids) -> dict:
     return out
 
 
+def team_nodes(team_docs: dict) -> dict:
+    """Every team's rating object at every level ("overall", "offense", "offense.passing", ...),
+    so the app can rank all 32 teams at any level (e.g. in Compare)."""
+    out = {}
+    for t, doc in team_docs.items():
+        out.setdefault("overall", {})[t] = doc["team"]["rt"]
+        for unit, cats in doc["units"].items():
+            out.setdefault(unit, {})[t] = doc["unitRatings"][unit]["rt"]
+            for c in cats:
+                out.setdefault(f"{unit}.{c['id']}", {})[t] = c["rt"]
+    return out
+
+
 def schedule_doc(sched, game_docs: dict, records: dict, last_played: int, season: int) -> dict:
     """Every game by week: teams, records going in, kickoff, score and win chances."""
     weeks = {}
@@ -1164,7 +1177,8 @@ def main():
     league = league_components(games_now, team_ids, current_rating, snaps_now, out_now, info_now, records,
                                {t["abbr"]: t["record"] for t in index})
     rankings_doc = {"season": season, "throughWeek": through_week, "updated": updated, "league": league,
-                    "units": unit_lists(team_docs, snaps_now, league["lastPlayedWeek"])}
+                    "units": unit_lists(team_docs, snaps_now, league["lastPlayedWeek"]),
+                    "nodes": team_nodes(team_docs)}
     for ul in rankings_doc["units"]:
         for v in ul["teams"].values():
             averages.add(f"rank.{ul['id']}", v["rt"])  # unit/category lists reuse the team ratings tagged above

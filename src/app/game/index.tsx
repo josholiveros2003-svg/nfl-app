@@ -6,7 +6,8 @@ import { Inactives } from '@/components/Inactives';
 import { Loading, Screen, Segmented } from '@/components/ui';
 import { GameHeader } from '@/components/WinProb';
 import { teamSide } from '@/lib/compare';
-import { useGame, useTeam } from '@/lib/data';
+import { useTeamRanks } from '@/lib/compareRanks';
+import { useGame, useRankings, useTeam } from '@/lib/data';
 import { useIsClient } from '@/lib/useIsClient';
 
 type Tab = 'box' | 'team' | 'matchup';
@@ -28,6 +29,12 @@ export default function GameScreen() {
   const away = useTeam(game.data?.away);
   const home = useTeam(game.data?.home);
   const error = game.error ?? away.error ?? home.error;
+  const ranks = useTeamRanks(useRankings().data);
+  const side = (doc: NonNullable<typeof away.data>) => {
+    const t = doc.team.abbr;
+    const power = ranks?.power(t);
+    return teamSide(doc, ranks?.groups(t), power ? `#${power} in power rankings` : null);
+  };
 
   const hrefFor = (p: string[]): Href => ({
     pathname: '/game',
@@ -51,7 +58,7 @@ export default function GameScreen() {
           {box && tab === 'team' ? <TeamStats box={box} teams={{ home: home.data.team, away: away.data.team }} /> : null}
           {tab === 'matchup' ? (
             <>
-              <Comparison a={teamSide(away.data)} b={teamSide(home.data)} path={path} hrefFor={hrefFor} />
+              <Comparison a={side(away.data)} b={side(home.data)} path={path} hrefFor={hrefFor} rankOf={ranks?.rankOf} />
               {path.length === 0 ? <Inactives game={game.data} away={away.data} home={home.data} /> : null}
             </>
           ) : null}

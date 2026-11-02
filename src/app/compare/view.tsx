@@ -3,7 +3,8 @@ import { Text } from 'react-native';
 import { Comparison } from '@/components/Comparison';
 import { Loading, Screen, styles as ui } from '@/components/ui';
 import { playerSide, teamSide } from '@/lib/compare';
-import { usePlayer, useTeam } from '@/lib/data';
+import { usePositionRank, useTeamRanks } from '@/lib/compareRanks';
+import { usePlayer, usePlayersIndex, useRankings, useTeam } from '@/lib/data';
 import { useIsClient } from '@/lib/useIsClient';
 
 // Side-by-side comparison of two teams or two players.
@@ -19,8 +20,24 @@ export default function CompareViewScreen() {
   const playerA = usePlayer(kind === 'players' ? params.a : undefined);
   const playerB = usePlayer(kind === 'players' ? params.b : undefined);
 
-  const a = kind === 'teams' ? (teamA.data ? teamSide(teamA.data) : null) : playerA.data ? playerSide(playerA.data) : null;
-  const b = kind === 'teams' ? (teamB.data ? teamSide(teamB.data) : null) : playerB.data ? playerSide(playerB.data) : null;
+  // Rankings: power-ranking spot and league rank at every level for teams; position rank for players.
+  const ranks = useTeamRanks(useRankings().data);
+  const players = usePlayersIndex(kind === 'players');
+  const posA = usePositionRank(players.data, kind === 'players' ? params.a : undefined);
+  const posB = usePositionRank(players.data, kind === 'players' ? params.b : undefined);
+  const teamBadge = (t: string) => {
+    const power = ranks?.power(t);
+    return power ? `#${power} in power rankings` : null;
+  };
+  const playerBadge = (r: ReturnType<typeof usePositionRank>) =>
+    !r ? null : r.rank ? `#${r.rank} of ${r.of} ${r.group}s` : `${r.group} · not ranked yet (limited sample)`;
+
+  const a = kind === 'teams'
+    ? teamA.data ? teamSide(teamA.data, ranks?.groups(teamA.data.team.abbr), teamBadge(teamA.data.team.abbr)) : null
+    : playerA.data ? playerSide(playerA.data, playerBadge(posA)) : null;
+  const b = kind === 'teams'
+    ? teamB.data ? teamSide(teamB.data, ranks?.groups(teamB.data.team.abbr), teamBadge(teamB.data.team.abbr)) : null
+    : playerB.data ? playerSide(playerB.data, playerBadge(posB)) : null;
   const error = teamA.error ?? teamB.error ?? playerA.error ?? playerB.error;
 
   const hrefFor = (p: string[]): Href => ({
@@ -37,7 +54,7 @@ export default function CompareViewScreen() {
         <Loading error={error} />
       ) : (
         <Screen>
-          <Comparison a={a} b={b} path={path} hrefFor={hrefFor} />
+          <Comparison a={a} b={b} path={path} hrefFor={hrefFor} rankOf={kind === 'teams' ? ranks?.rankOf : undefined} />
           <Link href={{ pathname: '/compare', params: { kind } }} style={[ui.muted, { color: '#7FB2FF', fontWeight: '700', marginTop: 8 }]}>
             Compare something else
           </Link>

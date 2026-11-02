@@ -10,6 +10,8 @@ export type CompareNode = {
   key: string;
   label: string;
   rt?: Rt | null;
+  /** Which league ranking this row belongs to (e.g. "offense.passing"), for showing its rank. */
+  rankKey?: string;
   /** Present on the bottom level (individual stats). */
   stat?: Stat;
   children?: CompareNode[];
@@ -23,10 +25,19 @@ export type CompareSide = {
   image: string | null;
   color: string;
   href: string;
+  /** Short line under the overall rating, e.g. "#5 in power rankings". */
+  badge?: string | null;
   tree: CompareNode;
 };
 
-export function teamSide(doc: TeamDoc): CompareSide {
+/** Ratings for units built from players (e.g. the starting five linemen), by list id. */
+export type TeamGroups = Partial<Record<'offensive_line' | 'defensive_line', Rt | null>>;
+const GROUP_ROWS: Record<string, { key: 'offensive_line' | 'defensive_line'; label: string }> = {
+  offense: { key: 'offensive_line', label: 'Offensive Line' },
+  defense: { key: 'defensive_line', label: 'Defensive Line' },
+};
+
+export function teamSide(doc: TeamDoc, groups: TeamGroups = {}, badge?: string | null): CompareSide {
   return {
     id: doc.team.abbr,
     name: doc.team.name,
@@ -34,26 +45,30 @@ export function teamSide(doc: TeamDoc): CompareSide {
     image: doc.team.logo,
     color: doc.team.color,
     href: `/team/${doc.team.abbr.toLowerCase()}`,
+    badge,
     tree: {
       key: 'overall',
       label: 'Overall',
       rt: doc.team.rt,
-      children: UNITS.map((u) => ({
-        key: u.id,
-        label: u.label,
-        rt: doc.unitRatings?.[u.id]?.rt,
-        children: doc.units[u.id].map((c) => ({
+      rankKey: 'overall',
+      children: UNITS.map((u) => {
+        const group = GROUP_ROWS[u.id];
+        const cats: CompareNode[] = doc.units[u.id].map((c) => ({
           key: c.id,
           label: c.label,
           rt: c.rt,
+          rankKey: `${u.id}.${c.id}`,
           children: c.stats.map((s) => ({ key: s.id, label: s.label, rt: s.rt, stat: s })),
-        })),
-      })),
+        }));
+        // Offensive / Defensive Line: ratings and ranks only (built from the starting linemen).
+        if (group && groups[group.key]) cats.push({ key: group.key, label: group.label, rt: groups[group.key], rankKey: group.key });
+        return { key: u.id, label: u.label, rt: doc.unitRatings?.[u.id]?.rt, rankKey: u.id, children: cats };
+      }),
     },
   };
 }
 
-export function playerSide(doc: PlayerDoc): CompareSide {
+export function playerSide(doc: PlayerDoc, badge?: string | null): CompareSide {
   return {
     id: doc.id,
     name: doc.name,
@@ -61,6 +76,7 @@ export function playerSide(doc: PlayerDoc): CompareSide {
     image: doc.headshot,
     color: doc.teamColor,
     href: `/player?id=${doc.id}`,
+    badge,
     tree: {
       key: 'overall',
       label: 'Overall',

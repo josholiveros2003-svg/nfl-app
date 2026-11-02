@@ -282,6 +282,8 @@ export type RankingsDoc = {
   season: number; throughWeek: number; updated: string;
   league: { lastPlayedWeek: number; teams: Record<string, LeagueTeam> };
   units: UnitList[];
+  /** Every team's rating at every level: "overall", "offense", "offense.passing", ... */
+  nodes: Record<string, Record<string, Rt | null>>;
 };
 
 // ---- public/data/schedule.json ----
