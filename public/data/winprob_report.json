@@ -46,15 +46,15 @@
     },
     {
      "band": "60-70%",
-     "games": 111,
+     "games": 110,
      "predicted": 64.6,
-     "actual": 66.7
+     "actual": 66.4
     },
     {
      "band": "70-80%",
-     "games": 74,
+     "games": 75,
      "predicted": 74.5,
-     "actual": 79.7
+     "actual": 80.0
     },
     {
      "band": "80-100%",
@@ -260,7 +260,7 @@
    "games": 119,
    "correct": 73,
    "accuracy": 61.3,
-   "brier": 0.236,
+   "brier": 0.2359,
    "calibration": [
     {
      "band": "50-60%",
@@ -270,15 +270,15 @@
     },
     {
      "band": "60-70%",
-     "games": 43,
-     "predicted": 64.5,
-     "actual": 67.4
+     "games": 42,
+     "predicted": 64.4,
+     "actual": 66.7
     },
     {
      "band": "70-80%",
-     "games": 22,
-     "predicted": 75.3,
-     "actual": 68.2
+     "games": 23,
+     "predicted": 75.0,
+     "actual": 69.6
     },
     {
      "band": "80-100%",
@@ -343,7 +343,7 @@
   "form": 0.133,
   "adjusted": 0.23,
   "lastSeason": 0.593,
-  "injuries": 1.205
+  "injuries": 1.206
  },
  "fittedMarginSD": 12.51,
  "calibratedMarginSD": 11.75,
@@ -359,7 +359,7 @@
    "brier": 0.2235
   },
   "0.10": {
-   "accuracy": 63.6,
+   "accuracy": 63.3,
    "brier": 0.2228
   },
   "0.15": {
@@ -368,10 +368,10 @@
   },
   "0.20": {
    "accuracy": 63.8,
-   "brier": 0.2215
+   "brier": 0.2214
   },
   "0.25": {
-   "accuracy": 63.8,
+   "accuracy": 64.1,
    "brier": 0.2208
   },
   "0.30": {
@@ -380,7 +380,7 @@
   },
   "0.35": {
    "accuracy": 63.8,
-   "brier": 0.2197
+   "brier": 0.2196
   },
   "0.40": {
    "accuracy": 64.4,
@@ -400,7 +400,7 @@
   },
   "0.60": {
    "accuracy": 65.4,
-   "brier": 0.2174
+   "brier": 0.2173
   },
   "0.65": {
    "accuracy": 64.6,

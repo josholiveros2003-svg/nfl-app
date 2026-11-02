@@ -160,19 +160,19 @@
    "topStats": [
     [
      "kicking: Extra point %",
-     1.75
+     1.78
     ],
     [
      "punting: Punts per game",
-     0.74
-    ],
-    [
-     "coverage: Kick return avg. allowed",
-     0.74
+     0.77
     ],
     [
      "coverage: Return TDs allowed",
      0.72
+    ],
+    [
+     "coverage: Kick return avg. allowed",
+     0.68
     ]
    ],
    "categories": {
@@ -181,10 +181,10 @@
      "learned": true,
      "weights": {
       "fg_pct": 0.225,
-      "fg_0_39": 0.082,
-      "fg_40_49": 0.181,
+      "fg_0_39": 0.081,
+      "fg_40_49": 0.183,
       "fg_50": 0.075,
-      "fg_long": 0.092,
+      "fg_long": 0.091,
       "xp_pct": 0.345
      }
     },
@@ -192,11 +192,11 @@
      "r2": 0.0,
      "learned": true,
      "weights": {
-      "punts_pg": 0.202,
-      "gross": 0.111,
-      "net": 0.25,
-      "in20": 0.285,
-      "tb": 0.151
+      "punts_pg": 0.209,
+      "gross": 0.108,
+      "net": 0.251,
+      "in20": 0.29,
+      "tb": 0.141
      }
     },
     "returns": {
@@ -212,9 +212,9 @@
      "r2": 0.0,
      "learned": true,
      "weights": {
-      "kr_allowed": 0.383,
-      "pr_allowed": 0.237,
-      "ret_td_allowed": 0.38
+      "kr_allowed": 0.376,
+      "pr_allowed": 0.247,
+      "ret_td_allowed": 0.378
      }
     }
    }
@@ -281,9 +281,9 @@
      "learned": true,
      "weights": {
       "snaps": 0.202,
-      "snaps_pg": 0.308,
+      "snaps_pg": 0.309,
       "snap_share": 0.3,
-      "penalties": 0.085,
+      "penalties": 0.086,
       "penalty_yds": 0.104
      }
     }
@@ -342,9 +342,9 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.193,
-      "snaps_pg": 0.298,
-      "snap_share": 0.306,
+      "snaps": 0.194,
+      "snaps_pg": 0.3,
+      "snap_share": 0.303,
       "penalties": 0.05,
       "penalty_yds": 0.154
      }
@@ -401,7 +401,7 @@
      "learned": true,
      "weights": {
       "snaps": 0.183,
-      "snaps_pg": 0.29,
+      "snaps_pg": 0.289,
       "snap_share": 0.319,
       "penalties": 0.05,
       "penalty_yds": 0.158
@@ -476,7 +476,7 @@
       "snaps_pg": 0.305,
       "snap_share": 0.303,
       "penalties": 0.056,
-      "penalty_yds": 0.137
+      "penalty_yds": 0.136
      }
     },
     "rushing": {
@@ -500,29 +500,29 @@
    }
   },
   "OL": {
-   "r2": 0.27,
-   "players": 382,
+   "r2": 0.28,
+   "players": 383,
    "topStats": [
     [
      "Playing Time: Offensive snaps",
-     1.91
+     1.9
     ],
     [
      "Playing Time: Offensive snaps per game",
-     1.91
-    ],
-    [
-     "Run Blocking: Team yards per carry",
-     0.74
+     1.9
     ],
     [
      "Playing Time: Snap share",
-     0.73
+     0.77
+    ],
+    [
+     "Run Blocking: Team yards per carry",
+     0.75
     ]
    ],
    "categories": {
     "pass_pro": {
-     "r2": 0.01,
+     "r2": 0.0,
      "learned": true,
      "weights": {
       "sacks": 0.675,
@@ -531,12 +531,12 @@
      }
     },
     "run_block": {
-     "r2": 0.01,
+     "r2": 0.0,
      "learned": true,
      "weights": {
-      "ypc": 0.261,
+      "ypc": 0.263,
       "stuffed": 0.243,
-      "rush_success": 0.272,
+      "rush_success": 0.271,
       "rush_epa": 0.224
      }
     },
@@ -547,8 +547,8 @@
       "snaps": 0.195,
       "snaps_pg": 0.299,
       "snap_share": 0.3,
-      "penalties": 0.11,
-      "penalty_yds": 0.096
+      "penalties": 0.111,
+      "penalty_yds": 0.095
      }
     }
    }
@@ -601,10 +601,10 @@
      "learned": true,
      "weights": {
       "snaps": 0.187,
-      "snaps_pg": 0.288,
+      "snaps_pg": 0.289,
       "snap_share": 0.3,
       "penalties": 0.05,
-      "penalty_yds": 0.175
+      "penalty_yds": 0.174
      }
     },
     "coverage": {
@@ -732,8 +732,8 @@
       "snaps": 0.186,
       "snaps_pg": 0.293,
       "snap_share": 0.3,
-      "penalties": 0.114,
-      "penalty_yds": 0.107
+      "penalties": 0.115,
+      "penalty_yds": 0.106
      }
     },
     "pass_rush": {
@@ -757,37 +757,37 @@
    }
   },
   "K": {
-   "r2": 0.06,
-   "players": 55,
+   "r2": 0.09,
+   "players": 56,
    "topStats": [
     [
      "Kicking: Extra point %",
-     0.96
+     1.0
     ],
     [
      "Kicking: Longest field goal",
-     0.69
+     0.71
     ],
     [
      "Kicking: FG 40\u201349 yards",
-     0.67
+     0.61
     ],
     [
      "Playing Time: Snap share",
-     0.31
+     0.36
     ]
    ],
    "categories": {
     "kicking": {
-     "r2": 0.04,
+     "r2": 0.11,
      "learned": true,
      "weights": {
-      "fg_pct": 0.225,
-      "fg_made": 0.08,
-      "fg_40": 0.187,
+      "fg_pct": 0.233,
+      "fg_made": 0.066,
+      "fg_40": 0.177,
       "fg_50": 0.075,
-      "fg_long": 0.172,
-      "xp_pct": 0.262
+      "fg_long": 0.18,
+      "xp_pct": 0.27
      }
     },
     "playing_time": {
@@ -795,8 +795,8 @@
      "learned": true,
      "weights": {
       "snaps_pg": 0.1,
-      "snap_share": 0.79,
-      "penalties": 0.06,
+      "snap_share": 0.791,
+      "penalties": 0.059,
       "penalty_yds": 0.05
      }
     }
@@ -873,7 +873,7 @@
    }
   }
  },
- "maddenMatched": 2282,
+ "maddenMatched": 2289,
  "trust": {
   "teams": {
    "offense": 0.75,
@@ -885,7 +885,7 @@
    "RB": 0.71,
    "WR": 0.82,
    "TE": 0.85,
-   "OL": 0.52,
+   "OL": 0.53,
    "DL": 0.71,
    "LB": 0.58,
    "DB": 0.55,
