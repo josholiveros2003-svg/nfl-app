@@ -150,6 +150,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0033793,64,C,Corey Levin,OL
 00-0033831,75,RG,Andrew Wylie,OL
 00-0033860,78,DT,Davon Godchaux,DL
+00-0033862,74,K,Zane Gonzalez,K
 00-0033868,99,REDG,Myles Garrett,DL
 00-0033869,65,QB,Mitchell Trubisky,QB
 00-0033870,72,DT,Solomon Thomas,DL
@@ -307,6 +308,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0035125,74,FB,Alec Ingold,RB
 00-0035127,67,C,Andre James,OL
 00-0035133,78,CB,Keisean Nixon,DB
+00-0035140,73,WR,Mecole Hardman,WR
 00-0035144,80,MIKE,Mack Wilson Sr,LB
 00-0035149,72,C,Nick Allegretti,OL
 00-0035156,79,P,Jack Fox,P
@@ -333,6 +335,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0035261,83,HB,Tony Pollard,RB
 00-0035262,89,WILL,Drue Tranquill,LB
 00-0035264,64,QB,Jarrett Stidham,QB
+00-0035266,69,LG,Michael Jordan,OL
 00-0035269,75,K,Matt Gay,K
 00-0035270,67,CB,Amani Oruwariye,DB
 00-0035272,83,REDG,Andrew Van Ginkel,DL
@@ -452,6 +455,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0036187,83,FB,Reggie Gilliam,RB
 00-0036192,75,REDG,A.J. Epenesa,DL
 00-0036193,77,LEDG,Anfernee Jennings,DL
+00-0036195,64,LT,Charlie Heck,OL
 00-0036198,86,RG,Mike Onwenu,OL
 00-0036199,79,FS,Geno Stone,DB
 00-0036204,68,DT,LaCale London,DL
@@ -577,6 +581,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0036557,71,RT,Jaylon Moore,OL
 00-0036563,81,CB,Deommodore Lenoir,DB
 00-0036564,88,SS,Talanoa Hufanga,DB
+00-0036567,72,HB,Elijah Mitchell,RB
 00-0036568,72,DT,Roy Lopez,DL
 00-0036584,55,LT,Foster Sarell,OL
 00-0036587,75,CB,Ar'Darius Washington,DB
@@ -625,6 +630,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0036775,62,WR,Brandon Smith,WR
 00-0036783,54,C,Ryan McCollum,OL
 00-0036788,64,DT,Jack Heflin,DL
+00-0036802,63,MIKE,Jon Rhattigan,LB
 00-0036813,73,WILL,Christian Elliss,LB
 00-0036816,72,K,Riley Patterson,K
 00-0036825,55,TE,Feleipe Franks,TE
@@ -880,6 +886,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0037594,67,HB,Julius Chestnut,RB
 00-0037596,72,WILL,Jack Gibbens,LB
 00-0037602,68,LEDG,Sam Okuayinonu,DL
+00-0037605,64,LG,Andrew Rupcich,OL
 00-0037611,78,REDG,Kayvon Thibodeaux,DL
 00-0037612,73,RG,Evan Neal,OL
 00-0037614,73,WR,John Metchie III,WR
