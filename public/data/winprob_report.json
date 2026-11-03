@@ -260,12 +260,12 @@
    "games": 120,
    "correct": 76,
    "accuracy": 63.3,
-   "brier": 0.236,
+   "brier": 0.2361,
    "calibration": [
     {
      "band": "50-60%",
      "games": 47,
-     "predicted": 54.8,
+     "predicted": 54.9,
      "actual": 59.6
     },
     {
@@ -336,14 +336,14 @@
   }
  },
  "fittedWeights": {
-  "home": 1.759,
+  "home": 1.758,
   "offense": 0.277,
   "defense": -0.039,
   "special": -0.068,
   "form": 0.127,
   "adjusted": 0.236,
   "lastSeason": 0.59,
-  "injuries": 1.218
+  "injuries": 1.217
  },
  "fittedMarginSD": 12.53,
  "calibratedMarginSD": 11.75,
@@ -355,11 +355,11 @@
    "brier": 0.2245
   },
   "0.05": {
-   "accuracy": 63.7,
+   "accuracy": 63.9,
    "brier": 0.2238
   },
   "0.10": {
-   "accuracy": 63.2,
+   "accuracy": 63.4,
    "brier": 0.2231
   },
   "0.15": {
@@ -368,10 +368,10 @@
   },
   "0.20": {
    "accuracy": 63.2,
-   "brier": 0.2217
+   "brier": 0.2218
   },
   "0.25": {
-   "accuracy": 62.9,
+   "accuracy": 62.7,
    "brier": 0.2211
   },
   "0.30": {
@@ -380,7 +380,7 @@
   },
   "0.35": {
    "accuracy": 63.7,
-   "brier": 0.2199
+   "brier": 0.22
   },
   "0.40": {
    "accuracy": 63.7,
@@ -396,7 +396,7 @@
   },
   "0.55": {
    "accuracy": 64.5,
-   "brier": 0.218
+   "brier": 0.2181
   },
   "0.60": {
    "accuracy": 64.7,
