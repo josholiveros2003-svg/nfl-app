@@ -588,12 +588,12 @@
      "r2": 0.17,
      "learned": true,
      "weights": {
-      "tackles": 0.169,
-      "tackles_pg": 0.019,
-      "solo": 0.2,
+      "tackles": 0.17,
+      "tackles_pg": 0.02,
+      "solo": 0.199,
       "tfl": 0.33,
-      "ff": 0.193,
-      "fr": 0.088
+      "ff": 0.194,
+      "fr": 0.087
      }
     },
     "playing_time": {
@@ -624,7 +624,7 @@
    "topStats": [
     [
      "Pass Rush: QB hits",
-     1.84
+     1.85
     ],
     [
      "Playing Time: Defensive snaps per game",
@@ -657,8 +657,8 @@
      "learned": true,
      "weights": {
       "sacks": 0.25,
-      "qb_hits": 0.404,
-      "tfl": 0.346
+      "qb_hits": 0.405,
+      "tfl": 0.345
      }
     },
     "coverage": {
