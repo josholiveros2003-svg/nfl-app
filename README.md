@@ -96,7 +96,8 @@ nflverse's roster file only catches up about once a week, so it's combined with 
 
 New signings and draft picks that nflverse doesn't list yet get an `espn-<id>` player page. Every 30
 minutes the scheduled job compares ESPN's rosters with the live site's `data/roster_fingerprint.txt`, and
-rebuilds and republishes only if they differ, so a failed publish is retried too. If ESPN can't be reached, it uses nflverse and depth charts.
+rebuilds and republishes only if they differ, so a failed publish is retried too. If ESPN can't be reached during a build, it uses the last good copy
+(`data/espn_rosters.json`), so one failed download can't put released players back on a team.
 
 Team rating baselines still come from each team's depth chart before Week 1, so a trade changes rosters,
 depth charts, position rankings and line ratings right away, but not the team's Madden starting point.

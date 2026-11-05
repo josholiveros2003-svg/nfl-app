@@ -24,7 +24,10 @@ from pathlib import Path
 
 BASE = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams"
 # Published with the site, so the check below can see what the live site actually has.
-FINGERPRINT = Path(__file__).resolve().parent.parent / "public" / "data" / "roster_fingerprint.txt"
+ROOT = Path(__file__).resolve().parent.parent
+FINGERPRINT = ROOT / "public" / "data" / "roster_fingerprint.txt"
+# The last rosters ESPN gave us, so one failed download can't put released players back.
+SNAPSHOT = ROOT / "data" / "espn_rosters.json"
 
 ESPN_TEAMS = ("ari atl bal buf car chi cin cle dal den det gb hou ind jax kc "
               "lv lac lar mia min ne no nyg nyj phi pit sf sea tb ten wsh").split()
@@ -39,16 +42,18 @@ def app_team(team) -> str:
     return {"LAR": "LA", "WSH": "WAS"}.get(code, code)
 
 
-def _get(url: str, tries: int = 3):
+def _get(url: str, tries: int = 5):
+    """ESPN occasionally answers with a false "not found", so keep trying for about 45 seconds.
+    The changing address keeps us from being handed the same bad answer from a cache."""
     for attempt in range(tries):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "nfl-stats-app"})
+            req = urllib.request.Request(f"{url}?_={int(time.time())}", headers={"User-Agent": "nfl-stats-app"})
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.load(r)
-        except Exception:  # network hiccup or bad response: wait a moment and try again
+        except Exception:
             if attempt == tries - 1:
                 raise
-            time.sleep(2 * (attempt + 1))
+            time.sleep(3 * 2 ** attempt)
 
 
 def fetch_rosters() -> dict:
@@ -89,11 +94,19 @@ def fetch_depth() -> dict:
 
 
 def fetch_live() -> dict | None:
-    """Everything live, or None if ESPN can't be reached (the build then uses nflverse alone)."""
+    """Everything live, or None if ESPN can't be reached."""
     try:
         return {"rosters": fetch_rosters(), "depth": fetch_depth()}
     except Exception as e:
-        print(f"  WARNING: couldn't load live ESPN rosters ({e}); using nflverse's rosters only")
+        print(f"  WARNING: couldn't load live ESPN rosters ({e})")
+        return None
+
+
+def load_snapshot() -> dict | None:
+    """The last good rosters, for when ESPN can't be reached during a build."""
+    try:
+        return json.loads(SNAPSHOT.read_text())
+    except (OSError, ValueError):
         return None
 
 
@@ -104,8 +117,10 @@ def fingerprint(live: dict) -> str:
     return hashlib.sha256("\n".join(rows).encode()).hexdigest()
 
 
-def save_fingerprint(live: dict) -> None:
+def save_live(live: dict) -> None:
+    """Remember these rosters: the code for the quick check, and the copy to fall back on."""
     FINGERPRINT.write_text(fingerprint(live) + "\n")
+    SNAPSHOT.write_text(json.dumps(live, sort_keys=True, indent=0) + "\n")
 
 
 def published_fingerprint() -> str:

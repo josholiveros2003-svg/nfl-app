@@ -31,7 +31,7 @@ from context import Context, expected_starters, burdens, team_contexts, team_str
 from learn import fit, fit_groups, repool, set_trust
 from winprob import FEATURES as WP_FEATURES, LABELS as WP_LABELS, SETTINGS as WP_SETTINGS
 from winprob import backtest, game_features, last_season_margins, phi, predict, team_results, unavailable_by_week
-from espn_live import fetch_live, save_fingerprint
+from espn_live import fetch_live, load_snapshot, save_live
 from madden import load_madden
 from roster_moves import apply_live_moves
 from players import CATEGORIES, GROUP_OF, build_players, hurt_weeks, season_players, training_rows
@@ -937,7 +937,10 @@ def main():
     pbp, games, teams, roster, modified, extra = load(season)
 
     # Trades, releases and signings that nflverse's roster file hasn't caught up with yet.
-    live = fetch_live()
+    fresh = fetch_live()
+    live = fresh or load_snapshot()
+    if not fresh:
+        print("  using the last saved ESPN rosters" if live else "  no saved ESPN rosters: using nflverse's only")
     roster, moves = apply_live_moves(roster, extra["depth"], live)
     print(f"  {len(moves)} roster moves newer than nflverse's roster file")
     for m in moves:
@@ -1215,8 +1218,8 @@ def main():
     (OUT_DIR / "averages.json").write_text(json.dumps(averages.to_json(), separators=(",", ":")))
     print(f"Wrote {len(index)} teams and {len(player_docs)} players through week {through_week} to {OUT_DIR}")
     # Remember these rosters, so the quick scheduled check can tell when something new happens.
-    if live:
-        save_fingerprint(live)
+    if fresh:
+        save_live(fresh)
 
 
 if __name__ == "__main__":
