@@ -153,6 +153,10 @@ export type PlayerDoc = {
   posName: string | null;
   team: string | null;
   teamName: string | null;
+  /** Team he last played for, when he's not on a team now. */
+  lastTeam?: string | null;
+  /** "Free agent", "Practice squad", "Suspended", "Retired" or "Roster exempt". */
+  rosterNote?: string | null;
   teamColor: string;
   teamColor2: string;
   teamLogo: string | null;

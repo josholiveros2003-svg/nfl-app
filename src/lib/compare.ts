@@ -72,7 +72,7 @@ export function playerSide(doc: PlayerDoc, badge?: string | null): CompareSide {
   return {
     id: doc.id,
     name: doc.name,
-    subtitle: [doc.pos, doc.team].filter(Boolean).join(' · '),
+    subtitle: [doc.pos, doc.team, doc.rosterNote].filter(Boolean).join(' · '),
     image: doc.headshot,
     color: doc.teamColor,
     href: `/player?id=${doc.id}`,

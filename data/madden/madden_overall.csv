@@ -73,6 +73,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0032394,64,TE,Nick Vannett,TE
 00-0032398,72,WR,Chris Moore,WR
 00-0032399,67,SS,Miles Killebrew,DB
+00-0032412,71,DT,Dean Lowry,DL
 00-0032424,84,DT,D.J. Reader,DL
 00-0032445,76,C,Ted Karras,OL
 00-0032464,75,WR,Kalif Raymond,WR
@@ -1465,6 +1466,7 @@ gsis_id,madden,madden_pos,name,grp
 00-0039753,71,LG,Beaux Limmer,OL
 00-0039754,62,TE,Devin Culp,TE
 00-0039755,68,RG,KT Leveston,OL
+00-0039757,65,HB,Terrell Jennings,RB
 00-0039763,69,MIKE,Joe Andreessen,LB
 00-0039764,71,DT,Elijah Chatman,DL
 00-0039770,65,CB,Charles Woods,DB
@@ -2288,3 +2290,4 @@ gsis_id,madden,madden_pos,name,grp
 00-0041579,63,TE,Seydou Traore,TE
 00-0041580,59,DT,Uar Bernard,DL
 00-0041583,61,RT,Paul Rubelt,OL
+espn-5083287,64,CB,Devon Marshall,DB

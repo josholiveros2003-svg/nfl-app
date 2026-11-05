@@ -33,10 +33,11 @@ export function PlayerHeader({ player, subtitle }: { player: PlayerDoc; subtitle
             {[player.jersey != null ? `#${player.jersey}` : null, player.posName].filter(Boolean).join(' · ')}
             {subtitle ? ` · ${subtitle}` : ''}
           </Text>
-          {player.depth || player.status === 'RES' ? (
+          {player.depth || player.status === 'RES' || player.rosterNote ? (
             <View style={s.tags}>
               {player.depth ? <Text style={s.tag}>{player.depth}</Text> : null}
               {player.status === 'RES' ? <Text style={s.tag}>Injured reserve</Text> : null}
+              {player.rosterNote ? <Text style={s.tag}>{player.rosterNote}</Text> : null}
             </View>
           ) : null}
         </View>
@@ -59,6 +60,8 @@ export function PlayerHeader({ player, subtitle }: { player: PlayerDoc; subtitle
           </Pressable>
         </Link>
       ) : null}
+
+      {!player.team && player.lastTeam ? <Text style={s.bio}>Last played for the {player.lastTeam}</Text> : null}
 
       {bio.length ? <Text style={s.bio}>{bio.join(' · ')}</Text> : null}
     </View>

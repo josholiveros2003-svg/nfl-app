@@ -1,6 +1,7 @@
 # Free scheduled job (GitHub Actions) that keeps the app's stats fresh.
 #
-# Every few hours it downloads the latest nflverse data and rebuilds the stats.
+# Every few hours it downloads the latest nflverse data and rebuilds the stats. Every 30
+# minutes it also takes a quick look at ESPN's live rosters and rebuilds if anyone moved.
 # If anything changed (i.e. games were played), it saves the new data to the
 # repo and republishes the website on GitHub Pages. If nothing changed, it stops
 # early, so quiet days cost almost nothing.
@@ -19,6 +20,9 @@ on:
     - cron: "7,37 16-23 * * 6"
     # Night games, which end after midnight UTC (Saturday, Sunday, Monday and Thursday nights)
     - cron: "7,37 0-5 * * 0,1,2,5"
+    # All year: a quick check for trades, releases and signings (see the first steps below).
+    # This takes seconds and only starts a full rebuild when a roster actually changed.
+    - cron: "22,52 * * * *"
   push:
     branches: [main]
   workflow_dispatch: # adds a "Run workflow" button on GitHub for manual runs
@@ -41,21 +45,29 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: Check for roster moves
+        id: rosters
+        if: github.event.schedule == '22,52 * * * *'
+        run: python3 pipeline/espn_live.py --check
+
       - uses: actions/setup-python@v7
+        if: steps.rosters.outputs.changed != 'false'
         with:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: pipeline/requirements.txt
 
       - name: Build stats from nflverse
+        if: steps.rosters.outputs.changed != 'false'
         run: |
           pip install -r pipeline/requirements.txt
           python pipeline/build_data.py
 
       - name: Save new data (if any)
         id: save
+        if: steps.rosters.outputs.changed != 'false'
         run: |
-          git add public/data
+          git add public/data data/roster_fingerprint.txt
           if git diff --cached --quiet; then
             echo "No new data."
             echo "changed=false" >> "$GITHUB_OUTPUT"

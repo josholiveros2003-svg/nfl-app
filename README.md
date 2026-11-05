@@ -28,8 +28,9 @@ dist/  →  GitHub Pages   ← the live website
 ```
 
 The `.github/workflows/update-and-deploy.yml` file is the scheduled job. It checks for
-new data every 6 hours. If games were played, it saves the new stats and republishes
-the site. Otherwise it stops early.
+new data every 6 hours (every 30 minutes during games), and for roster moves every 30
+minutes all year. If anything changed, it saves the new data and republishes the site.
+Otherwise it stops early.
 
 ## Folders
 
@@ -81,6 +82,24 @@ npm run build:web   # build the website into dist/
   Practice squad players aren't listed.
 - "EPA" (Expected Points Added) is nflverse's measure of how much each play helped
   or hurt a team's chances of scoring.
+
+## Roster moves (trades, releases, signings, all year)
+
+`pipeline/espn_live.py` and `pipeline/roster_moves.py` keep every player on the right team.
+nflverse's roster file only catches up about once a week, so it's combined with ESPN's live data:
+
+1. A depth chart that just moved a player (within 14 days) wins, if ESPN's roster still has him on
+   his old team or nowhere. Teams often update depth charts first.
+2. Otherwise ESPN's live roster decides his team and status (active, injured reserve, practice squad).
+3. On no ESPN roster and no matching depth chart: he's a free agent. His page says so, with the team
+   he last played for, and he leaves team rosters and position rankings.
+
+New signings and draft picks that nflverse doesn't list yet get an `espn-<id>` player page. Every 30
+minutes the scheduled job compares ESPN's rosters with `data/roster_fingerprint.txt`, and rebuilds and
+republishes only if something changed. If ESPN can't be reached, it uses nflverse and depth charts.
+
+Team rating baselines still come from each team's depth chart before Week 1, so a trade changes rosters,
+depth charts, position rankings and line ratings right away, but not the team's Madden starting point.
 
 ## Ratings (start from Madden, move with real results)
 

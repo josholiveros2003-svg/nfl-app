@@ -31,7 +31,9 @@ from context import Context, expected_starters, burdens, team_contexts, team_str
 from learn import fit, fit_groups, repool, set_trust
 from winprob import FEATURES as WP_FEATURES, LABELS as WP_LABELS, SETTINGS as WP_SETTINGS
 from winprob import backtest, game_features, last_season_margins, phi, predict, team_results, unavailable_by_week
+from espn_live import fetch_live, save_fingerprint
 from madden import load_madden
+from roster_moves import apply_live_moves
 from players import CATEGORIES, GROUP_OF, build_players, hurt_weeks, season_players, training_rows
 from ratings import MADDEN, RECENT_GAMES, blend_default, rate_teams, strip_fmt, team_baselines, weights_for
 from ratings import SETTINGS as RATINGS_SETTINGS
@@ -61,6 +63,17 @@ def current_season(today: date) -> int:
     # The NFL season starts in September and ends in February,
     # so January/February games belong to the previous year's season.
     return today.year if today.month >= 9 else today.year - 1
+
+
+def latest_season(today: date) -> int:
+    """The newest season that has started. In early September, before the first game, nflverse has
+    no play-by-play for the new season yet, so keep showing last season until it does."""
+    season = current_season(today)
+    try:
+        r = requests.head(f"{RELEASES}/pbp/play_by_play_{season}.parquet", allow_redirects=True, timeout=30)
+        return season - 1 if r.status_code == 404 else season
+    except requests.RequestException:
+        return season
 
 
 def optional_parquet(path: str, columns: list) -> pd.DataFrame:
@@ -916,12 +929,19 @@ def to_plain(o):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--season", type=int, default=current_season(date.today()))
+    ap.add_argument("--season", type=int, default=latest_season(date.today()))
     args = ap.parse_args()
     season = args.season
     print(f"Building data for the {season} season")
 
     pbp, games, teams, roster, modified, extra = load(season)
+
+    # Trades, releases and signings that nflverse's roster file hasn't caught up with yet.
+    live = fetch_live()
+    roster, moves = apply_live_moves(roster, extra["depth"], live)
+    print(f"  {len(moves)} roster moves newer than nflverse's roster file")
+    for m in moves:
+        print(f"    {m}")
 
     # Regular season only for now (playoffs can be added later).
     pbp = pbp[pbp.season_type == "REG"].copy()
@@ -1194,6 +1214,9 @@ def main():
         separators=(",", ":")))
     (OUT_DIR / "averages.json").write_text(json.dumps(averages.to_json(), separators=(",", ":")))
     print(f"Wrote {len(index)} teams and {len(player_docs)} players through week {through_week} to {OUT_DIR}")
+    # Remember these rosters, so the quick scheduled check can tell when something new happens.
+    if live:
+        save_fingerprint(live)
 
 
 if __name__ == "__main__":

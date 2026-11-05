@@ -22,6 +22,7 @@ from datetime import date
 
 import pandas as pd
 
+from espn_live import app_team
 from learn import fit, fit_groups, perf_value, set_trust
 from ratings import MADDEN as MADDEN_SETTINGS
 from ratings import RECENT_GAMES, clean, combine, respread, sample_bar, stat_rating, weights_for
@@ -512,7 +513,10 @@ def season_players(weekly, snaps, roster, team_games: dict, team_units: dict, ct
     snap_recent = snap_totals(s_recent)
 
     r = roster.dropna(subset=["gsis_id"]).sort_values("week").drop_duplicates("gsis_id", keep="last").set_index("gsis_id")
-    on_roster = set(r.index[r.status.isin(["ACT", "INA", "RES"])])
+    # Listed on the team's roster screen: the 53-man roster, injured reserve and suspended players.
+    on_roster = set(r.index[r.status.isin(["ACT", "INA", "RES", "SUS"])])
+    # Also on the team, but not listed (practice squad, roster exemptions).
+    on_team = on_roster | set(r.index[r.status.isin(["DEV", "EXE"])])
     ids = sorted(on_roster | set(totals.index))
 
     players = {}
@@ -531,7 +535,7 @@ def season_players(weekly, snaps, roster, team_games: dict, team_units: dict, ct
         if group is None:
             continue
         team = None
-        if info is not None and pid in on_roster:
+        if info is not None and pid in on_team:
             team = info.team
         elif tot is not None:
             team = tot.team
@@ -613,7 +617,7 @@ def season_players(weekly, snaps, roster, team_games: dict, team_units: dict, ct
                               f"don't drag down his per-game numbers.")
 
         players[pid] = {"id": pid, "group": group, "pos": pos, "team": team, "_info": info, "_tot": tot,
-                        "_onRoster": pid in on_roster, "_p": p, "_pr": pr, "_prate": p_rate, "_prrate": pr_rate,
+                        "_onRoster": pid in on_roster, "_onTeam": pid in on_team, "_p": p, "_pr": pr, "_prate": p_rate, "_prrate": pr_rate,
                         "_z": z, "context": texts, "categories": categories}
     return players
 
@@ -653,6 +657,9 @@ def build_players(weekly, snaps, depth, roster, team_info: dict, team_games: dic
 
         d = depths.get(pid, {})
         spot = (d.get("st") if pl["group"] in ("K", "P", "LS") else d.get("main")) or []
+        # A chart that hasn't caught up with a move says nothing about his role on his new team.
+        if spot and not (pl["_onTeam"] and app_team(spot[0]["team"]) == app_team(pl["team"])):
+            spot = []
         depth_label, starter, depth_key = None, False, (9, 99, 99)
         if spot:
             sp = spot[0]
@@ -670,6 +677,7 @@ def build_players(weekly, snaps, depth, roster, team_info: dict, team_games: dic
             "experience": _int(info.years_exp) if info is not None else None,
             "age": _age(info.birth_date, today) if info is not None else None,
             "status": info.status if info is not None and pl["_onRoster"] else None,
+            "rosterNote": _roster_note(pl, info),
             "depth": depth_label, "starter": starter, "_depth_key": depth_key,
         })
 
@@ -683,7 +691,9 @@ def build_players(weekly, snaps, depth, roster, team_info: dict, team_games: dic
         info = team_info.get(pl["team"])
         doc = {k: v for k, v in pl.items() if not k.startswith("_")}
         doc["categories"] = [{k: v for k, v in c.items() if not k.startswith("_")} for c in pl["categories"]]
-        doc["teamName"] = info["name"] if info else None
+        doc["team"] = pl["team"] if pl["_onTeam"] else None
+        doc["teamName"] = info["name"] if info and pl["_onTeam"] else None
+        doc["lastTeam"] = info["name"] if info and not pl["_onTeam"] else None
         doc["teamColor"] = info["color"] if info else "#333333"
         doc["teamColor2"] = info["color2"] if info else "#555555"
         doc["teamLogo"] = info["logo"] if info else None
@@ -691,6 +701,14 @@ def build_players(weekly, snaps, depth, roster, team_info: dict, team_games: dic
         doc["rankGroupPlural"] = GROUP_PLURAL[pl["group"]]
         docs[pid] = doc
     return docs, rosters, model
+
+
+def _roster_note(pl, info):
+    """Shown on his page when he isn't simply on a team's active roster."""
+    status = info.status if info is not None else None
+    if pl["_onTeam"]:
+        return {"DEV": "Practice squad", "SUS": "Suspended", "EXE": "Roster exempt"}.get(status)
+    return "Retired" if status == "RET" else "Free agent"
 
 
 def _int(v):
@@ -884,7 +902,7 @@ def _rosters(players: dict) -> dict:
             sections.append({"id": sid, "label": label, "players": [{
                 "id": pl["id"], "name": pl["name"], "pos": pl["pos"], "jersey": pl["jersey"],
                 "headshot": pl["headshot"], "depth": pl["depth"], "starter": pl["starter"],
-                "tag": "IR" if pl["status"] == "RES" else None, "line": _roster_line(pl), "rt": pl["rt"],
+                "tag": {"RES": "IR", "SUS": "SUSP"}.get(pl["status"]), "line": _roster_line(pl), "rt": pl["rt"],
             } for pl in members]})
         out[team] = sections
     return out
