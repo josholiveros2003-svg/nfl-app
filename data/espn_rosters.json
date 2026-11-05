@@ -2778,6 +2778,9 @@
 "4368304": [
 "PIT"
 ],
+"4368343": [
+"BAL"
+],
 "4368350": [
 "NYG"
 ],
@@ -2831,6 +2834,9 @@
 ],
 "4372056": [
 "PIT"
+],
+"4372066": [
+"BAL"
 ],
 "4372070": [
 "KC"
@@ -6505,9 +6511,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/15847.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "87",
 "last": "Kelce",
 "name": "Travis Kelce",
@@ -9609,9 +9613,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3115485.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "74",
 "last": "Jenkins",
 "name": "Elgton Jenkins",
@@ -14784,6 +14786,22 @@
 "weight": 238.0,
 "years": 7
 },
+"4036651": {
+"birth": "1997-12-11",
+"college": "Georgia Southern",
+"first": "Kindle",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4036651.png",
+"height": 71.0,
+"injuries": [],
+"jersey": "28",
+"last": "Vildor",
+"name": "Kindle Vildor",
+"pos": "CB",
+"team": "NE",
+"weight": 190.0,
+"years": 7
+},
 "4036660": {
 "birth": "1998-03-27",
 "college": "Georgia Southern",
@@ -14971,9 +14989,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038432.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "57",
 "last": "Ogbongbemiga",
 "name": "Amen Ogbongbemiga",
@@ -24529,9 +24545,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372030.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "90",
 "last": "Barmore",
 "name": "Christian Barmore",
@@ -27303,7 +27317,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427366.png",
 "height": 71.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "20",
 "last": "Hall",
 "name": "Breece Hall",
@@ -27865,9 +27881,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428331.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "4",
 "last": "Rice",
 "name": "Rashee Rice",
@@ -28741,7 +28755,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429023.png",
 "height": 69.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "32",
 "last": "Lloyd",
 "name": "MarShawn Lloyd",
@@ -35511,9 +35527,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4578085.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "8",
 "last": "Verse",
 "name": "Jared Verse",
@@ -39120,22 +39134,6 @@
 "weight": 203.0,
 "years": 2
 },
-"4685540": {
-"birth": "2003-08-21",
-"college": "BYU",
-"first": "Carsen",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685540.png",
-"height": 75.0,
-"injuries": [],
-"jersey": "48",
-"last": "Ryan",
-"name": "Carsen Ryan",
-"pos": "TE",
-"team": "CLE",
-"weight": 255.0,
-"years": 0
-},
 "4685549": {
 "birth": "2003-09-09",
 "college": "Notre Dame",
@@ -41291,9 +41289,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4695783.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "26",
 "last": "Harden",
 "name": "Myles Harden",
@@ -43185,7 +43181,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4837186.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "28",
 "last": "McNeil-Warren",
 "name": "Emmanuel McNeil-Warren",
@@ -46397,7 +46395,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5083076.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "44",
 "last": "Fannin Jr.",
 "name": "Harold Fannin Jr.",

@@ -34,26 +34,26 @@
   },
   "modelWithoutMarket": {
    "games": 391,
-   "correct": 248,
-   "accuracy": 63.4,
-   "brier": 0.2245,
+   "correct": 249,
+   "accuracy": 63.7,
+   "brier": 0.2246,
    "calibration": [
     {
      "band": "50-60%",
-     "games": 184,
+     "games": 183,
      "predicted": 54.8,
-     "actual": 54.3
+     "actual": 54.6
     },
     {
      "band": "60-70%",
-     "games": 112,
+     "games": 113,
      "predicted": 64.5,
-     "actual": 66.1
+     "actual": 66.4
     },
     {
      "band": "70-80%",
      "games": 73,
-     "predicted": 74.3,
+     "predicted": 74.2,
      "actual": 79.5
     },
     {
@@ -148,7 +148,7 @@
    "games": 271,
    "correct": 172,
    "accuracy": 63.5,
-   "brier": 0.2194,
+   "brier": 0.2195,
    "calibration": [
     {
      "band": "50-60%",
@@ -258,32 +258,32 @@
   },
   "modelWithoutMarket": {
    "games": 120,
-   "correct": 76,
-   "accuracy": 63.3,
-   "brier": 0.2361,
+   "correct": 77,
+   "accuracy": 64.2,
+   "brier": 0.2362,
    "calibration": [
     {
      "band": "50-60%",
-     "games": 47,
-     "predicted": 54.9,
-     "actual": 59.6
+     "games": 46,
+     "predicted": 54.7,
+     "actual": 60.9
     },
     {
      "band": "60-70%",
-     "games": 42,
+     "games": 43,
      "predicted": 64.2,
-     "actual": 64.3
+     "actual": 65.1
     },
     {
      "band": "70-80%",
      "games": 23,
-     "predicted": 74.7,
+     "predicted": 74.6,
      "actual": 69.6
     },
     {
      "band": "80-100%",
      "games": 8,
-     "predicted": 81.9,
+     "predicted": 82.0,
      "actual": 62.5
     }
    ]
@@ -336,47 +336,47 @@
   }
  },
  "fittedWeights": {
-  "home": 1.758,
-  "offense": 0.277,
-  "defense": -0.039,
+  "home": 1.757,
+  "offense": 0.275,
+  "defense": -0.042,
   "special": -0.068,
-  "form": 0.127,
-  "adjusted": 0.236,
-  "lastSeason": 0.59,
-  "injuries": 1.217
+  "form": 0.126,
+  "adjusted": 0.239,
+  "lastSeason": 0.592,
+  "injuries": 1.216
  },
  "fittedMarginSD": 12.53,
  "calibratedMarginSD": 11.75,
  "fittedMarketWeight": 1.0,
- "marginSDForMarketWeight": 11.5,
+ "marginSDForMarketWeight": 11.75,
  "marketBlendCurve": {
   "0.00": {
-   "accuracy": 63.4,
-   "brier": 0.2245
+   "accuracy": 63.7,
+   "brier": 0.2246
   },
   "0.05": {
-   "accuracy": 63.9,
-   "brier": 0.2238
+   "accuracy": 64.2,
+   "brier": 0.2239
   },
   "0.10": {
-   "accuracy": 63.4,
-   "brier": 0.2231
+   "accuracy": 62.9,
+   "brier": 0.2232
   },
   "0.15": {
-   "accuracy": 63.2,
-   "brier": 0.2224
+   "accuracy": 62.9,
+   "brier": 0.2225
   },
   "0.20": {
-   "accuracy": 63.2,
+   "accuracy": 62.9,
    "brier": 0.2218
   },
   "0.25": {
-   "accuracy": 62.7,
-   "brier": 0.2211
+   "accuracy": 62.9,
+   "brier": 0.2212
   },
   "0.30": {
    "accuracy": 63.2,
-   "brier": 0.2205
+   "brier": 0.2206
   },
   "0.35": {
    "accuracy": 63.7,
@@ -384,11 +384,11 @@
   },
   "0.40": {
    "accuracy": 63.7,
-   "brier": 0.2194
+   "brier": 0.2195
   },
   "0.45": {
-   "accuracy": 63.9,
-   "brier": 0.2189
+   "accuracy": 64.2,
+   "brier": 0.219
   },
   "0.50": {
    "accuracy": 64.5,
@@ -399,16 +399,16 @@
    "brier": 0.2181
   },
   "0.60": {
-   "accuracy": 64.7,
+   "accuracy": 64.5,
    "brier": 0.2177
   },
   "0.65": {
-   "accuracy": 64.5,
-   "brier": 0.2173
+   "accuracy": 64.7,
+   "brier": 0.2174
   },
   "0.70": {
    "accuracy": 65.0,
-   "brier": 0.217
+   "brier": 0.2171
   },
   "0.75": {
    "accuracy": 65.0,
@@ -420,7 +420,7 @@
   },
   "0.85": {
    "accuracy": 65.5,
-   "brier": 0.2164
+   "brier": 0.2165
   },
   "0.90": {
    "accuracy": 65.5,
