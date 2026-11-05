@@ -13,7 +13,7 @@
     "noMaddenPercentile": 25,
     "noMaddenWhy": "Players missing from the Madden file (signed later, or not matched) start at the 25th percentile of rated players at their position, roughly a backup, and are labeled 'estimated baseline'.",
     "teamBaseline": {
-      "why": "A team's Madden baseline is the average Madden rating of its expected starters (from the preseason depth chart), with the QB counting 4 times. It's then scaled so teams spread like Madden's own team ratings (average about 77, best around 90, worst in the low 60s).",
+      "why": "A team's Madden baseline is the average Madden rating of its expected starters (from the preseason depth chart), with the QB counting 4 times. It's then scaled so teams spread like Madden's own team ratings (average about 77, best around 90, worst in the low 60s). When a starter leaves or joins by trade, release or signing, the baseline moves right away: he comes off the list and his replacement goes on. Injuries and benchings don't change it, since injuries have their own factor and benchings show up in the stats.",
       "qbWeight": 4,
       "mean": 77,
       "sd": 7

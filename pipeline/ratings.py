@@ -165,10 +165,8 @@ def blend_default(rt):
 # Team baselines (from players' Madden ratings) + team ratings
 # --------------------------------------------------------------------------
 
-def team_baselines(starters: dict, madden: dict, fallback: dict) -> dict:
-    """{team: {"offense", "defense", "special", "overall"}} on Madden's team scale.
-    starters: {team: [(id, side, weight)]} (weight 3 marks the QB). madden: {id: rating}.
-    fallback: {id: estimated rating} for starters without a Madden rating."""
+def _raw_baselines(starters: dict, madden: dict, fallback: dict) -> dict:
+    """Weighted average Madden rating of each team's starters, per unit and overall."""
     cfg = MADDEN["teamBaseline"]
     raw = {}
     for team, players in starters.items():
@@ -186,14 +184,45 @@ def team_baselines(starters: dict, madden: dict, fallback: dict) -> dict:
     for vals in raw.values():
         tot = sum(unit_w[u] for u in unit_w if u in vals)
         vals["overall"] = sum(unit_w[u] * vals[u] for u in unit_w if u in vals) / tot
+    return raw
+
+
+def _spread(raw: dict, key: str) -> tuple[float, float]:
+    xs = [v[key] for v in raw.values() if key in v]
+    mu = sum(xs) / len(xs)
+    return mu, math.sqrt(sum((x - mu) ** 2 for x in xs) / len(xs)) or 1.0
+
+
+def team_baselines(starters: dict, madden: dict, fallback: dict) -> dict:
+    """{team: {"offense", "defense", "special", "overall"}} on Madden's team scale.
+    starters: {team: [(id, side, weight)]} (weight 3 marks the QB). madden: {id: rating}.
+    fallback: {id: estimated rating} for starters without a Madden rating."""
+    cfg = MADDEN["teamBaseline"]
+    raw = _raw_baselines(starters, madden, fallback)
     out = {t: {} for t in raw}
     for key in ("offense", "defense", "special", "overall"):
-        xs = [v[key] for v in raw.values() if key in v]
-        mu = sum(xs) / len(xs)
-        sd = math.sqrt(sum((x - mu) ** 2 for x in xs) / len(xs)) or 1.0
+        mu, sd = _spread(raw, key)
         for t, v in raw.items():
             if key in v:
                 out[t][key] = round(max(1, min(99, cfg["mean"] + cfg["sd"] * (v[key] - mu) / sd)), 1)
+    return out
+
+
+def baseline_shift(starters: dict, starters_now: dict, madden: dict, fallback: dict) -> dict:
+    """How far roster moves changed each team's baseline: {team: {unit or "overall": points}}.
+    Uses the Week 1 scale for everyone, so a team nobody left or joined doesn't move at all."""
+    cfg = MADDEN["teamBaseline"]
+    before = _raw_baselines(starters, madden, fallback)
+    after = _raw_baselines(starters_now, madden, fallback)
+    out = {}
+    for t in after:
+        if sorted(starters.get(t, [])) == sorted(starters_now[t]):
+            continue
+        out[t] = {}
+        for key in ("offense", "defense", "special", "overall"):
+            if key in after[t] and key in before.get(t, {}):
+                _, sd = _spread(before, key)
+                out[t][key] = round(cfg["sd"] * (after[t][key] - before[t][key]) / sd, 1)
     return out
 
 

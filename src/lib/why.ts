@@ -5,6 +5,15 @@ import type { Category, PlayerCategory, PlayerDoc, TeamDoc, UnitId } from './typ
 // Builds what each "why this rating" sheet shows, following the same drill-down as the
 // screens: team → unit → category → stat, and player → category → stat.
 
+/** "Since Week 1: out A, B; in C (-1.2)", for the Madden baseline line. */
+function rosterNote(doc: TeamDoc, key: 'overall' | UnitId): string | undefined {
+  const m = doc.rosterMoves;
+  const shift = m?.shift[key];
+  if (!m || !shift) return undefined;
+  const parts = [m.out.length ? `out ${m.out.join(', ')}` : null, m.in.length ? `in ${m.in.join(', ')}` : null];
+  return `Starters changed since Week 1: ${parts.filter(Boolean).join('; ')} (${shift > 0 ? '+' : ''}${shift.toFixed(1)}).`;
+}
+
 export function teamWhy(doc: TeamDoc): WhyInfo {
   const join = (key: 'opp' | 'inj') =>
     UNITS.slice(0, 2)
@@ -13,6 +22,7 @@ export function teamWhy(doc: TeamDoc): WhyInfo {
   return {
     title: `${doc.team.name}`,
     team: true,
+    baselineNote: rosterNote(doc, 'overall'),
     results: doc.results,
     rt: doc.team.rt,
     context: { opp: join('opp'), inj: join('inj'), recent: doc.context?.offense?.recent },
@@ -24,6 +34,7 @@ export function unitWhy(doc: TeamDoc, unit: UnitId): WhyInfo {
   return {
     title: `${doc.team.nickname} ${unitLabel(unit)}`,
     team: true,
+    baselineNote: rosterNote(doc, unit),
     rt: doc.unitRatings?.[unit]?.rt,
     context: doc.context?.[unit],
     parts: doc.units[unit].map((c) => ({ label: c.label, w: c.w, rt: c.rt })),

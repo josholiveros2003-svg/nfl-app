@@ -113,6 +113,9 @@ export type RosterPlayer = {
 
 export type RosterSection = { id: string; label: string; players: RosterPlayer[] };
 
+/** Starters who left or joined since Week 1, and how far that moved the team's Madden baseline. */
+export type RosterMoves = { out: string[]; in: string[]; shift: Partial<Record<'overall' | UnitId, number>> };
+
 export type TeamDoc = {
   season: number;
   throughWeek: number;
@@ -122,6 +125,7 @@ export type TeamDoc = {
   units: Record<UnitId, Category[]>;
   roster: RosterSection[];
   unitRatings: Record<UnitId, { rt: Rt | null; w: number }>;
+  rosterMoves?: RosterMoves | null;
   results?: TeamResults;
   context: Record<UnitId, RatingContext>;
 };

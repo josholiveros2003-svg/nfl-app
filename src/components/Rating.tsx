@@ -16,6 +16,8 @@ export type WhyInfo = {
   partsLabel?: string;
   /** Teams: the baseline is built from the starters' Madden ratings. */
   team?: boolean;
+  /** Teams: which trades, releases or signings moved the baseline. */
+  baselineNote?: string;
   /** Teams' overall rating: wins and losses in context, game by game. */
   results?: TeamResults;
   /** A button to the full team/player page (used by the rankings lists). */
@@ -147,7 +149,7 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
                   info.baseline
                     ? info.baseline.detail
                     : info.team
-                    ? 'Average Madden rating of the expected starters (QB counts 4×), scaled to Madden\'s team range.'
+                    ? `Average Madden rating of the expected starters (QB counts 4×), scaled to Madden's team range.${info.baselineNote ? ` ${info.baselineNote}` : ''}`
                     : b.estimatedBaseline
                       ? 'Not in the Madden file, so he starts at a typical backup rating for his position.'
                       : 'The starting point, from EA\'s launch ratings.'
@@ -157,7 +159,7 @@ export function WhySheet({ info, onClose }: { info: WhyInfo; onClose: () => void
               />
               <Row
                 label="This season's stats"
-                detail={`Compared with what a ${Math.round(b.baseline)} normally produces · stats count ${pct(b.statShare)} here${b.limited ? ' (limited sample)' : ''} · ${pct(b.perfShare)} weight${info.context?.short ? ` · ${info.context.short}` : ''}`}
+                detail={`Compared with what ${info.baselineNote ? 'its Week 1 roster' : `a ${Math.round(b.baseline)}`} normally produces · stats count ${pct(b.statShare)} here${b.limited ? ' (limited sample)' : ''} · ${pct(b.perfShare)} weight${info.context?.short ? ` · ${info.context.short}` : ''}`}
                 value={fmtMove(b.stats)}
                 color={b.stats >= 0.05 ? colors.good : b.stats <= -0.05 ? colors.bad : colors.muted}
               />

@@ -99,8 +99,12 @@ minutes the scheduled job compares ESPN's rosters with the live site's `data/ros
 rebuilds and republishes only if they differ, so a failed publish is retried too. If ESPN can't be reached during a build, it uses the last good copy
 (`data/espn_rosters.json`), so one failed download can't put released players back on a team.
 
-Team rating baselines still come from each team's depth chart before Week 1, so a trade changes rosters,
-depth charts, position rankings and line ratings right away, but not the team's Madden starting point.
+Trades move team ratings too (`starters_after_moves` in `pipeline/context.py`). When a starter leaves or
+joins, the team's Madden baseline moves for Offense, Defense, Special Teams and Overall, which flows into
+the power rankings and upcoming win chances. The list starts from the Week 1 starters and only changes for
+moves: injuries and benchings don't count. Past games keep the roster known at the time, the stat
+adjustment stays as it was, and categories like Passing and individual stat ratings stay as they were,
+since those describe games already played.
 
 ## Ratings (start from Madden, move with real results)
 

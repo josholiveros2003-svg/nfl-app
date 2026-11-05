@@ -27,15 +27,15 @@ import requests
 
 from averages import Averages
 from boxscore import box_scores
-from context import Context, expected_starters, burdens, team_contexts, team_strength, unavailable
+from context import Context, expected_starters, burdens, starters_after_moves, team_contexts, team_strength, unavailable
 from learn import fit, fit_groups, repool, set_trust
 from winprob import FEATURES as WP_FEATURES, LABELS as WP_LABELS, SETTINGS as WP_SETTINGS
 from winprob import backtest, game_features, last_season_margins, phi, predict, team_results, unavailable_by_week
-from espn_live import fetch_live, load_snapshot, save_live
+from espn_live import app_team, fetch_live, load_snapshot, save_live
 from madden import load_madden
-from roster_moves import apply_live_moves
+from roster_moves import HAS_TEAM, apply_live_moves
 from players import CATEGORIES, GROUP_OF, build_players, hurt_weeks, season_players, training_rows
-from ratings import MADDEN, RECENT_GAMES, blend_default, rate_teams, strip_fmt, team_baselines, weights_for
+from ratings import MADDEN, RECENT_GAMES, baseline_shift, blend_default, rate_teams, strip_fmt, team_baselines, weights_for
 from ratings import SETTINGS as RATINGS_SETTINGS
 from rankings import league_components, records_before, unit_lists
 from market import describe as describe_market, market_strengths
@@ -161,6 +161,13 @@ def ratings_asof(season, week, pbp, sched, team_ids, people, baselines, model) -
     return out
 
 
+def shift_rt(rt: dict | None, points: float | None) -> None:
+    """Move a team rating's starting point after a roster move. The stat adjustment stays as it
+    was, measured against the roster that produced those stats."""
+    if rt and points:
+        rt["m"] = round(rt["m"] + points, 1)
+
+
 def player_info(roster, madden: dict, starters: dict) -> dict:
     """Who each player is, for weighing injuries: position group, Madden rating, starter or not."""
     starter_ids = {pid for ps in starters.values() for pid, _, _ in ps}
@@ -173,7 +180,7 @@ def player_info(roster, madden: dict, starters: dict) -> dict:
     return out
 
 
-def winprob_games(season, sched, pbp, team_ids, people, baselines, model, out_by_week, info, prior):
+def winprob_games(season, sched, pbp, team_ids, people, baselines, model, out_by_week, info, prior, shift_for=None):
     """Every regular-season game with its pre-game features (and result, if played).
     Also returns the weekly 'as of' team ratings it built: {week: {team: ratings}}."""
     results = team_results(sched)
@@ -185,6 +192,11 @@ def winprob_games(season, sched, pbp, team_ids, people, baselines, model, out_by
         as_of = min(week, last_played + 1)  # future games use the latest ratings
         if as_of not in snaps:
             snaps[as_of] = ratings_asof(season, as_of, pbp, sched, team_ids, people, baselines, model)
+            # Roster moves known by that week.
+            for t, moved in (shift_for(as_of, last_played) if shift_for else {}).items():
+                for u in UNIT_KEYS:
+                    if t in snaps[as_of] and u in moved:
+                        snaps[as_of][t][u] = round(snaps[as_of][t][u] + moved[u], 1)
         # Injury reports exist only up to the current week; further ahead, only injured reserve is known.
         inj = out_by_week
         if week > latest_report:
@@ -1007,6 +1019,29 @@ def main():
     fallback = {pid: est.get(pos_group.get(pid), 65.0) for ps in starters.values() for pid, _, _ in ps}
     baselines = team_baselines(starters, madden, fallback)
 
+    # Trades, releases and signings since Week 1 move a team's baseline.
+    def fallback_for(lists):
+        return {**{pid: est.get(pos_group.get(pid), 65.0) for ps in lists.values() for pid, _, _ in ps}, **fallback}
+
+    latest_rows = roster.dropna(subset=["gsis_id"]).sort_values("week").drop_duplicates("gsis_id", keep="last")
+    team_now = {r.gsis_id: (app_team(r.team) if r.status in HAS_TEAM else None) for r in latest_rows.itertuples()}
+    latest_report = max((w for _, w in missing), default=0)
+    hurt_now = {p for p, w in missing if w == latest_report} | set(latest_rows[latest_rows.status == "RES"].gsis_id)
+    starters_now, roster_changes = starters_after_moves(extra["depth"], season_start, madden, hurt_now, team_now=team_now)
+    shift_now = baseline_shift(starters, starters_now, madden, fallback_for(starters_now))
+    for t, ch in roster_changes.items():
+        print(f"  {t} baseline {shift_now.get(t, {}).get('overall', 0):+.1f}: out {ch['out']} in {ch['in']}")
+
+    chart_names = dict(zip(extra["depth"].gsis_id, extra["depth"].player_name))
+
+    def shift_for_week(as_of, last_played):
+        if as_of > last_played:
+            return shift_now
+        day = str(sched[sched.week == as_of].gameday.min())
+        hurt_then = {p for p, w in missing if w == as_of}
+        then, _ = starters_after_moves(extra["depth"], season_start, madden, hurt_then, moment=day)
+        return baseline_shift(starters, then, madden, fallback_for(then))
+
     # ---- Last season, to learn from ----
     last = load_last_season(season - 1)
     lpbp = last["pbp"][last["pbp"].season_type == "REG"]
@@ -1032,6 +1067,10 @@ def main():
                team_rows(all_units, games_played, season, baselines), unit_cats, {})
     set_trust(team_model, MADDEN["minTrust"]["teams"])
     team_ratings = rate_teams(team_model, season, all_units, recent_units, games_played, team_ctx, baselines)
+    for t, moved in shift_now.items():
+        shift_rt(team_ratings[t]["rt"], moved.get("overall"))
+        for u in UNIT_KEYS:
+            shift_rt(team_ratings[t]["units"][u]["rt"], moved.get(u))
 
     # Betting market's view of each team fills the "analyst opinion" factor (offense, defense, overall).
     tb = MADDEN["teamBaseline"]
@@ -1081,10 +1120,11 @@ def main():
     # ---- Win probability: every game this season and last, then an honest test ----
     out_now = unavailable_by_week(extra["injuries"], extra["weekly_rosters"])
     all_reg = games[games.game_type == "REG"]
-    info_now = player_info(roster, madden, starters)
+    # New starters count as starters on the injury report too.
+    info_now = player_info(roster, madden, {t: starters.get(t, []) + starters_now.get(t, []) for t in team_ids})
     games_now, snaps_now = winprob_games(season, sched, pbp, team_ids, people, baselines, team_model, out_now,
                               info_now,
-                              last_season_margins(all_reg[all_reg.season == season - 1]))
+                              last_season_margins(all_reg[all_reg.season == season - 1]), shift_for_week)
     # Last season: no preseason Madden existed for it in our data, so every team starts even.
     flat = {t: {k: MADDEN["teamBaseline"]["mean"] for k in (*UNIT_KEYS, "overall")} for t in team_ids}
     lstarters = expected_starters(last["depth"], str(lsched.gameday.min()))
@@ -1159,7 +1199,7 @@ def main():
         record = f"{w}-{l}" + (f"-{tie}" if tie else "")
         team = {
             "rt": team_ratings[t]["rt"],
-            "madden": baselines[t].get("overall"),
+            "madden": round(baselines[t].get("overall", 0) + shift_now.get(t, {}).get("overall", 0), 1),
             "abbr": t,
             "name": info.team_name,
             "nickname": info.team_nick,
@@ -1187,6 +1227,10 @@ def main():
         doc = {"season": season, "throughWeek": through_week, "updated": updated,
                "team": team, "games": games_out, "units": all_units[t], "roster": rosters.get(t, []),
                "unitRatings": team_ratings[t]["units"],
+               "rosterMoves": None if t not in roster_changes else {
+                   "out": [chart_names.get(p, p) for p in roster_changes[t]["out"]],
+                   "in": [chart_names.get(p, p) for p in roster_changes[t]["in"]],
+                   "shift": shift_now.get(t, {})},
                "results": team_results_ctx[t],
                "context": {side: {"opp": c["opp"], "inj": c["inj"], "recent": recent_text(played_by_team[t]),
                                   "mkt": c.get("mkt")}
