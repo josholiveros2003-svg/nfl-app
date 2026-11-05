@@ -12324,7 +12324,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916387.png",
 "height": 74.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "8",
 "last": "Jackson",
@@ -14312,7 +14312,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035671.png",
 "height": 73.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "5",
 "last": "Huntley",
@@ -17117,7 +17117,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240589.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "78",
 "last": "Wirfs",
 "name": "Tristan Wirfs",
@@ -27301,9 +27303,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427366.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "20",
 "last": "Hall",
 "name": "Breece Hall",
@@ -38361,9 +38361,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685248.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "31",
 "last": "Bailey",
 "name": "David Bailey",
@@ -42845,9 +42843,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4808766.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "85",
 "last": "Taylor",
 "name": "Mason Taylor",
