@@ -67,7 +67,7 @@ jobs:
         id: save
         if: steps.rosters.outputs.changed != 'false'
         run: |
-          git add public/data data/roster_fingerprint.txt
+          git add public/data
           if git diff --cached --quiet; then
             echo "No new data."
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -81,13 +81,13 @@ jobs:
 
       # Everything below only runs when there's something new to publish.
       - uses: actions/setup-node@v7
-        if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
+        if: steps.save.outputs.changed == 'true' || steps.rosters.outputs.changed == 'true' || github.event_name != 'schedule'
         with:
           node-version: 24
           cache: npm
 
       - name: Build website
-        if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
+        if: steps.save.outputs.changed == 'true' || steps.rosters.outputs.changed == 'true' || github.event_name != 'schedule'
         run: |
           npm ci
           # GitHub Pages serves the site at /<repo-name>/ (unless the repo is <user>.github.io).
@@ -96,10 +96,10 @@ jobs:
           npm run build:web
 
       - uses: actions/upload-pages-artifact@v5
-        if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
+        if: steps.save.outputs.changed == 'true' || steps.rosters.outputs.changed == 'true' || github.event_name != 'schedule'
         with:
           path: dist
 
       - id: deploy
-        if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
+        if: steps.save.outputs.changed == 'true' || steps.rosters.outputs.changed == 'true' || github.event_name != 'schedule'
         uses: actions/deploy-pages@v5

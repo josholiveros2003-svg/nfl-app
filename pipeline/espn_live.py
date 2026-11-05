@@ -23,7 +23,8 @@ import urllib.request
 from pathlib import Path
 
 BASE = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams"
-FINGERPRINT = Path(__file__).resolve().parent.parent / "data" / "roster_fingerprint.txt"
+# Published with the site, so the check below can see what the live site actually has.
+FINGERPRINT = Path(__file__).resolve().parent.parent / "public" / "data" / "roster_fingerprint.txt"
 
 ESPN_TEAMS = ("ari atl bal buf car chi cin cle dal den det gb hou ind jax kc "
               "lv lac lar mia min ne no nyg nyj phi pit sf sea tb ten wsh").split()
@@ -107,13 +108,28 @@ def save_fingerprint(live: dict) -> None:
     FINGERPRINT.write_text(fingerprint(live) + "\n")
 
 
+def published_fingerprint() -> str:
+    """The code on the live site. Comparing with this (not the repo's copy) means a publish that
+    failed gets retried on the next check. Empty if it can't be read, which triggers a rebuild."""
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    try:
+        if not repo:
+            return FINGERPRINT.read_text().strip()
+        owner, name = repo.split("/")
+        url = f"https://{owner}.github.io/{name}/data/roster_fingerprint.txt?t={int(time.time())}"
+        req = urllib.request.Request(url, headers={"User-Agent": "nfl-stats-app"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return r.read().decode().strip()
+    except Exception:
+        return ""
+
+
 def check() -> bool:
-    """True if rosters changed since the last build. If ESPN is down, there's nothing to act on."""
+    """True if the live site's rosters are out of date. If ESPN is down, there's nothing to act on."""
     live = fetch_live()
     if live is None:
         return False
-    saved = FINGERPRINT.read_text().strip() if FINGERPRINT.exists() else ""
-    return fingerprint(live) != saved
+    return fingerprint(live) != published_fingerprint()
 
 
 if __name__ == "__main__":
