@@ -1212,6 +1212,9 @@
 "4033812": [
 "HOU"
 ],
+"4033855": [
+"CLE"
+],
 "4034729": [
 "MIA"
 ],
@@ -12510,7 +12513,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917142.png",
 "height": 74.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "51",
 "last": "Davis-Gaither",
@@ -16208,7 +16211,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4047646.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "1",
 "last": "Brown",
@@ -23960,7 +23963,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4367199.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "71",
 "last": "Gaines II",
@@ -27534,7 +27537,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427728.png",
 "height": 71.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "20",
 "last": "Knight",
@@ -32526,7 +32529,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432710.png",
 "height": 70.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "32",
 "last": "Henderson",
@@ -37588,7 +37591,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4682909.png",
 "height": 70.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "27",
 "last": "Walley",
@@ -42264,7 +42267,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4709718.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "66",
 "last": "Williams",
@@ -46236,7 +46239,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081999.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "43",
 "last": "Donaldson",
