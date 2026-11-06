@@ -15580,7 +15580,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4040622.png",
 "height": 78.0,
 "injuries": [],
-"jersey": null,
+"jersey": "67",
 "last": "Jordan",
 "name": "Michael Jordan",
 "pos": "G",
@@ -35343,7 +35343,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4575517.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "14",
 "last": "Hamilton",
 "name": "Kyle Hamilton",
