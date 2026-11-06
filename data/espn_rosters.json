@@ -1884,6 +1884,9 @@
 "4241961": [
 "LV"
 ],
+"4241983": [
+"LV"
+],
 "4241985": [
 "DEN"
 ],
@@ -23186,9 +23189,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362474.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "73",
 "last": "Avila",
 "name": "Steve Avila",
@@ -23598,7 +23599,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362851.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "13",
 "last": "Jones IV",
 "name": "Ernest Jones IV",
@@ -24904,9 +24907,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372716.png",
 "height": 69.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "81",
 "last": "Remigio",
 "name": "Nikko Remigio",
@@ -28076,7 +28077,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428512.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": null,
 "last": "Slovis",
 "name": "Kedon Slovis",
@@ -29344,9 +29347,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429211.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "75",
 "last": "Bradford",
 "name": "Anthony Bradford",
@@ -33598,7 +33599,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567226.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "58",
 "last": "Hall",
 "name": "Derick Hall",
@@ -36355,7 +36358,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4601278.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "2",
 "last": "Wiggins",
@@ -39428,7 +39431,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685736.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "51",
 "last": "Jones Jr.",
 "name": "Emery Jones Jr.",
@@ -41712,7 +41717,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4698113.png",
 "height": 71.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "16",
 "last": "Melton",
 "name": "Max Melton",
@@ -46756,7 +46763,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5088338.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "13",
 "last": "Sarratt",
 "name": "Elijah Sarratt",
