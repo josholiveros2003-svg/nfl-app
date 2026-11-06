@@ -26201,7 +26201,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426372.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "50",
 "last": "Isaac",
 "name": "Adisa Isaac",
