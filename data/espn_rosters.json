@@ -7422,11 +7422,11 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2578570.png",
 "height": 76.0,
 "injuries": [],
-"jersey": "7",
+"jersey": null,
 "last": "Brissett",
 "name": "Jacoby Brissett",
 "pos": "QB",
-"team": "ARI",
+"team": "BAL",
 "weight": 235.0,
 "years": 11
 },
@@ -17872,7 +17872,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241474.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "15",
 "last": "Robinson Jr.",
@@ -25872,7 +25872,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4401811.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "29",
 "last": "Dugger",
@@ -33373,9 +33373,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567098.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "27",
 "last": "Battle",
 "name": "Jordan Battle",
@@ -33795,7 +33793,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567750.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "2",
 "last": "Egbuka",
 "name": "Emeka Egbuka",
@@ -34458,7 +34458,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569618.png",
 "height": 72.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "5",
 "last": "Wilson",
@@ -38092,7 +38092,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683815.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "49",
 "last": "Wallace",
@@ -46009,7 +46009,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081394.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "27",
 "last": "Pearce Jr.",
 "name": "James Pearce Jr.",
