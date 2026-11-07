@@ -2016,6 +2016,9 @@
 "4243256": [
 "CAR"
 ],
+"4243315": [
+"CHI"
+],
 "4243321": [
 "HOU"
 ],
@@ -2096,6 +2099,9 @@
 ],
 "4248047": [
 "NO"
+],
+"4248425": [
+"MIA"
 ],
 "4248455": [
 "SEA"
@@ -3894,6 +3900,9 @@
 "4432525": [
 "SEA"
 ],
+"4432545": [
+"DET"
+],
 "4432571": [
 "LAC"
 ],
@@ -4629,6 +4638,9 @@
 "4683062": [
 "KC"
 ],
+"4683111": [
+"WAS"
+],
 "4683151": [
 "IND"
 ],
@@ -4798,6 +4810,9 @@
 "JAX"
 ],
 "4685441": [
+"DET"
+],
+"4685442": [
 "DET"
 ],
 "4685461": [
@@ -5943,6 +5958,9 @@
 "5125875": [
 "LA"
 ],
+"5143915": [
+"DET"
+],
 "5144457": [
 "MIA"
 ],
@@ -6273,7 +6291,7 @@
 "birth": "1987-07-07",
 "college": "Ohio State",
 "first": "Jake",
-"group": "practiceSquad",
+"group": "specialTeam",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/14676.png",
 "height": 74.0,
 "injuries": [],
@@ -8327,7 +8345,7 @@
 "birth": "1995-03-02",
 "college": "Illinois",
 "first": "Dawuane",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3042476.png",
 "height": 75.0,
 "injuries": [],
@@ -8489,7 +8507,7 @@
 "birth": "1995-05-07",
 "college": "Arizona State",
 "first": "Zane",
-"group": "practiceSquad",
+"group": "specialTeam",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3043234.png",
 "height": 72.0,
 "injuries": [],
@@ -11683,7 +11701,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3895856.png",
 "height": 71.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "3",
 "last": "Kirk",
@@ -16353,7 +16371,7 @@
 "birth": "1998-05-06",
 "college": "Iowa State",
 "first": "Eyioma",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4066109.png",
 "height": 78.0,
 "injuries": [
@@ -17885,7 +17903,7 @@
 "birth": "1998-05-02",
 "college": "Louisiana",
 "first": "Elijah",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241555.png",
 "height": 70.0,
 "injuries": [],
@@ -22359,11 +22377,11 @@
 "birth": "1999-11-01",
 "college": "North Carolina",
 "first": "Dyami",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361577.png",
 "height": 72.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "6",
 "last": "Brown",
@@ -22575,7 +22593,7 @@
 "birth": "1999-09-18",
 "college": "Georgia",
 "first": "Zamir",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361777.png",
 "height": 72.0,
 "injuries": [],
@@ -26633,7 +26651,7 @@
 "birth": "2000-05-01",
 "college": "Rice",
 "first": "Brant",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426623.png",
 "height": 79.0,
 "injuries": [],
@@ -31253,7 +31271,7 @@
 "birth": "2002-12-09",
 "college": "Alabama",
 "first": "Tim",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431414.png",
 "height": 74.0,
 "injuries": [],
@@ -31729,7 +31747,7 @@
 "birth": "2002-10-24",
 "college": "Clemson",
 "first": "Phil",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431562.png",
 "height": 73.0,
 "injuries": [],
@@ -33609,7 +33627,7 @@
 "birth": "1998-07-15",
 "college": "Houston",
 "first": "Damarion",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567480.png",
 "height": 70.0,
 "injuries": [],
@@ -34119,7 +34137,7 @@
 "birth": "2000-08-22",
 "college": "Iowa",
 "first": "Jack",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569465.png",
 "height": 77.0,
 "injuries": [
@@ -36841,7 +36859,7 @@
 "birth": "2003-04-05",
 "college": "Minnesota",
 "first": "Deven",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4609203.png",
 "height": 77.0,
 "injuries": [],
@@ -37563,7 +37581,7 @@
 "birth": "2003-03-25",
 "college": "UNLV",
 "first": "Jaden",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683111.png",
 "height": 76.0,
 "injuries": [],
@@ -38787,7 +38805,7 @@
 "birth": "2004-10-08",
 "college": "USC",
 "first": "Anthony",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685442.png",
 "height": 77.0,
 "injuries": [],
@@ -41257,7 +41275,7 @@
 "birth": "2001-11-16",
 "college": "Tulane",
 "first": "Johnathan",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4695991.png",
 "height": 73.0,
 "injuries": [],
@@ -41507,7 +41525,7 @@
 "birth": "1998-09-17",
 "college": "Washington State",
 "first": "Jaylen",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4697639.png",
 "height": 74.0,
 "injuries": [
@@ -47013,7 +47031,7 @@
 "birth": "2000-05-01",
 "college": "Saginaw Valley State",
 "first": "Nick",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5143915.png",
 "height": 73.0,
 "injuries": [],
@@ -47567,7 +47585,7 @@
 "birth": "2001-06-26",
 "college": null,
 "first": "Charlie",
-"group": "practiceSquad",
+"group": "specialTeam",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5208518.png",
 "height": 76.0,
 "injuries": [],
