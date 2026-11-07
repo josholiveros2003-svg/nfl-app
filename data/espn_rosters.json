@@ -2751,6 +2751,9 @@
 "4366349": [
 "BUF"
 ],
+"4366910": [
+"ARI"
+],
 "4366963": [
 "LV"
 ],
@@ -2831,6 +2834,9 @@
 ],
 "4372016": [
 "DEN"
+],
+"4372019": [
+"ARI"
 ],
 "4372020": [
 "SEA"
@@ -21561,7 +21567,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360807.png",
 "height": 73.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "22",
 "last": "Abdullah",
@@ -34141,7 +34147,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569465.png",
 "height": 77.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "46",
 "last": "Campbell",
@@ -46445,7 +46451,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5084939.png",
 "height": 76.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "74",
 "last": "Adams",
