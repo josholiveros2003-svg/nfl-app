@@ -7411,22 +7411,6 @@
 "weight": 235.0,
 "years": 11
 },
-"2579604": {
-"birth": "1993-01-05",
-"college": "Miami",
-"first": "Phillip",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2579604.png",
-"height": 70.0,
-"injuries": [],
-"jersey": "13",
-"last": "Dorsett II",
-"name": "Phillip Dorsett II",
-"pos": "WR",
-"team": "LV",
-"weight": 185.0,
-"years": 9
-},
 "2579621": {
 "birth": "1992-12-05",
 "college": "Miami",
@@ -43144,9 +43128,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4837244.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "50",
 "last": "Jacas",
 "name": "Gabe Jacas",
@@ -47410,6 +47392,22 @@
 "team": "KC",
 "weight": 170.0,
 "years": 0
+},
+"5155825": {
+"birth": "2001-07-23",
+"college": "Towson",
+"first": "Carter",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5155825.png",
+"height": 76.0,
+"injuries": [],
+"jersey": "84",
+"last": "Runyon",
+"name": "Carter Runyon",
+"pos": "TE",
+"team": "LV",
+"weight": 243.0,
+"years": 2
 },
 "5157289": {
 "birth": "2005-08-16",
