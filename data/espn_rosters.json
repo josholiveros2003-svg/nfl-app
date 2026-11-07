@@ -17801,11 +17801,11 @@
 "birth": "1999-03-22",
 "college": "Alabama",
 "first": "Brian",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241474.png",
 "height": 73.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "15",
 "last": "Robinson Jr.",
@@ -31043,7 +31043,7 @@
 "birth": "2002-12-16",
 "college": "Notre Dame",
 "first": "Beaux",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431210.png",
 "height": 75.0,
 "injuries": [
