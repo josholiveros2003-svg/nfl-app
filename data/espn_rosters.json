@@ -39,6 +39,9 @@
 "14163": [
 "GB"
 ],
+"14676": [
+"LA"
+],
 "14880": [
 "LV"
 ],
@@ -4082,6 +4085,9 @@
 ],
 "4567462": [
 "DEN"
+],
+"4567480": [
+"LA"
 ],
 "4567493": [
 "MIA"
@@ -10208,9 +10214,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3122132.png",
 "height": 76.0,
-"injuries": [
-"Injured Reserve"
-],
+"injuries": [],
 "jersey": "95",
 "last": "Garrett",
 "name": "Myles Garrett",
@@ -18754,9 +18758,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4243003.png",
 "height": 69.0,
-"injuries": [
-"Injured Reserve"
-],
+"injuries": [],
 "jersey": "20",
 "last": "Rivers",
 "name": "Ronnie Rivers",
@@ -41525,7 +41527,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4697639.png",
 "height": 74.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "35",
 "last": "Watson",
