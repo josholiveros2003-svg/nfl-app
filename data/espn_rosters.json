@@ -360,9 +360,6 @@
 "2983509": [
 "HOU"
 ],
-"2985659": [
-"DEN"
-],
 "2991662": [
 "NE"
 ],
@@ -765,9 +762,6 @@
 "3128412": [
 "HOU"
 ],
-"3128429": [
-"DEN"
-],
 "3129307": [
 "JAX"
 ],
@@ -812,9 +806,6 @@
 ],
 "3138826": [
 "SF"
-],
-"3139166": [
-"DEN"
 ],
 "3139368": [
 "PHI"
@@ -1448,9 +1439,6 @@
 ],
 "4039050": [
 "ARI"
-],
-"4039057": [
-"DEN"
 ],
 "4039059": [
 "DEN"
@@ -3498,6 +3486,9 @@
 "4429392": [
 "CLE"
 ],
+"4429466": [
+"GB"
+],
 "4429490": [
 "PIT"
 ],
@@ -3734,9 +3725,6 @@
 ],
 "4431268": [
 "TEN"
-],
-"4431280": [
-"DEN"
 ],
 "4431299": [
 "CHI"
@@ -4341,9 +4329,6 @@
 "4586333": [
 "DET"
 ],
-"4589212": [
-"DEN"
-],
 "4590292": [
 "NYG"
 ],
@@ -4418,9 +4403,6 @@
 ],
 "4600415": [
 "CLE"
-],
-"4600981": [
-"DEN"
 ],
 "4601021": [
 "IND"
@@ -4916,9 +4898,6 @@
 ],
 "4686468": [
 "IND"
-],
-"4686472": [
-"DEN"
 ],
 "4686540": [
 "SEA"
@@ -11497,7 +11476,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3886598.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "14",
 "last": "Jennings",
@@ -11970,9 +11949,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3915416.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "2",
 "last": "Moore",
 "name": "DJ Moore",
@@ -13488,9 +13465,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4030899.png",
 "height": 80.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "79",
 "last": "Brown",
 "name": "Spencer Brown",
@@ -15762,9 +15737,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4044133.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "28",
 "last": "Franklin Jr.",
 "name": "Sam Franklin Jr.",
@@ -22755,7 +22728,7 @@
 "birth": "1999-08-11",
 "college": "Virginia Tech",
 "first": "James",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361988.png",
 "height": 76.0,
 "injuries": [],
@@ -27493,7 +27466,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427816.png",
 "height": 74.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "35",
 "last": "Liufau",
@@ -29435,7 +29408,7 @@
 "birth": "2002-05-14",
 "college": "TCU",
 "first": "Drake",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429466.png",
 "height": 77.0,
 "injuries": [],
@@ -37100,9 +37073,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4635008.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "0",
 "last": "Coleman",
 "name": "Keon Coleman",
@@ -38737,7 +38708,7 @@
 "birth": "2003-11-22",
 "college": "SMU",
 "first": "Jordan",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685409.png",
 "height": 73.0,
 "injuries": [],
@@ -42237,7 +42208,7 @@
 "birth": "2003-07-21",
 "college": "UCF",
 "first": "Malachi",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4710067.png",
 "height": 76.0,
 "injuries": [
