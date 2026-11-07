@@ -280,11 +280,11 @@
      "r2": 0.15,
      "learned": true,
      "weights": {
-      "snaps": 0.203,
+      "snaps": 0.204,
       "snaps_pg": 0.312,
       "snap_share": 0.3,
-      "penalties": 0.084,
-      "penalty_yds": 0.101
+      "penalties": 0.085,
+      "penalty_yds": 0.099
      }
     }
    }
@@ -295,11 +295,11 @@
    "topStats": [
     [
      "Rushing: Rushing TDs",
-     1.54
+     1.55
     ],
     [
      "Receiving: Catches of 20+ yards",
-     0.93
+     0.94
     ],
     [
      "Rushing: Runs of 10+ yards",
@@ -307,7 +307,7 @@
     ],
     [
      "Playing Time: Snap share",
-     0.74
+     0.75
     ]
    ],
    "categories": {
