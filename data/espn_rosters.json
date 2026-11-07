@@ -2550,6 +2550,9 @@
 "4361776": [
 "GB"
 ],
+"4361777": [
+"NO"
+],
 "4361788": [
 "DET"
 ],
@@ -3629,9 +3632,6 @@
 ],
 "4430681": [
 "MIA"
-],
-"4430684": [
-"NO"
 ],
 "4430723": [
 "KC"
@@ -8243,11 +8243,11 @@
 "birth": "1993-09-16",
 "college": "North Carolina",
 "first": "Mack",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2991662.png",
 "height": 76.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "13",
 "last": "Hollins",
@@ -8457,12 +8457,10 @@
 "birth": "1994-09-21",
 "college": "Florida",
 "first": "Demarcus",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3043116.png",
 "height": 73.0,
-"injuries": [
-"Injured Reserve"
-],
+"injuries": [],
 "jersey": "11",
 "last": "Robinson",
 "name": "Demarcus Robinson",
@@ -8757,7 +8755,7 @@
 "birth": "1995-01-03",
 "college": "Prairie View A&M",
 "first": "KhaDarel",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3047876.png",
 "height": 74.0,
 "injuries": [],
@@ -11681,7 +11679,7 @@
 "birth": "1996-11-18",
 "college": "Texas A&M",
 "first": "Christian",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3895856.png",
 "height": 71.0,
 "injuries": [
@@ -14453,7 +14451,7 @@
 "birth": "1998-04-21",
 "college": "Virginia Tech",
 "first": "Khalil",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035886.png",
 "height": 69.0,
 "injuries": [],
@@ -17099,7 +17097,7 @@
 "birth": "1999-03-03",
 "college": "Florida",
 "first": "Marco",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240595.png",
 "height": 71.0,
 "injuries": [],
@@ -18871,7 +18869,7 @@
 "birth": "1998-12-30",
 "college": "Washington",
 "first": "Salvon",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4243315.png",
 "height": 71.0,
 "injuries": [],
@@ -22497,7 +22495,7 @@
 "birth": "1999-08-18",
 "college": "Wyoming",
 "first": "Chad",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361707.png",
 "height": 75.0,
 "injuries": [],
@@ -23837,7 +23835,7 @@
 "birth": "2000-05-16",
 "college": "Rutgers",
 "first": "Shawn",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4366910.png",
 "height": 76.0,
 "injuries": [],
@@ -24427,11 +24425,11 @@
 "birth": "1999-09-12",
 "college": "Cincinnati",
 "first": "Jerome",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372019.png",
 "height": 70.0,
 "injuries": [],
-"jersey": null,
+"jersey": "34",
 "last": "Ford",
 "name": "Jerome Ford",
 "pos": "RB",
@@ -25731,7 +25729,7 @@
 "birth": "1999-09-08",
 "college": "Missouri",
 "first": "Cody",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4391845.png",
 "height": 69.0,
 "injuries": [],
@@ -30375,22 +30373,6 @@
 "weight": 210.0,
 "years": 1
 },
-"4430684": {
-"birth": "2001-01-10",
-"college": "Wyoming",
-"first": "Treyton",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430684.png",
-"height": 76.0,
-"injuries": [],
-"jersey": "82",
-"last": "Welch",
-"name": "Treyton Welch",
-"pos": "TE",
-"team": "NO",
-"weight": 240.0,
-"years": 1
-},
 "4430723": {
 "birth": "2000-11-02",
 "college": "TCU",
@@ -31303,7 +31285,7 @@
 "birth": "2001-01-30",
 "college": "Louisville",
 "first": "Corey",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431426.png",
 "height": 73.0,
 "injuries": [],
@@ -32249,7 +32231,7 @@
 "birth": "2001-01-31",
 "college": "Tennessee",
 "first": "Jabari",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432545.png",
 "height": 71.0,
 "injuries": [],
@@ -34207,7 +34189,7 @@
 "birth": "2001-04-12",
 "college": "USC",
 "first": "Drake",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569511.png",
 "height": 76.0,
 "injuries": [],
@@ -36123,7 +36105,7 @@
 "birth": "2002-12-09",
 "college": "Ole Miss",
 "first": "Trey",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4599160.png",
 "height": 70.0,
 "injuries": [],
@@ -36150,22 +36132,6 @@
 "team": "NE",
 "weight": 310.0,
 "years": 2
-},
-"4599739": {
-"birth": "2002-06-11",
-"college": "TCU",
-"first": "Kendre",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4599739.png",
-"height": 72.0,
-"injuries": [],
-"jersey": "5",
-"last": "Miller",
-"name": "Kendre Miller",
-"pos": "RB",
-"team": "NO",
-"weight": 220.0,
-"years": 4
 },
 "4600415": {
 "birth": "2003-06-13",
@@ -36207,7 +36173,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4600981.png",
 "height": 74.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "13",
 "last": "Bryant",
@@ -38335,7 +38301,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685260.png",
 "height": 77.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "71",
 "last": "Banks Jr.",
@@ -44839,7 +44805,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4880281.png",
 "height": 74.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "0",
 "last": "Tyson",
