@@ -7111,9 +7111,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2515270.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "34",
 "last": "Burton",
 "name": "Michael Burton",
@@ -10301,7 +10299,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3121595.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "71",
 "last": "Smith",
 "name": "Braden Smith",
@@ -15704,7 +15704,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4040842.png",
 "height": 75.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "74",
 "last": "Awosika",
@@ -23223,7 +23223,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362474.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "73",
 "last": "Avila",
 "name": "Steve Avila",
@@ -24209,7 +24211,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4368113.png",
 "height": 71.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "22",
 "last": "Woods",
 "name": "Charles Woods",
@@ -25631,7 +25635,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4382401.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "21",
 "last": "Moss",
 "name": "Riley Moss",
@@ -26585,7 +26591,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426496.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "8",
 "last": "Stover",
 "name": "Cade Stover",
@@ -26715,7 +26723,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426535.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "82",
 "last": "Wease Jr.",
 "name": "Theo Wease Jr.",
@@ -28249,7 +28259,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428656.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "78",
 "last": "Thomas",
 "name": "Nate Thomas",
@@ -29747,7 +29759,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429676.png",
 "height": 69.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "32",
 "last": "Goodson",
 "name": "Tyler Goodson",
@@ -38137,7 +38151,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683848.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "6",
 "last": "Ezeiruaku",
 "name": "Donovan Ezeiruaku",
@@ -39248,7 +39264,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685553.png",
 "height": 69.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "89",
 "last": "Thompson",
@@ -45087,7 +45103,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4880873.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "64",
 "last": "Nwaiwu",
 "name": "Febechi Nwaiwu",
