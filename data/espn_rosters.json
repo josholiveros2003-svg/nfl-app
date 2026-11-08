@@ -22696,7 +22696,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361777.png",
 "height": 72.0,
 "injuries": [],
-"jersey": "33",
+"jersey": "26",
 "last": "White",
 "name": "Zamir White",
 "pos": "RB",
@@ -24521,7 +24521,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372016.png",
 "height": 70.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "17",
 "last": "Waddle",
 "name": "Jaylen Waddle",
@@ -36343,7 +36345,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4601021.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "57",
 "last": "Carlies",
 "name": "Jaylon Carlies",
