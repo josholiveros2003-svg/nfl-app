@@ -12531,7 +12531,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916923.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "7",
 "last": "Davis III",
 "name": "Carlton Davis III",
@@ -16307,7 +16309,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4047941.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "41",
 "last": "Schooler",
 "name": "Brenden Schooler",
@@ -23699,7 +23703,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362890.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "77",
 "last": "Brown",
 "name": "Ben Brown",
@@ -32171,7 +32177,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431623.png",
 "height": 79.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "66",
 "last": "Zuhn III",
 "name": "Trey Zuhn III",
