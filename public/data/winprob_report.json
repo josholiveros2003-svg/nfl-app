@@ -1,88 +1,88 @@
 {
  "all": {
   "model": {
-   "games": 398,
-   "correct": 263,
-   "accuracy": 66.1,
-   "brier": 0.2144,
+   "games": 400,
+   "correct": 265,
+   "accuracy": 66.2,
+   "brier": 0.214,
    "calibration": [
     {
      "band": "50-60%",
      "games": 99,
-     "predicted": 57.0,
+     "predicted": 57.1,
      "actual": 55.6
     },
     {
      "band": "60-70%",
-     "games": 171,
-     "predicted": 63.5,
-     "actual": 63.2
+     "games": 158,
+     "predicted": 63.2,
+     "actual": 61.4
     },
     {
      "band": "70-80%",
-     "games": 86,
-     "predicted": 74.2,
-     "actual": 72.1
+     "games": 94,
+     "predicted": 73.6,
+     "actual": 75.5
     },
     {
      "band": "80-100%",
-     "games": 42,
-     "predicted": 85.7,
-     "actual": 90.5
+     "games": 49,
+     "predicted": 85.3,
+     "actual": 85.7
     }
    ]
   },
   "modelWithoutMarket": {
-   "games": 398,
-   "correct": 255,
-   "accuracy": 64.1,
-   "brier": 0.2222,
+   "games": 400,
+   "correct": 256,
+   "accuracy": 64.0,
+   "brier": 0.2218,
    "calibration": [
     {
      "band": "50-60%",
      "games": 174,
-     "predicted": 54.7,
+     "predicted": 54.8,
      "actual": 55.2
     },
     {
      "band": "60-70%",
-     "games": 120,
-     "predicted": 64.5,
-     "actual": 68.3
+     "games": 121,
+     "predicted": 64.6,
+     "actual": 67.8
     },
     {
      "band": "70-80%",
-     "games": 79,
+     "games": 76,
      "predicted": 74.6,
-     "actual": 73.4
+     "actual": 72.4
     },
     {
      "band": "80-100%",
-     "games": 25,
-     "predicted": 83.8,
-     "actual": 76.0
+     "games": 29,
+     "predicted": 83.7,
+     "actual": 79.3
     }
    ]
   },
   "homeTeam": {
-   "games": 398,
-   "correct": 209,
+   "games": 400,
+   "correct": 210,
    "accuracy": 52.5,
    "brier": 0.2514,
    "calibration": [
     {
      "band": "50-60%",
-     "games": 398,
+     "games": 400,
      "predicted": 57.0,
      "actual": 52.5
     }
    ]
   },
   "vegas": {
-   "games": 398,
-   "correct": 263,
-   "accuracy": 66.1,
-   "brier": 0.2152,
+   "games": 400,
+   "correct": 265,
+   "accuracy": 66.2,
+   "brier": 0.2149,
    "calibration": [
     {
      "band": "50-60%",
@@ -92,9 +92,9 @@
     },
     {
      "band": "60-70%",
-     "games": 106,
-     "predicted": 66.0,
-     "actual": 71.7
+     "games": 108,
+     "predicted": 65.9,
+     "actual": 72.2
     },
     {
      "band": "70-80%",
@@ -116,31 +116,31 @@
    "games": 271,
    "correct": 177,
    "accuracy": 65.3,
-   "brier": 0.212,
+   "brier": 0.2121,
    "calibration": [
     {
      "band": "50-60%",
      "games": 70,
-     "predicted": 57.0,
+     "predicted": 57.1,
      "actual": 55.7
     },
     {
      "band": "60-70%",
-     "games": 111,
-     "predicted": 64.1,
-     "actual": 58.6
+     "games": 99,
+     "predicted": 63.6,
+     "actual": 55.6
     },
     {
      "band": "70-80%",
-     "games": 56,
-     "predicted": 74.3,
-     "actual": 73.2
+     "games": 63,
+     "predicted": 73.5,
+     "actual": 76.2
     },
     {
      "band": "80-100%",
-     "games": 34,
-     "predicted": 86.2,
-     "actual": 94.1
+     "games": 39,
+     "predicted": 85.9,
+     "actual": 89.7
     }
    ]
   },
@@ -148,31 +148,31 @@
    "games": 271,
    "correct": 173,
    "accuracy": 63.8,
-   "brier": 0.219,
+   "brier": 0.2189,
    "calibration": [
     {
      "band": "50-60%",
-     "games": 131,
+     "games": 130,
      "predicted": 54.8,
-     "actual": 54.2
+     "actual": 54.6
     },
     {
      "band": "60-70%",
-     "games": 70,
-     "predicted": 64.5,
-     "actual": 68.6
+     "games": 71,
+     "predicted": 64.6,
+     "actual": 67.6
     },
     {
      "band": "70-80%",
-     "games": 55,
-     "predicted": 74.4,
-     "actual": 76.4
+     "games": 53,
+     "predicted": 74.5,
+     "actual": 75.5
     },
     {
      "band": "80-100%",
-     "games": 15,
-     "predicted": 84.5,
-     "actual": 80.0
+     "games": 17,
+     "predicted": 84.4,
+     "actual": 82.4
     }
    ]
   },
@@ -225,88 +225,88 @@
  },
  "2026": {
   "model": {
-   "games": 127,
-   "correct": 86,
-   "accuracy": 67.7,
-   "brier": 0.2195,
+   "games": 129,
+   "correct": 88,
+   "accuracy": 68.2,
+   "brier": 0.2179,
    "calibration": [
     {
      "band": "50-60%",
      "games": 29,
-     "predicted": 57.0,
+     "predicted": 57.1,
      "actual": 55.2
     },
     {
      "band": "60-70%",
-     "games": 60,
+     "games": 59,
      "predicted": 62.4,
-     "actual": 71.7
+     "actual": 71.2
     },
     {
      "band": "70-80%",
-     "games": 30,
-     "predicted": 74.0,
-     "actual": 70.0
-    },
-    {
-     "band": "80-100%",
-     "games": 8,
-     "predicted": 83.4,
-     "actual": 75.0
-    }
-   ]
-  },
-  "modelWithoutMarket": {
-   "games": 127,
-   "correct": 82,
-   "accuracy": 64.6,
-   "brier": 0.2291,
-   "calibration": [
-    {
-     "band": "50-60%",
-     "games": 43,
-     "predicted": 54.4,
-     "actual": 58.1
-    },
-    {
-     "band": "60-70%",
-     "games": 50,
-     "predicted": 64.4,
-     "actual": 68.0
-    },
-    {
-     "band": "70-80%",
-     "games": 24,
-     "predicted": 75.1,
-     "actual": 66.7
+     "games": 31,
+     "predicted": 73.7,
+     "actual": 74.2
     },
     {
      "band": "80-100%",
      "games": 10,
-     "predicted": 82.7,
+     "predicted": 83.2,
      "actual": 70.0
     }
    ]
   },
-  "homeTeam": {
-   "games": 127,
-   "correct": 63,
-   "accuracy": 49.6,
-   "brier": 0.2555,
+  "modelWithoutMarket": {
+   "games": 129,
+   "correct": 83,
+   "accuracy": 64.3,
+   "brier": 0.2281,
    "calibration": [
     {
      "band": "50-60%",
-     "games": 127,
+     "games": 44,
+     "predicted": 54.5,
+     "actual": 56.8
+    },
+    {
+     "band": "60-70%",
+     "games": 50,
+     "predicted": 64.5,
+     "actual": 68.0
+    },
+    {
+     "band": "70-80%",
+     "games": 23,
+     "predicted": 74.8,
+     "actual": 65.2
+    },
+    {
+     "band": "80-100%",
+     "games": 12,
+     "predicted": 82.6,
+     "actual": 75.0
+    }
+   ]
+  },
+  "homeTeam": {
+   "games": 129,
+   "correct": 64,
+   "accuracy": 49.6,
+   "brier": 0.2554,
+   "calibration": [
+    {
+     "band": "50-60%",
+     "games": 129,
      "predicted": 57.0,
      "actual": 49.6
     }
    ]
   },
   "vegas": {
-   "games": 127,
-   "correct": 86,
-   "accuracy": 67.7,
-   "brier": 0.2209,
+   "games": 129,
+   "correct": 88,
+   "accuracy": 68.2,
+   "brier": 0.2196,
    "calibration": [
     {
      "band": "50-60%",
@@ -316,9 +316,9 @@
     },
     {
      "band": "60-70%",
-     "games": 32,
-     "predicted": 66.1,
-     "actual": 78.1
+     "games": 34,
+     "predicted": 65.9,
+     "actual": 79.4
     },
     {
      "band": "70-80%",
@@ -336,103 +336,103 @@
   }
  },
  "fittedWeights": {
-  "home": 1.74,
-  "offense": 0.289,
-  "defense": -0.049,
-  "special": -0.063,
+  "home": 1.726,
+  "offense": 0.287,
+  "defense": -0.044,
+  "special": -0.062,
   "form": 0.135,
   "adjusted": 0.241,
-  "lastSeason": 0.594,
-  "injuries": 1.243
+  "lastSeason": 0.592,
+  "injuries": 1.241
  },
- "fittedMarginSD": 12.46,
- "calibratedMarginSD": 11.5,
+ "fittedMarginSD": 12.44,
+ "calibratedMarginSD": 11.25,
  "fittedMarketWeight": 1.0,
  "marginSDForMarketWeight": 11.25,
  "marketBlendCurve": {
   "0.00": {
-   "accuracy": 64.1,
-   "brier": 0.2222
+   "accuracy": 64.0,
+   "brier": 0.2218
   },
   "0.05": {
-   "accuracy": 63.8,
-   "brier": 0.2215
+   "accuracy": 64.5,
+   "brier": 0.2211
   },
   "0.10": {
-   "accuracy": 64.1,
-   "brier": 0.2208
+   "accuracy": 64.5,
+   "brier": 0.2205
   },
   "0.15": {
-   "accuracy": 63.6,
-   "brier": 0.2202
+   "accuracy": 64.0,
+   "brier": 0.2198
   },
   "0.20": {
-   "accuracy": 63.6,
-   "brier": 0.2196
+   "accuracy": 64.0,
+   "brier": 0.2191
   },
   "0.25": {
-   "accuracy": 63.8,
-   "brier": 0.2189
+   "accuracy": 64.2,
+   "brier": 0.2185
   },
   "0.30": {
    "accuracy": 63.8,
-   "brier": 0.2184
+   "brier": 0.2179
   },
   "0.35": {
-   "accuracy": 64.1,
-   "brier": 0.2178
+   "accuracy": 64.5,
+   "brier": 0.2174
   },
   "0.40": {
-   "accuracy": 64.3,
-   "brier": 0.2173
+   "accuracy": 64.5,
+   "brier": 0.2169
   },
   "0.45": {
    "accuracy": 64.8,
-   "brier": 0.2168
-  },
-  "0.50": {
-   "accuracy": 65.1,
    "brier": 0.2164
   },
+  "0.50": {
+   "accuracy": 65.2,
+   "brier": 0.2159
+  },
   "0.55": {
-   "accuracy": 65.1,
-   "brier": 0.216
+   "accuracy": 65.2,
+   "brier": 0.2155
   },
   "0.60": {
-   "accuracy": 65.3,
-   "brier": 0.2156
+   "accuracy": 65.5,
+   "brier": 0.2152
   },
   "0.65": {
-   "accuracy": 65.3,
-   "brier": 0.2153
+   "accuracy": 65.5,
+   "brier": 0.2149
   },
   "0.70": {
-   "accuracy": 65.6,
-   "brier": 0.2151
+   "accuracy": 65.8,
+   "brier": 0.2146
   },
   "0.75": {
-   "accuracy": 65.6,
-   "brier": 0.2148
+   "accuracy": 65.8,
+   "brier": 0.2144
   },
   "0.80": {
-   "accuracy": 65.8,
-   "brier": 0.2147
+   "accuracy": 66.0,
+   "brier": 0.2142
   },
   "0.85": {
-   "accuracy": 66.1,
-   "brier": 0.2145
+   "accuracy": 66.2,
+   "brier": 0.2141
   },
   "0.90": {
-   "accuracy": 66.1,
-   "brier": 0.2145
+   "accuracy": 66.2,
+   "brier": 0.214
   },
   "0.95": {
-   "accuracy": 66.1,
-   "brier": 0.2144
+   "accuracy": 66.2,
+   "brier": 0.214
   },
   "1.00": {
-   "accuracy": 66.1,
-   "brier": 0.2144
+   "accuracy": 66.2,
+   "brier": 0.214
   }
  }
 }
