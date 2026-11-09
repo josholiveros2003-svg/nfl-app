@@ -27,6 +27,9 @@
 "13971": [
 "NO"
 ],
+"13976": [
+"DAL"
+],
 "13977": [
 "PIT"
 ],
@@ -47,6 +50,9 @@
 ],
 "14945": [
 "MIN"
+],
+"14950": [
+"DAL"
 ],
 "14958": [
 "NYJ"
@@ -222,6 +228,9 @@
 "2577185": [
 "SF"
 ],
+"2577417": [
+"DAL"
+],
 "2577466": [
 "MIA"
 ],
@@ -333,6 +342,9 @@
 "2980080": [
 "WAS"
 ],
+"2980097": [
+"DAL"
+],
 "2980100": [
 "SEA"
 ],
@@ -397,7 +409,7 @@
 "SF"
 ],
 "3043133": [
-"PHI"
+"JAX"
 ],
 "3043168": [
 "ATL"
@@ -500,6 +512,9 @@
 ],
 "3052180": [
 "LA"
+],
+"3052357": [
+"DAL"
 ],
 "3052587": [
 "TB"
@@ -657,6 +672,9 @@
 "3121023": [
 "PHI"
 ],
+"3121415": [
+"DAL"
+],
 "3121422": [
 "WAS"
 ],
@@ -671,6 +689,12 @@
 ],
 "3122132": [
 "LA"
+],
+"3122168": [
+"BUF"
+],
+"3122752": [
+"DAL"
 ],
 "3122793": [
 "NE"
@@ -828,6 +852,9 @@
 "3672833": [
 "ATL"
 ],
+"3676833": [
+"DAL"
+],
 "3686689": [
 "LV"
 ],
@@ -978,6 +1005,9 @@
 "3915777": [
 "TB"
 ],
+"3915834": [
+"DAL"
+],
 "3915837": [
 "BAL"
 ],
@@ -1122,6 +1152,9 @@
 "3929846": [
 "PIT"
 ],
+"3929850": [
+"DAL"
+],
 "3929851": [
 "SEA"
 ],
@@ -1175,6 +1208,9 @@
 ],
 "3948283": [
 "CHI"
+],
+"3953687": [
+"DAL"
 ],
 "4002046": [
 "NYJ"
@@ -1449,6 +1485,9 @@
 "4039160": [
 "TEN"
 ],
+"4039170": [
+"DAL"
+],
 "4039243": [
 "NYG"
 ],
@@ -1503,6 +1542,9 @@
 "4040945": [
 "NO"
 ],
+"4040982": [
+"DAL"
+],
 "4040983": [
 "ARI"
 ],
@@ -1512,6 +1554,9 @@
 "4043041": [
 "KC"
 ],
+"4043089": [
+"DAL"
+],
 "4043130": [
 "MIA"
 ],
@@ -1520,6 +1565,9 @@
 ],
 "4044133": [
 "BUF"
+],
+"4044138": [
+"DAL"
 ],
 "4044540": [
 "MIN"
@@ -1538,6 +1586,9 @@
 ],
 "4045701": [
 "TEN"
+],
+"4046523": [
+"DAL"
 ],
 "4046528": [
 "MIA"
@@ -1716,6 +1767,12 @@
 "4240596": [
 "ATL"
 ],
+"4240603": [
+"DAL"
+],
+"4240608": [
+"DAL"
+],
 "4240610": [
 "JAX"
 ],
@@ -1791,6 +1848,9 @@
 "4241385": [
 "KC"
 ],
+"4241389": [
+"DAL"
+],
 "4241401": [
 "ATL"
 ],
@@ -1848,6 +1908,9 @@
 "4241820": [
 "DEN"
 ],
+"4241921": [
+"DAL"
+],
 "4241961": [
 "LV"
 ],
@@ -1896,6 +1959,9 @@
 "4242335": [
 "IND"
 ],
+"4242355": [
+"DAL"
+],
 "4242358": [
 "DEN"
 ],
@@ -1919,6 +1985,9 @@
 ],
 "4242436": [
 "MIN"
+],
+"4242442": [
+"DAL"
 ],
 "4242459": [
 "KC"
@@ -2082,6 +2151,9 @@
 "4248789": [
 "GB"
 ],
+"4248911": [
+"DAL"
+],
 "4249030": [
 "IND"
 ],
@@ -2190,6 +2262,9 @@
 "4259545": [
 "CHI"
 ],
+"4259546": [
+"DAL"
+],
 "4259547": [
 "MIA"
 ],
@@ -2255,6 +2330,9 @@
 ],
 "4334300": [
 "JAX"
+],
+"4334405": [
+"MIN"
 ],
 "4360078": [
 "IND"
@@ -2325,6 +2403,9 @@
 "4360569": [
 "MIN"
 ],
+"4360590": [
+"DAL"
+],
 "4360635": [
 "WAS"
 ],
@@ -2381,6 +2462,9 @@
 ],
 "4360964": [
 "JAX"
+],
+"4360967": [
+"DAL"
 ],
 "4360978": [
 "TEN"
@@ -2472,6 +2556,9 @@
 "4361577": [
 "WAS"
 ],
+"4361579": [
+"DAL"
+],
 "4361600": [
 "NO"
 ],
@@ -2535,6 +2622,9 @@
 "4361985": [
 "MIN"
 ],
+"4361988": [
+"DAL"
+],
 "4362010": [
 "MIN"
 ],
@@ -2546,6 +2636,9 @@
 ],
 "4362081": [
 "LAC"
+],
+"4362088": [
+"DAL"
 ],
 "4362094": [
 "NYJ"
@@ -2709,6 +2802,9 @@
 "4367209": [
 "MIA"
 ],
+"4367210": [
+"DAL"
+],
 "4367567": [
 "TEN"
 ],
@@ -2792,6 +2888,9 @@
 ],
 "4372070": [
 "KC"
+],
+"4372096": [
+"DAL"
 ],
 "4372099": [
 "DET"
@@ -2916,6 +3015,9 @@
 "4383351": [
 "LAC"
 ],
+"4383396": [
+"DAL"
+],
 "4383409": [
 "SEA"
 ],
@@ -2924,6 +3026,9 @@
 ],
 "4383440": [
 "DEN"
+],
+"4384549": [
+"DAL"
 ],
 "4384595": [
 "NO"
@@ -2988,6 +3093,9 @@
 "4426350": [
 "HOU"
 ],
+"4426354": [
+"DAL"
+],
 "4426358": [
 "CHI"
 ],
@@ -3033,6 +3141,9 @@
 "4426473": [
 "IND"
 ],
+"4426485": [
+"DAL"
+],
 "4426489": [
 "NYG"
 ],
@@ -3041,6 +3152,9 @@
 ],
 "4426502": [
 "ATL"
+],
+"4426506": [
+"DAL"
 ],
 "4426512": [
 "LA"
@@ -3066,6 +3180,9 @@
 "4426659": [
 "KC"
 ],
+"4426663": [
+"DAL"
+],
 "4426676": [
 "NYJ"
 ],
@@ -3083,6 +3200,9 @@
 ],
 "4426844": [
 "ARI"
+],
+"4426875": [
+"DAL"
 ],
 "4426883": [
 "BUF"
@@ -3170,6 +3290,9 @@
 ],
 "4427752": [
 "LA"
+],
+"4427816": [
+"DAL"
 ],
 "4427834": [
 "CIN"
@@ -3282,6 +3405,9 @@
 "4428872": [
 "ATL"
 ],
+"4428914": [
+"DAL"
+],
 "4428930": [
 "NE"
 ],
@@ -3290,6 +3416,9 @@
 ],
 "4428988": [
 "NO"
+],
+"4428990": [
+"DAL"
 ],
 "4428991": [
 "ARI"
@@ -3411,6 +3540,9 @@
 "4429211": [
 "SEA"
 ],
+"4429249": [
+"DAL"
+],
 "4429251": [
 "TB"
 ],
@@ -3455,6 +3587,9 @@
 ],
 "4429636": [
 "NYJ"
+],
+"4429676": [
+"DAL"
 ],
 "4429684": [
 "IND"
@@ -3740,6 +3875,9 @@
 ],
 "4431545": [
 "PHI"
+],
+"4431547": [
+"DAL"
 ],
 "4431551": [
 "CAR"
@@ -4071,6 +4209,9 @@
 "4568624": [
 "BUF"
 ],
+"4568652": [
+"DAL"
+],
 "4568703": [
 "BUF"
 ],
@@ -4314,6 +4455,9 @@
 "4595348": [
 "NYG"
 ],
+"4595352": [
+"DAL"
+],
 "4596334": [
 "LAC"
 ],
@@ -4451,6 +4595,9 @@
 ],
 "4608929": [
 "JAX"
+],
+"4609048": [
+"DAL"
 ],
 "4609203": [
 "SEA"
@@ -4608,6 +4755,9 @@
 "4683815": [
 "NYJ"
 ],
+"4683848": [
+"DAL"
+],
 "4684432": [
 "KC"
 ],
@@ -4625,6 +4775,9 @@
 ],
 "4685116": [
 "MIA"
+],
+"4685120": [
+"DAL"
 ],
 "4685126": [
 "LV"
@@ -4652,6 +4805,12 @@
 ],
 "4685261": [
 "PIT"
+],
+"4685263": [
+"DAL"
+],
+"4685266": [
+"DAL"
 ],
 "4685278": [
 "CHI"
@@ -4695,8 +4854,14 @@
 "4685397": [
 "SF"
 ],
+"4685400": [
+"DAL"
+],
 "4685408": [
 "ARI"
+],
+"4685409": [
+"DAL"
 ],
 "4685413": [
 "NYJ"
@@ -4760,6 +4925,9 @@
 ],
 "4685553": [
 "LAC"
+],
+"4685554": [
+"DAL"
 ],
 "4685555": [
 "TEN"
@@ -4907,6 +5075,9 @@
 ],
 "4689117": [
 "CIN"
+],
+"4689333": [
+"DAL"
 ],
 "4689651": [
 "PHI"
@@ -5058,6 +5229,9 @@
 "4696051": [
 "SF"
 ],
+"4696203": [
+"DAL"
+],
 "4696211": [
 "SF"
 ],
@@ -5145,6 +5319,9 @@
 "4702559": [
 "NO"
 ],
+"4702577": [
+"DAL"
+],
 "4702918": [
 "BAL"
 ],
@@ -5171,6 +5348,9 @@
 ],
 "4710000": [
 "TEN"
+],
+"4710067": [
+"DAL"
 ],
 "4710422": [
 "DET"
@@ -5237,6 +5417,9 @@
 ],
 "4799994": [
 "MIN"
+],
+"4808759": [
+"DAL"
 ],
 "4808766": [
 "NYJ"
@@ -5370,6 +5553,9 @@
 "4870694": [
 "CAR"
 ],
+"4870706": [
+"DAL"
+],
 "4870707": [
 "TEN"
 ],
@@ -5402,6 +5588,9 @@
 ],
 "4870953": [
 "CHI"
+],
+"4870960": [
+"DAL"
 ],
 "4870976": [
 "MIA"
@@ -5742,6 +5931,9 @@
 "5083656": [
 "BAL"
 ],
+"5083754": [
+"DAL"
+],
 "5084514": [
 "ARI"
 ],
@@ -5807,6 +5999,9 @@
 ],
 "5093973": [
 "MIN"
+],
+"5095865": [
+"DAL"
 ],
 "5097554": [
 "TB"
@@ -7549,9 +7744,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2971586.png",
 "height": 72.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "24",
 "last": "Moreau",
 "name": "Fabian Moreau",
@@ -10124,7 +10317,7 @@
 "birth": "1996-02-25",
 "college": "Vanderbilt",
 "first": "Trent",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3122168.png",
 "height": 72.0,
 "injuries": [],
@@ -10177,9 +10370,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3122797.png",
 "height": 73.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "37",
 "last": "Yiadom",
 "name": "Isaac Yiadom",
@@ -11429,7 +11620,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3886633.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "72",
 "last": "Froholdt",
 "name": "Hjalte Froholdt",
@@ -13020,7 +13213,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3929850.png",
 "height": 71.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "1",
 "last": "Locke",
@@ -14881,7 +15074,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038524.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "15",
 "last": "Minshew II",
 "name": "Gardner Minshew II",
@@ -15079,9 +15274,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4039029.png",
 "height": 76.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "47",
 "last": "Kareem",
 "name": "Khalid Kareem",
@@ -16942,7 +17135,7 @@
 "birth": "1999-04-19",
 "college": "Iowa",
 "first": "Geno",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240575.png",
 "height": 71.0,
 "injuries": [],
@@ -18218,7 +18411,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242355.png",
 "height": 77.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "87",
 "last": "Ferguson",
@@ -18348,11 +18541,11 @@
 "birth": "1999-09-22",
 "college": "Tennessee",
 "first": "Joshua",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242433.png",
 "height": 73.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "5",
 "last": "Palmer",
@@ -18677,6 +18870,22 @@
 "team": "LA",
 "weight": 198.0,
 "years": 5
+},
+"4243009": {
+"birth": "1997-08-28",
+"college": "Fresno State",
+"first": "Mykal",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4243009.png",
+"height": 75.0,
+"injuries": [],
+"jersey": "43",
+"last": "Walker",
+"name": "Mykal Walker",
+"pos": "LB",
+"team": "NYJ",
+"weight": 230.0,
+"years": 6
 },
 "4243176": {
 "birth": "1998-08-31",
@@ -21396,10 +21605,12 @@
 "birth": "2000-02-23",
 "college": "Stanford",
 "first": "Michael",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360761.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "14",
 "last": "Wilson",
 "name": "Michael Wilson",
@@ -24036,22 +24247,6 @@
 "weight": 315.0,
 "years": 3
 },
-"4368343": {
-"birth": "2000-02-22",
-"college": "Western Kentucky",
-"first": "Austin",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4368343.png",
-"height": 73.0,
-"injuries": [],
-"jersey": "16",
-"last": "Reed",
-"name": "Austin Reed",
-"pos": "QB",
-"team": "BAL",
-"weight": 214.0,
-"years": 1
-},
 "4368350": {
 "birth": "1999-11-28",
 "college": "Pittsburg State",
@@ -25416,7 +25611,7 @@
 "last": "Davis",
 "name": "Jordan Davis",
 "pos": "DT",
-"team": "PHI",
+"team": "JAX",
 "weight": 336.0,
 "years": 5
 },
@@ -26500,7 +26695,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426515.png",
 "height": 74.0,
 "injuries": [
-"Questionable"
+"Doubtful"
 ],
 "jersey": "12",
 "last": "Nacua",
@@ -26679,9 +26874,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426698.png",
 "height": 73.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "48",
 "last": "Bethune",
 "name": "Tatum Bethune",
@@ -27005,9 +27198,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427140.png",
 "height": 78.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "69",
 "last": "Keegan",
 "name": "Trevor Keegan",
@@ -28501,9 +28692,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429007.png",
 "height": 77.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "90",
 "last": "Capehart",
 "name": "DeMonte Capehart",
@@ -29300,22 +29489,6 @@
 "weight": 220.0,
 "years": 2
 },
-"4429366": {
-"birth": "2001-04-02",
-"college": "Cincinnati",
-"first": "Derrick",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429366.png",
-"height": 70.0,
-"injuries": [],
-"jersey": "42",
-"last": "Canteen",
-"name": "Derrick Canteen",
-"pos": "CB",
-"team": "TEN",
-"weight": 193.0,
-"years": 1
-},
 "4429392": {
 "birth": "2000-12-05",
 "college": "SMU",
@@ -29550,7 +29723,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429676.png",
 "height": 69.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "32",
 "last": "Goodson",
@@ -31892,7 +32065,7 @@
 "birth": "2003-02-15",
 "college": "Miami",
 "first": "James",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431613.png",
 "height": 76.0,
 "injuries": [
@@ -32371,9 +32544,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432722.png",
 "height": 74.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "16",
 "last": "Kaliakmanis",
 "name": "Athan Kaliakmanis",
@@ -33910,22 +34081,6 @@
 "weight": 277.0,
 "years": 2
 },
-"4569068": {
-"birth": "1999-05-09",
-"college": "Eastern Michigan",
-"first": "Jose",
-"group": "defense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569068.png",
-"height": 74.0,
-"injuries": [],
-"jersey": "43",
-"last": "Ramirez",
-"name": "Jose Ramirez",
-"pos": "LB",
-"team": "NE",
-"weight": 252.0,
-"years": 1
-},
 "4569173": {
 "birth": "1998-02-23",
 "college": "Oklahoma",
@@ -34918,7 +35073,7 @@
 "birth": "2002-03-05",
 "college": "Auburn",
 "first": "Dorian",
-"group": "injuredReserveOrOut",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4573318.png",
 "height": 73.0,
 "injuries": [],
@@ -36272,22 +36427,6 @@
 "weight": 180.0,
 "years": 3
 },
-"4602788": {
-"birth": "2003-03-24",
-"college": "Syracuse",
-"first": "Jackson",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4602788.png",
-"height": 74.0,
-"injuries": [],
-"jersey": "13",
-"last": "Meeks",
-"name": "Jackson Meeks",
-"pos": "WR",
-"team": "DET",
-"weight": 235.0,
-"years": 1
-},
 "4602967": {
 "birth": "2003-04-18",
 "college": "Duke",
@@ -36391,9 +36530,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4605488.png",
 "height": 78.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "62",
 "last": "Togiai",
 "name": "Tanoa Togiai",
@@ -37710,22 +37847,6 @@
 "weight": 319.0,
 "years": 2
 },
-"4683308": {
-"birth": "2003-07-07",
-"college": "Illinois",
-"first": "Tanner",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683308.png",
-"height": 76.0,
-"injuries": [],
-"jersey": "84",
-"last": "Arkin",
-"name": "Tanner Arkin",
-"pos": "TE",
-"team": "NE",
-"weight": 262.0,
-"years": 0
-},
 "4683347": {
 "birth": "2002-12-22",
 "college": "Tulane",
@@ -39009,9 +39130,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685549.png",
 "height": 76.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "75",
 "last": "Schrauth",
 "name": "Billy Schrauth",
@@ -40167,6 +40286,22 @@
 "team": "ARI",
 "weight": 200.0,
 "years": 3
+},
+"4689804": {
+"birth": "2001-02-28",
+"college": "Army",
+"first": "Jimmy",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4689804.png",
+"height": 74.0,
+"injuries": [],
+"jersey": "46",
+"last": "Ciarlo",
+"name": "Jimmy Ciarlo",
+"pos": "LB",
+"team": "SEA",
+"weight": 229.0,
+"years": 2
 },
 "4689936": {
 "birth": "1999-03-03",
@@ -42906,11 +43041,11 @@
 "birth": "2003-10-09",
 "college": "Wake Forest",
 "first": "Demond",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4832846.png",
 "height": 70.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "21",
 "last": "Claiborne",
@@ -45035,9 +45170,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4890885.png",
 "height": 72.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "24",
 "last": "Garnes",
 "name": "Ayden Garnes",
