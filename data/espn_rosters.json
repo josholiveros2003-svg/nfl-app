@@ -1093,7 +1093,7 @@
 "HOU"
 ],
 "3919512": [
-"ATL"
+"JAX"
 ],
 "3919548": [
 "DEN"
@@ -18673,7 +18673,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242512.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "2",
 "last": "Willis",
 "name": "Malik Willis",
