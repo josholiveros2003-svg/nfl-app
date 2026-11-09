@@ -6477,7 +6477,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/15168.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "11",
 "last": "Keenum",
 "name": "Case Keenum",
@@ -12965,7 +12967,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3924327.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "2",
 "last": "Lock",
 "name": "Drew Lock",
@@ -13225,7 +13229,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3929850.png",
 "height": 71.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "1",
 "last": "Locke",
 "name": "P.J. Locke",
@@ -20359,7 +20365,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4259305.png",
 "height": 71.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "16",
 "last": "Melton",
 "name": "Bo Melton",
@@ -26285,9 +26293,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426374.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "29",
 "last": "Stevenson Sr.",
 "name": "Tyrique Stevenson Sr.",
@@ -27239,7 +27245,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427140.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "69",
 "last": "Keegan",
 "name": "Trevor Keegan",
@@ -28739,7 +28747,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429007.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "90",
 "last": "Capehart",
 "name": "DeMonte Capehart",
@@ -33859,9 +33869,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567750.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "2",
 "last": "Egbuka",
 "name": "Emeka Egbuka",
@@ -34189,7 +34197,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569173.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "38",
 "last": "Stevenson",
 "name": "Rhamondre Stevenson",
@@ -36910,7 +36920,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4608686.png",
 "height": 68.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "25",
 "last": "Monangai",
@@ -38655,7 +38665,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685298.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "66",
 "last": "Campbell",
 "name": "Will Campbell",
@@ -38817,7 +38829,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685369.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "93",
 "last": "Halton",
 "name": "Gracen Halton",
@@ -39291,7 +39305,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685549.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "75",
 "last": "Schrauth",
 "name": "Billy Schrauth",
@@ -43964,7 +43980,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4870953.png",
 "height": 72.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "24",
 "last": "Muhammad II",
@@ -44603,7 +44619,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4877376.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "91",
 "last": "Loving",
 "name": "Jayden Loving",
@@ -45345,7 +45363,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4890885.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "24",
 "last": "Garnes",
 "name": "Ayden Garnes",
@@ -45579,7 +45599,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4911952.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "49",
 "last": "Elliott",
 "name": "Keyshaun Elliott",
