@@ -1,24 +1,24 @@
 {
  "teams": {
   "offense": {
-   "r2": 0.3,
+   "r2": 0.29,
    "players": 64,
    "topStats": [
     [
-     "situational: Red zone TD %",
-     1.53
+     "red_zone: Red zone TD %",
+     1.7
+    ],
+    [
+     "third_down: Avg yards to go on 3rd down",
+     1.04
     ],
     [
      "rushing: Rushing TDs",
-     0.95
-    ],
-    [
-     "rushing: Rushing yards per game",
-     0.93
+     0.97
     ],
     [
      "overview: Time of possession / game",
-     0.78
+     0.87
     ]
    ],
    "categories": {
@@ -69,39 +69,65 @@
       "ypr": 0.518
      }
     },
-    "situational": {
-     "r2": 0.1,
+    "third_down": {
+     "r2": 0.11,
      "learned": true,
      "weights": {
-      "third": 0.233,
-      "fourth": 0.121,
-      "rz": 0.274,
-      "fd_pg": 0.27,
-      "pen_pg": 0.052,
-      "pen_yds_pg": 0.05
+      "third": 0.532,
+      "third_short": 0.075,
+      "third_long": 0.075,
+      "to_go": 0.318
+     }
+    },
+    "fourth_down": {
+     "r2": 0.06,
+     "learned": true,
+     "weights": {
+      "fourth": 0.875,
+      "fourth_short": 0.125
+     }
+    },
+    "red_zone": {
+     "r2": 0.18,
+     "learned": true,
+     "weights": {
+      "rz": 0.433,
+      "rz_score": 0.1,
+      "gtg": 0.075,
+      "rz_pg": 0.392
+     }
+    },
+    "situational": {
+     "r2": 0.15,
+     "learned": true,
+     "weights": {
+      "fd_pg": 0.642,
+      "three_out": 0.189,
+      "pen_pg": 0.094,
+      "pen_yds_pg": 0.075
      }
     }
    }
   },
   "defense": {
-   "r2": 0.02,
+   "r2": 0.0,
    "players": 64,
    "topStats": [
     [
      "pass_defense: Completion % allowed",
-     1.83
+     1.76
     ],
     [
      "run_defense: Runs of 10+ allowed",
-     1.27
+     1.17
     ],
     [
      "pass_defense: QB hits",
-     0.6
+     0.61
     ],
     [
      "overview: Defensive TDs",
-     0.48
+     0.55
     ]
    ],
    "categories": {
@@ -140,16 +166,42 @@
       "rush_epa": 0.15
      }
     },
-    "situational": {
-     "r2": 0.12,
+    "third_down": {
+     "r2": 0.11,
      "learned": true,
      "weights": {
-      "third": 0.225,
-      "fourth": 0.116,
-      "rz": 0.305,
-      "fd_pg": 0.254,
-      "pen_pg": 0.05,
-      "pen_yds_pg": 0.05
+      "third": 0.556,
+      "third_short": 0.075,
+      "third_long": 0.075,
+      "to_go": 0.294
+     }
+    },
+    "fourth_down": {
+     "r2": 0.06,
+     "learned": true,
+     "weights": {
+      "fourth": 0.875,
+      "fourth_short": 0.125
+     }
+    },
+    "red_zone": {
+     "r2": 0.2,
+     "learned": true,
+     "weights": {
+      "rz": 0.461,
+      "rz_score": 0.1,
+      "gtg": 0.075,
+      "rz_pg": 0.364
+     }
+    },
+    "situational": {
+     "r2": 0.15,
+     "learned": true,
+     "weights": {
+      "fd_pg": 0.639,
+      "three_out": 0.207,
+      "pen_pg": 0.079,
+      "pen_yds_pg": 0.075
      }
     }
    }
