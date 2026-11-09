@@ -12857,6 +12857,22 @@
 "weight": 228.0,
 "years": 8
 },
+"3919512": {
+"birth": "1997-02-26",
+"college": "Wake Forest",
+"first": "Jessie",
+"group": "defense",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3919512.png",
+"height": 73.0,
+"injuries": [],
+"jersey": "30",
+"last": "Bates III",
+"name": "Jessie Bates III",
+"pos": "S",
+"team": "JAX",
+"weight": 210.0,
+"years": 9
+},
 "3919548": {
 "birth": "1996-08-21",
 "college": "Wake Forest",
@@ -32982,7 +32998,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4433970.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "18",
 "last": "McCarthy",
 "name": "J.J. McCarthy",
