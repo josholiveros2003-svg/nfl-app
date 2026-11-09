@@ -419,6 +419,12 @@ HINTS = {
                "yards for the down and distance).",
     "red_zone": "When the offense got inside the opponent's 20-yard line, how often "
                 "the drive ended in a touchdown.",
+    "red_zone_score": "Red zone trips that ended in any points: a touchdown or a field goal.",
+    "goal_to_go": "Drives that reached 1st-and-goal (inside the 10), and how often they "
+                  "ended in a touchdown.",
+    "three_out": "Share of drives that ended in a punt without a single first down.",
+    "to_go": "How many yards the offense needed, on average, when it faced 3rd down. "
+             "Shorter is easier: it's a sign of good early-down play.",
     "net_ypa": "Passing yards per dropback, after subtracting yards lost to sacks.",
     "adot": "Average depth of target: how far downfield passes travel in the air.",
     "net_punt": "Punt distance minus the return and touchback yards.",
@@ -493,10 +499,46 @@ def time_of_possession(p: pd.DataFrame):
     return float(drives.map(secs).sum())
 
 
-def down_rate(p: pd.DataFrame, which: str):
-    conv = num(p[f"{which}_down_converted"])
-    fail = num(p[f"{which}_down_failed"])
-    return conv, conv + fail
+def down_rate(p: pd.DataFrame, which: str, shortest: int | None = None, longest: int | None = None):
+    """Conversions and attempts on 3rd or 4th down, optionally only at some distances."""
+    tries = p[(p[f"{which}_down_converted"] == 1) | (p[f"{which}_down_failed"] == 1)]
+    if shortest is not None:
+        tries = tries[tries.ydstogo >= shortest]
+    if longest is not None:
+        tries = tries[tries.ydstogo <= longest]
+    conv = num(tries[f"{which}_down_converted"])
+    return conv, len(tries)
+
+
+def avg_to_go(p: pd.DataFrame, which: str):
+    tries = p[(p[f"{which}_down_converted"] == 1) | (p[f"{which}_down_failed"] == 1)]
+    return mean(tries.ydstogo)
+
+
+def drive_numbers(p: pd.DataFrame) -> dict:
+    """Per-drive numbers: red zone trips and how they ended, goal-to-go, and 3-and-outs."""
+    if p.empty:
+        return {"drives": 0, "rz": 0, "rz_td": 0, "rz_score": 0, "gtg": 0, "gtg_td": 0, "three_out": 0}
+    drives = p.groupby(["game_id", "fixed_drive"]).agg(
+        closest=("yardline_100", "min"), result=("fixed_drive_result", "first"),
+        goal=("goal_to_go", "max"), firsts=("drive_first_downs", "first"))
+    rz = drives[drives.closest <= 20]
+    gtg = drives[drives.goal == 1]
+    return {
+        "drives": len(drives),
+        "rz": len(rz),
+        "rz_td": int((rz.result == "Touchdown").sum()),
+        "rz_score": int(rz.result.isin(["Touchdown", "Field goal"]).sum()),
+        "gtg": len(gtg),
+        "gtg_td": int((gtg.result == "Touchdown").sum()),
+        "three_out": int(((drives.result == "Punt") & (drives.firsts.fillna(0) == 0)).sum()),
+    }
+
+
+def pct_stat(id, label, made, tries, better="high", hint=None):
+    """A percentage shown with its count, e.g. "45.2%  (33/73)"."""
+    v = div(made, tries)
+    return stat(id, label, v, "pct", better, hint=hint, display=f"{fmt_value(v, 'pct')}  ({int(made)}/{int(tries)})")
 
 
 def frac_display(made, att):
@@ -572,12 +614,18 @@ def build_team(t, pbp, scrim, games_played, sched, people):
     pf = float(sched.pf.sum())
     pa = float(sched.pa.sum())
 
-    o_rz, o_rz_td = red_zone(off_p)
-    d_rz, d_rz_td = red_zone(def_p)
-    o3, o3a = down_rate(pbp[pbp.posteam == t], "third")
-    d3, d3a = down_rate(pbp[pbp.defteam == t], "third")
-    o4, o4a = down_rate(pbp[pbp.posteam == t], "fourth")
-    d4, d4a = down_rate(pbp[pbp.defteam == t], "fourth")
+    od, dd = drive_numbers(off_p), drive_numbers(def_p)
+    own, opp = pbp[pbp.posteam == t], pbp[pbp.defteam == t]
+    o3, o3a = down_rate(own, "third")
+    d3, d3a = down_rate(opp, "third")
+    o3s, o3sa = down_rate(own, "third", longest=3)
+    d3s, d3sa = down_rate(opp, "third", longest=3)
+    o3l, o3la = down_rate(own, "third", shortest=7)
+    d3l, d3la = down_rate(opp, "third", shortest=7)
+    o4, o4a = down_rate(own, "fourth")
+    d4, d4a = down_rate(opp, "fourth")
+    o4s, o4sa = down_rate(own, "fourth", longest=2)
+    d4s, d4sa = down_rate(opp, "fourth", longest=2)
 
     non_st = pbp[(pbp.special_teams_play != 1) & (pbp.penalty == 1) & (pbp.penalty_team == t)]
     off_pen = non_st[non_st.posteam == t]
@@ -681,16 +729,42 @@ def build_team(t, pbp, scrim, games_played, sched, people):
             }],
         },
         {
-            "id": "situational", "label": "Situational",
-            "blurb": "Clutch downs and scoring chances.",
+            "id": "third_down", "label": "3rd Down",
+            "blurb": "Moving the chains on third down.",
             "stats": [
-                stat("third", "3rd down conversion %", div(o3, o3a), "pct",
-                     display=f"{fmt_value(div(o3, o3a), 'pct')}  ({int(o3)}/{int(o3a)})"),
-                stat("fourth", "4th down conversion %", div(o4, o4a), "pct",
-                     display=f"{fmt_value(div(o4, o4a), 'pct')}  ({int(o4)}/{int(o4a)})"),
-                stat("rz", "Red zone TD %", div(o_rz_td, o_rz), "pct", hint=HINTS["red_zone"],
-                     display=f"{fmt_value(div(o_rz_td, o_rz), 'pct')}  ({o_rz_td}/{o_rz})"),
+                pct_stat("third", "3rd down conversion %", o3, o3a),
+                pct_stat("third_short", "3rd & short (1-3 yds) %", o3s, o3sa),
+                pct_stat("third_long", "3rd & long (7+ yds) %", o3l, o3la),
+                stat("to_go", "Avg yards to go on 3rd down", avg_to_go(own, "third"), "d1", "low", hint=HINTS["to_go"]),
+            ],
+            "leaders": [],
+        },
+        {
+            "id": "fourth_down", "label": "4th Down",
+            "blurb": "Going for it, and making it.",
+            "stats": [
+                pct_stat("fourth", "4th down conversion %", o4, o4a),
+                pct_stat("fourth_short", "4th & short (1-2 yds) %", o4s, o4sa),
+            ],
+            "leaders": [],
+        },
+        {
+            "id": "red_zone", "label": "Red Zone",
+            "blurb": "Turning trips inside the 20 into touchdowns.",
+            "stats": [
+                pct_stat("rz", "Red zone TD %", od["rz_td"], od["rz"], hint=HINTS["red_zone"]),
+                pct_stat("rz_score", "Red zone scoring % (TD or FG)", od["rz_score"], od["rz"], hint=HINTS["red_zone_score"]),
+                pct_stat("gtg", "Goal-to-go TD %", od["gtg_td"], od["gtg"], hint=HINTS["goal_to_go"]),
+                stat("rz_pg", "Red zone trips per game", div(od["rz"], gp)),
+            ],
+            "leaders": [],
+        },
+        {
+            "id": "situational", "label": "Drives & Discipline",
+            "blurb": "First downs, quick punts and penalties.",
+            "stats": [
                 stat("fd_pg", "First downs per game", div(first_downs, gp)),
+                pct_stat("three_out", "3-and-out %", od["three_out"], od["drives"], "low", hint=HINTS["three_out"]),
                 stat("pen_pg", "Penalties per game (on offense)", div(len(off_pen), gp), "d1", "low"),
                 stat("pen_yds_pg", "Penalty yards per game (on offense)", div(num(off_pen.penalty_yards), gp), "d1", "low"),
             ],
@@ -775,16 +849,43 @@ def build_team(t, pbp, scrim, games_played, sched, people):
             ],
         },
         {
-            "id": "situational", "label": "Situational",
-            "blurb": "Getting off the field on big downs and in the red zone.",
+            "id": "third_down", "label": "3rd Down",
+            "blurb": "Getting off the field on third down.",
             "stats": [
-                stat("third", "3rd down % allowed", div(d3, d3a), "pct", "low",
-                     display=f"{fmt_value(div(d3, d3a), 'pct')}  ({int(d3)}/{int(d3a)})"),
-                stat("fourth", "4th down % allowed", div(d4, d4a), "pct", "low",
-                     display=f"{fmt_value(div(d4, d4a), 'pct')}  ({int(d4)}/{int(d4a)})"),
-                stat("rz", "Red zone TD % allowed", div(d_rz_td, d_rz), "pct", "low", hint=HINTS["red_zone"],
-                     display=f"{fmt_value(div(d_rz_td, d_rz), 'pct')}  ({d_rz_td}/{d_rz})"),
+                pct_stat("third", "3rd down % allowed", d3, d3a, "low"),
+                pct_stat("third_short", "3rd & short (1-3 yds) % allowed", d3s, d3sa, "low"),
+                pct_stat("third_long", "3rd & long (7+ yds) % allowed", d3l, d3la, "low"),
+                stat("to_go", "Avg yards to go on opponents' 3rd downs", avg_to_go(opp, "third"), "d1", hint=HINTS["to_go"]),
+            ],
+            "leaders": [],
+        },
+        {
+            "id": "fourth_down", "label": "4th Down",
+            "blurb": "Stopping opponents when they go for it.",
+            "stats": [
+                pct_stat("fourth", "4th down % allowed", d4, d4a, "low"),
+                pct_stat("fourth_short", "4th & short (1-2 yds) % allowed", d4s, d4sa, "low"),
+            ],
+            "leaders": [],
+        },
+        {
+            "id": "red_zone", "label": "Red Zone",
+            "blurb": "Holding opponents to field goals, or nothing, inside the 20.",
+            "stats": [
+                pct_stat("rz", "Red zone TD % allowed", dd["rz_td"], dd["rz"], "low", hint=HINTS["red_zone"]),
+                pct_stat("rz_score", "Red zone scoring % allowed (TD or FG)", dd["rz_score"], dd["rz"], "low",
+                         hint=HINTS["red_zone_score"]),
+                pct_stat("gtg", "Goal-to-go TD % allowed", dd["gtg_td"], dd["gtg"], "low", hint=HINTS["goal_to_go"]),
+                stat("rz_pg", "Red zone trips allowed per game", div(dd["rz"], gp), "d1", "low"),
+            ],
+            "leaders": [],
+        },
+        {
+            "id": "situational", "label": "Drives & Discipline",
+            "blurb": "First downs allowed, quick stops and penalties.",
+            "stats": [
                 stat("fd_pg", "First downs allowed per game", div(first_downs_allowed, gp), "d1", "low"),
+                pct_stat("three_out", "3-and-out % forced", dd["three_out"], dd["drives"], "high", hint=HINTS["three_out"]),
                 stat("pen_pg", "Penalties per game (on defense)", div(len(def_pen), gp), "d1", "low"),
                 stat("pen_yds_pg", "Penalty yards per game (on defense)", div(num(def_pen.penalty_yards), gp), "d1", "low"),
             ],

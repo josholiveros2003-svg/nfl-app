@@ -154,7 +154,7 @@ The home screen has three tabs: **Schedule**, **Rankings** and **Compare**.
 - **Schedule:** every game of a week, grouped by day, with records, kickoff (Mountain Time, Utah) and
   win chances. Arrows or week numbers switch weeks; tapping a game opens the game screen.
 - **Power Rankings:** League (all 32 teams), Team units (Offense, Offensive Line, Secondary,
-  ...), and Players by position. Tap any row to see why it's ranked there.
+  3rd Down, 4th Down and Red Zone offense and defense, ...), and Players by position. Tap any row to see why it's ranked there.
 - **League power score (pipeline/rankings.py + src/lib/powerRankings.ts):** wins and losses
   in context (each game vs. what an average team would do against that opponent, home or
   away, with that opponent's injuries; close games count as partial results; margins capped

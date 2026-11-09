@@ -15,8 +15,8 @@ export const UNITS: { id: UnitId; label: string; short: string }[] = [
 ];
 
 export const CATEGORY_IDS: Record<UnitId, string[]> = {
-  offense: ['overview', 'passing', 'rushing', 'receiving', 'situational'],
-  defense: ['overview', 'pass_defense', 'run_defense', 'situational'],
+  offense: ['overview', 'passing', 'rushing', 'receiving', 'third_down', 'fourth_down', 'red_zone', 'situational'],
+  defense: ['overview', 'pass_defense', 'run_defense', 'third_down', 'fourth_down', 'red_zone', 'situational'],
   special: ['kicking', 'punting', 'returns', 'coverage'],
 };
 

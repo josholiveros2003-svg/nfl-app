@@ -86,22 +86,28 @@
     },
     "categories": {
       "offense": {
-        "why": "The overall picture (points, EPA) and passing predict winning best. Situational football (3rd downs, red zone) decides close games. The run game matters less than people think, and receiving overlaps with passing.",
+        "why": "The overall picture (points, EPA) and passing predict winning best. Third downs and the red zone turn drives into points and decide close games. Fourth downs are rare, so they count a little. The run game matters less than people think, and receiving overlaps with passing.",
         "weights": {
           "overview": 30,
           "passing": 30,
           "rushing": 12,
           "receiving": 8,
-          "situational": 20
+          "third_down": 8,
+          "red_zone": 7,
+          "fourth_down": 2,
+          "situational": 3
         }
       },
       "defense": {
-        "why": "Stopping the pass matters more than stopping the run in today's NFL. The overview captures points and EPA allowed. Situational defense (3rd downs, red zone) wins close games.",
+        "why": "Stopping the pass matters more than stopping the run in today's NFL. The overview captures points and EPA allowed. Getting off the field on third down and holding opponents to field goals in the red zone win close games. Fourth downs are rare, so they count a little.",
         "weights": {
           "overview": 35,
           "pass_defense": 35,
           "run_defense": 15,
-          "situational": 15
+          "third_down": 6,
+          "red_zone": 5,
+          "fourth_down": 2,
+          "situational": 2
         }
       },
       "special": {
@@ -160,15 +166,38 @@
             "ypr": 50
           }
         },
-        "situational": {
-          "why": "Red zone and 3rd down performance turn drives into points. Penalties stall drives.",
+        "third_down": {
+          "why": "The overall 3rd down rate matters most. Short and long 3rd downs show where a team wins or loses, and the average distance shows how well early downs set it up.",
           "weights": {
-            "rz": 30,
-            "third": 30,
-            "fourth": 10,
-            "fd_pg": 10,
-            "pen_pg": 10,
-            "pen_yds_pg": 10
+            "third": 60,
+            "third_short": 15,
+            "third_long": 15,
+            "to_go": 10
+          }
+        },
+        "fourth_down": {
+          "why": "The overall 4th down rate, plus the short-yardage tries that most 4th downs are.",
+          "weights": {
+            "fourth": 75,
+            "fourth_short": 25
+          }
+        },
+        "red_zone": {
+          "why": "Touchdowns, not field goals, inside the 20 matter most. Scoring at all, goal-to-go finishes and how often a team gets (or allows) red zone trips round it out.",
+          "weights": {
+            "rz": 50,
+            "rz_score": 20,
+            "gtg": 15,
+            "rz_pg": 15
+          }
+        },
+        "situational": {
+          "why": "Steady drives (first downs, few 3-and-outs) and few penalties keep drives alive.",
+          "weights": {
+            "fd_pg": 35,
+            "three_out": 35,
+            "pen_pg": 15,
+            "pen_yds_pg": 15
           }
         }
       },
@@ -211,15 +240,38 @@
             "rush_ypg": 5
           }
         },
-        "situational": {
-          "why": "Getting off the field on 3rd down and holding opponents to field goals in the red zone.",
+        "third_down": {
+          "why": "The overall 3rd down rate matters most. Short and long 3rd downs show where a team wins or loses, and the average distance shows how well early downs set it up.",
           "weights": {
-            "rz": 30,
-            "third": 30,
-            "fourth": 10,
-            "fd_pg": 10,
-            "pen_pg": 10,
-            "pen_yds_pg": 10
+            "third": 60,
+            "third_short": 15,
+            "third_long": 15,
+            "to_go": 10
+          }
+        },
+        "fourth_down": {
+          "why": "The overall 4th down rate, plus the short-yardage tries that most 4th downs are.",
+          "weights": {
+            "fourth": 75,
+            "fourth_short": 25
+          }
+        },
+        "red_zone": {
+          "why": "Touchdowns, not field goals, inside the 20 matter most. Scoring at all, goal-to-go finishes and how often a team gets (or allows) red zone trips round it out.",
+          "weights": {
+            "rz": 50,
+            "rz_score": 20,
+            "gtg": 15,
+            "rz_pg": 15
+          }
+        },
+        "situational": {
+          "why": "Limiting first downs, forcing 3-and-outs and avoiding penalties.",
+          "weights": {
+            "fd_pg": 35,
+            "three_out": 35,
+            "pen_pg": 15,
+            "pen_yds_pg": 15
           }
         }
       },
