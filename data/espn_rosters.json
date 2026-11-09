@@ -9649,7 +9649,7 @@
 "last": "Godchaux",
 "name": "Davon Godchaux",
 "pos": "DT",
-"team": "NO",
+"team": "JAX",
 "weight": 330.0,
 "years": 10
 },
@@ -22849,7 +22849,7 @@
 "last": "Cisco",
 "name": "Andre Cisco",
 "pos": "S",
-"team": "NYJ",
+"team": "DET",
 "weight": 210.0,
 "years": 6
 },
@@ -29807,7 +29807,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429676.png",
 "height": 69.0,
 "injuries": [
-"Questionable"
+"Doubtful"
 ],
 "jersey": "32",
 "last": "Goodson",
