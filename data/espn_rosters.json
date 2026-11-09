@@ -1752,6 +1752,9 @@
 "4240554": [
 "SF"
 ],
+"4240575": [
+"BUF"
+],
 "4240577": [
 "PIT"
 ],
@@ -11604,7 +11607,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3886601.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "96",
 "last": "Tuttle",
 "name": "Shy Tuttle",
@@ -15075,7 +15080,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038524.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Doubtful"
 ],
 "jersey": "15",
 "last": "Minshew II",
@@ -21460,7 +21465,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360635.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "85",
 "last": "Okonkwo",
 "name": "Chig Okonkwo",
@@ -21872,7 +21879,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361088.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "80",
 "last": "Yankoff",
 "name": "Colson Yankoff",
