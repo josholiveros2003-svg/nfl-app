@@ -13783,7 +13783,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4034790.png",
 "height": 69.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "31",
 "last": "Winfield Jr.",
 "name": "Antoine Winfield Jr.",
@@ -26297,7 +26299,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426374.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "29",
 "last": "Stevenson Sr.",
 "name": "Tyrique Stevenson Sr.",
