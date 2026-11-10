@@ -40,7 +40,7 @@
 "GB"
 ],
 "14880": [
-"LV"
+"MIN"
 ],
 "14931": [
 "GB"
@@ -1631,9 +1631,6 @@
 ],
 "4076951": [
 "NO"
-],
-"4212909": [
-"CAR"
 ],
 "4218312": [
 "PHI"
@@ -6063,13 +6060,13 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/11394.png",
 "height": 75.0,
 "injuries": [],
-"jersey": "11",
+"jersey": "14",
 "last": "Johnson",
 "name": "Josh Johnson",
 "pos": "QB",
-"team": "CIN",
+"team": "ARI",
 "weight": 219.0,
-"years": 12
+"years": 13
 },
 "11759": {
 "birth": "1986-01-20",
@@ -6275,7 +6272,7 @@
 "last": "Cousins",
 "name": "Kirk Cousins",
 "pos": "QB",
-"team": "LV",
+"team": "MIN",
 "weight": 209.0,
 "years": 15
 },
@@ -12483,7 +12480,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917315.png",
 "height": 70.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "1",
 "last": "Murray",
@@ -17024,7 +17021,9 @@
 "group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240573.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": null,
 "last": "Smith-Marsette",
 "name": "Ihmir Smith-Marsette",
@@ -17913,7 +17912,7 @@
 "last": "Henley",
 "name": "Daiyan Henley",
 "pos": "LB",
-"team": "LAC",
+"team": "DEN",
 "weight": 225.0,
 "years": 4
 },
@@ -47237,15 +47236,15 @@
 "birth": "2001-06-16",
 "college": "Tennessee",
 "first": "Joey",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5151948.png",
 "height": 75.0,
 "injuries": [],
-"jersey": "17",
+"jersey": null,
 "last": "Aguilar",
 "name": "Joey Aguilar",
 "pos": "QB",
-"team": "JAX",
+"team": "ARI",
 "weight": 225.0,
 "years": 0
 },
