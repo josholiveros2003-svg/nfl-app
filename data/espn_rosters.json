@@ -876,9 +876,6 @@
 "3863820": [
 "JAX"
 ],
-"3871102": [
-"TB"
-],
 "3873935": [
 "PIT"
 ],
@@ -3294,9 +3291,6 @@
 "4428394": [
 "NE"
 ],
-"4428396": [
-"LAC"
-],
 "4428414": [
 "WAS"
 ],
@@ -4007,9 +4001,6 @@
 ],
 "4565350": [
 "BAL"
-],
-"4565769": [
-"DEN"
 ],
 "4565779": [
 "SF"
@@ -4725,9 +4716,6 @@
 "4685278": [
 "CHI"
 ],
-"4685279": [
-"PHI"
-],
 "4685287": [
 "PHI"
 ],
@@ -5381,9 +5369,6 @@
 ],
 "4837248": [
 "LV"
-],
-"4837252": [
-"KC"
 ],
 "4837286": [
 "HOU"
@@ -11504,9 +11489,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3886601.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "96",
 "last": "Tuttle",
 "name": "Shy Tuttle",
@@ -15536,9 +15519,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4040655.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "17",
 "last": "Mooney",
 "name": "Darnell Mooney",
@@ -19838,7 +19819,9 @@
 "group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4250764.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": null,
 "last": "Smartt",
 "name": "Stone Smartt",
@@ -19938,9 +19921,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4257188.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "89",
 "last": "Jones",
 "name": "Charlie Jones",
@@ -38543,7 +38524,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685369.png",
 "height": 74.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "93",
 "last": "Halton",
@@ -45552,7 +45533,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4921249.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "12",
 "last": "Hood",
 "name": "Colton Hood",
@@ -46212,9 +46195,7 @@
 "group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5082633.png",
 "height": 77.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "49",
 "last": "Svoboda",
 "name": "Evan Svoboda",
