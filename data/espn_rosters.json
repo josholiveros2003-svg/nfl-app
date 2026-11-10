@@ -672,9 +672,6 @@
 "3122132": [
 "LA"
 ],
-"3122168": [
-"BUF"
-],
 "3122752": [
 "DAL"
 ],
@@ -1728,9 +1725,6 @@
 "4240554": [
 "SF"
 ],
-"4240575": [
-"BUF"
-],
 "4240577": [
 "PIT"
 ],
@@ -2297,9 +2291,6 @@
 ],
 "4334300": [
 "JAX"
-],
-"4334405": [
-"MIN"
 ],
 "4360078": [
 "IND"
@@ -19820,7 +19811,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4250764.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": null,
 "last": "Smartt",
@@ -21367,9 +21358,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360635.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "85",
 "last": "Okonkwo",
 "name": "Chig Okonkwo",
@@ -38520,7 +38509,7 @@
 "birth": "2004-01-27",
 "college": "Oklahoma",
 "first": "Gracen",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685369.png",
 "height": 74.0,
 "injuries": [
