@@ -8963,7 +8963,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3051324.png",
 "height": 77.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "73",
 "last": "Dawkins",
@@ -10813,7 +10813,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3127294.png",
 "height": 73.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "97",
 "last": "Gaines",
@@ -21441,7 +21441,7 @@
 "birth": "1999-05-24",
 "college": "Georgia Tech",
 "first": "Jordan",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360569.png",
 "height": 71.0,
 "injuries": [],
@@ -24059,7 +24059,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4367203.png",
 "height": 77.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "70",
 "last": "Anderson",
