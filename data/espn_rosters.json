@@ -1,8 +1,5 @@
 {
 "depth": {
-"10621": [
-"ATL"
-],
 "11252": [
 "CIN"
 ],
@@ -2848,7 +2845,7 @@
 "PIT"
 ],
 "4372066": [
-"BAL"
+"ATL"
 ],
 "4372070": [
 "KC"
@@ -6760,7 +6757,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/16737.png",
 "height": 77.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "5",
 "last": "Evans",
@@ -7296,7 +7293,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2576736.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Doubtful"
 ],
 "jersey": "63",
 "last": "Patrick",
