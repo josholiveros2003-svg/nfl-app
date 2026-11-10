@@ -585,10 +585,10 @@
      "r2": 0.0,
      "learned": true,
      "weights": {
-      "ypc": 0.25,
+      "ypc": 0.256,
       "stuffed": 0.125,
-      "rush_success": 0.413,
-      "rush_epa": 0.212
+      "rush_success": 0.409,
+      "rush_epa": 0.21
      }
     },
     "playing_time": {

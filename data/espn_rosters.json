@@ -1137,6 +1137,9 @@
 "3929645": [
 "NO"
 ],
+"3929785": [
+"IND"
+],
 "3929846": [
 "PIT"
 ],
@@ -1873,7 +1876,7 @@
 "ARI"
 ],
 "4241597": [
-"LAC"
+"DEN"
 ],
 "4241611": [
 "CHI"
@@ -2813,9 +2816,6 @@
 ],
 "4371940": [
 "TEN"
-],
-"4371946": [
-"MIA"
 ],
 "4371961": [
 "NYG"
@@ -4329,9 +4329,6 @@
 "4576297": [
 "SEA"
 ],
-"4577494": [
-"JAX"
-],
 "4578085": [
 "CLE"
 ],
@@ -4972,7 +4969,7 @@
 "NE"
 ],
 "4688813": [
-"IND"
+"KC"
 ],
 "4688930": [
 "GB"
@@ -12480,7 +12477,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917315.png",
 "height": 70.0,
 "injuries": [
-"Out"
+"Doubtful"
 ],
 "jersey": "1",
 "last": "Murray",
@@ -14698,7 +14695,7 @@
 "last": "Neuzil",
 "name": "Ryan Neuzil",
 "pos": "C",
-"team": "ATL",
+"team": "BAL",
 "weight": 305.0,
 "years": 5
 },
@@ -18546,7 +18543,7 @@
 "birth": "1999-05-25",
 "college": "Liberty",
 "first": "Malik",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242512.png",
 "height": 73.0,
 "injuries": [
@@ -18848,7 +18845,7 @@
 "last": "Vorhees",
 "name": "Andrew Vorhees",
 "pos": "G",
-"team": "BAL",
+"team": "ATL",
 "weight": 320.0,
 "years": 3
 },
@@ -20993,6 +20990,22 @@
 "team": "MIN",
 "weight": 305.0,
 "years": 3
+},
+"4360287": {
+"birth": "1999-12-16",
+"college": "Oklahoma",
+"first": "Delarrin",
+"group": "defense",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360287.png",
+"height": 71.0,
+"injuries": [],
+"jersey": "32",
+"last": "Turner-Yell",
+"name": "Delarrin Turner-Yell",
+"pos": "S",
+"team": "ATL",
+"weight": 200.0,
+"years": 4
 },
 "4360290": {
 "birth": "1999-11-11",
@@ -32086,6 +32099,22 @@
 "weight": 198.0,
 "years": 1
 },
+"4432237": {
+"birth": "2002-01-21",
+"college": "Purdue",
+"first": "Gus",
+"group": "offense",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432237.png",
+"height": 77.0,
+"injuries": [],
+"jersey": "60",
+"last": "Hartwig",
+"name": "Gus Hartwig",
+"pos": "C",
+"team": "ATL",
+"weight": 309.0,
+"years": 2
+},
 "4432244": {
 "birth": "2001-04-13",
 "college": "Texas Tech",
@@ -34172,22 +34201,6 @@
 "pos": "DT",
 "team": "SF",
 "weight": 269.0,
-"years": 4
-},
-"4569511": {
-"birth": "2001-04-12",
-"college": "USC",
-"first": "Drake",
-"group": "defense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569511.png",
-"height": 76.0,
-"injuries": [],
-"jersey": "91",
-"last": "Jackson",
-"name": "Drake Jackson",
-"pos": "DE",
-"team": "ATL",
-"weight": 273.0,
 "years": 4
 },
 "4569547": {
@@ -39752,6 +39765,22 @@
 "weight": 205.0,
 "years": 4
 },
+"4686884": {
+"birth": "2000-01-03",
+"college": "Indiana",
+"first": "Luke",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4686884.png",
+"height": 79.0,
+"injuries": [],
+"jersey": "72",
+"last": "Haggard",
+"name": "Luke Haggard",
+"pos": "G",
+"team": "TB",
+"weight": 305.0,
+"years": 2
+},
 "4686889": {
 "birth": "1997-10-07",
 "college": "Iowa",
@@ -40030,7 +40059,7 @@
 "last": "Downs",
 "name": "Josh Downs",
 "pos": "WR",
-"team": "IND",
+"team": "KC",
 "weight": 171.0,
 "years": 4
 },
@@ -44602,22 +44631,6 @@
 "pos": "QB",
 "team": "PHI",
 "weight": 232.0,
-"years": 0
-},
-"4879256": {
-"birth": "",
-"college": "North Dakota State",
-"first": "Barika",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4879256.png",
-"height": 70.0,
-"injuries": [],
-"jersey": null,
-"last": "Kpeenu",
-"name": "Barika Kpeenu",
-"pos": "RB",
-"team": "TB",
-"weight": 213.0,
 "years": 0
 },
 "4879276": {
