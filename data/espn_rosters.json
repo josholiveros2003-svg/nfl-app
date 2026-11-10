@@ -70,7 +70,7 @@
 "PHI"
 ],
 "15818": [
-"IND"
+"SF"
 ],
 "15846": [
 "BAL"
@@ -6453,11 +6453,11 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/15818.png",
 "height": 74.0,
 "injuries": [],
-"jersey": "10",
+"jersey": null,
 "last": "Allen",
 "name": "Keenan Allen",
 "pos": "WR",
-"team": "IND",
+"team": "SF",
 "weight": 211.0,
 "years": 13
 },
