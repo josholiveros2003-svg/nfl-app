@@ -1363,7 +1363,7 @@
 "MIN"
 ],
 "4036134": [
-"TEN"
+"BUF"
 ],
 "4036135": [
 "LA"
@@ -14569,7 +14569,7 @@
 "last": "Hooker",
 "name": "Amani Hooker",
 "pos": "S",
-"team": "TEN",
+"team": "BUF",
 "weight": 210.0,
 "years": 8
 },
