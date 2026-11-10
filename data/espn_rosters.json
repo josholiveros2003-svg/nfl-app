@@ -6886,7 +6886,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/16772.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "17",
 "last": "Van Noy",
 "name": "Kyle Van Noy",
@@ -12613,7 +12615,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917331.png",
 "height": 76.0,
 "injuries": [
-"Doubtful"
+"Questionable"
 ],
 "jersey": "78",
 "last": "McCoy",
@@ -16229,7 +16231,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4047365.png",
 "height": 70.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "8",
 "last": "Jacobs",
@@ -18425,7 +18427,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242355.png",
 "height": 77.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "87",
 "last": "Ferguson",
@@ -18559,7 +18561,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242433.png",
 "height": 73.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "5",
 "last": "Palmer",
@@ -35094,7 +35096,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4573318.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Injured Reserve"
+],
 "jersey": "54",
 "last": "Mausi",
 "name": "Dorian Mausi",
@@ -45245,7 +45249,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4892240.png",
 "height": 80.0,
 "injuries": [
-"Questionable"
+"Doubtful"
 ],
 "jersey": "75",
 "last": "Travis",
