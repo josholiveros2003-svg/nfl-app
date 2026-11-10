@@ -2188,7 +2188,7 @@
 "CHI"
 ],
 "4257591": [
-"CIN"
+"PHI"
 ],
 "4258173": [
 "HOU"
@@ -6023,22 +6023,6 @@
 ]
 },
 "rosters": {
-"10621": {
-"birth": "1984-11-05",
-"college": "Arizona",
-"first": "Nick",
-"group": "specialTeam",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/10621.png",
-"height": 73.0,
-"injuries": [],
-"jersey": "6",
-"last": "Folk",
-"name": "Nick Folk",
-"pos": "PK",
-"team": "ATL",
-"weight": 225.0,
-"years": 19
-},
 "11252": {
 "birth": "1985-01-16",
 "college": "Delaware",
@@ -20021,7 +20005,7 @@
 "last": "Ebiketie",
 "name": "Arnold Ebiketie",
 "pos": "LB",
-"team": "CIN",
+"team": "PHI",
 "weight": 256.0,
 "years": 5
 },
@@ -24577,7 +24561,7 @@
 "last": "Moody",
 "name": "Jake Moody",
 "pos": "PK",
-"team": "BAL",
+"team": "ATL",
 "weight": 210.0,
 "years": 4
 },
