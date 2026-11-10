@@ -114,9 +114,6 @@
 "16731": [
 "SF"
 ],
-"16733": [
-"MIN"
-],
 "16734": [
 "HOU"
 ],
@@ -200,9 +197,6 @@
 ],
 "2576336": [
 "JAX"
-],
-"2576399": [
-"BAL"
 ],
 "2576492": [
 "CHI"
@@ -1387,7 +1381,7 @@
 "BAL"
 ],
 "4036444": [
-"ATL"
+"BAL"
 ],
 "4036507": [
 "DET"
@@ -2020,7 +2014,7 @@
 "NO"
 ],
 "4243220": [
-"BAL"
+"ATL"
 ],
 "4243253": [
 "CHI"
@@ -2991,14 +2985,14 @@
 "4384595": [
 "NO"
 ],
-"4384683": [
-"BAL"
-],
 "4384852": [
 "CIN"
 ],
 "4385690": [
 "BUF"
+],
+"4386544": [
+"LA"
 ],
 "4394894": [
 "SF"
@@ -6699,7 +6693,7 @@
 "birth": "1992-11-05",
 "college": "LSU",
 "first": "Odell",
-"group": "offense",
+"group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/16733.png",
 "height": 71.0,
 "injuries": [],
@@ -7408,6 +7402,22 @@
 "team": "BAL",
 "weight": 235.0,
 "years": 11
+},
+"2579604": {
+"birth": "1993-01-05",
+"college": "Miami",
+"first": "Phillip",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2579604.png",
+"height": 70.0,
+"injuries": [],
+"jersey": null,
+"last": "Dorsett II",
+"name": "Phillip Dorsett II",
+"pos": "WR",
+"team": "ARI",
+"weight": 185.0,
+"years": 9
 },
 "2579621": {
 "birth": "1992-12-05",
@@ -9311,11 +9321,11 @@
 "birth": "1995-09-07",
 "college": "Ferris State",
 "first": "Zach",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3057956.png",
 "height": 78.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "92",
 "last": "Sieler",
@@ -14963,11 +14973,11 @@
 "birth": "1996-05-16",
 "college": "Washington State",
 "first": "Gardner",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038524.png",
 "height": 73.0,
 "injuries": [
-"Doubtful"
+"Injured Reserve"
 ],
 "jersey": "15",
 "last": "Minshew II",
@@ -18547,7 +18557,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242512.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Injured Reserve"
 ],
 "jersey": "2",
 "last": "Willis",
@@ -21527,7 +21537,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360761.png",
 "height": 74.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "14",
 "last": "Wilson",
@@ -25211,22 +25221,6 @@
 "weight": 193.0,
 "years": 1
 },
-"4374033": {
-"birth": "2000-04-15",
-"college": "Oregon State",
-"first": "Jermar",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4374033.png",
-"height": 70.0,
-"injuries": [],
-"jersey": null,
-"last": "Jefferson",
-"name": "Jermar Jefferson",
-"pos": "RB",
-"team": "ARI",
-"weight": 215.0,
-"years": 2
-},
 "4374037": {
 "birth": "2000-10-10",
 "college": "Oregon State",
@@ -25753,15 +25747,15 @@
 "birth": "1997-09-21",
 "college": "Florida A&M",
 "first": "Xavier",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4386544.png",
 "height": 69.0,
 "injuries": [],
-"jersey": null,
+"jersey": "19",
 "last": "Smith",
 "name": "Xavier Smith",
 "pos": "WR",
-"team": "SF",
+"team": "LA",
 "weight": 180.0,
 "years": 3
 },
@@ -33096,9 +33090,7 @@
 "group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4565908.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": null,
 "last": "Scott",
 "name": "Tyler Scott",
@@ -34091,7 +34083,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569382.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Injured Reserve"
 ],
 "jersey": "88",
 "last": "Whittington",
@@ -34777,22 +34769,6 @@
 "pos": "LS",
 "team": "DET",
 "weight": 239.0,
-"years": 3
-},
-"4571810": {
-"birth": "2001-03-03",
-"college": "Holy Cross",
-"first": "C.J.",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4571810.png",
-"height": 77.0,
-"injuries": [],
-"jersey": null,
-"last": "Hanson",
-"name": "C.J. Hanson",
-"pos": "G",
-"team": "MIN",
-"weight": 300.0,
 "years": 3
 },
 "4572036": {
@@ -36524,22 +36500,6 @@
 "team": "KC",
 "weight": 202.0,
 "years": 2
-},
-"4605858": {
-"birth": "2002-07-19",
-"college": "Auburn",
-"first": "Rivaldo",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4605858.png",
-"height": 75.0,
-"injuries": [],
-"jersey": "45",
-"last": "Fairweather",
-"name": "Rivaldo Fairweather",
-"pos": "TE",
-"team": "ARI",
-"weight": 249.0,
-"years": 1
 },
 "4605951": {
 "birth": "2002-01-04",
@@ -41493,7 +41453,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4696981.png",
 "height": 71.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "44",
 "last": "Skattebo",
@@ -41981,22 +41941,6 @@
 "pos": "CB",
 "team": "MIN",
 "weight": 183.0,
-"years": 0
-},
-"4705561": {
-"birth": "2003-08-04",
-"college": "Arkansas",
-"first": "Corey",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4705561.png",
-"height": 77.0,
-"injuries": [],
-"jersey": null,
-"last": "Robinson II",
-"name": "Corey Robinson II",
-"pos": "OT",
-"team": "MIN",
-"weight": 311.0,
 "years": 0
 },
 "4705926": {
@@ -42639,6 +42583,22 @@
 "pos": "DE",
 "team": "GB",
 "weight": 263.0,
+"years": 0
+},
+"4746099": {
+"birth": "2003-12-04",
+"college": "Rutgers",
+"first": "Kenny",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4746099.png",
+"height": 75.0,
+"injuries": [],
+"jersey": null,
+"last": "Fletcher Jr.",
+"name": "Kenny Fletcher Jr.",
+"pos": "TE",
+"team": "GB",
+"weight": 250.0,
 "years": 0
 },
 "4769895": {
