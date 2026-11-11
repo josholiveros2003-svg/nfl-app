@@ -7230,7 +7230,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2576736.png",
 "height": 75.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "63",
 "last": "Patrick",
@@ -14228,6 +14228,22 @@
 "weight": 220.0,
 "years": 8
 },
+"4035686": {
+"birth": "1997-12-20",
+"college": "Arizona State",
+"first": "Jack",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035686.png",
+"height": 71.0,
+"injuries": [],
+"jersey": "25",
+"last": "Jones",
+"name": "Jack Jones",
+"pos": "CB",
+"team": "SF",
+"weight": 175.0,
+"years": 5
+},
 "4035687": {
 "birth": "1997-10-05",
 "college": "USC",
@@ -16050,7 +16066,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4047365.png",
 "height": 70.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "8",
 "last": "Jacobs",
@@ -21678,7 +21694,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361088.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "80",
 "last": "Yankoff",
