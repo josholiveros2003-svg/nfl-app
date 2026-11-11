@@ -7017,7 +7017,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2573079.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "11",
 "last": "Wentz",
 "name": "Carson Wentz",
@@ -11251,7 +11253,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3728281.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "51",
 "last": "Cashman",
 "name": "Blake Cashman",
@@ -12418,7 +12422,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917315.png",
 "height": 70.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "1",
 "last": "Murray",
@@ -14084,7 +14088,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035538.png",
 "height": 71.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "32",
 "last": "Montgomery",
@@ -25311,6 +25315,22 @@
 "team": "LV",
 "weight": 240.0,
 "years": 6
+},
+"4379412": {
+"birth": "2000-07-13",
+"college": "Georgia",
+"first": "Jamaree",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4379412.png",
+"height": 76.0,
+"injuries": [],
+"jersey": null,
+"last": "Salyer",
+"name": "Jamaree Salyer",
+"pos": "G",
+"team": "ARI",
+"weight": 325.0,
+"years": 5
 },
 "4379416": {
 "birth": "2000-05-08",
