@@ -2859,9 +2859,6 @@
 "4372576": [
 "CHI"
 ],
-"4372716": [
-"KC"
-],
 "4372774": [
 "SF"
 ],
@@ -10247,7 +10244,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3122840.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "4",
 "last": "Watson",
