@@ -14084,7 +14084,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035538.png",
 "height": 71.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "32",
 "last": "Montgomery",
@@ -16066,7 +16066,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4047365.png",
 "height": 70.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "8",
 "last": "Jacobs",
@@ -20497,7 +20497,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4260394.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "12",
 "last": "O'Connell",
 "name": "Aidan O'Connell",
