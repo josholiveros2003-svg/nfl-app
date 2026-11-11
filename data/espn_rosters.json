@@ -4062,6 +4062,9 @@
 "4567242": [
 "CLE"
 ],
+"4567403": [
+"TEN"
+],
 "4567406": [
 "GB"
 ],
@@ -6996,7 +6999,9 @@
 "group": "specialTeam",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2566045.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "46",
 "last": "Rhodes",
 "name": "Luke Rhodes",
@@ -34130,7 +34135,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569620.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "33",
 "last": "Hickman",
 "name": "Ronnie Hickman",
@@ -42288,7 +42295,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4723820.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "11",
 "last": "Cooper Jr.",
 "name": "Omar Cooper Jr.",
@@ -42692,7 +42701,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4832800.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "12",
 "last": "Boston",
 "name": "Denzel Boston",
