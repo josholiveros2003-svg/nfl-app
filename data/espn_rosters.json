@@ -5244,6 +5244,9 @@
 "4711533": [
 "MIA"
 ],
+"4712462": [
+"MIA"
+],
 "4714157": [
 "CAR"
 ],
@@ -26315,7 +26318,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426496.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "8",
 "last": "Stover",
 "name": "Cade Stover",
@@ -38852,12 +38857,10 @@
 "birth": "2003-10-16",
 "college": "Texas",
 "first": "Cameron",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685590.png",
 "height": 78.0,
-"injuries": [
-"Injured Reserve"
-],
+"injuries": [],
 "jersey": "73",
 "last": "Williams",
 "name": "Cameron Williams",
