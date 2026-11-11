@@ -12422,7 +12422,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917315.png",
 "height": 70.0,
 "injuries": [
-"Out"
+"Doubtful"
 ],
 "jersey": "1",
 "last": "Murray",
@@ -18635,9 +18635,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242975.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "5",
 "last": "Phillips",
 "name": "Jaelan Phillips",
@@ -23321,9 +23319,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362647.png",
 "height": 74.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "68",
 "last": "Lewis",
 "name": "Damien Lewis",
@@ -24745,22 +24741,6 @@
 "team": "CHI",
 "weight": 234.0,
 "years": 5
-},
-"4372716": {
-"birth": "1999-11-04",
-"college": "Fresno State",
-"first": "Nikko",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372716.png",
-"height": 69.0,
-"injuries": [],
-"jersey": "81",
-"last": "Remigio",
-"name": "Nikko Remigio",
-"pos": "WR",
-"team": "KC",
-"weight": 187.0,
-"years": 2
 },
 "4372758": {
 "birth": "2000-03-30",
@@ -26380,11 +26360,11 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426498.png",
 "height": 76.0,
 "injuries": [],
-"jersey": null,
+"jersey": "65",
 "last": "Broeker",
 "name": "Nick Broeker",
 "pos": "G",
-"team": "TEN",
+"team": "BUF",
 "weight": 305.0,
 "years": 3
 },
@@ -42136,15 +42116,15 @@
 "birth": "2003-03-30",
 "college": "Houston",
 "first": "Keith",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4712462.png",
 "height": 77.0,
 "injuries": [],
-"jersey": null,
+"jersey": "97",
 "last": "Cooper Jr.",
 "name": "Keith Cooper Jr.",
 "pos": "DT",
-"team": "CAR",
+"team": "MIA",
 "weight": 280.0,
 "years": 1
 },
@@ -44705,7 +44685,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4882093.png",
 "height": 69.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "33",
 "last": "Tuten",
 "name": "Bhayshul Tuten",
@@ -46955,9 +46937,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5151083.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "24",
 "last": "Lee III",
 "name": "Will Lee III",
