@@ -260,7 +260,7 @@
    "games": 135,
    "correct": 89,
    "accuracy": 65.9,
-   "brier": 0.2253,
+   "brier": 0.2254,
    "calibration": [
     {
      "band": "50-60%",
@@ -339,7 +339,7 @@
   "home": 1.672,
   "offense": 0.277,
   "defense": -0.025,
-  "special": -0.069,
+  "special": -0.068,
   "form": 0.142,
   "adjusted": 0.258,
   "lastSeason": 0.598,
@@ -400,7 +400,7 @@
   },
   "0.60": {
    "accuracy": 66.0,
-   "brier": 0.2139
+   "brier": 0.214
   },
   "0.65": {
    "accuracy": 65.5,

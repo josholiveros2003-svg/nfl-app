@@ -28,7 +28,7 @@
      "weights": {
       "ppg": 0.183,
       "ypg": 0.067,
-      "ypp": 0.108,
+      "ypp": 0.107,
       "epa": 0.15,
       "success": 0.329,
       "to": 0.05,
@@ -41,7 +41,7 @@
      "weights": {
       "pass_ypg": 0.057,
       "cmp_pct": 0.147,
-      "net_ypa": 0.216,
+      "net_ypa": 0.215,
       "pass_td": 0.131,
       "ints": 0.075,
       "sacks": 0.176,
@@ -137,7 +137,7 @@
      "weights": {
       "ypp": 0.207,
       "epa": 0.273,
-      "success": 0.52
+      "success": 0.521
      }
     },
     "pass_defense": {
