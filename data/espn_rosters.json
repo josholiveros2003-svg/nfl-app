@@ -33060,7 +33060,9 @@
 "group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4565908.png",
 "height": 71.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": null,
 "last": "Scott",
 "name": "Tyler Scott",
