@@ -395,7 +395,7 @@
      "weights": {
       "snaps": 0.176,
       "snaps_pg": 0.279,
-      "snap_share": 0.342,
+      "snap_share": 0.341,
       "penalties": 0.05,
       "penalty_yds": 0.154
      }
@@ -451,9 +451,9 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.169,
+      "snaps": 0.17,
       "snaps_pg": 0.273,
-      "snap_share": 0.353,
+      "snap_share": 0.351,
       "penalties": 0.05,
       "penalty_yds": 0.156
      }
@@ -523,9 +523,9 @@
      "r2": 0.2,
      "learned": true,
      "weights": {
-      "snaps": 0.185,
-      "snaps_pg": 0.289,
-      "snap_share": 0.335,
+      "snaps": 0.186,
+      "snaps_pg": 0.29,
+      "snap_share": 0.334,
       "penalties": 0.05,
       "penalty_yds": 0.14
      }
@@ -556,19 +556,19 @@
    "topStats": [
     [
      "Playing Time: Offensive snaps per game",
-     1.86
+     1.87
     ],
     [
      "Playing Time: Offensive snaps",
-     1.8
+     1.81
     ],
     [
      "Playing Time: Snap share",
-     0.88
+     0.86
     ],
     [
      "Run Blocking: Team yards per carry",
-     0.69
+     0.68
     ]
    ],
    "categories": {
@@ -651,9 +651,9 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.179,
-      "snaps_pg": 0.279,
-      "snap_share": 0.321,
+      "snaps": 0.18,
+      "snaps_pg": 0.28,
+      "snap_share": 0.32,
       "penalties": 0.05,
       "penalty_yds": 0.17
      }
@@ -779,9 +779,9 @@
      "r2": 0.2,
      "learned": true,
      "weights": {
-      "snaps": 0.178,
-      "snaps_pg": 0.285,
-      "snap_share": 0.308,
+      "snaps": 0.179,
+      "snaps_pg": 0.286,
+      "snap_share": 0.307,
       "penalties": 0.1,
       "penalty_yds": 0.129
      }
