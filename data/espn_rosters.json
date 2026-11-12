@@ -15652,6 +15652,22 @@
 "weight": 301.0,
 "years": 6
 },
+"4040950": {
+"birth": "1998-07-20",
+"college": "North Dakota State",
+"first": "Cordell",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4040950.png",
+"height": 78.0,
+"injuries": [],
+"jersey": null,
+"last": "Volson",
+"name": "Cordell Volson",
+"pos": "G",
+"team": "SEA",
+"weight": 315.0,
+"years": 5
+},
 "4040966": {
 "birth": "1998-09-20",
 "college": "Alabama",
@@ -27140,22 +27156,6 @@
 "weight": 317.0,
 "years": 3
 },
-"4427190": {
-"birth": "2001-09-14",
-"college": "Ole Miss",
-"first": "AJ",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427190.png",
-"height": 74.0,
-"injuries": [],
-"jersey": "30",
-"last": "Finley",
-"name": "AJ Finley",
-"pos": "S",
-"team": "SEA",
-"weight": 202.0,
-"years": 4
-},
 "4427207": {
 "birth": "2001-01-24",
 "college": "Oklahoma",
@@ -27504,7 +27504,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427728.png",
 "height": 71.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "20",
 "last": "Knight",
@@ -35455,6 +35455,22 @@
 "team": "LAC",
 "weight": 256.0,
 "years": 3
+},
+"4577494": {
+"birth": "2001-01-16",
+"college": "North Carolina",
+"first": "Alijah",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4577494.png",
+"height": 70.0,
+"injuries": [],
+"jersey": "21",
+"last": "Huzzie",
+"name": "Alijah Huzzie",
+"pos": "CB",
+"team": "JAX",
+"weight": 195.0,
+"years": 1
 },
 "4578085": {
 "birth": "2000-11-04",
@@ -43874,7 +43890,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4871023.png",
 "height": 74.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "14",
 "last": "Tate",
