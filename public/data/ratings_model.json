@@ -354,11 +354,11 @@
     ],
     [
      "Playing Time: Snap share",
-     0.61
+     0.63
     ],
     [
      "Rushing: Rushing yards",
-     0.56
+     0.55
     ]
    ],
    "categories": {
@@ -451,9 +451,9 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.17,
+      "snaps": 0.169,
       "snaps_pg": 0.273,
-      "snap_share": 0.351,
+      "snap_share": 0.352,
       "penalties": 0.05,
       "penalty_yds": 0.156
      }
@@ -523,9 +523,9 @@
      "r2": 0.2,
      "learned": true,
      "weights": {
-      "snaps": 0.186,
-      "snaps_pg": 0.29,
-      "snap_share": 0.334,
+      "snaps": 0.185,
+      "snaps_pg": 0.289,
+      "snap_share": 0.335,
       "penalties": 0.05,
       "penalty_yds": 0.14
      }
@@ -651,9 +651,9 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.18,
+      "snaps": 0.179,
       "snaps_pg": 0.28,
-      "snap_share": 0.32,
+      "snap_share": 0.321,
       "penalties": 0.05,
       "penalty_yds": 0.17
      }
@@ -721,7 +721,7 @@
      }
     },
     "playing_time": {
-     "r2": 0.2,
+     "r2": 0.21,
      "learned": true,
      "weights": {
       "snaps": 0.159,
@@ -779,7 +779,7 @@
      "r2": 0.2,
      "learned": true,
      "weights": {
-      "snaps": 0.179,
+      "snaps": 0.178,
       "snaps_pg": 0.286,
       "snap_share": 0.307,
       "penalties": 0.1,

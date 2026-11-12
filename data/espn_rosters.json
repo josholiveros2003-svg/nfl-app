@@ -7192,6 +7192,22 @@
 "weight": 203.0,
 "years": 12
 },
+"2576399": {
+"birth": "1993-03-06",
+"college": "Ohio State",
+"first": "Nick",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2576399.png",
+"height": 78.0,
+"injuries": [],
+"jersey": "87",
+"last": "Vannett",
+"name": "Nick Vannett",
+"pos": "TE",
+"team": "BAL",
+"weight": 261.0,
+"years": 11
+},
 "2576492": {
 "birth": "1993-04-28",
 "college": "Clemson",
@@ -7248,7 +7264,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2576736.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "63",
 "last": "Patrick",
@@ -10709,7 +10725,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3127294.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "97",
 "last": "Gaines",
 "name": "Greg Gaines",
@@ -12160,22 +12178,6 @@
 "weight": 315.0,
 "years": 7
 },
-"3916071": {
-"birth": "1997-03-07",
-"college": "West Virginia",
-"first": "Gary",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916071.png",
-"height": 73.0,
-"injuries": [],
-"jersey": "87",
-"last": "Jennings",
-"name": "Gary Jennings",
-"pos": "WR",
-"team": "LAC",
-"weight": 216.0,
-"years": 2
-},
 "3916075": {
 "birth": "1996-08-09",
 "college": "West Virginia",
@@ -13608,15 +13610,15 @@
 "birth": "1998-06-16",
 "college": "Wagner",
 "first": "Chris",
-"group": "defense",
+"group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4034530.png",
 "height": 74.0,
 "injuries": [],
-"jersey": "61",
+"jersey": null,
 "last": "Williams",
 "name": "Chris Williams",
 "pos": "DT",
-"team": "CLE",
+"team": "LV",
 "weight": 298.0,
 "years": 5
 },
@@ -16409,6 +16411,22 @@
 "team": "NO",
 "weight": 315.0,
 "years": 9
+},
+"4212909": {
+"birth": "1995-01-15",
+"college": "East Central",
+"first": "David",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4212909.png",
+"height": 72.0,
+"injuries": [],
+"jersey": "83",
+"last": "Moore",
+"name": "David Moore",
+"pos": "WR",
+"team": "CAR",
+"weight": 220.0,
+"years": 8
 },
 "4218312": {
 "birth": "1995-08-23",
@@ -20037,6 +20055,22 @@
 "team": "LV",
 "weight": 265.0,
 "years": 6
+},
+"4258198": {
+"birth": "1999-10-31",
+"college": "Michigan",
+"first": "Josh",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4258198.png",
+"height": 72.0,
+"injuries": [],
+"jersey": "52",
+"last": "Ross",
+"name": "Josh Ross",
+"pos": "LB",
+"team": "MIN",
+"weight": 229.0,
+"years": 3
 },
 "4258199": {
 "birth": "1999-06-14",
@@ -27414,6 +27448,22 @@
 "weight": 253.0,
 "years": 2
 },
+"4427695": {
+"birth": "2001-05-22",
+"college": "Stanford",
+"first": "Kyu Blu",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427695.png",
+"height": 72.0,
+"injuries": [],
+"jersey": null,
+"last": "Kelly",
+"name": "Kyu Blu Kelly",
+"pos": "CB",
+"team": "LAC",
+"weight": 188.0,
+"years": 2
+},
 "4427716": {
 "birth": "2000-09-10",
 "college": "Notre Dame",
@@ -30438,11 +30488,11 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430818.png",
 "height": 75.0,
 "injuries": [],
-"jersey": "96",
+"jersey": null,
 "last": "Brevard",
 "name": "Cole Brevard",
 "pos": "DT",
-"team": "KC",
+"team": "SEA",
 "weight": 346.0,
 "years": 0
 },
@@ -30918,6 +30968,22 @@
 "weight": 205.0,
 "years": 1
 },
+"4431147": {
+"birth": "2002-02-06",
+"college": "Boston College",
+"first": "Cam",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431147.png",
+"height": 75.0,
+"injuries": [],
+"jersey": null,
+"last": "Horsley",
+"name": "Cam Horsley",
+"pos": "DT",
+"team": "CAR",
+"weight": 312.0,
+"years": 1
+},
 "4431162": {
 "birth": "2002-11-19",
 "college": "California",
@@ -31279,7 +31345,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431437.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "55",
 "last": "Latham",
 "name": "JC Latham",
@@ -33480,17 +33548,17 @@
 "birth": "2001-05-18",
 "college": "Utah",
 "first": "Mohamoud",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567403.png",
 "height": 76.0,
 "injuries": [],
-"jersey": null,
+"jersey": "44",
 "last": "Diabate",
 "name": "Mohamoud Diabate",
 "pos": "LB",
-"team": "CAR",
+"team": "TEN",
 "weight": 225.0,
-"years": null
+"years": 4
 },
 "4567406": {
 "birth": "2001-04-26",
@@ -33709,7 +33777,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567979.png",
 "height": 70.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "26",
 "last": "Echols",
 "name": "Brandin Echols",
@@ -36042,6 +36112,22 @@
 "weight": 310.0,
 "years": 2
 },
+"4599739": {
+"birth": "2002-06-11",
+"college": "TCU",
+"first": "Kendre",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4599739.png",
+"height": 72.0,
+"injuries": [],
+"jersey": null,
+"last": "Miller",
+"name": "Kendre Miller",
+"pos": "RB",
+"team": "DAL",
+"weight": 220.0,
+"years": 4
+},
 "4600415": {
 "birth": "2003-06-13",
 "college": "Ohio State",
@@ -36241,6 +36327,24 @@
 "team": "HOU",
 "weight": 180.0,
 "years": 3
+},
+"4602788": {
+"birth": "2003-03-24",
+"college": "Syracuse",
+"first": "Jackson",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4602788.png",
+"height": 74.0,
+"injuries": [
+"Out"
+],
+"jersey": "13",
+"last": "Meeks",
+"name": "Jackson Meeks",
+"pos": "WR",
+"team": "DET",
+"weight": 235.0,
+"years": 1
 },
 "4602967": {
 "birth": "2003-04-18",
@@ -37652,6 +37756,22 @@
 "weight": 319.0,
 "years": 2
 },
+"4683308": {
+"birth": "2003-07-07",
+"college": "Illinois",
+"first": "Tanner",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683308.png",
+"height": 76.0,
+"injuries": [],
+"jersey": "84",
+"last": "Arkin",
+"name": "Tanner Arkin",
+"pos": "TE",
+"team": "NE",
+"weight": 262.0,
+"years": 0
+},
 "4683347": {
 "birth": "2002-12-22",
 "college": "Tulane",
@@ -37822,7 +37942,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683815.png",
 "height": 73.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "49",
 "last": "Wallace",
@@ -38285,7 +38405,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685298.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "66",
 "last": "Campbell",
 "name": "Will Campbell",
@@ -39206,6 +39328,22 @@
 "pos": "TE",
 "team": "MIA",
 "weight": 250.0,
+"years": 1
+},
+"4685841": {
+"birth": "2002-01-21",
+"college": "Kentucky",
+"first": "Zion",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685841.png",
+"height": 71.0,
+"injuries": [],
+"jersey": null,
+"last": "Childress",
+"name": "Zion Childress",
+"pos": "CB",
+"team": "LAC",
+"weight": 203.0,
 "years": 1
 },
 "4685970": {
@@ -40613,7 +40751,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4692628.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "40",
 "last": "Slaughter",
 "name": "Doneiko Slaughter",
@@ -44166,6 +44306,22 @@
 "weight": 311.0,
 "years": 2
 },
+"4876378": {
+"birth": "2003-04-25",
+"college": "New Mexico",
+"first": "Damon",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4876378.png",
+"height": 70.0,
+"injuries": [],
+"jersey": null,
+"last": "Bankston",
+"name": "Damon Bankston",
+"pos": "RB",
+"team": "MIN",
+"weight": 186.0,
+"years": null
+},
 "4876380": {
 "birth": "2003-01-02",
 "college": "BYU",
@@ -45166,7 +45322,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4905664.png",
 "height": 71.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "25",
 "last": "Haulcy",
