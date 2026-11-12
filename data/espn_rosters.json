@@ -1059,6 +1059,9 @@
 "3917914": [
 "ATL"
 ],
+"3917949": [
+"WAS"
+],
 "3918298": [
 "BUF"
 ],
@@ -2437,6 +2440,9 @@
 "NYG"
 ],
 "4361088": [
+"WAS"
+],
+"4361090": [
 "WAS"
 ],
 "4361093": [
@@ -8711,9 +8717,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3046779.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "16",
 "last": "Goff",
 "name": "Jared Goff",
@@ -9219,9 +9223,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3054850.png",
 "height": 70.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "41",
 "last": "Kamara",
 "name": "Alvin Kamara",
@@ -11445,7 +11447,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3863182.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "94",
 "last": "Tillery",
 "name": "Jerry Tillery",
@@ -12201,7 +12205,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916148.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "20",
 "last": "Pollard",
 "name": "Tony Pollard",
@@ -13101,9 +13107,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3929846.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "25",
 "last": "Elliott",
 "name": "DeShon Elliott",
@@ -14545,9 +14549,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4036131.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "87",
 "last": "Fant",
 "name": "Noah Fant",
@@ -22415,7 +22417,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361510.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "99",
 "last": "Thomas",
 "name": "Cameron Thomas",
@@ -27504,7 +27508,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427728.png",
 "height": 71.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "20",
 "last": "Knight",
@@ -34026,7 +34030,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569173.png",
 "height": 72.0,
 "injuries": [
-"Doubtful"
+"Questionable"
 ],
 "jersey": "38",
 "last": "Stevenson",
@@ -35841,7 +35845,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4595343.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "53",
 "last": "Daniels",
 "name": "Kendal Daniels",
@@ -39241,7 +39247,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685617.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "23",
 "last": "Winston Jr.",
 "name": "Kevin Winston Jr.",
@@ -43890,7 +43898,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4871023.png",
 "height": 74.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "14",
 "last": "Tate",
@@ -45372,7 +45380,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4905664.png",
 "height": 71.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "25",
 "last": "Haulcy",
