@@ -18966,6 +18966,22 @@
 "weight": 247.0,
 "years": 5
 },
+"4243371": {
+"birth": "1999-09-07",
+"college": "Memphis",
+"first": "Riley",
+"group": "specialTeam",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4243371.png",
+"height": 72.0,
+"injuries": [],
+"jersey": null,
+"last": "Patterson",
+"name": "Riley Patterson",
+"pos": "PK",
+"team": "BAL",
+"weight": 190.0,
+"years": 6
+},
 "4243375": {
 "birth": "1999-08-24",
 "college": "Memphis",
@@ -35148,6 +35164,22 @@
 "weight": 190.0,
 "years": 2
 },
+"4574716": {
+"birth": "2002-03-27",
+"college": "Missouri",
+"first": "Harrison",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4574716.png",
+"height": 72.0,
+"injuries": [],
+"jersey": null,
+"last": "Mevis",
+"name": "Harrison Mevis",
+"pos": "PK",
+"team": "BAL",
+"weight": 245.0,
+"years": 2
+},
 "4575003": {
 "birth": "2001-04-15",
 "college": "Missouri",
@@ -39745,7 +39777,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4686768.png",
 "height": 80.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "78",
 "last": "Lichtenhan",
 "name": "Gerad Lichtenhan",
