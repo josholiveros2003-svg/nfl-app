@@ -7038,9 +7038,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2573079.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "11",
 "last": "Wentz",
 "name": "Carson Wentz",
@@ -7056,9 +7054,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2573401.png",
 "height": 78.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "89",
 "last": "Higbee",
 "name": "Tyler Higbee",
@@ -8185,22 +8181,6 @@
 "weight": 246.0,
 "years": 10
 },
-"2983509": {
-"birth": "1994-05-04",
-"college": "Wisconsin",
-"first": "Dare",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2983509.png",
-"height": 70.0,
-"injuries": [],
-"jersey": "23",
-"last": "Ogunbowale",
-"name": "Dare Ogunbowale",
-"pos": "RB",
-"team": "HOU",
-"weight": 205.0,
-"years": 9
-},
 "2985659": {
 "birth": "1994-07-07",
 "college": "Georgia State",
@@ -8306,9 +8286,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3040471.png",
 "height": 74.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "96",
 "last": "Collins",
 "name": "Maliek Collins",
@@ -8321,7 +8299,7 @@
 "birth": "1995-03-02",
 "college": "Illinois",
 "first": "Dawuane",
-"group": "defense",
+"group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3042476.png",
 "height": 75.0,
 "injuries": [],
@@ -8438,7 +8416,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3043109.png",
 "height": 80.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "77",
 "last": "Brown",
 "name": "Trent Brown",
@@ -8648,7 +8628,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3045474.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "75",
 "last": "Teller",
 "name": "Wyatt Teller",
@@ -9436,9 +9418,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3110565.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "5",
 "last": "Williams",
 "name": "Quincy Williams",
@@ -9584,9 +9564,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3115485.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "74",
 "last": "Jenkins",
 "name": "Elgton Jenkins",
@@ -10928,9 +10906,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3131498.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "71",
 "last": "Howard",
 "name": "Tytus Howard",
@@ -11307,7 +11283,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3728281.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "51",
 "last": "Cashman",
@@ -11495,7 +11471,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3886598.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "14",
 "last": "Jennings",
@@ -11817,22 +11793,6 @@
 "weight": 195.0,
 "years": 10
 },
-"3915106": {
-"birth": "1997-06-05",
-"college": "Florida",
-"first": "Fred",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3915106.png",
-"height": 79.0,
-"injuries": [],
-"jersey": "74",
-"last": "Johnson",
-"name": "Fred Johnson",
-"pos": "OT",
-"team": "PHI",
-"weight": 326.0,
-"years": 8
-},
 "3915147": {
 "birth": "1996-08-16",
 "college": "Oregon",
@@ -12102,9 +12062,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3915535.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "21",
 "last": "Ward",
 "name": "Denzel Ward",
@@ -12465,7 +12423,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917315.png",
 "height": 70.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "1",
 "last": "Murray",
@@ -12647,7 +12605,7 @@
 "birth": "1997-03-02",
 "college": "Iowa State",
 "first": "Julian",
-"group": "offense",
+"group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917949.png",
 "height": 77.0,
 "injuries": [],
@@ -12836,9 +12794,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3924327.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "2",
 "last": "Lock",
 "name": "Drew Lock",
@@ -14573,7 +14529,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4036133.png",
 "height": 77.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "87",
 "last": "Hockenson",
@@ -17573,22 +17529,6 @@
 "weight": 250.0,
 "years": 5
 },
-"4241372": {
-"birth": "1997-06-04",
-"college": "Oklahoma",
-"first": "Hollywood",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241372.png",
-"height": 69.0,
-"injuries": [],
-"jersey": "0",
-"last": "Brown",
-"name": "Hollywood Brown",
-"pos": "WR",
-"team": "PHI",
-"weight": 170.0,
-"years": 8
-},
 "4241374": {
 "birth": "1998-12-04",
 "college": "SMU",
@@ -18688,9 +18628,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242557.png",
 "height": 79.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "84",
 "last": "Parkinson",
 "name": "Colby Parkinson",
@@ -19136,9 +19074,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4243956.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "6",
 "last": "Blankenship",
 "name": "Reed Blankenship",
@@ -20895,7 +20831,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360086.png",
 "height": 79.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "81",
 "last": "Whyle",
@@ -23199,7 +23135,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362474.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "73",
 "last": "Avila",
@@ -23410,9 +23346,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362619.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "24",
 "last": "Rodriguez Jr.",
 "name": "Chris Rodriguez Jr.",
@@ -25728,9 +25662,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4385690.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "86",
 "last": "Kincaid",
 "name": "Dalton Kincaid",
@@ -26060,9 +25992,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426349.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "44",
 "last": "Walker",
 "name": "Travon Walker",
@@ -26820,7 +26750,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426817.png",
 "height": 70.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "2",
 "last": "Brownlee Jr.",
 "name": "Jarvis Brownlee Jr.",
@@ -29136,9 +29068,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429168.png",
 "height": 74.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "6",
 "last": "Johnson",
 "name": "Antonio Johnson",
@@ -29236,7 +29166,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429205.png",
 "height": 71.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "3",
 "last": "Addison",
 "name": "Jordan Addison",
@@ -30339,7 +30271,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430681.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "86",
 "last": "Wayne",
@@ -31211,7 +31143,7 @@
 "birth": "2002-02-02",
 "college": "Oklahoma State",
 "first": "Brennan",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431342.png",
 "height": 68.0,
 "injuries": [],
@@ -31502,9 +31434,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431487.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "83",
 "last": "Williams",
 "name": "Savion Williams",
@@ -33035,6 +32965,22 @@
 "weight": 198.0,
 "years": 0
 },
+"4565769": {
+"birth": "2001-11-10",
+"college": "Rice",
+"first": "Sean",
+"group": "defense",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4565769.png",
+"height": 69.0,
+"injuries": [],
+"jersey": "37",
+"last": "Fresch",
+"name": "Sean Fresch",
+"pos": "CB",
+"team": "DEN",
+"weight": 181.0,
+"years": 1
+},
 "4565779": {
 "birth": "2002-04-20",
 "college": "Washington",
@@ -33077,11 +33023,11 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4565908.png",
 "height": 71.0,
 "injuries": [],
-"jersey": null,
+"jersey": "82",
 "last": "Scott",
 "name": "Tyler Scott",
 "pos": "WR",
-"team": "LV",
+"team": "LA",
 "weight": 185.0,
 "years": 3
 },
@@ -36014,9 +35960,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4597310.png",
 "height": 79.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "58",
 "last": "Barber",
 "name": "Austin Barber",
@@ -36032,7 +35976,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4597500.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "15",
 "last": "Mitchell",
 "name": "Adonai Mitchell",
@@ -41141,7 +41087,7 @@
 "birth": "2002-12-11",
 "college": "Memphis",
 "first": "Chandler",
-"group": "defense",
+"group": "practiceSquad",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4695086.png",
 "height": 72.0,
 "injuries": [],
@@ -41696,24 +41642,6 @@
 "team": "NE",
 "weight": 245.0,
 "years": 0
-},
-"4698191": {
-"birth": "2000-03-24",
-"college": "Lock Haven",
-"first": "Chris",
-"group": "injuredReserveOrOut",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4698191.png",
-"height": 70.0,
-"injuries": [
-"Questionable"
-],
-"jersey": "33",
-"last": "Collier",
-"name": "Chris Collier",
-"pos": "RB",
-"team": "LV",
-"weight": 203.0,
-"years": 2
 },
 "4698244": {
 "birth": "2002-10-03",
@@ -42608,7 +42536,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4723820.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "11",
 "last": "Cooper Jr.",
 "name": "Omar Cooper Jr.",
@@ -43279,7 +43209,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4839498.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "66",
 "last": "Rutledge",
@@ -44258,9 +44188,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4876017.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "49",
 "last": "Schwesinger",
 "name": "Carson Schwesinger",
@@ -44856,9 +44784,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4880236.png",
 "height": 78.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "89",
 "last": "Kacmarek",
 "name": "Will Kacmarek",
@@ -46360,9 +46286,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5083076.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "44",
 "last": "Fannin Jr.",
 "name": "Harold Fannin Jr.",
