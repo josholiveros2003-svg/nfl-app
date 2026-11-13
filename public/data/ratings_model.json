@@ -331,11 +331,11 @@
      "r2": 0.17,
      "learned": true,
      "weights": {
-      "snaps": 0.375,
-      "snaps_pg": 0.127,
+      "snaps": 0.374,
+      "snaps_pg": 0.128,
       "snap_share": 0.3,
       "penalties": 0.05,
-      "penalty_yds": 0.148
+      "penalty_yds": 0.149
      }
     }
    }
@@ -421,7 +421,7 @@
     ],
     [
      "Receiving: Receptions",
-     1.6
+     1.58
     ],
     [
      "Receiving: Receiving yards per game",
@@ -451,9 +451,9 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.176,
-      "snaps_pg": 0.266,
-      "snap_share": 0.352,
+      "snaps": 0.175,
+      "snaps_pg": 0.265,
+      "snap_share": 0.353,
       "penalties": 0.05,
       "penalty_yds": 0.156
      }
@@ -523,9 +523,9 @@
      "r2": 0.2,
      "learned": true,
      "weights": {
-      "snaps": 0.19,
+      "snaps": 0.189,
       "snaps_pg": 0.281,
-      "snap_share": 0.338,
+      "snap_share": 0.339,
       "penalties": 0.05,
       "penalty_yds": 0.141
      }
@@ -598,8 +598,8 @@
       "snaps": 0.198,
       "snaps_pg": 0.293,
       "snap_share": 0.3,
-      "penalties": 0.104,
-      "penalty_yds": 0.105
+      "penalties": 0.103,
+      "penalty_yds": 0.106
      }
     }
    }
@@ -641,8 +641,8 @@
      "weights": {
       "tackles": 0.171,
       "tackles_pg": 0.021,
-      "solo": 0.191,
-      "tfl": 0.333,
+      "solo": 0.19,
+      "tfl": 0.332,
       "ff": 0.193,
       "fr": 0.092
      }
@@ -651,7 +651,7 @@
      "r2": 0.21,
      "learned": true,
      "weights": {
-      "snaps": 0.192,
+      "snaps": 0.191,
       "snaps_pg": 0.27,
       "snap_share": 0.318,
       "penalties": 0.05,
@@ -724,7 +724,7 @@
      "r2": 0.2,
      "learned": true,
      "weights": {
-      "snaps": 0.161,
+      "snaps": 0.16,
       "snaps_pg": 0.257,
       "snap_share": 0.388,
       "penalties": 0.057,
@@ -747,7 +747,7 @@
     ],
     [
      "Playing Time: Defensive snaps per game",
-     1.07
+     1.06
     ],
     [
      "Coverage: Passes defended",
@@ -760,7 +760,7 @@
      "learned": true,
      "weights": {
       "ints": 0.225,
-      "pd": 0.603,
+      "pd": 0.602,
       "def_td": 0.172
      }
     },
@@ -779,7 +779,7 @@
      "r2": 0.2,
      "learned": true,
      "weights": {
-      "snaps": 0.182,
+      "snaps": 0.181,
       "snaps_pg": 0.28,
       "snap_share": 0.309,
       "penalties": 0.103,
