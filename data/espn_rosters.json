@@ -351,9 +351,6 @@
 "2983155": [
 "NYJ"
 ],
-"2983509": [
-"HOU"
-],
 "2985659": [
 "DEN"
 ],
@@ -2867,6 +2864,9 @@
 ],
 "4372576": [
 "CHI"
+],
+"4372716": [
+"HOU"
 ],
 "4372774": [
 "SF"
@@ -12742,7 +12742,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3919512.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "30",
 "last": "Bates III",
 "name": "Jessie Bates III",
@@ -15074,9 +15076,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038849.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "98",
 "last": "Wonnum",
 "name": "DJ Wonnum",
@@ -15469,7 +15469,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4040537.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "55",
 "last": "Brewer",
@@ -37971,7 +37971,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683815.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "49",
 "last": "Wallace",
@@ -42624,9 +42624,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4723820.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "11",
 "last": "Cooper Jr.",
 "name": "Omar Cooper Jr.",
@@ -43491,7 +43489,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4869961.png",
 "height": 74.0,
 "injuries": [
-"Questionable"
+"Doubtful"
 ],
 "jersey": "18",
 "last": "Bell",
@@ -43871,7 +43869,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4871023.png",
 "height": 74.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "14",
 "last": "Tate",
