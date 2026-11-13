@@ -930,9 +930,6 @@
 "3914922": [
 "IND"
 ],
-"3915106": [
-"PHI"
-],
 "3915184": [
 "BAL"
 ],
@@ -12300,9 +12297,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916433.png",
 "height": 74.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "3",
 "last": "Meyers",
 "name": "Jakobi Meyers",
@@ -12554,9 +12549,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917660.png",
 "height": 78.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "76",
 "last": "Edwards",
 "name": "David Edwards",
@@ -27906,9 +27899,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428350.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "29",
 "last": "Riley",
 "name": "Quincy Riley",
@@ -38312,9 +38303,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685260.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "71",
 "last": "Banks Jr.",
 "name": "Kelvin Banks Jr.",
@@ -38855,7 +38844,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685479.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "52",
 "last": "Miller",
@@ -45016,9 +45005,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4882093.png",
 "height": 69.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "33",
 "last": "Tuten",
 "name": "Bhayshul Tuten",
@@ -46191,7 +46178,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081999.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "43",
 "last": "Donaldson",
