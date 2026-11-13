@@ -1815,9 +1815,6 @@
 "4241278": [
 "JAX"
 ],
-"4241372": [
-"PHI"
-],
 "4241374": [
 "PHI"
 ],
@@ -17309,7 +17306,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240706.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "25",
 "last": "Pinnock",
 "name": "Jason Pinnock",
