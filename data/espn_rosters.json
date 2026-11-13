@@ -3738,6 +3738,9 @@
 "4431325": [
 "CLE"
 ],
+"4431342": [
+"LA"
+],
 "4431346": [
 "GB"
 ],
@@ -7862,7 +7865,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2976560.png",
 "height": 77.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "55",
 "last": "Hunter",
@@ -12197,9 +12200,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916148.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "20",
 "last": "Pollard",
 "name": "Tony Pollard",
@@ -12716,7 +12717,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3919117.png",
 "height": 74.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "0",
 "last": "Al-Shaair",
@@ -15728,7 +15729,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4043041.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "77",
 "last": "Moore",
@@ -23280,7 +23281,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362504.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "9",
 "last": "Jordan",
@@ -25812,7 +25813,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4401811.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "29",
 "last": "Dugger",
@@ -28807,9 +28808,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429059.png",
 "height": 70.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "4",
 "last": "Marks",
 "name": "Woody Marks",
@@ -32422,7 +32421,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432708.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "18",
 "last": "Harrison Jr.",
@@ -39205,9 +39204,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685617.png",
 "height": 74.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "23",
 "last": "Winston Jr.",
 "name": "Kevin Winston Jr.",
@@ -43874,7 +43871,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4871063.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "99",
 "last": "Woods",
@@ -44825,7 +44822,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4880124.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "5",
 "last": "Delane",
 "name": "Mansoor Delane",
