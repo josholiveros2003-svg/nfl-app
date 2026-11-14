@@ -8103,7 +8103,7 @@
 "birth": "1993-10-22",
 "college": "Florida",
 "first": "Jonathan",
-"group": "injuredReserveOrOut",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2980097.png",
 "height": 75.0,
 "injuries": [
@@ -29155,7 +29155,7 @@
 "birth": "2002-10-05",
 "college": "Pittsburgh",
 "first": "Israel",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429202.png",
 "height": 70.0,
 "injuries": [],
@@ -29533,7 +29533,7 @@
 "birth": "2000-11-10",
 "college": "Iowa",
 "first": "Tyler",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429676.png",
 "height": 69.0,
 "injuries": [
@@ -40144,22 +40144,6 @@
 "team": "CIN",
 "weight": 310.0,
 "years": 0
-},
-"4689333": {
-"birth": "1999-12-08",
-"college": "Mississippi State",
-"first": "Tyrus",
-"group": "defense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4689333.png",
-"height": 74.0,
-"injuries": [],
-"jersey": "59",
-"last": "Wheat",
-"name": "Tyrus Wheat",
-"pos": "LB",
-"team": "DAL",
-"weight": 260.0,
-"years": 4
 },
 "4689364": {
 "birth": "2002-09-04",
