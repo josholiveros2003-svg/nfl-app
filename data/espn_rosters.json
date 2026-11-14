@@ -351,6 +351,9 @@
 "2983155": [
 "NYJ"
 ],
+"2983509": [
+"HOU"
+],
 "2985659": [
 "DEN"
 ],
@@ -1734,6 +1737,9 @@
 "4240589": [
 "TB"
 ],
+"4240595": [
+"CAR"
+],
 "4240596": [
 "ATL"
 ],
@@ -1865,6 +1871,9 @@
 ],
 "4241720": [
 "NE"
+],
+"4241802": [
+"MIA"
 ],
 "4241807": [
 "SF"
@@ -2316,6 +2325,9 @@
 "4360290": [
 "SF"
 ],
+"4360307": [
+"DAL"
+],
 "4360310": [
 "JAX"
 ],
@@ -2535,6 +2547,9 @@
 "4361691": [
 "DEN"
 ],
+"4361707": [
+"HOU"
+],
 "4361727": [
 "TB"
 ],
@@ -2576,6 +2591,9 @@
 ],
 "4361985": [
 "MIN"
+],
+"4361988": [
+"DAL"
 ],
 "4362010": [
 "MIN"
@@ -3468,6 +3486,9 @@
 "4429193": [
 "DEN"
 ],
+"4429202": [
+"DAL"
+],
 "4429205": [
 "MIN"
 ],
@@ -3491,6 +3512,9 @@
 ],
 "4429392": [
 "CLE"
+],
+"4429435": [
+"MIA"
 ],
 "4429490": [
 "PIT"
@@ -3746,6 +3770,9 @@
 ],
 "4431414": [
 "LV"
+],
+"4431426": [
+"CAR"
 ],
 "4431431": [
 "NE"
@@ -4983,9 +5010,6 @@
 "4689117": [
 "CIN"
 ],
-"4689333": [
-"DAL"
-],
 "4689651": [
 "PHI"
 ],
@@ -5192,9 +5216,6 @@
 ],
 "4699354": [
 "ARI"
-],
-"4699802": [
-"HOU"
 ],
 "4700136": [
 "NYJ"
@@ -8086,7 +8107,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2980097.png",
 "height": 75.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "90",
 "last": "Bullard",
@@ -11388,7 +11409,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3858276.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "21",
 "last": "Hawkins",
@@ -17504,7 +17525,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241250.png",
 "height": 73.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "33",
 "last": "Hummel",
@@ -29518,7 +29539,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429676.png",
 "height": 69.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "32",
 "last": "Goodson",
@@ -29864,7 +29885,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430034.png",
 "height": 75.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "17",
 "last": "Legette",
