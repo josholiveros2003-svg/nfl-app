@@ -18330,9 +18330,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242391.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "73",
 "last": "Hainsey",
 "name": "Robert Hainsey",
@@ -29881,7 +29879,7 @@
 "birth": "2001-01-29",
 "college": "South Carolina",
 "first": "Xavier",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430034.png",
 "height": 75.0,
 "injuries": [
@@ -47355,7 +47353,7 @@
 "birth": "2002-03-13",
 "college": "California",
 "first": "Jacob",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5155179.png",
 "height": 67.0,
 "injuries": [],
