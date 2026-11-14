@@ -16639,7 +16639,7 @@
 "birth": "1999-01-26",
 "college": "Clemson",
 "first": "Travis",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239996.png",
 "height": 70.0,
 "injuries": [
@@ -38755,7 +38755,7 @@
 "birth": "2004-08-05",
 "college": "Georgia",
 "first": "Christen",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685479.png",
 "height": 75.0,
 "injuries": [
