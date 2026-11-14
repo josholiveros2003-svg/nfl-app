@@ -5961,6 +5961,9 @@
 "5153072": [
 "IND"
 ],
+"5155179": [
+"KC"
+],
 "5157289": [
 "LV"
 ],
@@ -11325,7 +11328,7 @@
 "birth": "1996-05-03",
 "college": "LSU",
 "first": "Arden",
-"group": "injuredReserveOrOut",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3843843.png",
 "height": 77.0,
 "injuries": [],
@@ -12379,7 +12382,7 @@
 "birth": "1997-09-21",
 "college": "App State",
 "first": "Akeem",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917142.png",
 "height": 74.0,
 "injuries": [
@@ -22146,7 +22149,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361411.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "88",
 "last": "Freiermuth",
 "name": "Pat Freiermuth",
