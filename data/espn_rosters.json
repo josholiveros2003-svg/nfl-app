@@ -6998,7 +6998,7 @@
 "birth": "1992-02-01",
 "college": "Rutgers",
 "first": "Michael",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2515270.png",
 "height": 72.0,
 "injuries": [
@@ -10193,7 +10193,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3121595.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "71",
 "last": "Smith",
 "name": "Braden Smith",
@@ -14098,7 +14100,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035538.png",
 "height": 71.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "32",
 "last": "Montgomery",
@@ -44140,15 +44142,15 @@
 "birth": "1999-08-20",
 "college": "Florida Atlantic",
 "first": "Zaire",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4876006.png",
 "height": 77.0,
 "injuries": [],
-"jersey": null,
+"jersey": "80",
 "last": "Mitchell-Paden",
 "name": "Zaire Mitchell-Paden",
 "pos": "TE",
-"team": "HOU",
+"team": "CLE",
 "weight": 257.0,
 "years": 2
 },
