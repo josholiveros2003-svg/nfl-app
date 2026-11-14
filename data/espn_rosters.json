@@ -4824,6 +4824,9 @@
 "4685530": [
 "BAL"
 ],
+"4685540": [
+"CLE"
+],
 "4685549": [
 "TB"
 ],
@@ -5540,6 +5543,9 @@
 ],
 "4875592": [
 "CAR"
+],
+"4876006": [
+"CLE"
 ],
 "4876017": [
 "CLE"
@@ -6996,7 +7002,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2515270.png",
 "height": 72.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "34",
 "last": "Burton",
