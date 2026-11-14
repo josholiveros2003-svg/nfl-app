@@ -2421,9 +2421,6 @@
 "4360887": [
 "GB"
 ],
-"4360935": [
-"PIT"
-],
 "4360939": [
 "BAL"
 ],
@@ -37411,7 +37408,7 @@
 "birth": "2003-08-03",
 "college": "Oregon",
 "first": "Derrick",
-"group": "injuredReserveOrOut",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4682980.png",
 "height": 76.0,
 "injuries": [
