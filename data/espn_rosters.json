@@ -6444,24 +6444,6 @@
 "weight": 227.0,
 "years": 12
 },
-"15797": {
-"birth": "1990-05-08",
-"college": "Oklahoma",
-"first": "Lane",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/15797.png",
-"height": 78.0,
-"injuries": [
-"Out"
-],
-"jersey": "65",
-"last": "Johnson",
-"name": "Lane Johnson",
-"pos": "OT",
-"team": "PHI",
-"weight": 325.0,
-"years": 14
-},
 "15818": {
 "birth": "1992-04-27",
 "college": "California",
@@ -11172,11 +11154,11 @@
 "birth": "2000-01-11",
 "college": "BYU",
 "first": "Chris",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3149687.png",
 "height": 73.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "30",
 "last": "Brooks",
@@ -11904,7 +11886,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3915398.png",
 "height": 73.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "3",
 "last": "Townsend",
@@ -20840,7 +20822,7 @@
 "birth": "1999-09-08",
 "college": "Cincinnati",
 "first": "Josh",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360086.png",
 "height": 79.0,
 "injuries": [
@@ -21645,22 +21627,6 @@
 "team": "GB",
 "weight": 323.0,
 "years": 2
-},
-"4360935": {
-"birth": "1999-07-27",
-"college": "Minnesota",
-"first": "Terell",
-"group": "defense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360935.png",
-"height": 72.0,
-"injuries": [],
-"jersey": "39",
-"last": "Smith",
-"name": "Terell Smith",
-"pos": "CB",
-"team": "PIT",
-"weight": 204.0,
-"years": 5
 },
 "4360939": {
 "birth": "1999-11-29",
@@ -30008,7 +29974,7 @@
 "birth": "2000-09-10",
 "college": "Western Michigan",
 "first": "Skyy",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430191.png",
 "height": 70.0,
 "injuries": [
@@ -35888,7 +35854,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4596480.png",
 "height": 72.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "37",
 "last": "Hancock",
