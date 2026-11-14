@@ -15,6 +15,9 @@
 "12483": [
 "LA"
 ],
+"12701": [
+"TEN"
+],
 "13241": [
 "SF"
 ],
@@ -206,6 +209,9 @@
 ],
 "2576736": [
 "WAS"
+],
+"2576789": [
+"SEA"
 ],
 "2576925": [
 "CAR"
@@ -539,6 +545,9 @@
 ],
 "3057956": [
 "MIA"
+],
+"3059722": [
+"ARI"
 ],
 "3059839": [
 "ARI"
@@ -950,6 +959,9 @@
 ],
 "3915416": [
 "BUF"
+],
+"3915437": [
+"TEN"
 ],
 "3915470": [
 "BAL"
@@ -1446,6 +1458,9 @@
 "4039029": [
 "SF"
 ],
+"4039034": [
+"BUF"
+],
 "4039050": [
 "ARI"
 ],
@@ -1517,6 +1532,9 @@
 ],
 "4040945": [
 "NO"
+],
+"4040966": [
+"SEA"
 ],
 "4040982": [
 "DAL"
@@ -1760,9 +1778,6 @@
 ],
 "4240631": [
 "MIN"
-],
-"4240657": [
-"TEN"
 ],
 "4240677": [
 "GB"
@@ -2379,6 +2394,9 @@
 "4360635": [
 "WAS"
 ],
+"4360637": [
+"MIN"
+],
 "4360677": [
 "CLE"
 ],
@@ -2450,6 +2468,12 @@
 ],
 "4361093": [
 "CHI"
+],
+"4361094": [
+"TEN"
+],
+"4361112": [
+"MIN"
 ],
 "4361178": [
 "BAL"
@@ -2919,9 +2943,6 @@
 "4373825": [
 "DET"
 ],
-"4373951": [
-"NYJ"
-],
 "4373956": [
 "TEN"
 ],
@@ -3203,9 +3224,6 @@
 ],
 "4427325": [
 "SF"
-],
-"4427348": [
-"BUF"
 ],
 "4427356": [
 "GB"
@@ -3513,6 +3531,9 @@
 "4429435": [
 "MIA"
 ],
+"4429466": [
+"GB"
+],
 "4429490": [
 "PIT"
 ],
@@ -3611,6 +3632,9 @@
 ],
 "4430379": [
 "NO"
+],
+"4430411": [
+"ATL"
 ],
 "4430431": [
 "SF"
@@ -3764,6 +3788,9 @@
 ],
 "4431346": [
 "GB"
+],
+"4431353": [
+"TEN"
 ],
 "4431414": [
 "LV"
@@ -4350,9 +4377,6 @@
 "4578085": [
 "CLE"
 ],
-"4578436": [
-"GB"
-],
 "4582836": [
 "PHI"
 ],
@@ -4697,6 +4721,9 @@
 ],
 "4683848": [
 "DAL"
+],
+"4684030": [
+"ATL"
 ],
 "4684432": [
 "KC"
@@ -5157,6 +5184,9 @@
 "4696211": [
 "SF"
 ],
+"4696488": [
+"NO"
+],
 "4696700": [
 "ARI"
 ],
@@ -5270,6 +5300,9 @@
 ],
 "4710422": [
 "DET"
+],
+"4710661": [
+"TEN"
 ],
 "4710706": [
 "KC"
@@ -5742,6 +5775,9 @@
 "4916349": [
 "CHI"
 ],
+"4916597": [
+"NE"
+],
 "4917354": [
 "LV"
 ],
@@ -5988,6 +6024,9 @@
 "5155179": [
 "KC"
 ],
+"5155825": [
+"LV"
+],
 "5157289": [
 "LV"
 ],
@@ -6122,7 +6161,7 @@
 "birth": "1986-03-08",
 "college": "SMU",
 "first": "Thomas",
-"group": "practiceSquad",
+"group": "specialTeam",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/12701.png",
 "height": 76.0,
 "injuries": [],
@@ -6414,11 +6453,11 @@
 "birth": "1990-02-26",
 "college": "Pennsylvania",
 "first": "Greg",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/15718.png",
 "height": 75.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "70",
 "last": "Van Roten",
@@ -9344,11 +9383,11 @@
 "birth": "1995-03-30",
 "college": "East Carolina",
 "first": "Zay",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3059722.png",
 "height": 74.0,
 "injuries": [],
-"jersey": "9",
+"jersey": "7",
 "last": "Jones",
 "name": "Zay Jones",
 "pos": "WR",
@@ -11882,7 +11921,7 @@
 "birth": "1996-11-12",
 "college": "Florida",
 "first": "Tommy",
-"group": "specialTeam",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3915398.png",
 "height": 73.0,
 "injuries": [
@@ -14874,7 +14913,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4037626.png",
 "height": 75.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "0",
 "last": "Deablo",
@@ -15378,11 +15417,11 @@
 "birth": "1997-08-20",
 "college": "Toledo",
 "first": "Reggie",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4039505.png",
 "height": 73.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "44",
 "last": "Gilliam",
@@ -16528,11 +16567,11 @@
 "birth": "1998-08-19",
 "college": "Boston College",
 "first": "Hunter",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239944.png",
 "height": 77.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "89",
 "last": "Long",
@@ -16598,7 +16637,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239996.png",
 "height": 70.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "3",
 "last": "Etienne Jr.",
@@ -17199,22 +17238,6 @@
 "team": "MIN",
 "weight": 225.0,
 "years": 7
-},
-"4240657": {
-"birth": "1999-05-07",
-"college": "North Carolina",
-"first": "Michael",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240657.png",
-"height": 68.0,
-"injuries": [],
-"jersey": "35",
-"last": "Carter",
-"name": "Michael Carter",
-"pos": "RB",
-"team": "TEN",
-"weight": 201.0,
-"years": 5
 },
 "4240677": {
 "birth": "1998-05-19",
@@ -20826,7 +20849,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360086.png",
 "height": 79.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "81",
 "last": "Whyle",
@@ -21450,7 +21473,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360745.png",
 "height": 72.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "32",
 "last": "Williamson",
@@ -28820,11 +28843,11 @@
 "birth": "2001-07-31",
 "college": "Northwestern",
 "first": "Peter",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429100.png",
 "height": 76.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "77",
 "last": "Skoronski",
@@ -29978,7 +30001,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430191.png",
 "height": 70.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "23",
 "last": "Moore",
@@ -32332,11 +32355,11 @@
 "birth": "2002-10-22",
 "college": "Ohio State",
 "first": "TreVeyon",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432710.png",
 "height": 70.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "32",
 "last": "Henderson",
@@ -32650,7 +32673,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4433914.png",
 "height": 78.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "71",
 "last": "Taylor",
@@ -34986,7 +35009,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4574105.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "37",
 "last": "Waxter",
@@ -35365,22 +35388,6 @@
 "team": "CLE",
 "weight": 260.0,
 "years": 3
-},
-"4578436": {
-"birth": "2001-03-23",
-"college": "Ohio",
-"first": "Coleman",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4578436.png",
-"height": 70.0,
-"injuries": [],
-"jersey": "13",
-"last": "Owen",
-"name": "Coleman Owen",
-"pos": "WR",
-"team": "GB",
-"weight": 181.0,
-"years": 1
 },
 "4581189": {
 "birth": "2002-05-23",
@@ -35771,9 +35778,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4596334.png",
 "height": 68.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "34",
 "last": "Mitchell",
 "name": "Keaton Mitchell",
@@ -37896,7 +37901,7 @@
 "birth": "2003-04-15",
 "college": "Louisville",
 "first": "TJ",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4684030.png",
 "height": 72.0,
 "injuries": [],
@@ -38748,7 +38753,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685479.png",
 "height": 75.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "52",
 "last": "Miller",
@@ -38978,7 +38983,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685553.png",
 "height": 69.0,
 "injuries": [
-"Questionable"
+"Doubtful"
 ],
 "jersey": "89",
 "last": "Thompson",
@@ -40291,9 +40296,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4690171.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "33",
 "last": "Leonard",
 "name": "Deane Leonard",
@@ -43096,7 +43099,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4837388.png",
 "height": 75.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "34",
 "last": "Payne",
@@ -43129,9 +43132,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4838693.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "24",
 "last": "Shelley",
 "name": "Rodney Shelley",
@@ -45442,7 +45443,7 @@
 "birth": "1999-04-01",
 "college": "Culver Stockton",
 "first": "Andrew",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4916597.png",
 "height": 78.0,
 "injuries": [],
