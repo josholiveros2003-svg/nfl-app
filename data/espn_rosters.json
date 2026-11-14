@@ -1095,6 +1095,9 @@
 "3925357": [
 "TEN"
 ],
+"3925443": [
+"IND"
+],
 "3926229": [
 "TEN"
 ],
@@ -1595,6 +1598,9 @@
 ],
 "4048231": [
 "JAX"
+],
+"4050373": [
+"IND"
 ],
 "4051001": [
 "LAC"
@@ -4335,6 +4341,9 @@
 "4586333": [
 "DET"
 ],
+"4587724": [
+"IND"
+],
 "4589212": [
 "DEN"
 ],
@@ -4463,6 +4472,9 @@
 ],
 "4605792": [
 "CLE"
+],
+"4605841": [
+"KC"
 ],
 "4605951": [
 "LA"
@@ -8227,11 +8239,11 @@
 "birth": "1993-09-19",
 "college": "VCU",
 "first": "Mo",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2998565.png",
 "height": 77.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "81",
 "last": "Alie-Cox",
@@ -11316,9 +11328,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3843843.png",
 "height": 77.0,
-"injuries": [
-"Injured Reserve"
-],
+"injuries": [],
 "jersey": "98",
 "last": "Key",
 "name": "Arden Key",
@@ -12373,7 +12383,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917142.png",
 "height": 74.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "51",
 "last": "Davis-Gaither",
@@ -23223,7 +23233,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362523.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "86",
 "last": "Mallory",
