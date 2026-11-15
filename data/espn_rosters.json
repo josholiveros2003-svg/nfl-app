@@ -9126,7 +9126,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3052180.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "65",
 "last": "Shelton",
 "name": "Coleman Shelton",
@@ -9534,7 +9536,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3115312.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "90",
 "last": "Reed",
 "name": "Jarran Reed",
@@ -19288,7 +19292,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4245171.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "72",
 "last": "Lucas",
 "name": "Abraham Lucas",
@@ -19600,7 +19606,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4248911.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "26",
 "last": "Bland",
 "name": "DaRon Bland",
@@ -24024,7 +24032,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4367210.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "91",
 "last": "Ogbonnia",
 "name": "Otito Ogbonnia",
@@ -25725,7 +25735,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4386544.png",
 "height": 69.0,
 "injuries": [],
-"jersey": "19",
+"jersey": "14",
 "last": "Smith",
 "name": "Xavier Smith",
 "pos": "WR",
@@ -29759,7 +29769,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429835.png",
 "height": 71.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "36",
 "last": "Holani",
@@ -30006,7 +30016,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430155.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "63",
 "last": "McMahon",
 "name": "Dylan McMahon",
@@ -30341,7 +30353,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430723.png",
 "height": 78.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "12",
 "last": "Wiley",
@@ -32350,7 +32362,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432665.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "89",
 "last": "Bowers",
 "name": "Brock Bowers",
