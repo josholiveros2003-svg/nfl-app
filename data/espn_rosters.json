@@ -6462,9 +6462,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/15718.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "70",
 "last": "Van Roten",
 "name": "Greg Van Roten",
@@ -7130,9 +7128,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2574056.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "31",
 "last": "Byard",
 "name": "Kevin Byard",
@@ -14968,7 +14964,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038432.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "57",
 "last": "Ogbongbemiga",
 "name": "Amen Ogbongbemiga",
@@ -15442,9 +15440,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4039505.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "44",
 "last": "Gilliam",
 "name": "Reggie Gilliam",
@@ -16198,9 +16194,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4047646.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "1",
 "last": "Brown",
 "name": "A.J. Brown",
@@ -16249,7 +16243,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4047941.png",
 "height": 74.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "41",
 "last": "Schooler",
@@ -23183,6 +23177,22 @@
 "weight": 165.0,
 "years": 4
 },
+"4362478": {
+"birth": "1999-01-20",
+"college": "TCU",
+"first": "Emari",
+"group": "offense",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362478.png",
+"height": 69.0,
+"injuries": [],
+"jersey": "21",
+"last": "Demercado",
+"name": "Emari Demercado",
+"pos": "RB",
+"team": "HOU",
+"weight": 215.0,
+"years": 4
+},
 "4362487": {
 "birth": "1999-06-16",
 "college": "TCU",
@@ -24144,9 +24154,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4368113.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "22",
 "last": "Woods",
 "name": "Charles Woods",
@@ -24490,9 +24498,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372026.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "36",
 "last": "Latu",
 "name": "Cameron Latu",
@@ -25306,9 +25312,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4374302.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "14",
 "last": "St. Brown",
 "name": "Amon-Ra St. Brown",
@@ -27849,7 +27853,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428394.png",
 "height": 78.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "72",
 "last": "Rouse",
@@ -31352,7 +31356,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431465.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "15",
 "last": "Morton",
 "name": "Behren Morton",
@@ -31514,7 +31520,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431526.png",
 "height": 79.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "68",
 "last": "Crownover",
 "name": "Dametrious Crownover",
@@ -33924,9 +33932,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569173.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "38",
 "last": "Stevenson",
 "name": "Rhamondre Stevenson",
@@ -35454,7 +35460,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4586333.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "94",
 "last": "Wingo",
 "name": "Mekhi Wingo",
@@ -42128,7 +42136,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4710422.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "99",
 "last": "Hassanein",
 "name": "Ahmed Hassanein",
@@ -45336,9 +45346,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4912274.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "33",
 "last": "Vaki",
 "name": "Sione Vaki",
@@ -46658,7 +46666,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5093004.png",
 "height": 69.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "6",
 "last": "Abney II",
 "name": "Keith Abney II",
