@@ -1488,6 +1488,9 @@
 "4039160": [
 "TEN"
 ],
+"4039164": [
+"LAC"
+],
 "4039170": [
 "DAL"
 ],
@@ -2894,9 +2897,6 @@
 ],
 "4372459": [
 "DET"
-],
-"4372463": [
-"MIA"
 ],
 "4372505": [
 "TB"
@@ -10381,9 +10381,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3123076.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "83",
 "last": "Njoku",
 "name": "David Njoku",
@@ -12713,7 +12711,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3918331.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "28",
 "last": "Wingard",
 "name": "Andrew Wingard",
@@ -19598,7 +19598,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4248911.png",
 "height": 74.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "26",
 "last": "Bland",
@@ -27181,7 +27181,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427325.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "0",
 "last": "Green",
 "name": "Renardo Green",
@@ -28446,7 +28448,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428996.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "52",
 "last": "Burch",
@@ -32690,7 +32692,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4433914.png",
 "height": 78.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "71",
 "last": "Taylor",
