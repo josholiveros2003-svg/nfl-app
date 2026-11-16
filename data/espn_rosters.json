@@ -10552,9 +10552,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3125082.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "66",
 "last": "Risner",
 "name": "Dalton Risner",
@@ -13122,7 +13120,9 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3929846.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "25",
 "last": "Elliott",
 "name": "DeShon Elliott",
@@ -13384,7 +13384,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3932886.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "27",
 "last": "Murphy-Bunting",
 "name": "Sean Murphy-Bunting",
@@ -20056,7 +20058,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4258194.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "95",
 "last": "Paye",
 "name": "Kwity Paye",
@@ -22200,9 +22204,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361411.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "88",
 "last": "Freiermuth",
 "name": "Pat Freiermuth",
@@ -24032,9 +24034,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4367210.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "91",
 "last": "Ogbonnia",
 "name": "Otito Ogbonnia",
@@ -28505,7 +28505,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429000.png",
 "height": 78.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "77",
 "last": "Hinton",
@@ -28785,7 +28785,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429059.png",
 "height": 70.0,
 "injuries": [
-"Questionable"
+"Doubtful"
 ],
 "jersey": "4",
 "last": "Marks",
@@ -29769,7 +29769,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429835.png",
 "height": 71.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "36",
 "last": "Holani",
@@ -29870,7 +29870,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429955.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "18",
 "last": "Howard",
 "name": "Will Howard",
@@ -32363,7 +32365,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432665.png",
 "height": 76.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "89",
 "last": "Bowers",
@@ -37470,9 +37472,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4682980.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "99",
 "last": "Harmon",
 "name": "Derrick Harmon",
@@ -38338,7 +38338,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685263.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "52",
 "last": "Booker",
 "name": "Tyler Booker",
@@ -42482,7 +42484,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4714771.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "16",
 "last": "Allar",
 "name": "Drew Allar",
@@ -43678,7 +43682,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4870866.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "65",
 "last": "Lew",
 "name": "Connor Lew",
@@ -45994,7 +46000,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081508.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "29",
 "last": "Heidenreich",
 "name": "Eli Heidenreich",
@@ -46010,7 +46018,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081542.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "96",
 "last": "Robinson",
 "name": "Landon Robinson",
