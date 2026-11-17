@@ -2862,6 +2862,9 @@
 "4372459": [
 "DET"
 ],
+"4372463": [
+"CLE"
+],
 "4372505": [
 "TB"
 ],
@@ -3753,6 +3756,9 @@
 "4431346": [
 "GB"
 ],
+"4431353": [
+"TEN"
+],
 "4431414": [
 "LV"
 ],
@@ -4146,6 +4152,9 @@
 "4568703": [
 "BUF"
 ],
+"4569016": [
+"MIA"
+],
 "4569173": [
 "NE"
 ],
@@ -4157,6 +4166,9 @@
 ],
 "4569382": [
 "LA"
+],
+"4569448": [
+"MIA"
 ],
 "4569465": [
 "DET"
@@ -4728,6 +4740,9 @@
 "4685278": [
 "CHI"
 ],
+"4685279": [
+"PHI"
+],
 "4685287": [
 "PHI"
 ],
@@ -4820,9 +4835,6 @@
 ],
 "4685530": [
 "BAL"
-],
-"4685540": [
-"CLE"
 ],
 "4685549": [
 "TB"
@@ -24663,6 +24675,22 @@
 "weight": 206.0,
 "years": 4
 },
+"4372463": {
+"birth": "2000-06-14",
+"college": "James Madison",
+"first": "Jamree",
+"group": "defense",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372463.png",
+"height": 75.0,
+"injuries": [],
+"jersey": null,
+"last": "Kromah",
+"name": "Jamree Kromah",
+"pos": "DE",
+"team": "CLE",
+"weight": 268.0,
+"years": 1
+},
 "4372505": {
 "birth": "2000-06-15",
 "college": "Purdue",
@@ -34115,7 +34143,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569587.png",
 "height": 68.0,
 "injuries": [
-"Questionable"
+"Injured Reserve"
 ],
 "jersey": "4",
 "last": "Robinson",
@@ -35315,6 +35343,22 @@
 "weight": 260.0,
 "years": 3
 },
+"4578436": {
+"birth": "2001-03-23",
+"college": "Ohio",
+"first": "Coleman",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4578436.png",
+"height": 70.0,
+"injuries": [],
+"jersey": "13",
+"last": "Owen",
+"name": "Coleman Owen",
+"pos": "WR",
+"team": "GB",
+"weight": 181.0,
+"years": 1
+},
 "4581189": {
 "birth": "2002-05-23",
 "college": "Auburn",
@@ -36172,7 +36216,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4602699.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "3",
 "last": "Lassiter",
 "name": "Kamari Lassiter",
@@ -36446,7 +36492,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4606712.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Injured Reserve"
+],
 "jersey": "60",
 "last": "Reed-Adams",
 "name": "Ar'maj Reed-Adams",
@@ -37573,7 +37621,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683276.png",
 "height": 78.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "93",
 "last": "Biggers",
@@ -38858,22 +38906,6 @@
 "team": "BAL",
 "weight": 203.0,
 "years": 2
-},
-"4685540": {
-"birth": "2003-08-21",
-"college": "BYU",
-"first": "Carsen",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685540.png",
-"height": 75.0,
-"injuries": [],
-"jersey": "48",
-"last": "Ryan",
-"name": "Carsen Ryan",
-"pos": "TE",
-"team": "CLE",
-"weight": 255.0,
-"years": 0
 },
 "4685549": {
 "birth": "2003-09-09",
@@ -42925,7 +42957,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4837188.png",
 "height": 75.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "94",
 "last": "Phillips",
@@ -45519,6 +45551,22 @@
 "weight": 330.0,
 "years": 1
 },
+"5033343": {
+"birth": "2000-10-15",
+"college": null,
+"first": "Haggai",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5033343.png",
+"height": 78.0,
+"injuries": [],
+"jersey": null,
+"last": "Ndubuisi",
+"name": "Haggai Ndubuisi",
+"pos": "DT",
+"team": "GB",
+"weight": 298.0,
+"years": 1
+},
 "5065495": {
 "birth": "1998-09-25",
 "college": "Northwest Missouri State",
@@ -46677,7 +46725,7 @@
 "birth": "2003-12-05",
 "college": "Ole Miss",
 "first": "Wydett",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5099542.png",
 "height": 74.0,
 "injuries": [],
@@ -47584,22 +47632,6 @@
 "team": "DEN",
 "weight": 185.0,
 "years": 0
-},
-"5277116": {
-"birth": "2002-08-05",
-"college": null,
-"first": "Lenny",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5277116.png",
-"height": 73.0,
-"injuries": [],
-"jersey": "38",
-"last": "Krieg",
-"name": "Lenny Krieg",
-"pos": "PK",
-"team": "GB",
-"weight": 210.0,
-"years": 1
 },
 "5278092": {
 "birth": "2002-12-22",
