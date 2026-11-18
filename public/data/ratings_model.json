@@ -309,9 +309,9 @@
       "td_rate": 0.126,
       "int_rate": 0.05,
       "sack_rate": 0.025,
-      "epa_db": 0.126,
-      "cpoe": 0.054,
-      "pass_20": 0.081
+      "epa_db": 0.127,
+      "cpoe": 0.053,
+      "pass_20": 0.08
      }
     },
     "rushing": {
@@ -380,8 +380,8 @@
      "learned": true,
      "weights": {
       "rec_ypg": 0.125,
-      "rec": 0.26,
-      "targets": 0.063,
+      "rec": 0.261,
+      "targets": 0.061,
       "catch_rate": 0.075,
       "ypr": 0.05,
       "rec_td": 0.095,
@@ -438,12 +438,12 @@
      "learned": true,
      "weights": {
       "rec_ypg": 0.125,
-      "rec": 0.155,
-      "targets": 0.168,
-      "catch_rate": 0.098,
+      "rec": 0.154,
+      "targets": 0.17,
+      "catch_rate": 0.101,
       "ypr": 0.05,
-      "rec_td": 0.106,
-      "yac": 0.198,
+      "rec_td": 0.107,
+      "yac": 0.193,
       "rec_epa": 0.1
      }
     },
@@ -639,9 +639,9 @@
      "r2": 0.18,
      "learned": true,
      "weights": {
-      "tackles": 0.164,
-      "tackles_pg": 0.014,
-      "solo": 0.204,
+      "tackles": 0.165,
+      "tackles_pg": 0.015,
+      "solo": 0.203,
       "tfl": 0.337,
       "ff": 0.2,
       "fr": 0.08

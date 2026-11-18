@@ -2379,6 +2379,9 @@
 "4360635": [
 "WAS"
 ],
+"4360637": [
+"MIN"
+],
 "4360677": [
 "CLE"
 ],
@@ -4625,6 +4628,9 @@
 ],
 "4683062": [
 "KC"
+],
+"4683101": [
+"MIA"
 ],
 "4683151": [
 "IND"
@@ -7290,7 +7296,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2576925.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "88",
 "last": "Waller",
 "name": "Darren Waller",
@@ -11421,7 +11429,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3863182.png",
 "height": 78.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "94",
 "last": "Tillery",
@@ -13984,7 +13992,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035462.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "27",
 "last": "Simmons",
 "name": "Isaiah Simmons",
@@ -14805,7 +14815,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4037361.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "7",
 "last": "Ward",
@@ -17780,9 +17790,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241476.png",
 "height": 76.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "14",
 "last": "Shavers",
 "name": "Tyrell Shavers",
@@ -18323,7 +18331,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242391.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "73",
 "last": "Hainsey",
@@ -23247,7 +23255,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362523.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "86",
 "last": "Mallory",
@@ -23297,7 +23305,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362580.png",
 "height": 78.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "79",
 "last": "Raimann",
@@ -24153,7 +24161,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4368304.png",
 "height": 77.0,
 "injuries": [
-"Doubtful"
+"Injured Reserve"
 ],
 "jersey": "66",
 "last": "McCormick",
@@ -24902,7 +24910,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372780.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "82",
 "last": "Tremble",
 "name": "Tommy Tremble",
@@ -34112,7 +34122,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569371.png",
 "height": 70.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "18",
 "last": "Williams",
 "name": "Isaiah Williams",
@@ -39066,9 +39078,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685526.png",
 "height": 75.0,
-"injuries": [
-"Injured Reserve"
-],
+"injuries": [],
 "jersey": "23",
 "last": "Randall",
 "name": "Adam Randall",
@@ -39557,7 +39567,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4686334.png",
 "height": 76.0,
 "injuries": [
-"Doubtful"
+"Questionable"
 ],
 "jersey": "0",
 "last": "Diaby",
@@ -41092,9 +41102,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4694237.png",
 "height": 71.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "84",
 "last": "Hurleman",
 "name": "Max Hurleman",
@@ -44109,7 +44117,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4875564.png",
 "height": 73.0,
 "injuries": [
-"Questionable"
+"Injured Reserve"
 ],
 "jersey": "98",
 "last": "Richter",
@@ -45187,7 +45195,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4892240.png",
 "height": 80.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "75",
 "last": "Travis",
@@ -47208,9 +47216,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5151083.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "24",
 "last": "Lee III",
 "name": "Will Lee III",
