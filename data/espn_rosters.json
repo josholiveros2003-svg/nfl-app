@@ -393,9 +393,6 @@
 "3043116": [
 "SF"
 ],
-"3043133": [
-"JAX"
-],
 "3043168": [
 "ATL"
 ],
@@ -2957,6 +2954,9 @@
 ],
 "4380507": [
 "TB"
+],
+"4381558": [
+"JAX"
 ],
 "4382401": [
 "DEN"
@@ -7267,9 +7267,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2576736.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "63",
 "last": "Patrick",
 "name": "Lucas Patrick",
@@ -10623,7 +10621,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3126356.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "44",
 "last": "Humphrey",
 "name": "Marlon Humphrey",
@@ -11633,7 +11633,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3895840.png",
 "height": 80.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "73",
 "last": "Heck",
 "name": "Charlie Heck",
@@ -21693,9 +21695,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360853.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "9",
 "last": "Hufanga",
 "name": "Talanoa Hufanga",
@@ -29258,7 +29258,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429164.png",
 "height": 74.0,
 "injuries": [
-"Doubtful"
+"Questionable"
 ],
 "jersey": "51",
 "last": "Herbig",
@@ -39247,6 +39247,22 @@
 "team": "BAL",
 "weight": 203.0,
 "years": 2
+},
+"4685540": {
+"birth": "2003-08-21",
+"college": "BYU",
+"first": "Carsen",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685540.png",
+"height": 75.0,
+"injuries": [],
+"jersey": "48",
+"last": "Ryan",
+"name": "Carsen Ryan",
+"pos": "TE",
+"team": "CLE",
+"weight": 255.0,
+"years": 0
 },
 "4685549": {
 "birth": "2003-09-09",
