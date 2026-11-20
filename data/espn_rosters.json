@@ -7529,7 +7529,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2970204.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "98",
 "last": "Rankins",
 "name": "Sheldon Rankins",
@@ -13291,22 +13293,6 @@
 "team": "ATL",
 "weight": 212.0,
 "years": 8
-},
-"3931399": {
-"birth": "1997-02-15",
-"college": "Stanford",
-"first": "Justin",
-"group": "defense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3931399.png",
-"height": 73.0,
-"injuries": [],
-"jersey": "21",
-"last": "Reid",
-"name": "Justin Reid",
-"pos": "S",
-"team": "NO",
-"weight": 207.0,
-"years": 9
 },
 "3932335": {
 "birth": "1997-01-03",
@@ -28567,7 +28553,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428989.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Doubtful"
+],
 "jersey": "53",
 "last": "Braswell",
 "name": "Chris Braswell",
@@ -28815,7 +28803,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429022.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "14",
 "last": "Boutte",
 "name": "Kayshon Boutte",
@@ -39851,7 +39841,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4686468.png",
 "height": 72.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "20",
 "last": "McGowan",
 "name": "Seth McGowan",
@@ -43465,7 +43457,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4839498.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "66",
 "last": "Rutledge",
 "name": "Keylan Rutledge",
