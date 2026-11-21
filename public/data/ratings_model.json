@@ -631,8 +631,8 @@
      "learned": true,
      "weights": {
       "sacks": 0.25,
-      "qb_hits": 0.377,
-      "tfl": 0.373
+      "qb_hits": 0.378,
+      "tfl": 0.372
      }
     },
     "tackling": {
@@ -641,7 +641,7 @@
      "weights": {
       "tackles": 0.167,
       "tackles_pg": 0.017,
-      "solo": 0.198,
+      "solo": 0.199,
       "tfl": 0.338,
       "ff": 0.2,
       "fr": 0.08
@@ -675,11 +675,11 @@
    "topStats": [
     [
      "Pass Rush: QB hits",
-     1.67
+     1.68
     ],
     [
      "Tackling: Forced fumbles",
-     1.15
+     1.14
     ],
     [
      "Playing Time: Defensive snaps",
@@ -699,7 +699,7 @@
       "solo": 0.281,
       "tfl": 0.289,
       "ff": 0.204,
-      "fr": 0.075
+      "fr": 0.076
      }
     },
     "pass_rush": {
@@ -725,7 +725,7 @@
      "learned": true,
      "weights": {
       "snaps": 0.17,
-      "snaps_pg": 0.272,
+      "snaps_pg": 0.273,
       "snap_share": 0.376,
       "penalties": 0.05,
       "penalty_yds": 0.132
@@ -783,7 +783,7 @@
       "snaps_pg": 0.285,
       "snap_share": 0.309,
       "penalties": 0.076,
-      "penalty_yds": 0.152
+      "penalty_yds": 0.151
      }
     },
     "pass_rush": {
