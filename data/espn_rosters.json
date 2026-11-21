@@ -117,9 +117,6 @@
 "16716": [
 "LA"
 ],
-"16731": [
-"SF"
-],
 "16734": [
 "HOU"
 ],
@@ -203,6 +200,9 @@
 ],
 "2576336": [
 "JAX"
+],
+"2576399": [
+"BAL"
 ],
 "2576492": [
 "CHI"
@@ -324,6 +324,9 @@
 "2978247": [
 "ARI"
 ],
+"2978313": [
+"BUF"
+],
 "2978524": [
 "PIT"
 ],
@@ -380,6 +383,9 @@
 ],
 "3042702": [
 "WAS"
+],
+"3042717": [
+"BUF"
 ],
 "3042738": [
 "BAL"
@@ -1218,6 +1224,9 @@
 "4033855": [
 "CLE"
 ],
+"4034530": [
+"LV"
+],
 "4034729": [
 "MIA"
 ],
@@ -1439,6 +1448,9 @@
 ],
 "4038999": [
 "MIN"
+],
+"4039007": [
+"DEN"
 ],
 "4039018": [
 "DEN"
@@ -2829,6 +2841,9 @@
 "4372016": [
 "DEN"
 ],
+"4372017": [
+"LAC"
+],
 "4372020": [
 "SEA"
 ],
@@ -3057,6 +3072,9 @@
 "4426358": [
 "CHI"
 ],
+"4426368": [
+"PIT"
+],
 "4426374": [
 "CHI"
 ],
@@ -3170,6 +3188,9 @@
 ],
 "4426948": [
 "WAS"
+],
+"4426981": [
+"JAX"
 ],
 "4426987": [
 "TEN"
@@ -5097,6 +5118,9 @@
 "4693848": [
 "LA"
 ],
+"4694237": [
+"PIT"
+],
 "4694334": [
 "BAL"
 ],
@@ -5991,6 +6015,9 @@
 "5153072": [
 "IND"
 ],
+"5155825": [
+"LV"
+],
 "5157289": [
 "LV"
 ],
@@ -6017,6 +6044,9 @@
 ],
 "5209589": [
 "DET"
+],
+"5211114": [
+"BAL"
 ],
 "5216101": [
 "DEN"
@@ -12521,7 +12551,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917657.png",
 "height": 75.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "53",
 "last": "Baun",
@@ -14736,7 +14766,9 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4036660.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "22",
 "last": "Baker Jr.",
 "name": "Darrell Baker Jr.",
@@ -25843,7 +25875,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4411189.png",
 "height": 78.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "79",
 "last": "Pipkins III",
@@ -28311,7 +28343,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428850.png",
 "height": 73.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "13",
 "last": "Wicks",
@@ -31729,7 +31761,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431545.png",
 "height": 71.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "28",
 "last": "Shipley",
@@ -43359,7 +43391,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4838693.png",
 "height": 71.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "24",
 "last": "Shelley",
