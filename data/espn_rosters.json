@@ -477,6 +477,9 @@
 "3051890": [
 "WAS"
 ],
+"3051909": [
+"MIA"
+],
 "3051942": [
 "TB"
 ],
@@ -1758,6 +1761,9 @@
 "4240631": [
 "MIN"
 ],
+"4240657": [
+"TEN"
+],
 "4240677": [
 "GB"
 ],
@@ -2312,6 +2318,9 @@
 ],
 "4360290": [
 "SF"
+],
+"4360308": [
+"PIT"
 ],
 "4360310": [
 "JAX"
@@ -5543,6 +5552,9 @@
 ],
 "4875592": [
 "CAR"
+],
+"4876013": [
+"MIA"
 ],
 "4876017": [
 "CLE"
@@ -8870,11 +8882,11 @@
 "birth": "1995-03-21",
 "college": "Vanderbilt",
 "first": "Oren",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3051746.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Injured Reserve"
 ],
 "jersey": "42",
 "last": "Burks",
@@ -8954,16 +8966,16 @@
 "birth": "1995-01-23",
 "college": "Auburn",
 "first": "Daniel",
-"group": "practiceSquad",
+"group": "specialTeam",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3051909.png",
 "height": 77.0,
 "injuries": [],
-"jersey": null,
+"jersey": "38",
 "last": "Carlson",
 "name": "Daniel Carlson",
 "pos": "KR",
 "team": "MIA",
-"weight": 222.0,
+"weight": 213.0,
 "years": 9
 },
 "3051911": {
@@ -10464,7 +10476,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3125082.png",
 "height": 77.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "66",
 "last": "Risner",
@@ -14709,9 +14721,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4036660.png",
 "height": 73.0,
-"injuries": [
-"Out"
-],
+"injuries": [],
 "jersey": "22",
 "last": "Baker Jr.",
 "name": "Darrell Baker Jr.",
@@ -15285,7 +15295,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4039303.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "91",
 "last": "Oliver",
 "name": "Ed Oliver",
@@ -16913,9 +16925,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240532.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "29",
 "last": "Adams",
 "name": "Tony Adams",
@@ -17190,7 +17200,7 @@
 "birth": "1999-05-07",
 "college": "North Carolina",
 "first": "Michael",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240657.png",
 "height": 68.0,
 "injuries": [],
@@ -19544,11 +19554,11 @@
 "birth": "1999-07-12",
 "college": "Fresno State",
 "first": "DaRon",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4248911.png",
 "height": 74.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "26",
 "last": "Bland",
@@ -24752,7 +24762,7 @@
 "birth": "2000-08-20",
 "college": "Florida State",
 "first": "Jashaun",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372519.png",
 "height": 71.0,
 "injuries": [],
@@ -28070,7 +28080,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428557.png",
 "height": 71.0,
 "injuries": [
-"Questionable"
+"Injured Reserve"
 ],
 "jersey": "2",
 "last": "Spears",
@@ -29136,7 +29146,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429164.png",
 "height": 74.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "51",
 "last": "Herbig",
@@ -35064,7 +35074,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4573319.png",
 "height": 77.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "92",
 "last": "Striggow",
@@ -44314,11 +44324,11 @@
 "birth": "2001-11-14",
 "college": "San Diego State",
 "first": "Jack",
-"group": "practiceSquad",
+"group": "specialTeam",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4876013.png",
 "height": 71.0,
 "injuries": [],
-"jersey": null,
+"jersey": "31",
 "last": "Browning",
 "name": "Jack Browning",
 "pos": "P",
