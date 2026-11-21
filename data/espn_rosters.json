@@ -309,6 +309,9 @@
 "2976560": [
 "HOU"
 ],
+"2976592": [
+"NYJ"
+],
 "2977187": [
 "SEA"
 ],
@@ -2319,6 +2322,9 @@
 "4360290": [
 "SF"
 ],
+"4360307": [
+"DAL"
+],
 "4360308": [
 "PIT"
 ],
@@ -2766,6 +2772,9 @@
 "4367645": [
 "KC"
 ],
+"4367775": [
+"NO"
+],
 "4367828": [
 "TEN"
 ],
@@ -2858,6 +2867,9 @@
 ],
 "4372518": [
 "CAR"
+],
+"4372519": [
+"DAL"
 ],
 "4372533": [
 "NO"
@@ -5516,6 +5528,9 @@
 ],
 "4872841": [
 "MIA"
+],
+"4873075": [
+"NO"
 ],
 "4873232": [
 "CLE"
@@ -30660,7 +30675,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430841.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "19",
 "last": "Beck",
@@ -31578,11 +31593,11 @@
 "birth": "2001-06-19",
 "college": "Michigan",
 "first": "Roman",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431492.png",
 "height": 70.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "14",
 "last": "Wilson",
