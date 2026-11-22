@@ -378,6 +378,9 @@
 "3040471": [
 "CLE"
 ],
+"3042476": [
+"NYG"
+],
 "3042519": [
 "MIN"
 ],
@@ -545,6 +548,9 @@
 ],
 "3057956": [
 "MIA"
+],
+"3059722": [
+"ARI"
 ],
 "3059839": [
 "ARI"
@@ -2031,6 +2037,9 @@
 "4243256": [
 "CAR"
 ],
+"4243315": [
+"CHI"
+],
 "4243321": [
 "HOU"
 ],
@@ -2416,6 +2425,9 @@
 "ARI"
 ],
 "4360763": [
+"CAR"
+],
+"4360773": [
 "CAR"
 ],
 "4360797": [
@@ -3570,6 +3582,9 @@
 "4429693": [
 "HOU"
 ],
+"4429731": [
+"PHI"
+],
 "4429743": [
 "PIT"
 ],
@@ -3861,6 +3876,9 @@
 "4431561": [
 "KC"
 ],
+"4431562": [
+"NYG"
+],
 "4431567": [
 "ATL"
 ],
@@ -4062,6 +4080,9 @@
 "4566154": [
 "IND"
 ],
+"4566165": [
+"TB"
+],
 "4566190": [
 "KC"
 ],
@@ -4101,6 +4122,9 @@
 "4567175": [
 "LA"
 ],
+"4567219": [
+"DET"
+],
 "4567222": [
 "SEA"
 ],
@@ -4125,11 +4149,17 @@
 "4567410": [
 "ARI"
 ],
+"4567416": [
+"CAR"
+],
 "4567462": [
 "DEN"
 ],
 "4567493": [
 "MIA"
+],
+"4567535": [
+"PHI"
 ],
 "4567747": [
 "KC"
@@ -4515,6 +4545,9 @@
 "4605792": [
 "CLE"
 ],
+"4605841": [
+"KC"
+],
 "4605951": [
 "LA"
 ],
@@ -4625,6 +4658,9 @@
 ],
 "4682618": [
 "PHI"
+],
+"4682626": [
+"KC"
 ],
 "4682648": [
 "NYG"
@@ -5976,6 +6012,9 @@
 "5125875": [
 "LA"
 ],
+"5143915": [
+"DET"
+],
 "5144457": [
 "MIA"
 ],
@@ -6713,22 +6752,6 @@
 "weight": 280.0,
 "years": 10
 },
-"16731": {
-"birth": "1993-09-25",
-"college": "Oregon State",
-"first": "Brandin",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/16731.png",
-"height": 70.0,
-"injuries": [],
-"jersey": "84",
-"last": "Cooks",
-"name": "Brandin Cooks",
-"pos": "WR",
-"team": "SF",
-"weight": 189.0,
-"years": 13
-},
 "16733": {
 "birth": "1992-11-05",
 "college": "LSU",
@@ -7306,7 +7329,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2576736.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "63",
 "last": "Patrick",
 "name": "Lucas Patrick",
@@ -12619,7 +12644,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917853.png",
 "height": 73.0,
 "injuries": [
-"Injured Reserve"
+"Questionable"
 ],
 "jersey": "2",
 "last": "Jackson",
@@ -14009,7 +14034,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035462.png",
 "height": 76.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "27",
 "last": "Simmons",
@@ -16532,7 +16557,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239694.png",
 "height": 69.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "2",
 "last": "Robertson",
 "name": "Amik Robertson",
@@ -17209,22 +17236,6 @@
 "pos": "DT",
 "team": "ARI",
 "weight": 301.0,
-"years": 4
-},
-"4240623": {
-"birth": "1998-10-21",
-"college": "Oregon",
-"first": "DJ",
-"group": "practiceSquad",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240623.png",
-"height": 76.0,
-"injuries": [],
-"jersey": null,
-"last": "Johnson",
-"name": "DJ Johnson",
-"pos": "DE",
-"team": "GB",
-"weight": 260.0,
 "years": 4
 },
 "4240631": {
@@ -19747,6 +19758,22 @@
 "weight": 236.0,
 "years": 5
 },
+"4249836": {
+"birth": "1998-12-10",
+"college": "South Dakota State",
+"first": "Pierre",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4249836.png",
+"height": 71.0,
+"injuries": [],
+"jersey": "22",
+"last": "Strong Jr.",
+"name": "Pierre Strong Jr.",
+"pos": "RB",
+"team": "GB",
+"weight": 207.0,
+"years": 4
+},
 "4250392": {
 "birth": "1999-05-03",
 "college": "Sam Houston",
@@ -21134,9 +21161,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360378.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "20",
 "last": "Martin",
 "name": "Quan Martin",
@@ -22615,7 +22640,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361788.png",
 "height": 78.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "64",
 "last": "Mays",
@@ -25842,7 +25867,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4401811.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "29",
 "last": "Dugger",
 "name": "Kyle Dugger",
@@ -30478,7 +30505,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430737.png",
 "height": 69.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "23",
 "last": "Williams",
 "name": "Kyren Williams",
@@ -33512,9 +33541,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567156.png",
 "height": 74.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "13",
 "last": "Burks",
 "name": "Treylon Burks",
@@ -39653,12 +39680,10 @@
 "birth": "2002-06-12",
 "college": "Indiana",
 "first": "C.J.",
-"group": "injuredReserveOrOut",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4686308.png",
 "height": 73.0,
-"injuries": [
-"Injured Reserve"
-],
+"injuries": [],
 "jersey": "99",
 "last": "West",
 "name": "C.J. West",
@@ -46707,7 +46732,7 @@
 "birth": "2004-04-29",
 "college": "Weber State",
 "first": "Gavin",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5085625.png",
 "height": 77.0,
 "injuries": [],
