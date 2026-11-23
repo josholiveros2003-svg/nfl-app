@@ -12237,7 +12237,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916075.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "68",
 "last": "McKivitz",
 "name": "Colton McKivitz",
