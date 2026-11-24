@@ -336,14 +336,14 @@
   }
  },
  "fittedWeights": {
-  "home": 1.606,
-  "offense": 0.354,
+  "home": 1.605,
+  "offense": 0.355,
   "defense": 0.031,
   "special": -0.049,
-  "form": 0.155,
-  "adjusted": 0.201,
-  "lastSeason": 0.547,
-  "injuries": 1.098
+  "form": 0.154,
+  "adjusted": 0.202,
+  "lastSeason": 0.546,
+  "injuries": 1.099
  },
  "fittedMarginSD": 12.42,
  "calibratedMarginSD": 11.0,
@@ -356,7 +356,7 @@
   },
   "0.05": {
    "accuracy": 64.2,
-   "brier": 0.2182
+   "brier": 0.2181
   },
   "0.10": {
    "accuracy": 63.7,
@@ -384,7 +384,7 @@
   },
   "0.40": {
    "accuracy": 65.1,
-   "brier": 0.214
+   "brier": 0.2139
   },
   "0.45": {
    "accuracy": 65.1,
@@ -396,7 +396,7 @@
   },
   "0.55": {
    "accuracy": 65.8,
-   "brier": 0.2127
+   "brier": 0.2126
   },
   "0.60": {
    "accuracy": 66.1,
