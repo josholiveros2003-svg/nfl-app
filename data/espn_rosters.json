@@ -5550,6 +5550,9 @@
 "4875592": [
 "CAR"
 ],
+"4876013": [
+"MIA"
+],
 "4876017": [
 "CLE"
 ],
@@ -7514,7 +7517,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2971027.png",
 "height": 70.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "31",
 "last": "Jones",
@@ -8335,7 +8338,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3043078.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "22",
 "last": "Henry",
 "name": "Derrick Henry",
@@ -12078,7 +12083,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916075.png",
 "height": 78.0,
 "injuries": [
-"Out"
+"Injured Reserve"
 ],
 "jersey": "68",
 "last": "McKivitz",
@@ -15592,7 +15597,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4043041.png",
 "height": 76.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "77",
 "last": "Moore",
@@ -16781,7 +16786,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240472.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "83",
 "last": "Gray",
 "name": "Noah Gray",
@@ -16847,9 +16854,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240542.png",
 "height": 72.0,
-"injuries": [
-"Injured Reserve"
-],
+"injuries": [],
 "jersey": "22",
 "last": "Hobbs",
 "name": "Nate Hobbs",
@@ -18156,7 +18161,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242355.png",
 "height": 77.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "87",
 "last": "Ferguson",
@@ -18361,9 +18366,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242459.png",
 "height": 78.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "65",
 "last": "Smith",
 "name": "Trey Smith",
@@ -19882,7 +19885,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4257591.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "17",
 "last": "Ebiketie",
@@ -21069,6 +21072,22 @@
 "team": "ATL",
 "weight": 220.0,
 "years": 3
+},
+"4360438": {
+"birth": "1998-03-17",
+"college": "Arizona State",
+"first": "Brandon",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360438.png",
+"height": 72.0,
+"injuries": [],
+"jersey": null,
+"last": "Aiyuk",
+"name": "Brandon Aiyuk",
+"pos": "WR",
+"team": "WAS",
+"weight": 200.0,
+"years": 6
 },
 "4360469": {
 "birth": "2000-06-22",
@@ -22395,7 +22414,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361741.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "13",
 "last": "Purdy",
 "name": "Brock Purdy",
@@ -27394,7 +27415,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4427843.png",
 "height": 79.0,
 "injuries": [],
-"jersey": null,
+"jersey": "77",
 "last": "Lundt",
 "name": "Chase Lundt",
 "pos": "OT",
@@ -31549,9 +31570,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431545.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "28",
 "last": "Shipley",
 "name": "Will Shipley",
@@ -31683,9 +31702,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431573.png",
 "height": 74.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "42",
 "last": "Mondon Jr.",
 "name": "Smael Mondon Jr.",
@@ -33122,7 +33139,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567048.png",
 "height": 69.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "9",
 "last": "Walker III",
@@ -35472,7 +35489,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4591008.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "55",
 "last": "Norman-Lott",
@@ -39347,9 +39364,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4686273.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "27",
 "last": "Mitchell",
 "name": "Quinyon Mitchell",
@@ -43645,7 +43660,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4871063.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "99",
 "last": "Woods",
 "name": "Peter Woods",
