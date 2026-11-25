@@ -144,13 +144,13 @@
      "r2": 0.0,
      "learned": true,
      "weights": {
-      "cmp_pct": 0.214,
+      "cmp_pct": 0.215,
       "net_ypa": 0.1,
       "pass_td": 0.182,
       "ints": 0.075,
       "sack_rate": 0.075,
-      "qb_hits": 0.141,
-      "epa_db": 0.212
+      "qb_hits": 0.14,
+      "epa_db": 0.213
      }
     },
     "run_defense": {
@@ -610,11 +610,11 @@
    "topStats": [
     [
      "Pass Rush: QB hits",
-     1.72
+     1.71
     ],
     [
      "Playing Time: Snap share",
-     1.47
+     1.48
     ],
     [
      "Playing Time: Defensive snaps per game",
