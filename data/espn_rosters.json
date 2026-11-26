@@ -9037,7 +9037,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3052101.png",
 "height": 71.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "3",
 "last": "Awuzie",
 "name": "Chidobe Awuzie",
@@ -9961,7 +9963,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3117256.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "86",
 "last": "Schultz",
 "name": "Dalton Schultz",
@@ -13981,9 +13985,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035479.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "74",
 "last": "Simpson",
 "name": "John Simpson",
@@ -17491,9 +17493,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241250.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "33",
 "last": "Hummel",
 "name": "Jake Hummel",
@@ -20831,9 +20831,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360189.png",
 "height": 78.0,
-"injuries": [
-"Doubtful"
-],
+"injuries": [],
 "jersey": "96",
 "last": "Hall",
 "name": "Logan Hall",
@@ -21621,9 +21619,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360939.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "7",
 "last": "Bateman",
 "name": "Rashod Bateman",
@@ -29591,9 +29587,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429615.png",
 "height": 69.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "4",
 "last": "Flowers",
 "name": "Zay Flowers",
@@ -31977,7 +31971,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431611.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "18",
 "last": "Williams",
 "name": "Caleb Williams",
@@ -32441,9 +32437,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432708.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "18",
 "last": "Harrison Jr.",
 "name": "Marvin Harrison Jr.",
@@ -37737,9 +37731,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683188.png",
 "height": 75.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "15",
 "last": "Green",
 "name": "Mike Green",
@@ -42624,7 +42616,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4723086.png",
 "height": 78.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "84",
 "last": "Loveland",
