@@ -7061,7 +7061,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2573401.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "89",
 "last": "Higbee",
 "name": "Tyler Higbee",
@@ -37959,7 +37961,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683643.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "99",
 "last": "Sorrell",
 "name": "Barryn Sorrell",
