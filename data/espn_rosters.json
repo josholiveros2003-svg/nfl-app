@@ -894,6 +894,9 @@
 "3886633": [
 "ARI"
 ],
+"3886812": [
+"LAC"
+],
 "3892775": [
 "DEN"
 ],
@@ -3060,6 +3063,9 @@
 "4426358": [
 "CHI"
 ],
+"4426368": [
+"PIT"
+],
 "4426374": [
 "CHI"
 ],
@@ -3362,6 +3368,9 @@
 ],
 "4428872": [
 "ATL"
+],
+"4428909": [
+"PIT"
 ],
 "4428914": [
 "DAL"
@@ -5109,6 +5118,9 @@
 "4693848": [
 "LA"
 ],
+"4694237": [
+"PIT"
+],
 "4694334": [
 "BAL"
 ],
@@ -6379,7 +6391,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/15168.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "11",
 "last": "Keenum",
 "name": "Case Keenum",
@@ -7305,7 +7319,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2576925.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "88",
 "last": "Waller",
 "name": "Darren Waller",
@@ -7817,9 +7833,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2976212.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "3",
 "last": "Diggs",
 "name": "Stefon Diggs",
@@ -8065,7 +8079,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2980097.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "90",
 "last": "Bullard",
 "name": "Jonathan Bullard",
@@ -8425,7 +8441,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3043168.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "55",
 "last": "Smith",
 "name": "Za'Darius Smith",
@@ -8572,7 +8590,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3045463.png",
 "height": 72.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "36",
 "last": "Clark",
@@ -10007,9 +10025,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3120464.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "91",
 "last": "Franklin-Myers",
 "name": "John Franklin-Myers",
@@ -10255,7 +10271,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3122797.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": null,
 "last": "Yiadom",
 "name": "Isaac Yiadom",
@@ -11675,7 +11693,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3912189.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "66",
 "last": "Murray",
 "name": "Bill Murray",
@@ -12417,9 +12437,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3917331.png",
 "height": 76.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "78",
 "last": "McCoy",
 "name": "Erik McCoy",
@@ -12999,9 +13017,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3929846.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "25",
 "last": "Elliott",
 "name": "DeShon Elliott",
@@ -13637,7 +13653,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4034948.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "81",
 "last": "Franks",
 "name": "Feleipe Franks",
@@ -14096,7 +14114,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035656.png",
 "height": 75.0,
 "injuries": [
-"Questionable"
+"Injured Reserve"
 ],
 "jersey": "15",
 "last": "Skowronek",
@@ -14229,9 +14247,7 @@
 "group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035687.png",
 "height": 76.0,
-"injuries": [
-"Injured Reserve"
-],
+"injuries": [],
 "jersey": "11",
 "last": "Pittman Jr.",
 "name": "Michael Pittman Jr.",
@@ -14429,7 +14445,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4036063.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "91",
 "last": "Jones II",
 "name": "Patrick Jones II",
@@ -14706,7 +14724,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4037333.png",
 "height": 76.0,
 "injuries": [
-"Doubtful"
+"Out"
 ],
 "jersey": "56",
 "last": "Highsmith",
@@ -14956,7 +14974,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038849.png",
 "height": 77.0,
 "injuries": [
-"Questionable"
+"Out"
 ],
 "jersey": "98",
 "last": "Wonnum",
@@ -15675,9 +15693,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4043089.png",
 "height": 71.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "34",
 "last": "Thompson",
 "name": "Jalen Thompson",
@@ -16517,7 +16533,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239944.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "89",
 "last": "Long",
 "name": "Hunter Long",
@@ -17011,7 +17029,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4240585.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "57",
 "last": "Epenesa",
 "name": "AJ Epenesa",
@@ -17407,9 +17427,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241007.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "48",
 "last": "Jackson",
 "name": "D'Marco Jackson",
@@ -17507,7 +17525,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241374.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "81",
 "last": "Calcaterra",
 "name": "Grant Calcaterra",
@@ -18647,7 +18667,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242975.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "5",
 "last": "Phillips",
 "name": "Jaelan Phillips",
@@ -21055,7 +21077,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360319.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "74",
 "last": "McFadden",
 "name": "Jordan McFadden",
@@ -22273,7 +22297,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361510.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "99",
 "last": "Thomas",
 "name": "Cameron Thomas",
@@ -24853,7 +24879,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372780.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "82",
 "last": "Tremble",
 "name": "Tommy Tremble",
@@ -26093,9 +26121,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426374.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "29",
 "last": "Stevenson Sr.",
 "name": "Tyrique Stevenson Sr.",
@@ -29103,9 +29129,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429164.png",
 "height": 74.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "51",
 "last": "Herbig",
 "name": "Nick Herbig",
@@ -32315,7 +32339,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432620.png",
 "height": 70.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "11",
 "last": "Washington",
 "name": "Parker Washington",
@@ -32909,9 +32935,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4565185.png",
 "height": 73.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "13",
 "last": "Felton",
 "name": "Tai Felton",
@@ -32993,9 +33017,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4565311.png",
 "height": 72.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "90",
 "last": "Peebles",
 "name": "Aeneas Peebles",
@@ -34057,9 +34079,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569371.png",
 "height": 70.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "18",
 "last": "Williams",
 "name": "Isaiah Williams",
@@ -34981,7 +35001,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4573318.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "54",
 "last": "Mausi",
 "name": "Dorian Mausi",
@@ -34997,9 +35019,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4573319.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "92",
 "last": "Striggow",
 "name": "Danny Striggow",
@@ -35841,7 +35861,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4595343.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "53",
 "last": "Daniels",
 "name": "Kendal Daniels",
@@ -37781,7 +37803,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683243.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "84",
 "last": "Evans",
 "name": "Mitchell Evans",
@@ -38387,7 +38411,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685266.png",
 "height": 75.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "55",
 "last": "Barham",
 "name": "Jaishawn Barham",
@@ -40237,7 +40263,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4689333.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "90",
 "last": "Wheat",
 "name": "Tyrus Wheat",
@@ -40430,7 +40458,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4690171.png",
 "height": 72.0,
 "injuries": [
-"Questionable"
+"Injured Reserve"
 ],
 "jersey": "33",
 "last": "Leonard",
@@ -41441,7 +41469,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4696203.png",
 "height": 77.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "65",
 "last": "Cornelius",
 "name": "Ajani Cornelius",
@@ -42179,7 +42209,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4709695.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "43",
 "last": "Sharar",
 "name": "Karson Sharar",
@@ -42575,9 +42607,7 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4722908.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "85",
 "last": "Ogletree",
 "name": "Drew Ogletree",
@@ -42593,7 +42623,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4723086.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "84",
 "last": "Loveland",
 "name": "Colston Loveland",
@@ -42983,7 +43015,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4832793.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "71",
 "last": "Ioane",
 "name": "Olaivavega Ioane",
@@ -44127,7 +44161,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4875592.png",
 "height": 76.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "46",
 "last": "Kuwatch",
 "name": "Jackson Kuwatch",
@@ -44437,7 +44473,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4877376.png",
 "height": 73.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "91",
 "last": "Loving",
 "name": "Jayden Loving",
@@ -44671,7 +44709,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4879250.png",
 "height": 74.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "18",
 "last": "Payton",
 "name": "Cole Payton",
@@ -45943,9 +45983,7 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081394.png",
 "height": 77.0,
-"injuries": [
-"Questionable"
-],
+"injuries": [],
 "jersey": "27",
 "last": "Pearce Jr.",
 "name": "James Pearce Jr.",
@@ -46825,7 +46863,9 @@
 "group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5093004.png",
 "height": 69.0,
-"injuries": [],
+"injuries": [
+"Out"
+],
 "jersey": "6",
 "last": "Abney II",
 "name": "Keith Abney II",
