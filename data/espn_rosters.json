@@ -11126,7 +11126,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3139368.png",
 "height": 72.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "29",
 "last": "Epps",
@@ -11550,7 +11550,7 @@
 "birth": "1996-04-11",
 "college": "Washington",
 "first": "Jake",
-"group": "practiceSquad",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3886812.png",
 "height": 74.0,
 "injuries": [],
@@ -14136,7 +14136,7 @@
 "birth": "1997-06-27",
 "college": "Notre Dame",
 "first": "Ben",
-"group": "offense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035656.png",
 "height": 75.0,
 "injuries": [
@@ -14270,7 +14270,7 @@
 "birth": "1997-10-05",
 "college": "USC",
 "first": "Michael",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4035687.png",
 "height": 76.0,
 "injuries": [],
@@ -18477,7 +18477,9 @@
 "group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242459.png",
 "height": 78.0,
-"injuries": [],
+"injuries": [
+"Questionable"
+],
 "jersey": "65",
 "last": "Smith",
 "name": "Trey Smith",
@@ -20089,6 +20091,22 @@
 "team": "GB",
 "weight": 200.0,
 "years": 6
+},
+"4258209": {
+"birth": "1999-09-09",
+"college": "Michigan",
+"first": "Ambry",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4258209.png",
+"height": 72.0,
+"injuries": [],
+"jersey": null,
+"last": "Thomas",
+"name": "Ambry Thomas",
+"pos": "CB",
+"team": "WAS",
+"weight": 190.0,
+"years": 5
 },
 "4258237": {
 "birth": "1999-07-02",
@@ -23424,7 +23442,7 @@
 "birth": "2000-02-07",
 "college": "Missouri",
 "first": "Tyler",
-"group": "injuredReserveOrOut",
+"group": "offense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362748.png",
 "height": 68.0,
 "injuries": [
@@ -28326,7 +28344,7 @@
 "birth": "2001-08-20",
 "college": "Michigan State",
 "first": "Jacoby",
-"group": "practiceSquad",
+"group": "defense",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428909.png",
 "height": 74.0,
 "injuries": [],
@@ -31873,6 +31891,22 @@
 "team": "PHI",
 "weight": 239.0,
 "years": 0
+},
+"4431582": {
+"birth": "2002-09-27",
+"college": "Clemson",
+"first": "Payton",
+"group": "practiceSquad",
+"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431582.png",
+"height": 76.0,
+"injuries": [],
+"jersey": "98",
+"last": "Page",
+"name": "Payton Page",
+"pos": "DT",
+"team": "NYJ",
+"weight": 300.0,
+"years": 1
 },
 "4431584": {
 "birth": "2003-01-31",
@@ -36500,7 +36534,7 @@
 "birth": "2003-07-03",
 "college": "LSU",
 "first": "Sai'vion",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4603189.png",
 "height": 77.0,
 "injuries": [
@@ -40292,22 +40326,6 @@
 "weight": 260.0,
 "years": 4
 },
-"4689334": {
-"birth": "2000-03-31",
-"college": "Ole Miss",
-"first": "Malik",
-"group": "offense",
-"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4689334.png",
-"height": 74.0,
-"injuries": [],
-"jersey": null,
-"last": "Heath",
-"name": "Malik Heath",
-"pos": "WR",
-"team": "WAS",
-"weight": 213.0,
-"years": 3
-},
 "4689364": {
 "birth": "2002-09-04",
 "college": "Kansas",
@@ -40472,7 +40490,7 @@
 "birth": "1999-11-20",
 "college": "Ole Miss",
 "first": "Deane",
-"group": "defense",
+"group": "injuredReserveOrOut",
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4690171.png",
 "height": 72.0,
 "injuries": [
@@ -46376,7 +46394,7 @@
 "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5082630.png",
 "height": 72.0,
 "injuries": [
-"Out"
+"Questionable"
 ],
 "jersey": "11",
 "last": "Royals",
