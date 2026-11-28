@@ -417,7 +417,7 @@
    "topStats": [
     [
      "Receiving: Targets",
-     1.85
+     1.86
     ],
     [
      "Receiving: Receptions",
@@ -425,11 +425,11 @@
     ],
     [
      "Receiving: Receiving yards per game",
-     1.07
+     1.06
     ],
     [
      "Receiving: Receiving yards",
-     1.07
+     1.06
     ]
    ],
    "categories": {
@@ -453,7 +453,7 @@
      "weights": {
       "snaps": 0.193,
       "snaps_pg": 0.299,
-      "snap_share": 0.306,
+      "snap_share": 0.307,
       "penalties": 0.05,
       "penalty_yds": 0.151
      }
@@ -622,7 +622,7 @@
     ],
     [
      "Playing Time: Defensive snaps",
-     0.86
+     0.87
     ]
    ],
    "categories": {
@@ -783,7 +783,7 @@
       "snaps_pg": 0.292,
       "snap_share": 0.3,
       "penalties": 0.086,
-      "penalty_yds": 0.134
+      "penalty_yds": 0.135
      }
     },
     "pass_rush": {
